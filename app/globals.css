@@ -2,8 +2,26 @@
 
 @layer utilities {
   .shadow-watercolor {
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    box-shadow: 0 10px 25px -5px rgba(43, 108, 176, 0.1), 0 8px 10px -6px rgba(43, 108, 176, 0.05);
   }
+}
+
+.section-readable {
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9),
+    0 8px 24px rgba(255, 255, 255, 0.72);
+}
+
+.certificate-marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.certificate-marquee-track {
+  animation: certificate-marquee 54s linear infinite;
+}
+
+.certificate-marquee-track:hover {
+  animation-play-state: paused;
 }
 
 html {
@@ -12,7 +30,137 @@ html {
 }
 
 body {
-  /* Gunakan CSS native untuk tekstur latar belakang cat air */
-  background-color: #fdfcf8;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  background-color: #EAF4FC;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(234, 244, 252, 0.18) 0%,
+      rgba(214, 236, 249, 0.16) 32%,
+      rgba(255, 248, 227, 0.26) 100%
+    ),
+    url("/watercolor-beach.jpg");
+  background-attachment: fixed, fixed;
+  background-position:
+    center top,
+    center top;
+  background-repeat: no-repeat;
+  background-size:
+    cover,
+    cover;
+}
+
+body::before,
+body::after {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+}
+
+body::before {
+  background-image:
+    radial-gradient(circle at 16% 18%, rgba(255, 255, 255, 0.52), transparent 28rem),
+    radial-gradient(circle at 82% 12%, rgba(234, 244, 252, 0.4), transparent 24rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+  background-position:
+    center,
+    center,
+    center;
+  background-repeat: no-repeat;
+  background-size:
+    cover,
+    cover,
+    cover;
+  filter: saturate(1.06);
+  opacity: 0.72;
+  animation: beach-drift 24s ease-in-out infinite alternate;
+}
+
+body::after {
+  background-image:
+    repeating-linear-gradient(
+      168deg,
+      transparent 0 5.8rem,
+      rgba(255, 255, 255, 0.28) 6.1rem 6.4rem,
+      transparent 6.8rem 12rem
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 36%,
+      rgba(255, 255, 255, 0.22) 49%,
+      rgba(255, 255, 255, 0.1) 58%,
+      transparent 72%
+    ),
+    linear-gradient(
+      110deg,
+      transparent 0%,
+      transparent 62%,
+      rgba(255, 244, 205, 0.34) 78%,
+      transparent 100%
+    );
+  background-position:
+    0 0,
+    center,
+    center;
+  background-size:
+    210% 100%,
+    100% 100%,
+    100% 100%;
+  opacity: 0.86;
+  animation: wave-slide 18s linear infinite;
+}
+
+@keyframes beach-drift {
+  from {
+    transform: translate3d(-0.8rem, -0.5rem, 0) scale(1.015);
+  }
+
+  to {
+    transform: translate3d(0.8rem, 0.6rem, 0) scale(1.035);
+  }
+}
+
+@keyframes wave-slide {
+  from {
+    background-position:
+      0 0,
+      center,
+      center;
+  }
+
+  to {
+    background-position:
+      18rem 0,
+      center,
+      center;
+  }
+}
+
+@keyframes certificate-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.625rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after,
+  .certificate-marquee-track {
+    animation: none;
+  }
+}
+
+body > main,
+body > footer {
+  position: relative;
+  z-index: 1;
 }

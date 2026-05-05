@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "./components/site-footer";
 import { SiteNav } from "./components/site-nav";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "Abid Hanan Wicaksono - Portfolio",
   description: "Developer Relations Portfolio",
+  icons: {
+    icon: "/ahawi-icon.svg",
+    shortcut: "/ahawi-icon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -18,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body className={`${inter.className} min-h-screen bg-[#F8F6F0] text-[#1D3557] font-sans`}>
+      <body className="min-h-screen bg-[#EAF4FC] font-sans text-[#102A43]">
         <SiteNav />
         {children}
         <SiteFooter />

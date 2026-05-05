@@ -18,7 +18,7 @@ export function RotatingRoleBadge() {
   return (
     <span
       key={roles[activeIndex]}
-      className="inline-block min-w-[11.5rem] font-bold text-[#1D3557] transition-opacity"
+      className="inline-block min-w-[11.5rem] font-bold text-[#102A43] transition-opacity"
       aria-live="polite"
     >
       {roles[activeIndex]}

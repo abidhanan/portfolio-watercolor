@@ -1,19 +1,68 @@
-export const techGroups = [
+type TechTool = {
+  name: string;
+  logo?: string;
+  mark?: string;
+};
+
+type TechGroup = {
+  title: string;
+  tools: TechTool[];
+};
+
+type CareerItem = {
+  period: string;
+  role: string;
+  company: string;
+  companyLogo?: string;
+  companyMark?: string;
+  desc: string;
+  highlights: string[];
+};
+
+export const techGroups: TechGroup[] = [
   {
     title: "Frontend",
-    tools: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vite", "Blade"],
+    tools: [
+      { name: "Next.js", logo: "https://cdn.simpleicons.org/nextdotjs/000000" },
+      { name: "React", logo: "https://cdn.simpleicons.org/react/61DAFB" },
+      { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript/3178C6" },
+      { name: "Tailwind CSS", logo: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+      { name: "Vite", logo: "https://cdn.simpleicons.org/vite/646CFF" },
+      { name: "Blade", logo: "https://cdn.simpleicons.org/laravel/FF2D20" },
+    ],
   },
   {
     title: "Backend",
-    tools: ["Laravel", "PHP", "MySQL", "REST API", "Laravel Sanctum", "Eloquent ORM"],
+    tools: [
+      { name: "Laravel", logo: "https://cdn.simpleicons.org/laravel/FF2D20" },
+      { name: "PHP", logo: "https://cdn.simpleicons.org/php/777BB4" },
+      { name: "MySQL", logo: "https://cdn.simpleicons.org/mysql/4479A1" },
+      { name: "REST API", logo: "https://cdn.simpleicons.org/openapiinitiative/6BA539" },
+      { name: "Laravel Sanctum", logo: "https://cdn.simpleicons.org/laravel/FF2D20" },
+      { name: "Eloquent ORM", logo: "https://cdn.simpleicons.org/laravel/FF2D20" },
+    ],
   },
   {
     title: "Web3",
-    tools: ["Sui", "Move", "Sui dApp Kit", "Mysten Sui SDK", "React Query", "NFT Marketplace"],
+    tools: [
+      { name: "Sui", logo: "https://cdn.simpleicons.org/sui/4DA2FF" },
+      { name: "Move", mark: "M" },
+      { name: "Sui dApp Kit", logo: "https://cdn.simpleicons.org/sui/4DA2FF" },
+      { name: "Mysten Sui SDK", logo: "https://cdn.simpleicons.org/sui/4DA2FF" },
+      { name: "React Query", logo: "https://cdn.simpleicons.org/reactquery/FF4154" },
+      { name: "NFT Marketplace", logo: "https://cdn.simpleicons.org/opensea/2081E2" },
+    ],
   },
   {
     title: "Integrations & Workflow",
-    tools: ["Midtrans", "Digiflazz", "OrderSosmed API", "Discord Webhook", "GitHub", "Vercel"],
+    tools: [
+      { name: "Midtrans", mark: "M" },
+      { name: "Digiflazz", mark: "D" },
+      { name: "OrderSosmed API", mark: "OS" },
+      { name: "Discord Webhook", logo: "https://cdn.simpleicons.org/discord/5865F2" },
+      { name: "GitHub", logo: "https://cdn.simpleicons.org/github/181717" },
+      { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel/000000" },
+    ],
   },
 ];
 
@@ -27,11 +76,12 @@ export const educationItems = [
   },
 ];
 
-export const careerItems = [
+export const careerItems: CareerItem[] = [
   {
     period: "Mei 2019 - Saat ini",
     role: "Content Creator",
     company: "Instagram - Paruh Waktu",
+    companyLogo: "https://cdn.simpleicons.org/instagram/E4405F",
     desc: "Passionate content creator with expertise in social media analytics, driving engagement, and building a dedicated audience. Skilled in creating insightful data-driven content to enhance visibility and interaction. Currently managing Instagram content to optimize reach and growth.",
     highlights: ["Instagram", "Content strategy", "Social analytics"],
   },
@@ -39,6 +89,7 @@ export const careerItems = [
     period: "Mei 2020 - Saat ini",
     role: "Social Media Marketing",
     company: "Instagram - Paruh Waktu",
+    companyLogo: "https://cdn.simpleicons.org/instagram/E4405F",
     desc: "Experienced in digital marketing, specializing in social media strategy and campaign management. Focused on delivering effective marketing solutions for brands like Scarlett Whitening and elevating brand awareness through targeted campaigns.",
     highlights: ["Digital marketing", "Campaign management", "Brand awareness"],
   },
@@ -46,6 +97,7 @@ export const careerItems = [
     period: "Apr 2022 - Saat ini",
     role: "Entrepreneur",
     company: "Instagram - Paruh Waktu",
+    companyLogo: "https://cdn.simpleicons.org/instagram/E4405F",
     desc: "Founder and entrepreneur specializing in creative entrepreneurship and digital marketing for digital products. Developed and marketed innovative digital solutions, driving customer engagement and sales growth through scalable online products.",
     highlights: ["Entrepreneurship", "Digital products", "Sales growth"],
   },
@@ -53,6 +105,7 @@ export const careerItems = [
     period: "Jun 2023 - Saat ini",
     role: "Content Creator",
     company: "TikTok - Paruh Waktu",
+    companyLogo: "https://cdn.simpleicons.org/tiktok/000000",
     desc: "Content creator on TikTok with a focus on social media analytics to boost engagement and visibility. Skilled in tracking performance and optimizing content strategies to maximize reach. Currently developing creative content to grow the audience and enhance brand interaction.",
     highlights: ["TikTok", "Content optimization", "Audience growth"],
   },
@@ -60,6 +113,7 @@ export const careerItems = [
     period: "Jun 2023 - Saat ini",
     role: "Affiliator",
     company: "TikTok - Paruh Waktu",
+    companyLogo: "https://cdn.simpleicons.org/tiktok/000000",
     desc: "Experienced in digital marketing as an affiliator, leveraging TikTok to drive product promotions and sales. Specializing in showcasing products and generating revenue through affiliate marketing with campaigns that drive conversions.",
     highlights: ["Affiliate marketing", "Product promotion", "Conversions"],
   },
@@ -67,6 +121,7 @@ export const careerItems = [
     period: "Jun 2023 - Saat ini",
     role: "Content Creator",
     company: "YouTube - Paruh Waktu",
+    companyLogo: "https://cdn.simpleicons.org/youtube/FF0000",
     desc: "Content creator on YouTube, utilizing social media analytics to grow the channel and enhance viewer engagement. Focused on optimizing content strategies based on performance metrics and audience insights. Currently building a growing YouTube presence with data-driven content.",
     highlights: ["YouTube", "Audience insights", "Channel growth"],
   },
@@ -74,6 +129,7 @@ export const careerItems = [
     period: "Jun 2022 - Jun 2024",
     role: "Affiliator",
     company: "Shopee - Paruh Waktu",
+    companyLogo: "https://cdn.simpleicons.org/shopee/EE4D2D",
     desc: "Affiliator on Shopee, promoting products through strategic digital marketing campaigns. Expert in curating product collections and driving sales through affiliate marketing. Focused on leveraging Shopee's platform to create effective campaigns that boost conversions.",
     highlights: ["Shopee", "Affiliate campaigns", "Product curation"],
   },
@@ -81,6 +137,8 @@ export const careerItems = [
     period: "Des 2025 - Feb 2026",
     role: "Ambassador",
     company: "FLOQ - Kontrak",
+    companyLogo: "",
+    companyMark: "FLOQ",
     desc: "Collaborated with FLOQ to demystify trading for beginners through engaging social media content, driving brand awareness and organic user growth.",
     highlights: ["Ambassador", "Trading education", "Brand awareness"],
   },
@@ -88,6 +146,7 @@ export const careerItems = [
     period: "Sep 2025 - Feb 2026",
     role: "Student Ambassador",
     company: "Google - Kontrak",
+    companyLogo: "https://cdn.simpleicons.org/google/4285F4",
     desc: "Leading the adoption of Google AI on campus for one semester by creating a positive impact through effective leadership skills, networking, creativity, and digital communication.",
     highlights: ["Google AI", "Campus leadership", "Digital communication"],
   },

@@ -1,0 +1,9 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="32" fill="#EAF4FC"/>
+  <path d="M14 86C31 67 47 65 64 78C83 92 102 91 118 73V128H14V86Z" fill="#F6E09E"/>
+  <path d="M0 45C17 32 35 31 54 44C78 60 101 57 128 35V97C105 113 82 113 59 99C38 86 19 88 0 104V45Z" fill="#90CDF4"/>
+  <path d="M0 57C20 43 38 43 56 56C79 72 101 70 128 49" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="99" cy="25" r="13" fill="#F6AD55"/>
+  <text x="64" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="800" fill="#102A43">A</text>
+  <text x="64" y="98" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="1.8" fill="#2B6CB0">AHAWI</text>
+</svg>

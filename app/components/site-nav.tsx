@@ -24,7 +24,6 @@ export function SiteNav() {
 
     const updateActiveSection = () => {
       animationFrame = null;
-
       if (window.scrollY < 24) {
         setActiveHref("/#home");
         return;
@@ -35,18 +34,14 @@ export function SiteNav() {
 
       for (const item of navItems) {
         const section = document.getElementById(item.href.slice(2));
-
         if (!section) {
           continue;
         }
-
         const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-
         if (sectionTop <= probeLine) {
           currentHref = item.href;
         }
       }
-
       setActiveHref(currentHref);
     };
 
@@ -64,7 +59,6 @@ export function SiteNav() {
       if (animationFrame !== null) {
         window.cancelAnimationFrame(animationFrame);
       }
-
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
     };
@@ -74,13 +68,10 @@ export function SiteNav() {
     if (!href.startsWith("/#")) {
       return;
     }
-
     const section = document.getElementById(href.slice(2));
-
     if (!section) {
       return;
     }
-
     event.preventDefault();
     setActiveHref(href);
 
@@ -93,45 +84,30 @@ export function SiteNav() {
     const headerHeight =
       document.querySelector("header")?.getBoundingClientRect().height ?? 0;
     const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-    const footerTop =
-      (document.querySelector("footer")?.getBoundingClientRect().top ?? 0) +
-      window.scrollY;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const noFooterMaxScroll = Math.max(0, footerTop - window.innerHeight);
-    const targetPosition =
-      href === "/#contact"
-        ? sectionTop + section.offsetHeight / 2 - window.innerHeight / 2
-        : sectionTop - headerHeight - 16;
+
+    const targetPosition = sectionTop - headerHeight - 16;
 
     window.scrollTo({
-      top: Math.max(
-        0,
-        Math.min(
-          targetPosition,
-          href === "/#contact" ? noFooterMaxScroll : maxScroll,
-        ),
-      ),
+      top: Math.max(0, Math.min(targetPosition, maxScroll)),
       behavior: "smooth",
     });
-
     window.history.pushState(null, "", href);
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#EBE6DD]/80 bg-[#F8F6F0]/88 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-[#DCEBF7]/80 bg-[#EAF4FC]/88 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-4 md:flex-row md:items-center md:justify-between md:px-10 xl:px-12">
         <Link
           href="/#home"
           onClick={(event) => handleSectionClick(event, "/#home")}
-          className="w-fit text-lg font-bold tracking-normal text-[#1D3557]"
+          className="w-fit text-lg font-bold tracking-normal text-[#102A43]"
         >
-          AHAWI<span className="text-[#457B9D]"> Portfolio</span>
+          AHAWI<span className="text-[#2B6CB0]"> Portfolio</span>
         </Link>
-
         <div className="flex max-w-full gap-2 overflow-x-auto pb-1 md:flex-wrap md:justify-end md:overflow-visible md:pb-0">
           {navItems.map((item) => {
             const isActive = activeHref === item.href;
-
             return (
               <Link
                 key={item.href}
@@ -139,13 +115,13 @@ export function SiteNav() {
                 onClick={(event) => handleSectionClick(event, item.href)}
                 className={`relative whitespace-nowrap rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
                   isActive
-                    ? "border-[#7A9E7E] bg-white text-[#1D3557] shadow-sm"
-                    : "border-transparent text-[#4A6478] hover:border-[#E1E8D5] hover:bg-white/70 hover:text-[#1D3557]"
+                    ? "border-[#4299E1] bg-white text-[#102A43] shadow-sm"
+                    : "border-transparent text-[#334E68] hover:border-[#BEE3F8] hover:bg-white/70 hover:text-[#102A43]"
                 }`}
               >
                 <span
                   className={`mr-2 inline-block h-2 w-2 rounded-full align-middle transition-colors ${
-                    isActive ? "bg-[#7A9E7E]" : "bg-transparent"
+                    isActive ? "bg-[#4299E1]" : "bg-transparent"
                   }`}
                 />
                 {item.label}

@@ -1,19 +1,19 @@
 export const techGroups = [
   {
     title: "Frontend",
-    tools: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML", "CSS"],
+    tools: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vite", "Blade"],
   },
   {
     title: "Backend",
-    tools: ["Node.js", "Express", "REST API", "MySQL", "PostgreSQL", "Firebase"],
+    tools: ["Laravel", "PHP", "MySQL", "REST API", "Laravel Sanctum", "Eloquent ORM"],
   },
   {
-    title: "Mobile",
-    tools: ["Flutter", "Dart", "React Native", "Android Studio"],
+    title: "Web3",
+    tools: ["Sui", "Move", "Sui dApp Kit", "Mysten Sui SDK", "React Query", "NFT Marketplace"],
   },
   {
-    title: "Workflow",
-    tools: ["Git", "GitHub", "Figma", "VS Code", "Postman", "Vercel"],
+    title: "Integrations & Workflow",
+    tools: ["Midtrans", "Digiflazz", "OrderSosmed API", "Discord Webhook", "GitHub", "Vercel"],
   },
 ];
 

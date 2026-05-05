@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { RotatingRoleBadge } from "./components/rotating-role-badge";
 import { SocialLinks } from "./components/social-links";
 import {
   activityItems,
@@ -15,16 +16,24 @@ const toolTone = [
   "border-[#EBE6DD] bg-[#F9F7F2] text-[#4A6478]",
 ];
 
+const startupServices = [
+  "Layanan suntik sosmed",
+  "Top up game",
+  "Paket data",
+  "Aplikasi premium",
+];
+
 export default function Home() {
   return (
-    <main className="mx-auto max-w-[92rem] px-6 py-12 md:px-12 xl:px-16">
+    <main className="mx-auto max-w-7xl px-6 py-12 md:px-10 xl:px-12">
       <section
         id="home"
         className="mb-28 flex scroll-mt-28 flex-col-reverse items-center justify-between gap-12 md:flex-row"
       >
         <div className="w-full space-y-6 md:w-1/2">
-          <div className="inline-block rounded-full bg-[#E1E8D5] px-3 py-1 text-sm font-medium text-[#386641] opacity-90">
-            I&apos;m Ready For Job <span className="font-bold">Mobile Application</span>
+          <div className="inline-flex max-w-full flex-wrap items-center gap-1 rounded-full bg-[#E1E8D5] px-3 py-1 text-sm font-medium text-[#386641] opacity-90">
+            <span>I&apos;m Ready For Job</span>
+            <RotatingRoleBadge />
           </div>
           <h1 className="text-4xl font-bold leading-tight text-[#1D3557] md:text-6xl">
             I&apos;m Abid Hanan Wicaksono
@@ -81,28 +90,17 @@ export default function Home() {
             />
           </div>
 
-          <div className="space-y-6">
-            <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.24em] text-[#7A9E7E]">
-                About Me
-              </p>
-              <h2 className="text-4xl font-bold leading-tight text-[#1D3557] md:text-5xl">
-                Developer Relations yang suka merapikan ide teknis menjadi cerita yang mudah dipahami.
-              </h2>
-            </div>
+          <div className="space-y-3">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.24em] text-[#7A9E7E]">
+              About Me
+            </p>
             <p className="max-w-2xl text-lg leading-relaxed text-[#4A6478]">
               I&apos;m Abid Hanan Wicaksono, a Developer Relations professional
               with a diverse background in technology, business, Web3,
-              blockchain, and digital marketing. I enjoy turning complex
-              technical ideas into clear stories, useful resources, and
-              collaborative opportunities for developers and communities.
-            </p>
-            <p className="max-w-2xl leading-relaxed text-[#4A6478]">
-              I believe strong relationships, open communication, and a
-              positive working culture help people reach their best potential.
-              Beyond professional work, I also value humanitarian and volunteer
-              activities, and I&apos;m always open to connecting, exchanging ideas,
-              and creating something impactful together.
+              blockchain, and digital marketing who turns complex technical
+              ideas into clear stories, useful resources, and collaborative
+              opportunities while staying grounded in communication,
+              community, and meaningful social impact.
             </p>
           </div>
         </div>
@@ -113,9 +111,6 @@ export default function Home() {
           <p className="mb-2 text-sm font-semibold uppercase tracking-[0.24em] text-[#7A9E7E]">
             Background Education
           </p>
-          <h2 className="mb-5 text-4xl font-bold leading-tight text-[#1D3557] md:text-5xl">
-            Fondasi belajar yang membentuk cara berpikir dan berkarya.
-          </h2>
           <p className="text-lg leading-relaxed text-[#4A6478]">
             Saat ini saya menempuh studi S1 Ilmu Komputer di Universitas
             Sugeng Hartono sambil mengembangkan minat pada teknologi,
@@ -170,12 +165,10 @@ export default function Home() {
           <p className="mb-2 text-sm font-semibold uppercase tracking-[0.24em] text-[#7A9E7E]">
             Tools & Tech Stack
           </p>
-          <h2 className="mb-5 text-4xl font-bold leading-tight text-[#1D3557] md:text-5xl">
-            Teknologi yang membantu ide bergerak dari sketsa ke aplikasi.
-          </h2>
           <p className="text-lg leading-relaxed text-[#4A6478]">
-            Daftar ini bisa kamu update ketika skill, framework, atau workflow
-            baru masuk ke portofolio.
+            Stack ini dirangkum dari repository Aura, EcoSwap, WiboostStore,
+            dan portfolio-watercolor: mulai dari web app, marketplace, API
+            integration, sampai eksperimen Web3 di ekosistem Sui.
           </p>
         </div>
 
@@ -208,9 +201,6 @@ export default function Home() {
           <p className="mb-2 text-sm font-semibold uppercase tracking-[0.24em] text-[#7A9E7E]">
             License & Certificate
           </p>
-          <h2 className="mb-5 text-4xl font-bold leading-tight text-[#1D3557] md:text-5xl">
-            Bukti belajar dan validasi skill yang mendukung perjalanan Developer Relations.
-          </h2>
           <p className="text-lg leading-relaxed text-[#4A6478]">
             Tambahkan lisensi, sertifikat kursus, bootcamp, kompetisi, atau
             credential lain yang ingin kamu tampilkan.
@@ -281,9 +271,6 @@ export default function Home() {
           <p className="mb-2 text-sm font-semibold uppercase tracking-[0.24em] text-[#7A9E7E]">
             Career
           </p>
-          <h2 className="mb-5 text-4xl font-bold leading-tight text-[#1D3557] md:text-5xl">
-            Pengalaman membangun audiens, brand, dan produk digital.
-          </h2>
           <p className="text-lg leading-relaxed text-[#4A6478]">
             Perjalanan karier saya menggabungkan content creation, social media
             marketing, dan entrepreneurship untuk mendorong pertumbuhan digital.
@@ -322,42 +309,58 @@ export default function Home() {
           <p className="mb-2 text-sm font-semibold uppercase tracking-[0.24em] text-[#7A9E7E]">
             Start Up
           </p>
-          <h2 className="mb-5 text-4xl font-bold leading-tight text-[#1D3557] md:text-5xl">
-            Exploring digital products, creative business, and community-led growth.
-          </h2>
           <p className="text-lg leading-relaxed text-[#4A6478]">
-            A space for startup ideas, digital product experiments, and business
-            initiatives that combine technology, marketing, and community insight.
+            Startup digital yang menghadirkan layanan suntik sosmed, top up
+            game, paket data, dan aplikasi premium dalam satu platform.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {[
-            {
-              title: "Digital Products",
-              desc: "Building scalable online products with clear value, practical use cases, and growth potential.",
-            },
-            {
-              title: "Growth Strategy",
-              desc: "Combining content, social media analytics, and campaign strategy to reach the right audience.",
-            },
-            {
-              title: "Web3 & AI Exploration",
-              desc: "Exploring emerging technology as a foundation for future-facing products and communities.",
-            },
-          ].map((item, index) => (
-            <article
-              key={item.title}
-              className="shadow-watercolor rounded-xl border border-[#F0EBE1] bg-white p-6"
+        <article className="shadow-watercolor grid grid-cols-1 overflow-hidden rounded-xl border border-[#F0EBE1] bg-white lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="relative min-h-[320px] border-b border-[#F0EBE1] bg-[#D9E9F2] lg:border-b-0 lg:border-r">
+            <Image
+              src="/wiboostore-logo.jpeg"
+              alt="Logo Wiboostore"
+              fill
+              sizes="(min-width: 1024px) 480px, 100vw"
+              className="object-contain p-8"
+            />
+          </div>
+
+          <div className="flex flex-col justify-center p-6 md:p-8">
+            <p className="mb-3 w-fit rounded-full border border-[#D9E9F2] bg-[#F3FAFD] px-3 py-1 text-sm font-bold text-[#457B9D]">
+              Digital Service Platform
+            </p>
+            <h3 className="mb-3 text-3xl font-bold leading-tight text-[#1D3557] md:text-4xl">
+              Wiboostore.com
+            </h3>
+            <p className="mb-6 text-lg leading-relaxed text-[#4A6478]">
+              Pusat layanan digital terlengkap di Indonesia yang membantu
+              pengguna memenuhi kebutuhan digital harian secara praktis, mulai
+              dari pertumbuhan sosial media hingga produk digital premium.
+            </p>
+            <div className="mb-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {startupServices.map((service, index) => (
+                <div
+                  key={service}
+                  className={`rounded-xl border px-4 py-3 text-sm font-bold ${
+                    toolTone[index % toolTone.length]
+                  }`}
+                >
+                  {service}
+                </div>
+              ))}
+            </div>
+            <a
+              href="https://wiboostore.com"
+              target="_blank"
+              rel="noreferrer"
+              className="w-fit bg-gradient-to-r from-[#7A9E7E] to-[#457B9D] px-6 py-3 font-bold text-white opacity-90 shadow-md transition-opacity hover:opacity-100"
+              style={{ borderRadius: "255px 15px 225px 15px/15px 225px 15px 255px" }}
             >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#F3DE9E] bg-[#FFF8DF] text-lg font-bold text-[#946C12]">
-                {String(index + 1).padStart(2, "0")}
-              </div>
-              <h3 className="mb-3 text-2xl font-bold text-[#1D3557]">{item.title}</h3>
-              <p className="leading-relaxed text-[#4A6478]">{item.desc}</p>
-            </article>
-          ))}
-        </div>
+              Visit wiboostore.com
+            </a>
+          </div>
+        </article>
       </section>
 
       <section id="activity" className="mb-28 scroll-mt-28">
@@ -365,9 +368,6 @@ export default function Home() {
           <p className="mb-2 text-sm font-semibold uppercase tracking-[0.24em] text-[#7A9E7E]">
             Activity
           </p>
-          <h2 className="mb-5 text-4xl font-bold leading-tight text-[#1D3557] md:text-5xl">
-            Aktivitas yang menunjukkan proses tumbuh, mencoba, dan berkolaborasi.
-          </h2>
           <p className="text-lg leading-relaxed text-[#4A6478]">
             Kegiatan sosial, komunitas, workshop, dan eksplorasi personal yang
             membentuk cara saya berkontribusi di dalam maupun luar dunia digital.
@@ -410,7 +410,11 @@ export default function Home() {
       </section>
 
       <section id="contact" className="mx-auto mb-20 max-w-2xl scroll-mt-28 text-center">
-        <h2 className="mb-8 text-3xl font-bold text-[#1D3557]">Let&apos;s Connect</h2>
+        <h2 className="mb-3 text-3xl font-bold text-[#1D3557]">Let&apos;s Connect</h2>
+        <p className="mb-8 text-lg leading-relaxed text-[#4A6478]">
+          Terbuka untuk kolaborasi, diskusi komunitas, peluang Developer
+          Relations, dan ide digital yang ingin dibuat lebih berdampak.
+        </p>
         <form className="space-y-4">
           <div className="flex flex-col gap-4 sm:flex-row">
             <input

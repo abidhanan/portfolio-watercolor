@@ -7,8 +7,8 @@ import { SiteNav } from "./components/site-nav";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "M. Fadh Khulloh - Portfolio",
-  description: "Full Stack Web Developer Portfolio",
+  title: "Abid Hanan Wicaksono - Portfolio",
+  description: "Developer Relations Portfolio",
 };
 
 export default function RootLayout({

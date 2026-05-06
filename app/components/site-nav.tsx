@@ -24,6 +24,47 @@ function getHrefFromHash() {
   return navItems.find((item) => item.href === `/${window.location.hash}`)?.href ?? null;
 }
 
+function getActiveHrefFromPage() {
+  if (typeof window === "undefined") {
+    return "/#home";
+  }
+
+  const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+  const isAtPageEnd = maxScroll > 0 && window.scrollY >= maxScroll - 8;
+
+  const contactSection = document.getElementById("contact");
+  const contactRect = contactSection?.getBoundingClientRect();
+  const contactIsVisible =
+    Boolean(contactRect) &&
+    contactRect!.top <= window.innerHeight - 12 &&
+    contactRect!.bottom >= 12;
+
+  if (isAtPageEnd || contactIsVisible) {
+    return "/#contact";
+  }
+
+  if (window.scrollY < 24) {
+    return "/#home";
+  }
+
+  const probeLine = window.scrollY + window.innerHeight * 0.42;
+  let currentHref = "/#home";
+
+  for (const item of navItems) {
+    const section = document.getElementById(item.href.slice(2));
+    if (!section) {
+      continue;
+    }
+
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    if (sectionTop <= probeLine) {
+      currentHref = item.href;
+    }
+  }
+
+  return currentHref;
+}
+
 export function SiteNav() {
   const [activeHref, setActiveHref] = useState("/#home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,49 +82,7 @@ export function SiteNav() {
         return;
       }
 
-      const hashHref = getHrefFromHash();
-
-      if (hashHref === "/#contact") {
-        setActiveHref("/#contact");
-        return;
-      }
-
-      const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-      const isAtPageEnd = maxScroll > 0 && window.scrollY >= maxScroll - 8;
-
-      const contactSection = document.getElementById("contact");
-      const contactRect = contactSection?.getBoundingClientRect();
-      const contactIsVisible =
-        Boolean(contactRect) &&
-        contactRect!.top <= window.innerHeight - 12 &&
-        contactRect!.bottom >= 12;
-
-      if (isAtPageEnd || (window.location.hash === "#contact" && contactIsVisible)) {
-        setActiveHref("/#contact");
-        return;
-      }
-
-      if (window.scrollY < 24) {
-        setActiveHref("/#home");
-        return;
-      }
-
-      const probeLine = window.scrollY + window.innerHeight * 0.42;
-      let currentHref = "/#home";
-
-      for (const item of navItems) {
-        const section = document.getElementById(item.href.slice(2));
-        if (!section) {
-          continue;
-        }
-
-        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-        if (sectionTop <= probeLine) {
-          currentHref = item.href;
-        }
-      }
-
-      setActiveHref(currentHref);
+      setActiveHref(getActiveHrefFromPage());
     };
 
     const requestUpdate = () => {
@@ -189,7 +188,13 @@ export function SiteNav() {
           <button
             type="button"
             className="flex items-center justify-center rounded-lg p-2 text-[#0F172A] transition-colors hover:bg-gray-100 md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => {
+              const willOpen = !isMenuOpen;
+              if (willOpen) {
+                setActiveHref(getHrefFromHash() ?? getActiveHrefFromPage());
+              }
+              setIsMenuOpen(willOpen);
+            }}
             aria-label="Toggle navigation menu"
           >
             {isMenuOpen ? (
@@ -235,13 +240,26 @@ export function SiteNav() {
                   data-nav-target={item.href.slice(2)}
                   aria-current={isActive ? "page" : undefined}
                   onClick={(event) => handleSectionClick(event, item.href)}
-                  className={`site-nav-link relative block w-full rounded-lg px-4 py-3 text-sm font-bold transition-all duration-300 ${
+                  className={`site-nav-link relative flex w-full items-center justify-between gap-3 rounded-lg px-4 py-3 text-sm font-bold transition-all duration-300 ${
                     isActive
                       ? "site-nav-link-active bg-[#0284C7] text-white shadow-md"
                       : "text-[#475569] hover:bg-[#E0F2FE] hover:text-[#0369A1]"
                   }`}
                 >
-                  {item.label}
+                  <span className="flex items-center gap-3">
+                    <span
+                      className={`h-2.5 w-2.5 rounded-full border transition-all ${
+                        isActive ? "border-white bg-white" : "border-[#CBD5E1] bg-transparent"
+                      }`}
+                      aria-hidden="true"
+                    />
+                    <span>{item.label}</span>
+                  </span>
+                  {isActive ? (
+                    <span className="rounded-full bg-white/20 px-2.5 py-1 text-[0.65rem] font-black uppercase tracking-[0.12em] text-white">
+                      Current
+                    </span>
+                  ) : null}
                 </Link>
               );
             })}

@@ -79,12 +79,14 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover 
   text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
 }
 
-/* Hilangkan border putih di mobile, hanya aktifkan di layar >= 768px */
+/* Tampilan Mobile: Stroke sewarna teks agar ketebalan/model font sama dengan desktop, tanpa border putih */
 .home-title-outline {
+  -webkit-text-stroke: 1px #0F172A;
   text-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
 }
 
 .home-role-outline {
+  -webkit-text-stroke: 1px #0284C7;
   text-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
 }
 

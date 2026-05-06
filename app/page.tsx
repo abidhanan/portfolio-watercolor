@@ -250,11 +250,11 @@ export default function Home() {
           title="Tools & Tech Stack"
           summary="The technologies, frameworks, and platforms that support my workflow across frontend, backend, Web3, and product development."
         />
-        <div className="relative grid grid-cols-1 gap-5 md:grid-cols-2 md:items-stretch md:gap-6">
-          <div className="rope-line-vertical absolute left-[0.4rem] top-3 h-[calc(100%-1.5rem)] md:hidden" />
+        <div className="mobile-rope-stack relative grid grid-cols-1 gap-5 md:grid-cols-2 md:items-stretch md:gap-6">
+          <div className="mobile-rope-line rope-line-vertical absolute md:hidden" />
           {techGroups.map((group, groupIndex) => (
-            <div key={group.title} className="relative grid grid-cols-[1.75rem_1fr] gap-3 md:block md:h-full">
-              <div className="rope-knot z-10 mt-5 h-5 w-5 rounded-full md:hidden" />
+            <div key={group.title} className="mobile-rope-item relative grid grid-cols-[2.5rem_1fr] gap-0 md:block md:h-full">
+              <div className="mobile-rope-knot rope-knot z-10 mt-5 h-5 w-5 rounded-full md:hidden" />
               <div
                 className="shadow-watercolor h-full p-5 sm:p-8"
               >
@@ -293,14 +293,14 @@ export default function Home() {
           title="Career"
           summary="A summary of work experience, creative roles, and professional contributions that shaped my communication, business, and technology skills."
         />
-        <div className="relative grid grid-cols-1 gap-5 md:gap-6 lg:grid-cols-3">
-          <div className="rope-line-vertical absolute left-[0.4rem] top-3 h-[calc(100%-1.5rem)] md:hidden" />
+        <div className="mobile-rope-stack relative grid grid-cols-1 gap-5 md:gap-6 lg:grid-cols-3">
+          <div className="mobile-rope-line rope-line-vertical absolute md:hidden" />
           {careerItems.map((item) => (
             <div
               key={`${item.period}-${item.role}-${item.company}`}
-              className="relative grid grid-cols-[1.75rem_1fr] gap-3 md:block"
+              className="mobile-rope-item relative grid grid-cols-[2.5rem_1fr] gap-0 md:block"
             >
-              <div className="rope-knot z-10 mt-5 h-5 w-5 rounded-full md:hidden" />
+              <div className="mobile-rope-knot rope-knot z-10 mt-5 h-5 w-5 rounded-full md:hidden" />
               <article
                 className="shadow-watercolor flex h-full flex-col p-5 transition-transform hover:-translate-y-2 sm:p-6"
               >
@@ -342,7 +342,7 @@ export default function Home() {
         <article className="shadow-watercolor relative overflow-hidden p-5 sm:p-8 md:p-10">
           <div className="relative grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
             <div className="relative mx-auto flex w-full max-w-sm items-center justify-center h-full">
-              <div className="shadow-watercolor relative z-10 h-52 w-52 rotate-[-3deg] overflow-hidden rounded-2xl bg-white p-5 sm:h-64 sm:w-64 sm:p-6">
+              <div className="shadow-watercolor relative z-10 h-52 w-52 overflow-hidden rounded-2xl bg-white p-5 sm:h-64 sm:w-64 sm:p-6">
                 <div className="relative h-full w-full rounded-xl overflow-hidden bg-gray-50 border border-gray-100">
                   <Image
                     src="/wiboostore-logo.jpeg"
@@ -394,11 +394,11 @@ export default function Home() {
           title="Activity"
           summary="A collection of community, social, educational, and personal development activities that reflect how I learn and contribute."
         />
-        <div className="relative grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-          <div className="rope-line-vertical absolute left-[0.4rem] top-3 h-[calc(100%-1.5rem)] md:hidden" />
+        <div className="mobile-rope-stack relative grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+          <div className="mobile-rope-line rope-line-vertical absolute md:hidden" />
           {activityItems.map((activity) => (
-            <div key={activity.title} className="relative grid grid-cols-[1.75rem_1fr] gap-3 md:block">
-              <div className="rope-knot z-10 mt-5 h-5 w-5 rounded-full md:hidden" />
+            <div key={activity.title} className="mobile-rope-item relative grid grid-cols-[2.5rem_1fr] gap-0 md:block">
+              <div className="mobile-rope-knot rope-knot z-10 mt-5 h-5 w-5 rounded-full md:hidden" />
               <article
                 className="shadow-watercolor flex h-full flex-col p-4 transition-transform hover:-translate-y-2 sm:p-5"
               >

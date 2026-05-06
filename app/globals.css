@@ -145,6 +145,26 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover 
     0 3px 6px rgba(15, 23, 42, 0.15) !important;
 }
 
+.mobile-rope-stack {
+  --mobile-rope-x: 1rem;
+}
+
+.mobile-rope-line {
+  bottom: 1.35rem;
+  left: calc(var(--mobile-rope-x) - 0.225rem);
+  top: 1.35rem;
+  z-index: 0;
+}
+
+.mobile-rope-item {
+  position: relative;
+  z-index: 1;
+}
+
+.mobile-rope-knot {
+  margin-left: calc(var(--mobile-rope-x) - 0.625rem);
+}
+
 .certificate-marquee-mask {
   mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }

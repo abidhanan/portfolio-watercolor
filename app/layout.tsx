@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body className="min-h-screen bg-[#EAF4FC] font-sans text-[#102A43]">
+      <body className="min-h-screen bg-[#F0F7FA] font-sans text-[#1E293B]">
         <SiteNav />
         {children}
         <SiteFooter />

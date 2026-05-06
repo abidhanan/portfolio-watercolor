@@ -83,10 +83,13 @@ export function SiteNav() {
 
     const headerHeight =
       document.querySelector("header")?.getBoundingClientRect().height ?? 0;
-    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const sectionRect = section.getBoundingClientRect();
+    const sectionTop = sectionRect.top + window.scrollY;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const availableHeight = window.innerHeight - headerHeight;
+    const centerOffset = Math.max(0, (availableHeight - sectionRect.height) / 2);
 
-    const targetPosition = sectionTop - headerHeight - 16;
+    const targetPosition = sectionTop - headerHeight - centerOffset;
 
     window.scrollTo({
       top: Math.max(0, Math.min(targetPosition, maxScroll)),
@@ -96,16 +99,16 @@ export function SiteNav() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#DCEBF7]/80 bg-[#EAF4FC]/88 backdrop-blur-md">
+    <header className="paper-nav sticky top-0 z-50">
       <nav className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-4 md:flex-row md:items-center md:justify-between md:px-10 xl:px-12">
         <Link
           href="/#home"
           onClick={(event) => handleSectionClick(event, "/#home")}
-          className="w-fit text-lg font-bold tracking-normal text-[#102A43]"
+          className="section-readable w-fit text-xl font-extrabold tracking-tight text-[#0F172A]"
         >
-          AHAWI<span className="text-[#2B6CB0]"> Portfolio</span>
+          AHAWI <span className="text-[#0284C7]">Portofolio</span>
         </Link>
-        <div className="flex max-w-full gap-2 overflow-x-auto pb-1 md:flex-wrap md:justify-end md:overflow-visible md:pb-0">
+        <div className="flex max-w-full gap-2 overflow-x-auto pb-1 md:flex-wrap md:justify-end md:overflow-visible md:pb-0 scrollbar-hide">
           {navItems.map((item) => {
             const isActive = activeHref === item.href;
             return (
@@ -113,17 +116,12 @@ export function SiteNav() {
                 key={item.href}
                 href={item.href}
                 onClick={(event) => handleSectionClick(event, item.href)}
-                className={`relative whitespace-nowrap rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
+                className={`relative whitespace-nowrap rounded-full px-4 py-2 text-sm font-bold transition-all duration-300 ${
                   isActive
-                    ? "border-[#4299E1] bg-white text-[#102A43] shadow-sm"
-                    : "border-transparent text-[#334E68] hover:border-[#BEE3F8] hover:bg-white/70 hover:text-[#102A43]"
+                    ? "bg-[#0284C7] text-white shadow-md"
+                    : "text-[#475569] hover:bg-[#E0F2FE] hover:text-[#0369A1]"
                 }`}
               >
-                <span
-                  className={`mr-2 inline-block h-2 w-2 rounded-full align-middle transition-colors ${
-                    isActive ? "bg-[#4299E1]" : "bg-transparent"
-                  }`}
-                />
                 {item.label}
               </Link>
             );

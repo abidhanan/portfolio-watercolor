@@ -4,23 +4,20 @@ export function SiteFooter() {
   return (
     <footer
       id="contact"
-      className="scroll-mt-28 border-t border-[#DCEBF7] bg-[#EAF4FC]/86 backdrop-blur-md"
+      className="paper-nav scroll-mt-28"
     >
-      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 md:px-10 lg:grid-cols-[1.3fr_0.7fr] xl:px-12">
+      <div className="mx-auto grid w-full max-w-7xl gap-6 px-6 py-10 md:px-10 lg:grid-cols-[1.3fr_0.7fr] xl:px-12">
         <div className="text-center lg:text-left">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-[#0F5D91]">
-            Motivation Note
+          <p className="section-readable max-w-2xl text-xl font-semibold leading-relaxed text-[#0F172A] lg:text-2xl">
+            "Setelah kesulitan pasti ada kemudahan"
           </p>
-          <p className="max-w-2xl text-xl font-bold leading-relaxed text-[#102A43] lg:text-2xl">
-            Kata-kata motivasiku akan hadir di sini.
-          </p>
-          <p className="mt-5 text-sm font-medium text-[#334E68]">
-            (c) 2026 Abid Hanan Wicaksono - Built with Next.js & Tailwind
+          <p className="section-readable mt-6 text-sm font-medium text-[#64748B]">
+            &copy; 2026 Abid Hanan Wicaksono - Built with Next.js & Tailwind
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center gap-4 lg:items-end">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0F5D91]">
-            Contact
+        <div className="flex flex-col items-center justify-center gap-5 lg:items-end">
+          <p className="section-readable text-sm font-bold uppercase tracking-[0.24em] text-[#0284C7]">
+            Let&apos;s Connect
           </p>
           <SocialLinks size="md" className="justify-center lg:justify-end" />
         </div>

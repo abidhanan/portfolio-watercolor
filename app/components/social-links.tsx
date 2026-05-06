@@ -1,5 +1,6 @@
 import type { SVGProps } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type BrandIconProps = SVGProps<SVGSVGElement>;
 
@@ -74,8 +75,8 @@ function LinkedInIcon(props: BrandIconProps) {
 }
 
 const socialItems = [
-  { label: "Instagram", icon: InstagramIcon },
-  { label: "WhatsApp", icon: WhatsAppIcon },
+  { label: "Instagram", icon: InstagramIcon, imageSrc: "/logo-instagram.jpg" },
+  { label: "WhatsApp", icon: WhatsAppIcon, imageSrc: "/logo-whatsapp.jpg" },
   { label: "GitHub", icon: GitHubIcon },
   { label: "LinkedIn", icon: LinkedInIcon },
 ];
@@ -100,7 +101,18 @@ export function SocialLinks({ size = "md", className = "" }: SocialLinksProps) {
             aria-label={item.label}
             className={`${boxSize} flex shrink-0 items-center justify-center rounded-2xl border border-[#DCEBF7] bg-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md`}
           >
-            <Icon className={iconSize} aria-hidden="true" />
+            {item.imageSrc ? (
+              <Image
+                src={item.imageSrc}
+                alt=""
+                width={size === "sm" ? 24 : 28}
+                height={size === "sm" ? 24 : 28}
+                className={`${iconSize} rounded-md object-cover`}
+                aria-hidden="true"
+              />
+            ) : (
+              <Icon className={iconSize} aria-hidden="true" />
+            )}
           </Link>
         );
       })}

@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { BackgroundMusic } from "./components/background-music";
 import { SiteFooter } from "./components/site-footer";
 import { SiteNav } from "./components/site-nav";
+
+// Memuat Google Font agar konsisten di Desktop dan Mobile
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Abid Hanan Wicaksono - Portfolio",
@@ -20,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-[#F0F7FA] font-sans text-[#1E293B]">
+      <body className={`${plusJakarta.className} min-h-screen bg-[#F0F7FA] text-[#1E293B]`}>
         <SiteNav />
         {children}
         <SiteFooter />

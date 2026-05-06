@@ -95,12 +95,12 @@ export default function Home() {
             <span>Open to Work</span>
             <RotatingRoleBadge />
           </div>
-          <h1 className="section-readable text-5xl font-extrabold leading-tight text-[#0F172A] md:text-6xl lg:text-7xl">
+          <h1 className="home-title-outline section-readable text-5xl font-extrabold leading-tight text-[#0F172A] md:text-6xl lg:text-7xl">
             I&apos;m Abid Hanan
             <br />
-            <span className="text-[#0284C7]">Developer Relations</span>
+            <span className="home-role-outline text-[#0284C7]">Developer Relations</span>
           </h1>
-          <p className="section-readable max-w-lg text-lg leading-relaxed text-[#334155]">
+          <p className="home-copy-outline section-readable max-w-lg text-lg font-bold leading-relaxed text-[#334155]">
             I connect technology, communities, and business goals through clear communication,
             developer education, and meaningful collaboration.
           </p>

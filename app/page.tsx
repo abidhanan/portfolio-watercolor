@@ -168,19 +168,19 @@ export default function Home() {
               <div className="relative flex w-full flex-col items-center md:items-start">
                 
                 {/* Pills Row */}
-                <div className="relative z-20 flex w-full items-center justify-center md:ml-6 md:w-auto md:justify-start md:whitespace-nowrap">
+                <div className="relative z-20 flex w-full flex-col items-center justify-center gap-3 md:ml-6 md:w-auto md:flex-row md:gap-0 md:whitespace-nowrap">
                   
                   <div className="relative z-20 flex items-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF] px-4 py-2.5 shadow-md sm:gap-3 sm:px-6">
-                    <span className="rope-knot h-3.5 w-3.5 shrink-0 rounded-full" aria-hidden="true" />
+                    <span className="rope-knot hidden h-3.5 w-3.5 shrink-0 rounded-full md:block" aria-hidden="true" />
                     <span className="text-xs font-black uppercase tracking-[0.12em] text-[#0369A1] sm:text-sm md:text-base md:tracking-[0.14em]">About Me</span>
-                    <div className="rope-knot absolute -right-2.5 top-1/2 h-5 w-5 -translate-y-1/2 rounded-full" />
+                    <div className="rope-knot absolute -right-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
                   </div>
                   
-                  <div className="rope-line-x z-10 w-5 sm:w-16 md:w-20" />
+                  <div className="rope-line-x z-10 hidden w-5 sm:w-16 md:block md:w-20" />
 
                   <div className="relative flex flex-col items-center z-20">
                     <div className="relative z-20 rounded-full border border-[#E2E8F0] bg-white/95 px-4 py-2.5 shadow-md sm:px-6">
-                      <div className="rope-knot absolute -left-2.5 top-1/2 h-5 w-5 -translate-y-1/2 rounded-full" />
+                      <div className="rope-knot absolute -left-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
                       <span className="text-xs font-bold text-[#334155] sm:text-sm md:text-base">Identity & DevRel Values</span>
                     </div>
                   </div>
@@ -212,7 +212,7 @@ export default function Home() {
               key={`${item.year}-${item.title}`}
               className="relative grid grid-cols-1 gap-5 md:grid-cols-[4rem_1fr]"
             >
-              <div className="rope-knot z-10 mx-auto h-5 w-5 rounded-full md:ml-3 md:mt-2 md:h-7 md:w-7" />
+              <div className="rope-knot z-10 hidden rounded-full md:ml-3 md:mt-2 md:block md:h-7 md:w-7" />
               <div className="shadow-watercolor p-5 transition-all hover:shadow-lg sm:p-6">
                 <div className="flex flex-col gap-6 md:flex-row md:items-center">
                   <div className="mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-2xl border border-[#E2E8F0] bg-white p-3 shadow-sm md:mx-0 md:h-28 md:w-28">
@@ -250,25 +250,28 @@ export default function Home() {
           title="Tools & Tech Stack"
           summary="The technologies, frameworks, and platforms that support my workflow across frontend, backend, Web3, and product development."
         />
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="relative grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+          <div className="rope-line-vertical absolute left-[0.6rem] top-3 h-[calc(100%-1.5rem)] md:hidden" />
           {techGroups.map((group, groupIndex) => (
-            <div
-              key={group.title}
-              className="shadow-watercolor p-5 sm:p-8"
-            >
-              <h3 className="mb-5 text-xl font-bold text-[#0F172A] sm:mb-6 sm:text-2xl">{group.title}</h3>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
-                {group.tools.map((tool, toolIndex) => (
-                  <div
-                    key={tool.name}
-                    className={`flex min-h-[6.25rem] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3 text-center text-xs font-bold shadow-sm transition-transform hover:-translate-y-1 sm:min-h-[7rem] sm:gap-3 sm:px-3 sm:py-4 sm:text-sm ${
-                      toolTone[(groupIndex + toolIndex) % toolTone.length]
-                    }`}
-                  >
-                    <LogoBadge name={tool.name} logo={tool.logo} mark={tool.mark} size="sm" />
-                    <span>{tool.name}</span>
-                  </div>
-                ))}
+            <div key={group.title} className="relative grid grid-cols-[1.75rem_1fr] gap-3 md:block">
+              <div className="rope-knot z-10 mt-5 h-5 w-5 rounded-full md:hidden" />
+              <div
+                className="shadow-watercolor p-5 sm:p-8"
+              >
+                <h3 className="mb-5 text-xl font-bold text-[#0F172A] sm:mb-6 sm:text-2xl">{group.title}</h3>
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
+                  {group.tools.map((tool, toolIndex) => (
+                    <div
+                      key={tool.name}
+                      className={`flex min-h-[6.25rem] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3 text-center text-xs font-bold shadow-sm transition-transform hover:-translate-y-1 sm:min-h-[7rem] sm:gap-3 sm:px-3 sm:py-4 sm:text-sm ${
+                        toolTone[(groupIndex + toolIndex) % toolTone.length]
+                      }`}
+                    >
+                      <LogoBadge name={tool.name} logo={tool.logo} mark={tool.mark} size="sm" />
+                      <span>{tool.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -288,37 +291,43 @@ export default function Home() {
           title="Career"
           summary="A summary of work experience, creative roles, and professional contributions that shaped my communication, business, and technology skills."
         />
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="relative grid grid-cols-1 gap-5 md:gap-6 lg:grid-cols-3">
+          <div className="rope-line-vertical absolute left-[0.6rem] top-3 h-[calc(100%-1.5rem)] md:hidden" />
           {careerItems.map((item) => (
-            <article
+            <div
               key={`${item.period}-${item.role}-${item.company}`}
-              className="shadow-watercolor flex h-full flex-col p-5 transition-transform hover:-translate-y-2 sm:p-6"
+              className="relative grid grid-cols-[1.75rem_1fr] gap-3 md:block"
             >
-              <div className="mb-5 flex items-start justify-between gap-3 sm:mb-6 sm:gap-4">
-                <LogoBadge
-                  name={item.company}
-                  logo={item.companyLogo}
-                  mark={item.companyMark}
-                  size="sm"
-                />
-                <p className="w-fit rounded-full border border-[#E2E8F0] bg-[#F1F5F9] px-3 py-1 text-right text-[0.68rem] font-bold text-[#475569] sm:text-xs">
-                  {item.period}
-                </p>
-              </div>
-              <h3 className="mb-2 text-xl font-bold text-[#0F172A]">{item.role}</h3>
-              <p className="mb-4 font-bold text-[#0284C7]">{item.company}</p>
-              <p className="mb-6 leading-relaxed text-[#475569] flex-grow">{item.desc}</p>
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {item.highlights.map((highlight) => (
-                  <span
-                    key={highlight}
-                    className="rounded-full border border-[#E2E8F0] bg-white px-3 py-1 text-xs font-bold text-[#334155] shadow-sm"
-                  >
-                    {highlight}
-                  </span>
-                ))}
-              </div>
-            </article>
+              <div className="rope-knot z-10 mt-5 h-5 w-5 rounded-full md:hidden" />
+              <article
+                className="shadow-watercolor flex h-full flex-col p-5 transition-transform hover:-translate-y-2 sm:p-6"
+              >
+                <div className="mb-5 flex items-start justify-between gap-3 sm:mb-6 sm:gap-4">
+                  <LogoBadge
+                    name={item.company}
+                    logo={item.companyLogo}
+                    mark={item.companyMark}
+                    size="sm"
+                  />
+                  <p className="w-fit rounded-full border border-[#E2E8F0] bg-[#F1F5F9] px-3 py-1 text-right text-[0.68rem] font-bold text-[#475569] sm:text-xs">
+                    {item.period}
+                  </p>
+                </div>
+                <h3 className="mb-2 text-xl font-bold text-[#0F172A]">{item.role}</h3>
+                <p className="mb-4 font-bold text-[#0284C7]">{item.company}</p>
+                <p className="mb-6 leading-relaxed text-[#475569] flex-grow">{item.desc}</p>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {item.highlights.map((highlight) => (
+                    <span
+                      key={highlight}
+                      className="rounded-full border border-[#E2E8F0] bg-white px-3 py-1 text-xs font-bold text-[#334155] shadow-sm"
+                    >
+                      {highlight}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            </div>
           ))}
         </div>
       </section>
@@ -331,7 +340,7 @@ export default function Home() {
         <article className="shadow-watercolor relative overflow-hidden p-5 sm:p-8 md:p-10">
           <div className="relative grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
             <div className="relative mx-auto flex w-full max-w-sm items-center justify-center h-full">
-              <div className="shadow-watercolor relative z-10 h-52 w-52 rotate-[-3deg] overflow-hidden rounded-2xl bg-white p-5 transition-transform duration-300 hover:rotate-0 sm:h-64 sm:w-64 sm:p-6">
+              <div className="shadow-watercolor relative z-10 h-52 w-52 rotate-[-3deg] overflow-hidden rounded-2xl bg-white p-5 sm:h-64 sm:w-64 sm:p-6">
                 <div className="relative h-full w-full rounded-xl overflow-hidden bg-gray-50 border border-gray-100">
                   <Image
                     src="/wiboostore-logo.jpeg"
@@ -345,13 +354,6 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              <div className="mb-6 flex flex-wrap items-center gap-3">
-                <span className="section-readable flex w-fit items-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF] px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-[#0369A1] shadow-sm">
-                  <span className="rope-knot h-3.5 w-3.5 rounded-full" />
-                  Digital Service Map
-                </span>
-                <div className="rope-line-x h-2 flex-1" aria-hidden="true" />
-              </div>
               <h3 className="section-readable mb-4 text-3xl font-black leading-tight text-[#0F172A] md:text-5xl">
                 Wiboost Store
               </h3>
@@ -390,36 +392,39 @@ export default function Home() {
           title="Activity"
           summary="A collection of community, social, educational, and personal development activities that reflect how I learn and contribute."
         />
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="relative grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+          <div className="rope-line-vertical absolute left-[0.6rem] top-3 h-[calc(100%-1.5rem)] md:hidden" />
           {activityItems.map((activity) => (
-            <article
-              key={activity.title}
-              className="shadow-watercolor flex h-full flex-col p-4 transition-transform hover:-translate-y-2 sm:p-5"
-            >
-              <h3 className="mb-3 text-lg font-bold text-[#0F172A] sm:text-xl">{activity.title}</h3>
-              {activity.organization ? (
-                <p className="mb-2 text-sm font-bold text-[#0284C7]">{activity.organization}</p>
-              ) : null}
-              {activity.category ? (
-                <p className="mb-4 w-fit rounded-full border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-1 text-xs font-bold text-[#475569]">
-                  {activity.category}
-                </p>
-              ) : null}
-              <p className="text-sm leading-relaxed text-[#475569]">{activity.desc}</p>
-              {activity.image ? (
-                <div className="mt-auto pt-5">
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[#E2E8F0] bg-gray-100 shadow-sm">
-                    <Image
-                      src={activity.image}
-                      alt={activity.title}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
+            <div key={activity.title} className="relative grid grid-cols-[1.75rem_1fr] gap-3 md:block">
+              <div className="rope-knot z-10 mt-5 h-5 w-5 rounded-full md:hidden" />
+              <article
+                className="shadow-watercolor flex h-full flex-col p-4 transition-transform hover:-translate-y-2 sm:p-5"
+              >
+                <h3 className="mb-3 text-lg font-bold text-[#0F172A] sm:text-xl">{activity.title}</h3>
+                {activity.organization ? (
+                  <p className="mb-2 text-sm font-bold text-[#0284C7]">{activity.organization}</p>
+                ) : null}
+                {activity.category ? (
+                  <p className="mb-4 w-fit rounded-full border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-1 text-xs font-bold text-[#475569]">
+                    {activity.category}
+                  </p>
+                ) : null}
+                <p className="text-sm leading-relaxed text-[#475569]">{activity.desc}</p>
+                {activity.image ? (
+                  <div className="mt-auto pt-5">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[#E2E8F0] bg-gray-100 shadow-sm">
+                      <Image
+                        src={activity.image}
+                        alt={activity.title}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
                   </div>
-                </div>
-              ) : null}
-            </article>
+                ) : null}
+              </article>
+            </div>
           ))}
         </div>
       </section>

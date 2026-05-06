@@ -56,6 +56,24 @@ footer [class*="rounded-full"][class*="border"] {
   box-shadow: 0 6px 28px -12px rgba(15, 23, 42, 0.12);
 }
 
+.site-nav-link-active,
+html:has(#contact:target) .site-nav-link[data-nav-target="contact"] {
+  background-color: #0284C7 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 18px -12px rgba(2, 132, 199, 0.65) !important;
+}
+
+html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]) {
+  background-color: transparent !important;
+  color: #475569 !important;
+  box-shadow: none !important;
+}
+
+html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover {
+  background-color: #E0F2FE !important;
+  color: #0369A1 !important;
+}
+
 /* Text Shadow cerah untuk keterbacaan di atas background laut */
 .section-readable {
   text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);

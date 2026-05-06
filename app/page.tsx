@@ -23,8 +23,10 @@ const startupServices = [
   "Premium apps",
 ];
 
-const sectionFrameClass = "mb-28 min-h-[calc(100svh-5.5rem)] scroll-mt-28 py-10";
-const homeSectionClass = "-mt-6 mb-28 min-h-[calc(100svh-5.5rem)] scroll-mt-28 pb-10 pt-0";
+const sectionFrameClass =
+  "mb-20 scroll-mt-36 py-8 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:py-10";
+const homeSectionClass =
+  "mb-20 scroll-mt-36 pb-8 pt-2 md:-mt-6 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:pb-10 md:pt-0";
 const centeredSectionClass = `${sectionFrameClass} flex flex-col justify-center`;
 
 type LogoBadgeProps = {
@@ -64,17 +66,17 @@ type SectionHeaderProps = {
 
 function SectionHeader({ title, summary }: SectionHeaderProps) {
   return (
-    <div className="relative mb-12 max-w-5xl">
+    <div className="relative mb-8 max-w-5xl md:mb-12">
       <div className="relative flex flex-col gap-3 md:flex-row md:items-center md:gap-0">
-        <div className="section-readable shadow-watercolor relative z-20 flex w-fit max-w-full items-center gap-3 rounded-full border border-[#BAE6FD] bg-[#F0F9FF]/95 px-5 py-2.5">
+        <div className="section-readable shadow-watercolor relative z-20 flex w-full max-w-full items-center justify-center gap-3 rounded-full border border-[#BAE6FD] bg-[#F0F9FF]/95 px-4 py-2.5 sm:w-fit sm:px-5">
           <span className="rope-knot h-3.5 w-3.5 shrink-0 rounded-full" aria-hidden="true" />
-          <p className="whitespace-nowrap text-xs font-black uppercase tracking-[0.14em] text-[#0369A1] sm:text-sm">
+          <p className="text-center text-xs font-black uppercase tracking-[0.1em] text-[#0369A1] sm:whitespace-nowrap sm:text-sm sm:tracking-[0.14em]">
             {title}
           </p>
           <span className="rope-knot absolute -right-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
         </div>
         <div className="rope-line-x hidden w-12 shrink-0 md:block" aria-hidden="true" />
-        <div className="section-readable shadow-watercolor relative z-20 rounded-full border border-[#E2E8F0] bg-white/95 px-6 py-3.5">
+        <div className="section-readable shadow-watercolor relative z-20 rounded-2xl border border-[#E2E8F0] bg-white/95 px-4 py-3 md:rounded-full md:px-6 md:py-3.5">
           <span className="rope-knot absolute -left-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
           <p className="text-sm leading-relaxed text-[#334155] md:text-base">{summary}</p>
         </div>
@@ -85,29 +87,29 @@ function SectionHeader({ title, summary }: SectionHeaderProps) {
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-7xl px-6 py-12 md:px-10 xl:px-12">
+    <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:px-10 md:py-12 xl:px-12">
       <section
         id="home"
-        className={`${homeSectionClass} flex flex-col-reverse items-center justify-between gap-12 md:flex-row`}
+        className={`${homeSectionClass} flex flex-col items-center justify-between gap-8 md:flex-row md:gap-12`}
       >
-        <div className="w-full space-y-6 md:w-1/2">
-          <div className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF]/90 px-4 py-1.5 text-sm font-bold text-[#0284C7] backdrop-blur-sm shadow-sm">
+        <div className="w-full space-y-4 text-center md:w-1/2 md:space-y-6 md:text-left">
+          <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF]/90 px-3 py-1.5 text-xs font-bold text-[#0284C7] shadow-sm backdrop-blur-sm sm:text-sm md:justify-start md:px-4">
             <span>Open to Work</span>
             <RotatingRoleBadge />
           </div>
-          <h1 className="home-title-outline section-readable text-5xl font-extrabold leading-tight text-[#0F172A] md:text-6xl lg:text-7xl">
+          <h1 className="home-title-outline section-readable text-[2.75rem] font-extrabold leading-[1.05] text-[#0F172A] sm:text-5xl md:text-6xl md:leading-tight lg:text-7xl">
             I&apos;m Abid Hanan
             <br />
             <span className="home-role-outline text-[#0284C7]">Developer Relations</span>
           </h1>
-          <p className="home-copy-outline section-readable max-w-lg text-lg font-bold leading-relaxed text-[#334155]">
+          <p className="home-copy-outline section-readable mx-auto max-w-lg text-base font-bold leading-relaxed text-[#334155] sm:text-lg md:mx-0">
             I connect technology, communities, and business goals through clear communication,
             developer education, and meaningful collaboration.
           </p>
         </div>
-        <div className="relative isolate flex h-[450px] w-full justify-center overflow-visible md:w-1/2">
-          <div className="absolute -left-4 top-24 z-0 rotate-[-12deg] rounded-lg bg-white p-3 pb-8 shadow-xl border border-gray-100 sm:left-[2%] lg:-left-2">
-            <div className="relative h-56 w-44 overflow-hidden bg-gray-100 rounded-sm">
+        <div className="relative isolate flex h-[330px] w-full max-w-[22rem] justify-center overflow-visible sm:h-[390px] sm:max-w-[30rem] md:h-[450px] md:max-w-none md:w-1/2">
+          <div className="absolute left-0 top-24 z-0 rotate-[-12deg] rounded-lg border border-gray-100 bg-white p-2 pb-6 shadow-xl sm:left-[2%] sm:p-3 sm:pb-8 lg:-left-2">
+            <div className="relative h-44 w-36 overflow-hidden rounded-sm bg-gray-100 sm:h-56 sm:w-44">
               <Image
                 src="/home-gemini-seminar.jpg"
                 alt="Abid Hanan Wicaksono at a Gemini AI seminar"
@@ -117,8 +119,8 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="absolute left-[50%] top-4 z-30 -translate-x-1/2 rotate-[2deg] rounded-lg bg-white p-3 pb-8 shadow-2xl border border-gray-100">
-            <div className="relative h-64 w-52 overflow-hidden bg-gray-100 rounded-sm">
+          <div className="absolute left-1/2 top-3 z-30 -translate-x-1/2 rotate-[2deg] rounded-lg border border-gray-100 bg-white p-2 pb-6 shadow-2xl sm:top-4 sm:p-3 sm:pb-8">
+            <div className="relative h-52 w-40 overflow-hidden rounded-sm bg-gray-100 sm:h-64 sm:w-52">
               <Image
                 src="/home-google-office.jpeg"
                 alt="Abid Hanan Wicaksono during a Google Office visit"
@@ -129,8 +131,8 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="absolute left-[64%] top-16 z-10 rotate-[12deg] rounded-lg bg-white p-3 pb-8 shadow-xl border border-gray-100">
-            <div className="relative h-56 w-44 overflow-hidden bg-gray-100 rounded-sm">
+          <div className="absolute right-0 top-24 z-10 rotate-[12deg] rounded-lg border border-gray-100 bg-white p-2 pb-6 shadow-xl sm:left-[64%] sm:right-auto sm:top-16 sm:p-3 sm:pb-8">
+            <div className="relative h-44 w-36 overflow-hidden rounded-sm bg-gray-100 sm:h-56 sm:w-44">
               <Image
                 src="/home-ngabuburit-speaker.jpeg"
                 alt="Abid Hanan Wicaksono as a speaker"
@@ -144,12 +146,12 @@ export default function Home() {
       </section>
 
       <section id="about" className={centeredSectionClass}>
-        <div className="relative w-full max-w-5xl mx-auto pt-8">
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 relative">
+        <div className="relative mx-auto w-full max-w-5xl pt-4 md:pt-8">
+          <div className="relative flex flex-col items-center gap-7 md:flex-row md:items-start md:gap-12">
             
             {/* Left Side: Profile Circle */}
-            <div className="relative shrink-0 flex flex-col items-center md:pt-16 z-20">
-              <div className="relative h-56 w-56 md:h-64 md:w-64 overflow-hidden rounded-full border-[6px] border-white shadow-2xl bg-[#E0F2FE]">
+            <div className="relative z-20 flex shrink-0 flex-col items-center md:pt-16">
+              <div className="relative h-44 w-44 overflow-hidden rounded-full border-[6px] border-white bg-[#E0F2FE] shadow-2xl sm:h-56 sm:w-56 md:h-64 md:w-64">
                 <Image 
                   src="/abid-profile.jpeg" 
                   alt="Abid Hanan Wicaksono" 
@@ -161,33 +163,33 @@ export default function Home() {
             </div>
 
             {/* Right Side: Hanging Canvas Layout */}
-            <div className="relative flex-1 flex flex-col items-center md:items-start w-full z-10 md:pt-4">
+            <div className="relative z-10 flex w-full flex-1 flex-col items-center md:items-start md:pt-4">
               
-              <div className="relative w-full flex flex-col items-center md:items-start">
+              <div className="relative flex w-full flex-col items-center md:items-start">
                 
                 {/* Pills Row */}
-                <div className="flex items-center justify-center md:justify-start whitespace-nowrap z-20 relative md:ml-6">
+                <div className="relative z-20 flex w-full items-center justify-center md:ml-6 md:w-auto md:justify-start md:whitespace-nowrap">
                   
-                  <div className="relative z-20 flex items-center gap-3 rounded-full border border-[#BAE6FD] bg-[#F0F9FF] px-6 py-2.5 shadow-md">
+                  <div className="relative z-20 flex items-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF] px-4 py-2.5 shadow-md sm:gap-3 sm:px-6">
                     <span className="rope-knot h-3.5 w-3.5 shrink-0 rounded-full" aria-hidden="true" />
-                    <span className="text-sm md:text-base font-black uppercase tracking-[0.14em] text-[#0369A1]">About Me</span>
+                    <span className="text-xs font-black uppercase tracking-[0.12em] text-[#0369A1] sm:text-sm md:text-base md:tracking-[0.14em]">About Me</span>
                     <div className="rope-knot absolute -right-2.5 top-1/2 h-5 w-5 -translate-y-1/2 rounded-full" />
                   </div>
                   
-                  <div className="rope-line-x z-10 w-8 sm:w-16 md:w-20" />
+                  <div className="rope-line-x z-10 w-5 sm:w-16 md:w-20" />
 
                   <div className="relative flex flex-col items-center z-20">
-                    <div className="relative px-6 py-2.5 rounded-full border border-[#E2E8F0] bg-white/95 shadow-md z-20">
+                    <div className="relative z-20 rounded-full border border-[#E2E8F0] bg-white/95 px-4 py-2.5 shadow-md sm:px-6">
                       <div className="rope-knot absolute -left-2.5 top-1/2 h-5 w-5 -translate-y-1/2 rounded-full" />
-                      <span className="text-sm md:text-base font-bold text-[#334155]">Identity & DevRel Values</span>
+                      <span className="text-xs font-bold text-[#334155] sm:text-sm md:text-base">Identity & DevRel Values</span>
                     </div>
                   </div>
 
                 </div>
 
                 {/* Canvas Box */}
-                <div className="shadow-watercolor relative z-20 mt-8 w-full rounded-2xl bg-white p-8 md:p-10">
-                  <p className="relative z-10 text-base leading-relaxed text-[#334155] md:text-lg text-justify font-medium">
+                <div className="shadow-watercolor relative z-20 mt-6 w-full rounded-2xl bg-white p-5 sm:p-8 md:mt-8 md:p-10">
+                  <p className="relative z-10 text-left text-base font-medium leading-relaxed text-[#334155] md:text-justify md:text-lg">
                     I am Abid Hanan Wicaksono, a Developer Relations professional with a diverse background in technology, business, Web3, blockchain, and digital marketing. I turn complex technical ideas into clear stories, useful resources, and mutually valuable collaboration opportunities while staying grounded in communication, community, and meaningful social impact.
                   </p>
                 </div>
@@ -210,10 +212,10 @@ export default function Home() {
               key={`${item.year}-${item.title}`}
               className="relative grid grid-cols-1 gap-5 md:grid-cols-[4rem_1fr]"
             >
-              <div className="rope-knot z-10 ml-3 mt-2 h-7 w-7 rounded-full" />
-              <div className="shadow-watercolor p-6 transition-all hover:shadow-lg">
+              <div className="rope-knot z-10 mx-auto h-5 w-5 rounded-full md:ml-3 md:mt-2 md:h-7 md:w-7" />
+              <div className="shadow-watercolor p-5 transition-all hover:shadow-lg sm:p-6">
                 <div className="flex flex-col gap-6 md:flex-row md:items-center">
-                  <div className="flex h-28 w-28 shrink-0 items-center justify-center rounded-2xl border border-[#E2E8F0] bg-white p-3 shadow-sm">
+                  <div className="mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-2xl border border-[#E2E8F0] bg-white p-3 shadow-sm md:mx-0 md:h-28 md:w-28">
                     <Image
                       src={item.logo}
                       alt="Sugeng Hartono University logo"
@@ -252,14 +254,14 @@ export default function Home() {
           {techGroups.map((group, groupIndex) => (
             <div
               key={group.title}
-              className="shadow-watercolor p-8"
+              className="shadow-watercolor p-5 sm:p-8"
             >
-              <h3 className="mb-6 text-2xl font-bold text-[#0F172A]">{group.title}</h3>
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+              <h3 className="mb-5 text-xl font-bold text-[#0F172A] sm:mb-6 sm:text-2xl">{group.title}</h3>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
                 {group.tools.map((tool, toolIndex) => (
                   <div
                     key={tool.name}
-                    className={`flex min-h-[7rem] flex-col items-center justify-center gap-3 rounded-xl border px-3 py-4 text-center text-sm font-bold shadow-sm transition-transform hover:-translate-y-1 ${
+                    className={`flex min-h-[6.25rem] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3 text-center text-xs font-bold shadow-sm transition-transform hover:-translate-y-1 sm:min-h-[7rem] sm:gap-3 sm:px-3 sm:py-4 sm:text-sm ${
                       toolTone[(groupIndex + toolIndex) % toolTone.length]
                     }`}
                   >
@@ -290,16 +292,16 @@ export default function Home() {
           {careerItems.map((item) => (
             <article
               key={`${item.period}-${item.role}-${item.company}`}
-              className="shadow-watercolor p-6 transition-transform hover:-translate-y-2 flex flex-col h-full"
+              className="shadow-watercolor flex h-full flex-col p-5 transition-transform hover:-translate-y-2 sm:p-6"
             >
-              <div className="mb-6 flex items-start justify-between gap-4">
+              <div className="mb-5 flex items-start justify-between gap-3 sm:mb-6 sm:gap-4">
                 <LogoBadge
                   name={item.company}
                   logo={item.companyLogo}
                   mark={item.companyMark}
                   size="sm"
                 />
-                <p className="w-fit rounded-full bg-[#F1F5F9] border border-[#E2E8F0] px-3 py-1 text-right text-xs font-bold text-[#475569]">
+                <p className="w-fit rounded-full border border-[#E2E8F0] bg-[#F1F5F9] px-3 py-1 text-right text-[0.68rem] font-bold text-[#475569] sm:text-xs">
                   {item.period}
                 </p>
               </div>
@@ -326,10 +328,10 @@ export default function Home() {
           title="Startup"
           summary="This section highlights the digital business initiative I am building, from brand identity to product direction."
         />
-        <article className="shadow-watercolor relative overflow-hidden p-8 md:p-10">
-          <div className="relative grid grid-cols-1 gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <article className="shadow-watercolor relative overflow-hidden p-5 sm:p-8 md:p-10">
+          <div className="relative grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
             <div className="relative mx-auto flex w-full max-w-sm items-center justify-center h-full">
-              <div className="shadow-watercolor relative z-10 h-64 w-64 rotate-[-3deg] overflow-hidden rounded-2xl bg-white p-6 transition-transform hover:rotate-0 duration-300">
+              <div className="shadow-watercolor relative z-10 h-52 w-52 rotate-[-3deg] overflow-hidden rounded-2xl bg-white p-5 transition-transform duration-300 hover:rotate-0 sm:h-64 sm:w-64 sm:p-6">
                 <div className="relative h-full w-full rounded-xl overflow-hidden bg-gray-50 border border-gray-100">
                   <Image
                     src="/wiboostore-logo.jpeg"
@@ -350,10 +352,10 @@ export default function Home() {
                 </span>
                 <div className="rope-line-x h-2 flex-1" aria-hidden="true" />
               </div>
-              <h3 className="section-readable mb-4 text-4xl font-black leading-tight text-[#0F172A] md:text-5xl">
+              <h3 className="section-readable mb-4 text-3xl font-black leading-tight text-[#0F172A] md:text-5xl">
                 Wiboost Store
               </h3>
-              <p className="section-readable mb-8 max-w-2xl text-lg leading-relaxed text-[#475569]">
+              <p className="section-readable mb-6 max-w-2xl text-base leading-relaxed text-[#475569] sm:mb-8 sm:text-lg">
                 A comprehensive digital service hub in Indonesia for social media growth,
                 game top-ups, data packages, and premium apps in one practical place.
               </p>
@@ -374,7 +376,7 @@ export default function Home() {
                 href="https://wiboostore.com"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex w-fit items-center justify-center rounded-full bg-[#0F172A] px-8 py-4 text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-[#0284C7] hover:shadow-lg hover:-translate-y-1"
+                className="inline-flex w-full items-center justify-center rounded-full bg-[#0F172A] px-6 py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-all hover:-translate-y-1 hover:bg-[#0284C7] hover:shadow-lg sm:w-fit sm:px-8 sm:py-4"
               >
                 Visit Wiboost Store
               </a>
@@ -392,9 +394,9 @@ export default function Home() {
           {activityItems.map((activity) => (
             <article
               key={activity.title}
-              className="shadow-watercolor p-5 transition-transform hover:-translate-y-2 flex flex-col h-full"
+              className="shadow-watercolor flex h-full flex-col p-4 transition-transform hover:-translate-y-2 sm:p-5"
             >
-              <h3 className="mb-3 text-xl font-bold text-[#0F172A]">{activity.title}</h3>
+              <h3 className="mb-3 text-lg font-bold text-[#0F172A] sm:text-xl">{activity.title}</h3>
               {activity.organization ? (
                 <p className="mb-2 text-sm font-bold text-[#0284C7]">{activity.organization}</p>
               ) : null}

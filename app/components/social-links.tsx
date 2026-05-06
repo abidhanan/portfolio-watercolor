@@ -156,10 +156,12 @@ type SocialLinksProps = {
 };
 
 export function SocialLinks({ size = "md", className = "", wrap = true }: SocialLinksProps) {
-  const boxSize = size === "xs" ? "h-9 w-9" : size === "sm" ? "h-10 w-10" : "h-12 w-12";
-  const iconSize = size === "xs" ? "h-5 w-5" : size === "sm" ? "h-6 w-6" : "h-7 w-7";
+  const boxSize =
+    size === "xs" ? "h-8 w-8 sm:h-9 sm:w-9" : size === "sm" ? "h-8 w-8 sm:h-10 sm:w-10" : "h-12 w-12";
+  const iconSize =
+    size === "xs" ? "h-4 w-4 sm:h-5 sm:w-5" : size === "sm" ? "h-5 w-5 sm:h-6 sm:w-6" : "h-7 w-7";
   const imageSize = size === "xs" ? 20 : size === "sm" ? 24 : 28;
-  const gapSize = size === "xs" ? "gap-2" : "gap-3";
+  const gapSize = size === "xs" ? "gap-1.5 sm:gap-2" : size === "sm" ? "gap-1.5 sm:gap-3" : "gap-3";
   const wrapClass = wrap ? "flex-wrap" : "flex-nowrap";
 
   return (

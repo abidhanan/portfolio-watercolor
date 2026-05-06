@@ -149,15 +149,15 @@ export function SiteNav() {
 
   return (
     <header className="paper-nav sticky top-0 z-50">
-      <nav className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-4 md:flex-row md:items-center md:justify-between md:px-10 xl:px-12">
+      <nav className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 sm:py-4 md:flex-row md:items-center md:justify-between md:px-10 xl:px-12">
         <Link
           href="/#home"
           onClick={(event) => handleSectionClick(event, "/#home")}
-          className="section-readable w-fit text-xl font-extrabold tracking-tight text-[#0F172A]"
+          className="section-readable w-fit text-lg font-extrabold tracking-tight text-[#0F172A] sm:text-xl"
         >
           AHAWI <span className="text-[#0284C7]">Portofolio</span>
         </Link>
-        <div className="flex max-w-full gap-2 overflow-x-auto pb-1 md:flex-wrap md:justify-end md:overflow-visible md:pb-0 scrollbar-hide">
+        <div className="scrollbar-hide flex max-w-full gap-2 overflow-x-auto pb-1 md:flex-wrap md:justify-end md:overflow-visible md:pb-0">
           {navItems.map((item) => {
             const isActive = activeHref === item.href;
             return (
@@ -167,7 +167,7 @@ export function SiteNav() {
                 data-nav-target={item.href.slice(2)}
                 aria-current={isActive ? "page" : undefined}
                 onClick={(event) => handleSectionClick(event, item.href)}
-                className={`site-nav-link relative whitespace-nowrap rounded-full px-4 py-2 text-sm font-bold transition-all duration-300 ${
+                className={`site-nav-link relative whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-bold transition-all duration-300 sm:px-4 sm:py-2 sm:text-sm ${
                   isActive
                     ? "site-nav-link-active bg-[#0284C7] text-white shadow-md"
                     : "text-[#475569] hover:bg-[#E0F2FE] hover:text-[#0369A1]"

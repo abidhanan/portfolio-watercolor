@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { BackgroundMusic } from "./components/background-music";
 import { SiteFooter } from "./components/site-footer";
 import { SiteNav } from "./components/site-nav";
 
@@ -18,11 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
+    <html lang="en">
       <body className="min-h-screen bg-[#F0F7FA] font-sans text-[#1E293B]">
         <SiteNav />
         {children}
         <SiteFooter />
+        <BackgroundMusic />
       </body>
     </html>
   );

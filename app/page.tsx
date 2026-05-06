@@ -9,23 +9,22 @@ import {
   techGroups,
 } from "./lib/portfolio-data";
 
-// Palet warna pesisir dan laut yang premium
 const toolTone = [
-  "border-[#E0F2FE] bg-[#F0F9FF] text-[#0369A1]", // Biru buih laut
-  "border-[#BAE6FD] bg-[#E0F2FE] text-[#0284C7]", // Biru ombak
-  "border-[#FEF08A] bg-[#FEF9C3] text-[#A16207]", // Pasir pantai emas
-  "border-[#E2E8F0] bg-[#F8FAFC] text-[#334155]", // Batu karang putih
+  "border-[#E0F2FE] bg-[#F0F9FF] text-[#0369A1]",
+  "border-[#BAE6FD] bg-[#E0F2FE] text-[#0284C7]",
+  "border-[#FEF08A] bg-[#FEF9C3] text-[#A16207]",
+  "border-[#E2E8F0] bg-[#F8FAFC] text-[#334155]",
 ];
 
 const startupServices = [
-  "Layanan suntik sosmed",
-  "Top up game",
-  "Paket data",
-  "Aplikasi premium",
+  "Social media boosting services",
+  "Game top-ups",
+  "Data packages",
+  "Premium apps",
 ];
 
 const sectionFrameClass = "mb-28 min-h-[calc(100svh-5.5rem)] scroll-mt-28 py-10";
-const homeSectionClass = "mb-28 min-h-[calc(100svh-5.5rem)] scroll-mt-28 pb-10 pt-4";
+const homeSectionClass = "-mt-6 mb-28 min-h-[calc(100svh-5.5rem)] scroll-mt-28 pb-10 pt-0";
 const centeredSectionClass = `${sectionFrameClass} flex flex-col justify-center`;
 
 type LogoBadgeProps = {
@@ -93,7 +92,7 @@ export default function Home() {
       >
         <div className="w-full space-y-6 md:w-1/2">
           <div className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF]/90 px-4 py-1.5 text-sm font-bold text-[#0284C7] backdrop-blur-sm shadow-sm">
-            <span>I&apos;m Ready For Job</span>
+            <span>Open to Work</span>
             <RotatingRoleBadge />
           </div>
           <h1 className="section-readable text-5xl font-extrabold leading-tight text-[#0F172A] md:text-6xl lg:text-7xl">
@@ -107,12 +106,11 @@ export default function Home() {
           </p>
         </div>
         <div className="relative isolate flex h-[450px] w-full justify-center overflow-visible md:w-1/2">
-          {/* Polaroid Photos styling */}
           <div className="absolute -left-4 top-24 z-0 rotate-[-12deg] rounded-lg bg-white p-3 pb-8 shadow-xl border border-gray-100 sm:left-[2%] lg:-left-2">
             <div className="relative h-56 w-44 overflow-hidden bg-gray-100 rounded-sm">
               <Image
                 src="/home-gemini-seminar.jpg"
-                alt="Abid Hanan Wicaksono saat seminar Gemini AI"
+                alt="Abid Hanan Wicaksono at a Gemini AI seminar"
                 fill
                 sizes="384px"
                 className="object-cover object-[52%_42%]"
@@ -123,7 +121,7 @@ export default function Home() {
             <div className="relative h-64 w-52 overflow-hidden bg-gray-100 rounded-sm">
               <Image
                 src="/home-google-office.jpeg"
-                alt="Abid Hanan Wicaksono saat Google Office Visit"
+                alt="Abid Hanan Wicaksono during a Google Office visit"
                 fill
                 priority
                 sizes="384px"
@@ -135,7 +133,7 @@ export default function Home() {
             <div className="relative h-56 w-44 overflow-hidden bg-gray-100 rounded-sm">
               <Image
                 src="/home-ngabuburit-speaker.jpeg"
-                alt="Abid Hanan Wicaksono saat menjadi pembicara"
+                alt="Abid Hanan Wicaksono as a speaker"
                 fill
                 sizes="384px"
                 className="scale-110 object-cover object-[52%_66%]"
@@ -181,7 +179,7 @@ export default function Home() {
                   <div className="relative flex flex-col items-center z-20">
                     <div className="relative px-6 py-2.5 rounded-full border border-[#E2E8F0] bg-white/95 shadow-md z-20">
                       <div className="rope-knot absolute -left-2.5 top-1/2 h-5 w-5 -translate-y-1/2 rounded-full" />
-                      <span className="text-sm md:text-base font-bold text-[#334155]">Identitas & Nilai DevRel</span>
+                      <span className="text-sm md:text-base font-bold text-[#334155]">Identity & DevRel Values</span>
                     </div>
                   </div>
 
@@ -190,7 +188,7 @@ export default function Home() {
                 {/* Canvas Box */}
                 <div className="shadow-watercolor relative z-20 mt-8 w-full rounded-2xl bg-white p-8 md:p-10">
                   <p className="relative z-10 text-base leading-relaxed text-[#334155] md:text-lg text-justify font-medium">
-                    Saya adalah Abid Hanan Wicaksono, seorang profesional Developer Relations dengan latar belakang yang beragam di bidang teknologi, bisnis, Web3, blockchain, dan digital marketing. Saya mengubah ide-ide teknis yang kompleks menjadi cerita yang jelas, sumber daya yang berguna, dan peluang kolaborasi yang saling menguntungkan, sambil tetap berpijak pada komunikasi, komunitas, dan dampak sosial yang bermakna.
+                    I am Abid Hanan Wicaksono, a Developer Relations professional with a diverse background in technology, business, Web3, blockchain, and digital marketing. I turn complex technical ideas into clear stories, useful resources, and mutually valuable collaboration opportunities while staying grounded in communication, community, and meaningful social impact.
                   </p>
                 </div>
 
@@ -203,7 +201,7 @@ export default function Home() {
       <section id="education" className={centeredSectionClass}>
         <SectionHeader
           title="Background Education"
-          summary="Riwayat pendidikan yang menjadi fondasi akademik, cara berpikir, dan arah pengembangan profesional saya."
+          summary="The academic background that shapes my foundation, way of thinking, and professional growth direction."
         />
         <div className="relative space-y-6">
           <div className="rope-line-vertical absolute left-[1.35rem] top-3 hidden h-[calc(100%-1.5rem)] md:block" />
@@ -218,7 +216,7 @@ export default function Home() {
                   <div className="flex h-28 w-28 shrink-0 items-center justify-center rounded-2xl border border-[#E2E8F0] bg-white p-3 shadow-sm">
                     <Image
                       src={item.logo}
-                      alt="Logo Universitas Sugeng Hartono"
+                      alt="Sugeng Hartono University logo"
                       width={96}
                       height={96}
                       className="h-full w-full object-contain"
@@ -230,10 +228,10 @@ export default function Home() {
                     <p className="mb-3 font-semibold text-[#0369A1]">{item.place}</p>
                     <div className="mb-4 flex flex-wrap gap-2">
                       <span className="rounded-full border border-[#BAE6FD] bg-[#F0F9FF] px-4 py-1.5 text-xs font-bold text-[#0284C7]">
-                        Semester 4
+                        4th Semester
                       </span>
                       <span className="rounded-full border border-[#FEF08A] bg-[#FEF9C3] px-4 py-1.5 text-xs font-bold text-[#A16207]">
-                        GPA 3,97
+                        GPA 3.97
                       </span>
                     </div>
                     <p className="leading-relaxed text-[#475569]">{item.desc}</p>
@@ -248,7 +246,7 @@ export default function Home() {
       <section id="tools" className={centeredSectionClass}>
         <SectionHeader
           title="Tools & Tech Stack"
-          summary="Kumpulan teknologi, framework, dan platform yang mendukung proses membangun produk digital dari sisi frontend, backend, Web3, dan workflow."
+          summary="The technologies, frameworks, and platforms that support my workflow across frontend, backend, Web3, and product development."
         />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {techGroups.map((group, groupIndex) => (
@@ -277,8 +275,8 @@ export default function Home() {
 
       <section id="certificates" className={centeredSectionClass}>
         <SectionHeader
-          title="License & Certificate"
-          summary="Arsip credential dan penghargaan yang merekam proses belajar, validasi kemampuan, serta pencapaian profesional."
+          title="Licenses & Certificates"
+          summary="A record of credentials, awards, and learning milestones that validate my skills and professional growth."
         />
         <CertificateMarquee certificates={certificateItems} />
       </section>
@@ -286,7 +284,7 @@ export default function Home() {
       <section id="career" className={centeredSectionClass}>
         <SectionHeader
           title="Career"
-          summary="Rangkuman pengalaman kerja, peran kreatif, dan kontribusi profesional yang membentuk kemampuan komunikasi, bisnis, dan teknologi saya."
+          summary="A summary of work experience, creative roles, and professional contributions that shaped my communication, business, and technology skills."
         />
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {careerItems.map((item) => (
@@ -325,8 +323,8 @@ export default function Home() {
 
       <section id="startup" className={centeredSectionClass}>
         <SectionHeader
-          title="Start Up"
-          summary="Bagian Start Up menampilkan inisiatif bisnis digital yang sedang dibangun, mulai dari identitas brand sampai arah pengembangannya."
+          title="Startup"
+          summary="This section highlights the digital business initiative I am building, from brand identity to product direction."
         />
         <article className="shadow-watercolor relative overflow-hidden p-8 md:p-10">
           <div className="relative grid grid-cols-1 gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
@@ -335,7 +333,7 @@ export default function Home() {
                 <div className="relative h-full w-full rounded-xl overflow-hidden bg-gray-50 border border-gray-100">
                   <Image
                     src="/wiboostore-logo.jpeg"
-                    alt="Logo Wiboost Store"
+                    alt="Wiboost Store logo"
                     fill
                     sizes="320px"
                     className="object-contain p-4"
@@ -356,8 +354,8 @@ export default function Home() {
                 Wiboost Store
               </h3>
               <p className="section-readable mb-8 max-w-2xl text-lg leading-relaxed text-[#475569]">
-                Pusat layanan digital terlengkap di Indonesia untuk kebutuhan sosial media,
-                top up game, paket data, dan aplikasi premium dalam satu tempat yang praktis.
+                A comprehensive digital service hub in Indonesia for social media growth,
+                game top-ups, data packages, and premium apps in one practical place.
               </p>
 
               <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -388,7 +386,7 @@ export default function Home() {
       <section id="activity" className={centeredSectionClass}>
         <SectionHeader
           title="Activity"
-          summary="Catatan aktivitas komunitas, sosial, edukasi, dan pengembangan diri yang memperlihatkan cara saya belajar serta berkontribusi."
+          summary="A collection of community, social, educational, and personal development activities that reflect how I learn and contribute."
         />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {activityItems.map((activity) => (
@@ -396,27 +394,29 @@ export default function Home() {
               key={activity.title}
               className="shadow-watercolor p-5 transition-transform hover:-translate-y-2 flex flex-col h-full"
             >
-              {activity.image ? (
-                <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-xl border border-[#E2E8F0] bg-gray-100 shadow-sm">
-                  <Image
-                    src={activity.image}
-                    alt={activity.title}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
-              ) : null}
               <h3 className="mb-3 text-xl font-bold text-[#0F172A]">{activity.title}</h3>
               {activity.organization ? (
-                <p className="mb-3 font-bold text-[#0284C7] text-sm uppercase tracking-wide">{activity.organization}</p>
+                <p className="mb-2 text-sm font-bold text-[#0284C7]">{activity.organization}</p>
               ) : null}
               {activity.category ? (
                 <p className="mb-4 w-fit rounded-full border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-1 text-xs font-bold text-[#475569]">
                   {activity.category}
                 </p>
               ) : null}
-              <p className="leading-relaxed text-[#475569] text-sm mt-auto">{activity.desc}</p>
+              <p className="text-sm leading-relaxed text-[#475569]">{activity.desc}</p>
+              {activity.image ? (
+                <div className="mt-auto pt-5">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[#E2E8F0] bg-gray-100 shadow-sm">
+                    <Image
+                      src={activity.image}
+                      alt={activity.title}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                </div>
+              ) : null}
             </article>
           ))}
         </div>

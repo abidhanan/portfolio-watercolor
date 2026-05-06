@@ -72,11 +72,11 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
                       tabIndex={isDuplicate ? -1 : 0}
                       onClick={() => openCertificate(certificate)}
                       className="group relative block h-full w-full cursor-pointer"
-                      aria-label={`Buka sertifikat ${certificate.title}`}
+                      aria-label={`Open certificate ${certificate.title}`}
                     >
                       <Image
                         src={certificate.image}
-                        alt={`Sertifikat ${certificate.title}`}
+                        alt={`Certificate ${certificate.title}`}
                         fill
                         sizes="320px"
                         className="object-contain p-2"
@@ -122,7 +122,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
           style={{ top: overlayTop }}
           role="dialog"
           aria-modal="true"
-          aria-label={`Sertifikat ${selectedCertificate.title}`}
+          aria-label={`Certificate ${selectedCertificate.title}`}
           onClick={() => setSelectedCertificate(null)}
         >
           <div
@@ -133,14 +133,14 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
               type="button"
               onClick={() => setSelectedCertificate(null)}
               className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-[#102A43] text-white shadow-md transition-opacity hover:opacity-90"
-              aria-label="Tutup sertifikat"
+              aria-label="Close certificate"
             >
               <X className="h-5 w-5" aria-hidden="true" />
             </button>
             <div className="relative min-h-[46vh] overflow-hidden rounded-xl border border-[#DCEBF7] bg-white md:min-h-[68vh]">
               <Image
                 src={selectedCertificate.image}
-                alt={`Sertifikat ${selectedCertificate.title}`}
+                alt={`Certificate ${selectedCertificate.title}`}
                 fill
                 sizes="70vw"
                 className="object-contain p-3"

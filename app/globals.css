@@ -79,25 +79,37 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover 
   text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
 }
 
-/* Tampilan Model Font disamakan persis antara Mobile dan Desktop */
+/* Tampilan Mobile: Stroke sewarna teks agar ketebalan/model font sama dengan desktop, tanpa border putih */
 .home-title-outline {
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.9);
-  text-shadow:
-    -1.5px -1.5px 0 rgba(255, 255, 255, 0.88),
-    1.5px -1.5px 0 rgba(255, 255, 255, 0.88),
-    -1.5px 1.5px 0 rgba(255, 255, 255, 0.88),
-    1.5px 1.5px 0 rgba(255, 255, 255, 0.88),
-    0 14px 28px rgba(15, 23, 42, 0.16);
+  -webkit-text-stroke: 1px #0F172A;
+  text-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
 }
 
 .home-role-outline {
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.92);
-  text-shadow:
-    -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
-    1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
-    -1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
-    1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
-    0 12px 24px rgba(2, 132, 199, 0.2);
+  -webkit-text-stroke: 1px #0284C7;
+  text-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+}
+
+@media (min-width: 768px) {
+  .home-title-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.9);
+    text-shadow:
+      -1.5px -1.5px 0 rgba(255, 255, 255, 0.88),
+      1.5px -1.5px 0 rgba(255, 255, 255, 0.88),
+      -1.5px 1.5px 0 rgba(255, 255, 255, 0.88),
+      1.5px 1.5px 0 rgba(255, 255, 255, 0.88),
+      0 14px 28px rgba(15, 23, 42, 0.16);
+  }
+
+  .home-role-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.92);
+    text-shadow:
+      -1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
+      1.5px -1.5px 0 rgba(255, 255, 255, 0.9),
+      -1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+      1.5px 1.5px 0 rgba(255, 255, 255, 0.9),
+      0 12px 24px rgba(2, 132, 199, 0.2);
+  }
 }
 
 .home-copy-outline {
@@ -181,24 +193,13 @@ body {
   isolation: isolate;
   overflow-x: hidden;
   background-color: #F0F7FA;
-}
-
-/* Solusi agar background diam tidak bergerak/jitter di mobile */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
   background-image: url("/watercolor-beach.jpg");
+  background-attachment: fixed;
   background-position: center top;
   background-size: cover;
-  background-repeat: no-repeat;
-  z-index: -1;
-  pointer-events: none;
 }
 
+body::before,
 body::after {
   display: none;
   content: none;

@@ -20,7 +20,6 @@ function getHrefFromHash() {
   if (typeof window === "undefined" || !window.location.hash) {
     return null;
   }
-
   return navItems.find((item) => item.href === `/${window.location.hash}`)?.href ?? null;
 }
 
@@ -41,6 +40,7 @@ export function SiteNav() {
 
       const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
       const isAtPageEnd = maxScroll > 0 && window.scrollY >= maxScroll - 8;
+
       const contactSection = document.getElementById("contact");
       const contactRect = contactSection?.getBoundingClientRect();
       const contactIsVisible =
@@ -66,11 +66,14 @@ export function SiteNav() {
         if (!section) {
           continue;
         }
+
         const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+
         if (sectionTop <= probeLine) {
           currentHref = item.href;
         }
       }
+
       setActiveHref(currentHref);
     };
 
@@ -90,6 +93,7 @@ export function SiteNav() {
 
     syncHashActive();
     requestUpdate();
+
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
     window.addEventListener("hashchange", syncHashActive);
@@ -110,10 +114,12 @@ export function SiteNav() {
     if (!href.startsWith("/#")) {
       return;
     }
+
     const section = document.getElementById(href.slice(2));
     if (!section) {
       return;
     }
+
     event.preventDefault();
     setActiveHref(href);
 
@@ -127,6 +133,7 @@ export function SiteNav() {
       document.querySelector("header")?.getBoundingClientRect().height ?? 0;
     const sectionRect = section.getBoundingClientRect();
     const sectionTop = sectionRect.top + window.scrollY;
+
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 
     if (href === "/#contact") {
@@ -137,29 +144,31 @@ export function SiteNav() {
 
     const availableHeight = window.innerHeight - headerHeight;
     const centerOffset = Math.max(0, (availableHeight - sectionRect.height) / 2);
-
     const targetPosition = sectionTop - headerHeight - centerOffset;
 
     window.scrollTo({
       top: Math.max(0, Math.min(targetPosition, maxScroll)),
       behavior: "smooth",
     });
+
     window.history.pushState(null, "", href);
   }
 
   return (
     <header className="paper-nav sticky top-0 z-50">
-      <nav className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 sm:py-4 md:flex-row md:items-center md:justify-between md:px-10 xl:px-12">
+      <nav className="mx-auto flex max-w-7xl flex-row items-center justify-between gap-3 px-10 py-4 xl:px-12">
         <Link
           href="/#home"
           onClick={(event) => handleSectionClick(event, "/#home")}
-          className="section-readable w-fit text-lg font-extrabold tracking-tight text-[#0F172A] sm:text-xl"
+          className="section-readable w-fit text-xl font-extrabold tracking-tight text-[#0F172A]"
         >
           AHAWI <span className="text-[#0284C7]">Portofolio</span>
         </Link>
-        <div className="scrollbar-hide flex max-w-full gap-2 overflow-x-auto pb-1 md:flex-wrap md:justify-end md:overflow-visible md:pb-0">
+
+        <div className="scrollbar-hide flex max-w-full flex-wrap justify-end overflow-visible gap-2 pb-0">
           {navItems.map((item) => {
             const isActive = activeHref === item.href;
+
             return (
               <Link
                 key={item.href}
@@ -167,7 +176,7 @@ export function SiteNav() {
                 data-nav-target={item.href.slice(2)}
                 aria-current={isActive ? "page" : undefined}
                 onClick={(event) => handleSectionClick(event, item.href)}
-                className={`site-nav-link relative whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-bold transition-all duration-300 sm:px-4 sm:py-2 sm:text-sm ${
+                className={`site-nav-link relative whitespace-nowrap rounded-full px-4 py-2 text-sm font-bold transition-all duration-300 ${
                   isActive
                     ? "site-nav-link-active bg-[#0284C7] text-white shadow-md"
                     : "text-[#475569] hover:bg-[#E0F2FE] hover:text-[#0369A1]"

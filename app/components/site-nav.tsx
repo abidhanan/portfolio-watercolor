@@ -175,7 +175,7 @@ export function SiteNav() {
 
   return (
     <header className="paper-nav sticky top-0 z-50">
-      <nav className="mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4 md:px-10 xl:px-12">
+      <nav className="relative mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4 md:px-10 xl:px-12">
         <div className="flex items-center justify-between">
           <Link
             href="/#home"
@@ -225,7 +225,7 @@ export function SiteNav() {
 
         {/* Navigasi Mobile (Tampil saat Hamburger di-klik) */}
         {isMenuOpen && (
-          <div className="mt-4 flex flex-col gap-2 border-t border-[#DCEBF7] pt-4 md:hidden">
+          <div className="absolute left-4 right-4 top-full z-50 mt-2 flex max-h-[calc(100svh-5rem)] flex-col gap-2 overflow-y-auto rounded-2xl border border-[#DCEBF7] bg-white/95 p-3 shadow-2xl backdrop-blur-xl md:hidden">
             {navItems.map((item) => {
               const isActive = activeHref === item.href;
               return (

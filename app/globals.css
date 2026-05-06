@@ -198,13 +198,17 @@ body::before {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100lvh;
+  min-height: 100svh;
   z-index: -10;
   background-image: url("/watercolor-beach.jpg");
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
   pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 body::after {
@@ -228,4 +232,13 @@ body > main,
 body > footer {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 767px) {
+  body::before {
+    height: 120svh;
+    min-height: 120svh;
+    background-size: auto 120svh;
+    background-position: center top;
+  }
 }

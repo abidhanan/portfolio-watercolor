@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -27,12 +27,20 @@ function getHrefFromHash() {
 export function SiteNav() {
   const [activeHref, setActiveHref] = useState("/#home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const clickedHrefRef = useRef<string | null>(null);
 
   useEffect(() => {
     let animationFrame: number | null = null;
 
     const updateActiveSection = () => {
       animationFrame = null;
+      const clickedHref = clickedHrefRef.current;
+
+      if (clickedHref) {
+        setActiveHref(clickedHref);
+        return;
+      }
+
       const hashHref = getHrefFromHash();
 
       if (hashHref === "/#contact") {
@@ -122,12 +130,23 @@ export function SiteNav() {
     }
 
     event.preventDefault();
+    clickedHrefRef.current = href;
     setActiveHref(href);
     setIsMenuOpen(false);
 
+    window.setTimeout(() => {
+      if (clickedHrefRef.current === href) {
+        clickedHrefRef.current = null;
+      }
+      const hashHref = getHrefFromHash();
+      if (hashHref) {
+        setActiveHref(hashHref);
+      }
+    }, 1200);
+
     if (href === "/#home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
       window.history.pushState(null, "", href);
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
@@ -147,12 +166,11 @@ export function SiteNav() {
     const centerOffset = Math.max(0, (availableHeight - sectionRect.height) / 2);
     const targetPosition = sectionTop - headerHeight - centerOffset;
 
+    window.history.pushState(null, "", href);
     window.scrollTo({
       top: Math.max(0, Math.min(targetPosition, maxScroll)),
       behavior: "smooth",
     });
-
-    window.history.pushState(null, "", href);
   }
 
   return (

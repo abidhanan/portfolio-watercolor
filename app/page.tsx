@@ -24,9 +24,9 @@ const startupServices = [
 ];
 
 const sectionFrameClass =
-  "mb-20 scroll-mt-36 py-8 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:py-10";
+  "mb-28 scroll-mt-36 py-10 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:py-10";
 const homeSectionClass =
-  "mb-20 scroll-mt-36 pb-8 pt-2 md:-mt-6 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:pb-10 md:pt-0";
+  "mb-28 scroll-mt-36 pb-10 pt-2 md:-mt-6 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:pb-10 md:pt-0";
 const centeredSectionClass = `${sectionFrameClass} flex flex-col justify-center`;
 
 type LogoBadgeProps = {
@@ -250,20 +250,22 @@ export default function Home() {
           title="Tools & Tech Stack"
           summary="The technologies, frameworks, and platforms that support my workflow across frontend, backend, Web3, and product development."
         />
-        <div className="relative grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
-          <div className="rope-line-vertical absolute left-[0.6rem] top-3 h-[calc(100%-1.5rem)] md:hidden" />
+        <div className="relative grid grid-cols-1 gap-5 md:grid-cols-2 md:items-stretch md:gap-6">
+          <div className="rope-line-vertical absolute left-[0.4rem] top-3 h-[calc(100%-1.5rem)] md:hidden" />
           {techGroups.map((group, groupIndex) => (
-            <div key={group.title} className="relative grid grid-cols-[1.75rem_1fr] gap-3 md:block">
+            <div key={group.title} className="relative grid grid-cols-[1.75rem_1fr] gap-3 md:block md:h-full">
               <div className="rope-knot z-10 mt-5 h-5 w-5 rounded-full md:hidden" />
               <div
-                className="shadow-watercolor p-5 sm:p-8"
+                className="shadow-watercolor h-full p-5 sm:p-8"
               >
-                <h3 className="mb-5 text-xl font-bold text-[#0F172A] sm:mb-6 sm:text-2xl">{group.title}</h3>
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
+                <h3 className="mb-5 text-xl font-bold leading-tight text-[#0F172A] sm:mb-6 sm:text-2xl md:min-h-[3.75rem]">
+                  {group.title}
+                </h3>
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:auto-rows-fr">
                   {group.tools.map((tool, toolIndex) => (
                     <div
                       key={tool.name}
-                      className={`flex min-h-[6.25rem] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3 text-center text-xs font-bold shadow-sm transition-transform hover:-translate-y-1 sm:min-h-[7rem] sm:gap-3 sm:px-3 sm:py-4 sm:text-sm ${
+                      className={`flex min-h-[6.25rem] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3 text-center text-xs font-bold shadow-sm transition-transform hover:-translate-y-1 sm:min-h-[7rem] sm:gap-3 sm:px-3 sm:py-4 sm:text-sm md:h-full ${
                         toolTone[(groupIndex + toolIndex) % toolTone.length]
                       }`}
                     >
@@ -292,7 +294,7 @@ export default function Home() {
           summary="A summary of work experience, creative roles, and professional contributions that shaped my communication, business, and technology skills."
         />
         <div className="relative grid grid-cols-1 gap-5 md:gap-6 lg:grid-cols-3">
-          <div className="rope-line-vertical absolute left-[0.6rem] top-3 h-[calc(100%-1.5rem)] md:hidden" />
+          <div className="rope-line-vertical absolute left-[0.4rem] top-3 h-[calc(100%-1.5rem)] md:hidden" />
           {careerItems.map((item) => (
             <div
               key={`${item.period}-${item.role}-${item.company}`}
@@ -393,7 +395,7 @@ export default function Home() {
           summary="A collection of community, social, educational, and personal development activities that reflect how I learn and contribute."
         />
         <div className="relative grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-          <div className="rope-line-vertical absolute left-[0.6rem] top-3 h-[calc(100%-1.5rem)] md:hidden" />
+          <div className="rope-line-vertical absolute left-[0.4rem] top-3 h-[calc(100%-1.5rem)] md:hidden" />
           {activityItems.map((activity) => (
             <div key={activity.title} className="relative grid grid-cols-[1.75rem_1fr] gap-3 md:block">
               <div className="rope-knot z-10 mt-5 h-5 w-5 rounded-full md:hidden" />

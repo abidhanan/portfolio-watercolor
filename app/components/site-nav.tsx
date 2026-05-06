@@ -172,6 +172,8 @@ export function SiteNav() {
     });
   }
 
+  const activeItem = navItems.find((item) => item.href === activeHref) ?? navItems[0];
+
   return (
     <header className="paper-nav sticky top-0 z-50">
       <nav className="relative mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4 md:px-10 xl:px-12">
@@ -184,25 +186,35 @@ export function SiteNav() {
             AHAWI <span className="text-[#0284C7]">Portofolio</span>
           </Link>
 
-          {/* Tombol Hamburger Mobile */}
-          <button
-            type="button"
-            className="flex items-center justify-center rounded-lg p-2 text-[#0F172A] transition-colors hover:bg-gray-100 md:hidden"
-            onClick={() => {
-              const willOpen = !isMenuOpen;
-              if (willOpen) {
-                setActiveHref(getHrefFromHash() ?? getActiveHrefFromPage());
-              }
-              setIsMenuOpen(willOpen);
-            }}
-            aria-label="Toggle navigation menu"
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" aria-hidden="true" />
-            ) : (
-              <Menu className="h-6 w-6" aria-hidden="true" />
-            )}
-          </button>
+          <div className="flex items-center gap-1.5 md:hidden">
+            <span
+              className="section-readable inline-flex max-w-[5.75rem] items-center gap-1.5 rounded-full border border-[#BAE6FD] bg-white/90 px-2.5 py-1.5 text-[0.68rem] font-black text-[#0369A1] shadow-sm"
+              aria-live="polite"
+            >
+              <span className="h-2 w-2 shrink-0 rounded-full bg-[#0284C7]" aria-hidden="true" />
+              <span className="truncate">{activeItem.label}</span>
+            </span>
+
+            {/* Tombol Hamburger Mobile */}
+            <button
+              type="button"
+              className="flex items-center justify-center rounded-lg p-2 text-[#0F172A] transition-colors hover:bg-gray-100"
+              onClick={() => {
+                const willOpen = !isMenuOpen;
+                if (willOpen) {
+                  setActiveHref(getHrefFromHash() ?? getActiveHrefFromPage());
+                }
+                setIsMenuOpen(willOpen);
+              }}
+              aria-label="Toggle navigation menu"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
 
           {/* Navigasi Desktop */}
           <div className="hidden md:flex md:flex-wrap md:items-center md:justify-end md:gap-2">

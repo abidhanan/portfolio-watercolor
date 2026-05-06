@@ -356,7 +356,7 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              <h3 className="section-readable mb-4 text-3xl font-black leading-tight text-[#0F172A] md:text-5xl">
+              <h3 className="section-readable mb-4 text-center text-3xl font-black leading-tight text-[#0F172A] md:text-5xl lg:text-left">
                 Wiboost Store
               </h3>
               <p className="section-readable mb-6 max-w-2xl text-base leading-relaxed text-[#475569] sm:mb-8 sm:text-lg">
@@ -380,7 +380,7 @@ export default function Home() {
                 href="https://wiboostore.com"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex w-full items-center justify-center rounded-full bg-[#0F172A] px-6 py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-all hover:-translate-y-1 hover:bg-[#0284C7] hover:shadow-lg sm:w-fit sm:px-8 sm:py-4"
+                className="mx-auto flex w-fit items-center justify-center rounded-full bg-[#0F172A] px-6 py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-all hover:-translate-y-1 hover:bg-[#0284C7] hover:shadow-lg sm:px-8 sm:py-4 lg:mx-0"
               >
                 Visit Wiboost Store
               </a>

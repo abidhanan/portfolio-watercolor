@@ -255,11 +255,6 @@ export function SiteNav() {
                     />
                     <span>{item.label}</span>
                   </span>
-                  {isActive ? (
-                    <span className="rounded-full bg-white/20 px-2.5 py-1 text-[0.65rem] font-black uppercase tracking-[0.12em] text-white">
-                      Current
-                    </span>
-                  ) : null}
                 </Link>
               );
             })}

@@ -345,7 +345,7 @@ export default function Home() {
               <div className="shadow-watercolor relative z-10 h-52 w-52 overflow-hidden rounded-2xl bg-white p-5 sm:h-64 sm:w-64 sm:p-6">
                 <div className="relative h-full w-full rounded-xl overflow-hidden bg-gray-50 border border-gray-100">
                   <Image
-                    src="/wiboostore-logo.svg"
+                    src="/wiboostore-logo.jpeg"
                     alt="Wiboost Store logo"
                     fill
                     sizes="320px"

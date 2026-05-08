@@ -114,13 +114,13 @@ const socialItems = [
     label: "Instagram",
     href: "https://www.instagram.com/ahawi_channel?igsh=MWI3ZmlxaWFycm5z",
     icon: InstagramIcon,
-    imageSrc: "/logo-instagram.svg",
+    imageSrc: "/logo-instagram.jpg",
   },
   {
     label: "TikTok",
     href: "https://www.tiktok.com/@ahawi_channel?_r=1&_t=ZS-968BH4ElC4u",
     icon: TikTokIcon,
-    imageSrc: "/logo-tiktok.svg",
+    imageSrc: "/logo-tiktok.jpg",
   },
   {
     label: "YouTube",

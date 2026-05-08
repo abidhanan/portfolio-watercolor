@@ -165,6 +165,31 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover 
   margin-left: calc(var(--mobile-rope-x) - 0.625rem);
 }
 
+html.reveal-ready [data-scroll-reveal] {
+  opacity: 0;
+  translate: 0 1.6rem;
+  scale: 0.98;
+  filter: blur(5px);
+  transition:
+    opacity 650ms ease,
+    translate 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    scale 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 650ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, translate, scale, filter;
+}
+
+html.reveal-ready [data-scroll-reveal][data-reveal-direction="up"] {
+  translate: 0 -1.6rem;
+}
+
+html.reveal-ready [data-scroll-reveal].is-revealed {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+  filter: blur(0);
+}
+
 .certificate-marquee-mask {
   mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
@@ -223,8 +248,14 @@ body::after {
 
 @media (prefers-reduced-motion: reduce) {
   body::before,
+  [data-scroll-reveal],
   .certificate-marquee-track {
     animation: none;
+    opacity: 1 !important;
+    translate: 0 0 !important;
+    scale: 1 !important;
+    filter: none !important;
+    transition: none !important;
   }
 }
 

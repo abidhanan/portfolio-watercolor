@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { BackgroundMusic } from "./components/background-music";
+import { ScrollRevealController } from "./components/scroll-reveal-controller";
 import { SiteFooter } from "./components/site-footer";
 import { SiteNav } from "./components/site-nav";
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         {children}
         <SiteFooter />
         <BackgroundMusic />
+        <ScrollRevealController />
       </body>
     </html>
   );

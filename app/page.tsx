@@ -107,38 +107,38 @@ export default function Home() {
             developer education, and meaningful collaboration.
           </p>
         </div>
-        <div className="relative isolate flex h-[330px] w-full max-w-[22rem] justify-center overflow-visible sm:h-[390px] sm:max-w-[30rem] md:h-[450px] md:max-w-none md:w-1/2">
-          <div className="absolute left-0 top-24 z-0 rotate-[-12deg] rounded-lg border border-gray-100 bg-white p-2 pb-6 shadow-xl sm:left-[2%] sm:p-3 sm:pb-8 lg:-left-2">
-            <div className="relative h-44 w-36 overflow-hidden rounded-sm bg-gray-100 sm:h-56 sm:w-44">
+        <div className="relative isolate mt-1 h-[350px] w-full max-w-[23rem] overflow-visible sm:h-[410px] sm:max-w-[31rem] md:mt-0 md:h-[500px] md:w-1/2 md:max-w-[36rem] lg:h-[540px]">
+          <div className="absolute left-1 top-28 z-10 -rotate-[10deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_18px_35px_-18px_rgba(15,23,42,0.45)] sm:left-7 sm:top-32 sm:p-3 sm:pb-7 md:left-0 md:top-36 lg:left-8 lg:top-40">
+            <div className="relative h-[10.5rem] w-[8.25rem] overflow-hidden rounded-md bg-gray-100 sm:h-[13.5rem] sm:w-[10.25rem] md:h-[15rem] md:w-[11.5rem] lg:h-[16.5rem] lg:w-[12.5rem]">
               <Image
                 src="/home-gemini-seminar.jpg"
                 alt="Abid Hanan Wicaksono at a Gemini AI seminar"
                 fill
-                sizes="384px"
-                className="object-cover object-[52%_42%]"
+                sizes="(min-width: 1024px) 200px, (min-width: 768px) 184px, 164px"
+                className="scale-[1.03] object-cover object-[52%_42%]"
               />
             </div>
           </div>
-          <div className="absolute left-1/2 top-3 z-30 -translate-x-1/2 rotate-[2deg] rounded-lg border border-gray-100 bg-white p-2 pb-6 shadow-2xl sm:top-4 sm:p-3 sm:pb-8">
-            <div className="relative h-52 w-40 overflow-hidden rounded-sm bg-gray-100 sm:h-64 sm:w-52">
+          <div className="absolute left-1/2 top-0 z-30 -translate-x-1/2 rotate-[1.5deg] rounded-xl border border-white/90 bg-white p-2.5 pb-6 shadow-[0_24px_50px_-20px_rgba(15,23,42,0.55)] sm:p-3 sm:pb-8 md:top-4">
+            <div className="relative h-[14rem] w-[10.25rem] overflow-hidden rounded-md bg-gray-100 sm:h-[17.25rem] sm:w-[13rem] md:h-[19rem] md:w-[14.5rem] lg:h-[21rem] lg:w-[16rem]">
               <Image
                 src="/home-google-office.jpeg"
                 alt="Abid Hanan Wicaksono during a Google Office visit"
                 fill
                 priority
-                sizes="384px"
-                className="scale-110 object-cover object-[32%_58%]"
+                sizes="(min-width: 1024px) 256px, (min-width: 768px) 232px, 208px"
+                className="scale-[1.08] object-cover object-[32%_58%]"
               />
             </div>
           </div>
-          <div className="absolute right-0 top-24 z-10 rotate-[12deg] rounded-lg border border-gray-100 bg-white p-2 pb-6 shadow-xl sm:left-[64%] sm:right-auto sm:top-16 sm:p-3 sm:pb-8">
-            <div className="relative h-44 w-36 overflow-hidden rounded-sm bg-gray-100 sm:h-56 sm:w-44">
+          <div className="absolute right-1 top-28 z-20 rotate-[10deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_18px_35px_-18px_rgba(15,23,42,0.45)] sm:right-7 sm:top-28 sm:p-3 sm:pb-7 md:right-0 md:top-36 lg:right-8 lg:top-40">
+            <div className="relative h-[10.5rem] w-[8.25rem] overflow-hidden rounded-md bg-gray-100 sm:h-[13.5rem] sm:w-[10.25rem] md:h-[15rem] md:w-[11.5rem] lg:h-[16.5rem] lg:w-[12.5rem]">
               <Image
                 src="/home-ngabuburit-speaker.jpeg"
                 alt="Abid Hanan Wicaksono as a speaker"
                 fill
-                sizes="384px"
-                className="scale-110 object-cover object-[52%_66%]"
+                sizes="(min-width: 1024px) 200px, (min-width: 768px) 184px, 164px"
+                className="scale-[1.08] object-cover object-[52%_66%]"
               />
             </div>
           </div>

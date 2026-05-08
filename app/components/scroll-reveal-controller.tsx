@@ -21,7 +21,7 @@ export function ScrollRevealController() {
     const revealElements = Array.from(
       document.querySelectorAll<HTMLElement>(revealSelectors),
     ).filter((element) => {
-      return !element.closest(".certificate-marquee-track, [role='dialog']");
+      return !element.closest(".certificate-marquee-track, [role='dialog'], .home-photo-stack");
     });
 
     const sectionCounters = new Map<Element, number>();

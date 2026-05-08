@@ -107,37 +107,37 @@ export default function Home() {
             developer education, and meaningful collaboration.
           </p>
         </div>
-        <div className="relative isolate mt-1 h-[350px] w-full max-w-[23rem] overflow-visible sm:h-[410px] sm:max-w-[31rem] md:mt-0 md:h-[500px] md:w-1/2 md:max-w-[36rem] lg:h-[540px]">
-          <div className="absolute left-1 top-28 z-10 -rotate-[10deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_18px_35px_-18px_rgba(15,23,42,0.45)] sm:left-7 sm:top-32 sm:p-3 sm:pb-7 md:left-0 md:top-36 lg:left-8 lg:top-40">
-            <div className="relative h-[10.5rem] w-[8.25rem] overflow-hidden rounded-md bg-gray-100 sm:h-[13.5rem] sm:w-[10.25rem] md:h-[15rem] md:w-[11.5rem] lg:h-[16.5rem] lg:w-[12.5rem]">
+        <div className="home-photo-stack relative isolate mt-2 h-[360px] w-full max-w-[25rem] overflow-visible sm:h-[430px] sm:max-w-[35rem] md:mt-0 md:h-[500px] md:w-1/2 md:max-w-[40rem] lg:h-[520px]">
+          <div className="home-photo-card absolute left-3 top-24 z-10 -rotate-[10deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_18px_36px_-18px_rgba(15,23,42,0.5)] sm:left-10 sm:top-28 sm:p-3 sm:pb-7 md:left-4 md:top-36 lg:left-10 lg:top-40">
+            <div className="relative h-[12.25rem] w-[9.2rem] overflow-hidden rounded-md bg-gray-100 sm:h-[15rem] sm:w-[11rem] md:h-[16rem] md:w-[12rem] lg:h-[18rem] lg:w-[13rem]">
               <Image
                 src="/home-gemini-seminar.jpg"
                 alt="Abid Hanan Wicaksono at a Gemini AI seminar"
                 fill
-                sizes="(min-width: 1024px) 200px, (min-width: 768px) 184px, 164px"
+                sizes="(min-width: 1024px) 208px, (min-width: 768px) 192px, 176px"
                 className="scale-[1.03] object-cover object-[52%_42%]"
               />
             </div>
           </div>
-          <div className="absolute left-1/2 top-0 z-30 -translate-x-1/2 rotate-[1.5deg] rounded-xl border border-white/90 bg-white p-2.5 pb-6 shadow-[0_24px_50px_-20px_rgba(15,23,42,0.55)] sm:p-3 sm:pb-8 md:top-4">
-            <div className="relative h-[14rem] w-[10.25rem] overflow-hidden rounded-md bg-gray-100 sm:h-[17.25rem] sm:w-[13rem] md:h-[19rem] md:w-[14.5rem] lg:h-[21rem] lg:w-[16rem]">
+          <div className="home-photo-card absolute left-1/2 top-5 z-30 -translate-x-1/2 rotate-[2deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_26px_54px_-22px_rgba(15,23,42,0.6)] sm:top-6 sm:p-3 sm:pb-7 md:top-10">
+            <div className="relative h-[12.25rem] w-[9.2rem] overflow-hidden rounded-md bg-gray-100 sm:h-[15rem] sm:w-[11rem] md:h-[16rem] md:w-[12rem] lg:h-[18rem] lg:w-[13rem]">
               <Image
                 src="/home-google-office.jpeg"
                 alt="Abid Hanan Wicaksono during a Google Office visit"
                 fill
                 priority
-                sizes="(min-width: 1024px) 256px, (min-width: 768px) 232px, 208px"
+                sizes="(min-width: 1024px) 208px, (min-width: 768px) 192px, 176px"
                 className="scale-[1.08] object-cover object-[32%_58%]"
               />
             </div>
           </div>
-          <div className="absolute right-1 top-28 z-20 rotate-[10deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_18px_35px_-18px_rgba(15,23,42,0.45)] sm:right-7 sm:top-28 sm:p-3 sm:pb-7 md:right-0 md:top-36 lg:right-8 lg:top-40">
-            <div className="relative h-[10.5rem] w-[8.25rem] overflow-hidden rounded-md bg-gray-100 sm:h-[13.5rem] sm:w-[10.25rem] md:h-[15rem] md:w-[11.5rem] lg:h-[16.5rem] lg:w-[12.5rem]">
+          <div className="home-photo-card absolute right-3 top-24 z-20 rotate-[10deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_18px_36px_-18px_rgba(15,23,42,0.5)] sm:right-10 sm:top-28 sm:p-3 sm:pb-7 md:right-4 md:top-36 lg:right-10 lg:top-40">
+            <div className="relative h-[12.25rem] w-[9.2rem] overflow-hidden rounded-md bg-gray-100 sm:h-[15rem] sm:w-[11rem] md:h-[16rem] md:w-[12rem] lg:h-[18rem] lg:w-[13rem]">
               <Image
                 src="/home-ngabuburit-speaker.jpeg"
                 alt="Abid Hanan Wicaksono as a speaker"
                 fill
-                sizes="(min-width: 1024px) 200px, (min-width: 768px) 184px, 164px"
+                sizes="(min-width: 1024px) 208px, (min-width: 768px) 192px, 176px"
                 className="scale-[1.08] object-cover object-[52%_66%]"
               />
             </div>

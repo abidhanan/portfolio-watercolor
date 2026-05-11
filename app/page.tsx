@@ -168,7 +168,7 @@ export default function Home() {
                 <div className="relative z-20 flex w-full flex-col items-center justify-center gap-3 md:ml-6 md:w-auto md:flex-row md:gap-0 md:whitespace-nowrap">
                   
                   <div className="relative z-20 flex items-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF] px-4 py-2.5 shadow-md sm:gap-3 sm:px-6">
-                    <span className="rope-knot hidden h-3.5 w-3.5 shrink-0 rounded-full md:block" aria-hidden="true" />
+                    <span className="rope-knot h-3.5 w-3.5 shrink-0 rounded-full" aria-hidden="true" />
                     <span className="text-xs font-black uppercase tracking-[0.12em] text-[#0369A1] sm:text-sm md:text-base md:tracking-[0.14em]">{content.about.eyebrow}</span>
                     <div className="rope-knot absolute -right-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
                   </div>

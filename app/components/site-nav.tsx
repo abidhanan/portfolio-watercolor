@@ -4,24 +4,14 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import { Menu, X } from "lucide-react";
-
-const navItems = [
-  { label: "Home", href: "/#home" },
-  { label: "About Me", href: "/#about" },
-  { label: "Education", href: "/#education" },
-  { label: "Tools", href: "/#tools" },
-  { label: "Certificate", href: "/#certificates" },
-  { label: "Career", href: "/#career" },
-  { label: "Startup", href: "/#startup" },
-  { label: "Activity", href: "/#activity" },
-  { label: "Contact", href: "/#contact" },
-];
+import { useLanguage } from "./language-provider";
+import { languageOptions, navSections, type Language } from "../lib/i18n";
 
 function getHrefFromHash() {
   if (typeof window === "undefined" || !window.location.hash) {
     return null;
   }
-  return navItems.find((item) => item.href === `/${window.location.hash}`)?.href ?? null;
+  return navSections.find((item) => item.href === `/${window.location.hash}`)?.href ?? null;
 }
 
 function getActiveHrefFromPage() {
@@ -50,7 +40,7 @@ function getActiveHrefFromPage() {
   const probeLine = window.scrollY + window.innerHeight * 0.42;
   let currentHref = "/#home";
 
-  for (const item of navItems) {
+  for (const item of navSections) {
     const section = document.getElementById(item.href.slice(2));
     if (!section) {
       continue;
@@ -65,10 +55,44 @@ function getActiveHrefFromPage() {
   return currentHref;
 }
 
+function LanguageToggle({ className = "" }: { className?: string }) {
+  const { language, setLanguage, content } = useLanguage();
+
+  return (
+    <div
+      className={`flex items-center gap-1 rounded-full border border-[#DCEBF7] bg-white/90 p-1 shadow-sm ${className}`}
+      role="group"
+      aria-label={content.languageToggle.label}
+    >
+      {languageOptions.map((option) => {
+        const isActive = language === option.code;
+
+        return (
+          <button
+            key={option.code}
+            type="button"
+            onClick={() => setLanguage(option.code as Language)}
+            className={`rounded-full px-2.5 py-1 text-[0.68rem] font-black uppercase tracking-[0.08em] transition-all sm:px-3 sm:text-xs ${
+              isActive
+                ? "bg-[#0284C7] text-white shadow-sm"
+                : "text-[#475569] hover:bg-[#E0F2FE] hover:text-[#0369A1]"
+            }`}
+            aria-pressed={isActive}
+          >
+            {option.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 export function SiteNav() {
+  const { content } = useLanguage();
   const [activeHref, setActiveHref] = useState("/#home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const clickedHrefRef = useRef<string | null>(null);
+  const navItems = content.navItems;
 
   useEffect(() => {
     let animationFrame: number | null = null;
@@ -181,28 +205,30 @@ export function SiteNav() {
             onClick={(event) => handleSectionClick(event, "/#home")}
             className="section-readable w-fit text-lg font-extrabold tracking-tight text-[#0F172A] sm:text-xl"
           >
-            AHAWI <span className="text-[#0284C7]">Portofolio</span>
+            {content.brand.prefix} <span className="text-[#0284C7]">{content.brand.accent}</span>
           </Link>
 
-          {/* Tombol Hamburger Mobile */}
-          <button
-            type="button"
-            className="flex items-center justify-center rounded-lg p-2 text-[#0F172A] transition-colors hover:bg-gray-100 md:hidden"
-            onClick={() => {
-              const willOpen = !isMenuOpen;
-              if (willOpen) {
-                setActiveHref(getActiveHrefFromPage());
-              }
-              setIsMenuOpen(willOpen);
-            }}
-            aria-label="Toggle navigation menu"
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" aria-hidden="true" />
-            ) : (
-              <Menu className="h-6 w-6" aria-hidden="true" />
-            )}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <LanguageToggle />
+            <button
+              type="button"
+              className="flex items-center justify-center rounded-lg p-2 text-[#0F172A] transition-colors hover:bg-gray-100"
+              onClick={() => {
+                const willOpen = !isMenuOpen;
+                if (willOpen) {
+                  setActiveHref(getActiveHrefFromPage());
+                }
+                setIsMenuOpen(willOpen);
+              }}
+              aria-label="Toggle navigation menu"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
 
           {/* Navigasi Desktop */}
           <div className="hidden md:flex md:flex-wrap md:items-center md:justify-end md:gap-2">
@@ -225,6 +251,7 @@ export function SiteNav() {
                 </Link>
               );
             })}
+            <LanguageToggle className="ml-1" />
           </div>
         </div>
 

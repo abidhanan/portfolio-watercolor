@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useLanguage } from "./language-provider";
 
 type CertificateItem = {
   title: string;
@@ -17,6 +18,7 @@ type CertificateMarqueeProps = {
 };
 
 export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
+  const { content } = useLanguage();
   const [selectedCertificate, setSelectedCertificate] = useState<CertificateItem | null>(null);
   const [overlayTop, setOverlayTop] = useState(0);
 
@@ -72,11 +74,11 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
                       tabIndex={isDuplicate ? -1 : 0}
                       onClick={() => openCertificate(certificate)}
                       className="group relative block h-full w-full cursor-pointer"
-                      aria-label={`Open certificate ${certificate.title}`}
+                      aria-label={`${content.certificates.openLabel} ${certificate.title}`}
                     >
                       <Image
                         src={certificate.image}
-                        alt={`Certificate ${certificate.title}`}
+                        alt={`${content.certificates.imageAlt} ${certificate.title}`}
                         fill
                         sizes="320px"
                         className="object-contain p-2"
@@ -85,13 +87,13 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
                   ) : (
                     <div className="flex h-full w-full flex-col items-center justify-center bg-[#FEF8E7] p-6 text-center">
                       <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#977418]">
-                        Certificate
+                        {content.certificates.fallbackTitle}
                       </p>
                       <p className="text-2xl font-bold leading-tight text-[#102A43]">
                         {certificate.title}
                       </p>
                       <p className="mt-4 text-sm font-semibold text-[#2B6CB0]">
-                        Image pending
+                        {content.certificates.imagePending}
                       </p>
                     </div>
                   )}
@@ -122,7 +124,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
           style={{ top: overlayTop }}
           role="dialog"
           aria-modal="true"
-          aria-label={`Certificate ${selectedCertificate.title}`}
+          aria-label={`${content.certificates.imageAlt} ${selectedCertificate.title}`}
           onClick={() => setSelectedCertificate(null)}
         >
           <div
@@ -133,14 +135,14 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
               type="button"
               onClick={() => setSelectedCertificate(null)}
               className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-[#102A43] text-white shadow-md transition-opacity hover:opacity-90"
-              aria-label="Close certificate"
+              aria-label={content.certificates.closeLabel}
             >
               <X className="h-5 w-5" aria-hidden="true" />
             </button>
             <div className="relative min-h-[46vh] overflow-hidden rounded-xl border border-[#DCEBF7] bg-white md:min-h-[68vh]">
               <Image
                 src={selectedCertificate.image}
-                alt={`Certificate ${selectedCertificate.title}`}
+                alt={`${content.certificates.imageAlt} ${selectedCertificate.title}`}
                 fill
                 sizes="70vw"
                 className="object-contain p-3"

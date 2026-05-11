@@ -1,26 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import { CertificateMarquee } from "./components/certificate-marquee";
+import { useLanguage } from "./components/language-provider";
 import { RotatingRoleBadge } from "./components/rotating-role-badge";
-import {
-  activityItems,
-  careerItems,
-  certificateItems,
-  educationItems,
-  techGroups,
-} from "./lib/portfolio-data";
 
 const toolTone = [
   "border-[#E0F2FE] bg-[#F0F9FF] text-[#0369A1]",
   "border-[#BAE6FD] bg-[#E0F2FE] text-[#0284C7]",
   "border-[#FEF08A] bg-[#FEF9C3] text-[#A16207]",
   "border-[#E2E8F0] bg-[#F8FAFC] text-[#334155]",
-];
-
-const startupServices = [
-  "Social media boosting services",
-  "Game top-ups",
-  "Data packages",
-  "Premium apps",
 ];
 
 const sectionFrameClass =
@@ -86,6 +75,15 @@ function SectionHeader({ title, summary }: SectionHeaderProps) {
 }
 
 export default function Home() {
+  const { content } = useLanguage();
+  const {
+    activityItems,
+    careerItems,
+    certificateItems,
+    educationItems,
+    techGroups,
+  } = content.portfolio;
+
   return (
     <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:px-10 md:py-12 xl:px-12">
       <section
@@ -94,17 +92,16 @@ export default function Home() {
       >
         <div className="w-full space-y-4 text-center md:w-1/2 md:space-y-6 md:text-left">
           <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF]/90 px-3 py-1.5 text-xs font-bold text-[#0284C7] shadow-sm backdrop-blur-sm sm:text-sm md:justify-start md:px-4">
-            <span>Open to Work</span>
+            <span>{content.home.badge}</span>
             <RotatingRoleBadge />
           </div>
           <h1 className="home-title-outline section-readable text-[2.75rem] font-extrabold leading-[1.05] text-[#0F172A] sm:text-5xl md:text-6xl md:leading-tight lg:text-7xl">
-            I&apos;m Abid Hanan
+            {content.home.intro}
             <br />
-            <span className="home-role-outline text-[#0284C7]">Developer Relations</span>
+            <span className="home-role-outline text-[#0284C7]">{content.home.role}</span>
           </h1>
           <p className="home-copy-outline section-readable mx-auto max-w-lg text-base font-bold leading-relaxed text-[#334155] sm:text-lg md:mx-0">
-            I connect technology, communities, and business goals through clear communication,
-            developer education, and meaningful collaboration.
+            {content.home.description}
           </p>
         </div>
         <div className="home-photo-stack relative isolate mt-2 h-[360px] w-full max-w-[25rem] overflow-visible sm:h-[430px] sm:max-w-[35rem] md:mt-0 md:h-[500px] md:w-1/2 md:max-w-[39rem] lg:h-[520px] lg:max-w-[42rem]">
@@ -172,7 +169,7 @@ export default function Home() {
                   
                   <div className="relative z-20 flex items-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF] px-4 py-2.5 shadow-md sm:gap-3 sm:px-6">
                     <span className="rope-knot hidden h-3.5 w-3.5 shrink-0 rounded-full md:block" aria-hidden="true" />
-                    <span className="text-xs font-black uppercase tracking-[0.12em] text-[#0369A1] sm:text-sm md:text-base md:tracking-[0.14em]">About Me</span>
+                    <span className="text-xs font-black uppercase tracking-[0.12em] text-[#0369A1] sm:text-sm md:text-base md:tracking-[0.14em]">{content.about.eyebrow}</span>
                     <div className="rope-knot absolute -right-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
                   </div>
                   
@@ -181,7 +178,7 @@ export default function Home() {
                   <div className="relative flex flex-col items-center z-20">
                     <div className="relative z-20 rounded-full border border-[#E2E8F0] bg-white/95 px-4 py-2.5 shadow-md sm:px-6">
                       <div className="rope-knot absolute -left-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
-                      <span className="text-xs font-bold text-[#334155] sm:text-sm md:text-base">Identity & DevRel Values</span>
+                      <span className="text-xs font-bold text-[#334155] sm:text-sm md:text-base">{content.about.summaryLabel}</span>
                     </div>
                   </div>
 
@@ -190,7 +187,7 @@ export default function Home() {
                 {/* Canvas Box */}
                 <div className="shadow-watercolor relative z-20 mt-6 w-full rounded-2xl bg-white p-5 sm:p-8 md:mt-8 md:p-10">
                   <p className="relative z-10 text-left text-base font-medium leading-relaxed text-[#334155] md:text-justify md:text-lg">
-                    I am Abid Hanan Wicaksono, a Developer Relations professional with a diverse background in technology, business, Web3, blockchain, and digital marketing. I turn complex technical ideas into clear stories, useful resources, and mutually valuable collaboration opportunities while staying grounded in communication, community, and meaningful social impact.
+                    {content.about.body}
                   </p>
                 </div>
 
@@ -202,8 +199,8 @@ export default function Home() {
 
       <section id="education" className={centeredSectionClass}>
         <SectionHeader
-          title="Background Education"
-          summary="The academic background that shapes my foundation, way of thinking, and professional growth direction."
+          title={content.sections.education.title}
+          summary={content.sections.education.summary}
         />
         <div className="relative space-y-6">
           <div className="rope-line-vertical absolute left-[1.35rem] top-3 hidden h-[calc(100%-1.5rem)] md:block" />
@@ -230,10 +227,10 @@ export default function Home() {
                     <p className="mb-3 font-semibold text-[#0369A1]">{item.place}</p>
                     <div className="mb-4 flex flex-wrap gap-2">
                       <span className="rounded-full border border-[#BAE6FD] bg-[#F0F9FF] px-4 py-1.5 text-xs font-bold text-[#0284C7]">
-                        4th Semester
+                        {content.education.semester}
                       </span>
                       <span className="rounded-full border border-[#FEF08A] bg-[#FEF9C3] px-4 py-1.5 text-xs font-bold text-[#A16207]">
-                        GPA 3.97
+                        {content.education.gpa}
                       </span>
                     </div>
                     <p className="leading-relaxed text-[#475569]">{item.desc}</p>
@@ -247,8 +244,8 @@ export default function Home() {
 
       <section id="tools" className={centeredSectionClass}>
         <SectionHeader
-          title="Tools & Tech Stack"
-          summary="The technologies, frameworks, and platforms that support my workflow across frontend, backend, Web3, and product development."
+          title={content.sections.tools.title}
+          summary={content.sections.tools.summary}
         />
         <div className="mobile-rope-stack relative grid grid-cols-1 gap-5 md:grid-cols-2 md:items-stretch md:gap-6">
           <div className="mobile-rope-line rope-line-vertical absolute md:hidden" />
@@ -282,16 +279,16 @@ export default function Home() {
 
       <section id="certificates" className={centeredSectionClass}>
         <SectionHeader
-          title="Licenses & Certificates"
-          summary="A record of credentials, awards, and learning milestones that validate my skills and professional growth."
+          title={content.sections.certificates.title}
+          summary={content.sections.certificates.summary}
         />
         <CertificateMarquee certificates={certificateItems} />
       </section>
 
       <section id="career" className={centeredSectionClass}>
         <SectionHeader
-          title="Career"
-          summary="A summary of work experience, creative roles, and professional contributions that shaped my communication, business, and technology skills."
+          title={content.sections.career.title}
+          summary={content.sections.career.summary}
         />
         <div className="mobile-rope-stack relative grid grid-cols-1 gap-5 md:gap-6 lg:grid-cols-3">
           <div className="mobile-rope-line rope-line-vertical absolute md:hidden" />
@@ -336,8 +333,8 @@ export default function Home() {
 
       <section id="startup" className={centeredSectionClass}>
         <SectionHeader
-          title="Startup"
-          summary="This section highlights the digital business initiative I am building, from brand identity to product direction."
+          title={content.sections.startup.title}
+          summary={content.sections.startup.summary}
         />
         <article className="shadow-watercolor relative overflow-hidden p-5 sm:p-8 md:p-10">
           <div className="relative grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
@@ -357,15 +354,14 @@ export default function Home() {
 
             <div className="relative">
               <h3 className="section-readable mb-4 text-center text-3xl font-black leading-tight text-[#0F172A] md:text-5xl lg:text-left">
-                Wiboost Store
+                {content.startup.title}
               </h3>
               <p className="section-readable mb-6 max-w-2xl text-base leading-relaxed text-[#475569] sm:mb-8 sm:text-lg">
-                A comprehensive digital service hub in Indonesia for social media growth,
-                game top-ups, data packages, and premium apps in one practical place.
+                {content.startup.description}
               </p>
 
               <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {startupServices.map((service) => (
+                {content.startup.services.map((service) => (
                   <div
                     key={service}
                     className="shadow-watercolor relative rounded-xl bg-white/90 px-6 py-4 transition-transform hover:-translate-y-1"
@@ -382,7 +378,7 @@ export default function Home() {
                 rel="noreferrer"
                 className="mx-auto flex w-fit items-center justify-center rounded-full bg-[#0F172A] px-6 py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-all hover:-translate-y-1 hover:bg-[#0284C7] hover:shadow-lg sm:px-8 sm:py-4 lg:mx-0"
               >
-                Visit Wiboost Store
+                {content.startup.visit}
               </a>
             </div>
           </div>
@@ -391,8 +387,8 @@ export default function Home() {
 
       <section id="activity" className={centeredSectionClass}>
         <SectionHeader
-          title="Activity"
-          summary="A collection of community, social, educational, and personal development activities that reflect how I learn and contribute."
+          title={content.sections.activity.title}
+          summary={content.sections.activity.summary}
         />
         <div className="mobile-rope-stack relative grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           <div className="mobile-rope-line rope-line-vertical absolute md:hidden" />

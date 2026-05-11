@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { BackgroundMusic } from "./components/background-music";
+import { LanguageProvider } from "./components/language-provider";
 import { ScrollRevealController } from "./components/scroll-reveal-controller";
 import { SiteFooter } from "./components/site-footer";
 import { SiteNav } from "./components/site-nav";
@@ -26,11 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${plusJakarta.className} min-h-screen bg-[#F0F7FA] text-[#1E293B]`}>
-        <SiteNav />
-        {children}
-        <SiteFooter />
-        <BackgroundMusic />
-        <ScrollRevealController />
+        <LanguageProvider>
+          <SiteNav />
+          {children}
+          <SiteFooter />
+          <BackgroundMusic />
+          <ScrollRevealController />
+        </LanguageProvider>
       </body>
     </html>
   );

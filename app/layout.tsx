@@ -11,11 +11,12 @@ import { SiteNav } from "./components/site-nav";
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Abid Hanan Wicaksono - Portfolio",
+  title: "Abid Hanan - DevRel",
   description: "Developer Relations Portfolio",
   icons: {
-    icon: "/ahawi-icon.svg",
-    shortcut: "/ahawi-icon.svg",
+    icon: "/icon.jpg",
+    shortcut: "/icon.jpg",
+    apple: "/icon.jpg",
   },
 };
 

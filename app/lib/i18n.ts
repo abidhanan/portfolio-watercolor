@@ -9,8 +9,8 @@ import {
 export type Language = "en" | "id";
 
 export const languageOptions: { code: Language; label: string }[] = [
-  { code: "en", label: "EN" },
   { code: "id", label: "ID" },
+  { code: "en", label: "EN" },
 ];
 
 export const navSections = [
@@ -116,7 +116,7 @@ const uiText = {
       visit: "Visit Wiboost Store",
     },
     footer: {
-      motivation: "Every difficulty is followed by ease.",
+      motivation: "\"Every difficulty is followed by ease.\"",
       contact: "Contact",
       connect: "Let's Connect",
       copyright: "© 2026 Abid Hanan Wicaksono - Built with Next.js & Tailwind",
@@ -210,7 +210,7 @@ const uiText = {
       visit: "Kunjungi Wiboost Store",
     },
     footer: {
-      motivation: "Setiap kesulitan pasti ada kemudahan.",
+      motivation: "\"Setiap kesulitan pasti ada kemudahan.\"",
       contact: "Kontak",
       connect: "Mari Terhubung",
       copyright: "© 2026 Abid Hanan Wicaksono - Dibuat dengan Next.js & Tailwind",

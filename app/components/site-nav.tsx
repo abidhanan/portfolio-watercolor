@@ -14,6 +14,18 @@ function getHrefFromHash() {
   return navSections.find((item) => item.href === `/${window.location.hash}`)?.href ?? null;
 }
 
+function getCleanCurrentPath() {
+  if (typeof window === "undefined") {
+    return "/";
+  }
+
+  return `${window.location.pathname}${window.location.search}` || "/";
+}
+
+function keepAddressClean() {
+  window.history.replaceState(null, "", getCleanCurrentPath());
+}
+
 function getActiveHrefFromPage() {
   if (typeof window === "undefined") {
     return "/#home";
@@ -119,6 +131,7 @@ export function SiteNav() {
       const hashHref = getHrefFromHash();
       if (hashHref) {
         setActiveHref(hashHref);
+        keepAddressClean();
       }
       requestUpdate();
     };
@@ -161,14 +174,11 @@ export function SiteNav() {
       if (clickedHrefRef.current === href) {
         clickedHrefRef.current = null;
       }
-      const hashHref = getHrefFromHash();
-      if (hashHref) {
-        setActiveHref(hashHref);
-      }
+      setActiveHref(getActiveHrefFromPage());
     }, 1200);
 
     if (href === "/#home") {
-      window.history.pushState(null, "", href);
+      keepAddressClean();
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -180,7 +190,7 @@ export function SiteNav() {
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 
     if (href === "/#contact") {
-      window.history.pushState(null, "", href);
+      keepAddressClean();
       window.scrollTo({ top: maxScroll, behavior: "smooth" });
       return;
     }
@@ -189,7 +199,7 @@ export function SiteNav() {
     const centerOffset = Math.max(0, (availableHeight - sectionRect.height) / 2);
     const targetPosition = sectionTop - headerHeight - centerOffset;
 
-    window.history.pushState(null, "", href);
+    keepAddressClean();
     window.scrollTo({
       top: Math.max(0, Math.min(targetPosition, maxScroll)),
       behavior: "smooth",

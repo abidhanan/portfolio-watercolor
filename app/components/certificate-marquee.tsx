@@ -62,20 +62,18 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
             const isDuplicate = index >= certificates.length;
 
             return (
-              <article
+              <button
                 key={`${certificate.title}-${certificate.year}-${index}`}
-                className="shadow-watercolor flex w-72 shrink-0 flex-col rounded-xl border border-[#CFE2F3] bg-white p-4 md:w-80"
+                type="button"
+                tabIndex={isDuplicate ? -1 : 0}
+                onClick={() => openCertificate(certificate)}
+                className="shadow-watercolor flex w-72 shrink-0 cursor-pointer flex-col rounded-xl border border-[#CFE2F3] bg-white p-4 text-left transition-transform hover:-translate-y-1 hover:shadow-lg md:w-80"
                 aria-hidden={isDuplicate}
+                aria-label={`${content.certificates.openLabel} ${certificate.title}`}
               >
                 <div className="relative mb-4 h-48 overflow-hidden rounded-xl border border-[#DCEBF7] bg-white md:h-56">
                   {certificate.image ? (
-                    <button
-                      type="button"
-                      tabIndex={isDuplicate ? -1 : 0}
-                      onClick={() => openCertificate(certificate)}
-                      className="group relative block h-full w-full cursor-pointer"
-                      aria-label={`${content.certificates.openLabel} ${certificate.title}`}
-                    >
+                    <div className="relative h-full w-full">
                       <Image
                         src={certificate.image}
                         alt={`${content.certificates.imageAlt} ${certificate.title}`}
@@ -83,7 +81,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
                         sizes="320px"
                         className="object-contain p-2"
                       />
-                    </button>
+                    </div>
                   ) : (
                     <div className="flex h-full w-full flex-col items-center justify-center bg-[#FEF8E7] p-6 text-center">
                       <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#977418]">
@@ -112,7 +110,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
                     {certificate.desc}
                   </p>
                 </div>
-              </article>
+              </button>
             );
           })}
         </div>

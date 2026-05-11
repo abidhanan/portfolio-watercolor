@@ -5,10 +5,6 @@ import { useEffect } from "react";
 const revealSelectors = [
   "main section .shadow-watercolor",
   "main section article",
-  "main section [class*='rounded-lg'][class*='border']",
-  "main section [class*='rounded-xl'][class*='border']",
-  "main section [class*='rounded-2xl'][class*='border']",
-  "main section [class*='rounded-full'][class*='border']",
 ].join(",");
 
 function isInViewport(element: HTMLElement) {
@@ -18,6 +14,10 @@ function isInViewport(element: HTMLElement) {
 
 export function ScrollRevealController() {
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     const revealElements = Array.from(
       document.querySelectorAll<HTMLElement>(revealSelectors),
     ).filter((element) => {
@@ -25,8 +25,6 @@ export function ScrollRevealController() {
     });
 
     const sectionCounters = new Map<Element, number>();
-    let scrollDirection: "down" | "up" = "down";
-    let previousScrollY = window.scrollY;
 
     for (const element of revealElements) {
       const section = element.closest("section");
@@ -34,7 +32,7 @@ export function ScrollRevealController() {
       sectionCounters.set(section ?? element, sectionIndex + 1);
 
       element.dataset.scrollReveal = "";
-      element.style.setProperty("--reveal-delay", `${Math.min(sectionIndex * 45, 220)}ms`);
+      element.style.setProperty("--reveal-delay", `${Math.min(sectionIndex * 35, 140)}ms`);
 
       if (isInViewport(element)) {
         element.classList.add("is-revealed");
@@ -43,40 +41,30 @@ export function ScrollRevealController() {
 
     document.documentElement.classList.add("reveal-ready");
 
-    const updateScrollDirection = () => {
-      const currentScrollY = window.scrollY;
-      scrollDirection = currentScrollY >= previousScrollY ? "down" : "up";
-      previousScrollY = currentScrollY;
-    };
-
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          const element = entry.target as HTMLElement;
-
           if (entry.isIntersecting) {
-            element.dataset.revealDirection = scrollDirection;
+            const element = entry.target as HTMLElement;
             element.classList.add("is-revealed");
-          } else {
-            element.classList.remove("is-revealed");
+            observer.unobserve(element);
           }
         }
       },
       {
-        rootMargin: "0px 0px -8% 0px",
-        threshold: 0.08,
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.12,
       },
     );
 
     for (const element of revealElements) {
-      observer.observe(element);
+      if (!element.classList.contains("is-revealed")) {
+        observer.observe(element);
+      }
     }
-
-    window.addEventListener("scroll", updateScrollDirection, { passive: true });
 
     return () => {
       observer.disconnect();
-      window.removeEventListener("scroll", updateScrollDirection);
       document.documentElement.classList.remove("reveal-ready");
       for (const element of revealElements) {
         element.classList.remove("is-revealed");

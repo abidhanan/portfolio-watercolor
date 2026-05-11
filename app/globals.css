@@ -27,7 +27,6 @@ footer [class*="rounded-3xl"][class*="border"] {
   border-color: rgba(203, 213, 225, 0.6) !important;
   border-width: 1px !important;
   border-radius: 16px !important;
-  backdrop-filter: blur(8px);
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.9),
     0 12px 24px -10px rgba(15, 23, 42, 0.08),
@@ -50,8 +49,8 @@ footer [class*="rounded-full"][class*="border"] {
 /* Navigasi efek kaca buram (Frosted Sea Glass) */
 .paper-nav {
   background-color: rgba(248, 250, 252, 0.9) !important;
-  backdrop-filter: blur(20px) saturate(1.2);
-  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  backdrop-filter: blur(12px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
   border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
   box-shadow: 0 6px 28px -12px rgba(15, 23, 42, 0.12);
 }
@@ -167,27 +166,18 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover 
 
 html.reveal-ready [data-scroll-reveal] {
   opacity: 0;
-  translate: 0 1.6rem;
-  scale: 0.98;
-  filter: blur(5px);
+  transform: translate3d(0, 1.25rem, 0);
   transition:
-    opacity 650ms ease,
-    translate 650ms cubic-bezier(0.22, 1, 0.36, 1),
-    scale 650ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 650ms ease;
+    opacity 420ms ease,
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, translate, scale, filter;
-}
-
-html.reveal-ready [data-scroll-reveal][data-reveal-direction="up"] {
-  translate: 0 -1.6rem;
+  will-change: opacity, transform;
 }
 
 html.reveal-ready [data-scroll-reveal].is-revealed {
   opacity: 1;
-  translate: 0 0;
-  scale: 1;
-  filter: blur(0);
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
 }
 
 .certificate-marquee-mask {
@@ -231,9 +221,6 @@ body::before {
   background-size: cover;
   background-repeat: no-repeat;
   pointer-events: none;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  will-change: transform;
 }
 
 body::after {
@@ -252,9 +239,7 @@ body::after {
   .certificate-marquee-track {
     animation: none;
     opacity: 1 !important;
-    translate: 0 0 !important;
-    scale: 1 !important;
-    filter: none !important;
+    transform: none !important;
     transition: none !important;
   }
 }

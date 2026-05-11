@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   title: "Abid Hanan - DevRel",
   description: "Developer Relations Portfolio",
   icons: {
-    icon: "/icon.jpg",
-    shortcut: "/icon.jpg",
-    apple: "/icon.jpg",
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
   },
 };
 

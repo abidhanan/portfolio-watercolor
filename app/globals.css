@@ -164,6 +164,31 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover 
   margin-left: calc(var(--mobile-rope-x) - 0.625rem);
 }
 
+.startup-rope-stack {
+  --startup-rope-x: var(--mobile-rope-x);
+}
+
+.startup-rope-line {
+  bottom: 2rem;
+  left: calc(var(--startup-rope-x) - 0.225rem);
+  top: 2rem;
+  z-index: 0;
+}
+
+.startup-rope-knot {
+  margin-left: calc(var(--startup-rope-x) - 0.625rem);
+}
+
+@media (min-width: 768px) {
+  .startup-rope-stack {
+    --startup-rope-x: 1.625rem;
+  }
+
+  .startup-rope-knot {
+    margin-left: calc(var(--startup-rope-x) - 0.875rem);
+  }
+}
+
 html.reveal-ready [data-scroll-reveal] {
   opacity: 0;
   transform: translate3d(0, 1.25rem, 0);

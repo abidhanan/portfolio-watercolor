@@ -336,15 +336,14 @@ export default function Home() {
           title={content.sections.startup.title}
           summary={content.sections.startup.summary}
         />
-        <div className="mobile-rope-stack relative space-y-5 md:space-y-7">
-          <div className="mobile-rope-line rope-line-vertical absolute md:hidden" />
-          <div className="rope-line-vertical absolute left-[1.35rem] top-8 hidden h-[calc(100%-4rem)] md:block" />
+        <div className="startup-rope-stack mobile-rope-stack relative space-y-5 md:space-y-7">
+          <div className="startup-rope-line rope-line-vertical absolute" />
           {content.startup.items.map((startup) => (
             <div
               key={startup.title}
               className="mobile-rope-item relative grid grid-cols-[2.5rem_1fr] gap-0 md:grid-cols-[4rem_1fr]"
             >
-              <div className="mobile-rope-knot rope-knot z-10 mt-8 h-5 w-5 rounded-full md:ml-3 md:mt-10 md:h-7 md:w-7" />
+              <div className="startup-rope-knot rope-knot z-10 mt-8 h-5 w-5 rounded-full md:mt-10 md:h-7 md:w-7" />
               <article className="shadow-watercolor relative overflow-hidden p-5 sm:p-8 md:p-10">
                 <div className="relative grid grid-cols-1 gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:gap-12">
                   <div className="relative mx-auto flex h-full w-full max-w-sm items-center justify-center">

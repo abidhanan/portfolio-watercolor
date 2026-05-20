@@ -336,53 +336,65 @@ export default function Home() {
           title={content.sections.startup.title}
           summary={content.sections.startup.summary}
         />
-        <article className="shadow-watercolor relative overflow-hidden p-5 sm:p-8 md:p-10">
-          <div className="relative grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
-            <div className="relative mx-auto flex w-full max-w-sm items-center justify-center h-full">
-              <div className="shadow-watercolor relative z-10 h-52 w-52 overflow-hidden rounded-2xl bg-white p-5 sm:h-64 sm:w-64 sm:p-6">
-                <div className="relative h-full w-full rounded-xl overflow-hidden bg-gray-50 border border-gray-100">
-                  <Image
-                    src="/wiboostore-logo.jpeg"
-                    alt="Wiboost Store logo"
-                    fill
-                    sizes="320px"
-                    className="object-contain p-4"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <h3 className="section-readable mb-4 text-center text-3xl font-black leading-tight text-[#0F172A] md:text-5xl lg:text-left">
-                {content.startup.title}
-              </h3>
-              <p className="section-readable mb-6 max-w-2xl text-base leading-relaxed text-[#475569] sm:mb-8 sm:text-lg">
-                {content.startup.description}
-              </p>
-
-              <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {content.startup.services.map((service) => (
-                  <div
-                    key={service}
-                    className="shadow-watercolor relative rounded-xl bg-white/90 px-6 py-4 transition-transform hover:-translate-y-1"
-                  >
-                    <span className="rope-knot absolute -left-2.5 top-1/2 h-5 w-5 -translate-y-1/2 rounded-full" />
-                    <p className="pl-3 text-sm font-bold text-[#1E293B]">{service}</p>
+        <div className="mobile-rope-stack relative space-y-5 md:space-y-7">
+          <div className="mobile-rope-line rope-line-vertical absolute md:hidden" />
+          <div className="rope-line-vertical absolute left-[1.35rem] top-8 hidden h-[calc(100%-4rem)] md:block" />
+          {content.startup.items.map((startup) => (
+            <div
+              key={startup.title}
+              className="mobile-rope-item relative grid grid-cols-[2.5rem_1fr] gap-0 md:grid-cols-[4rem_1fr]"
+            >
+              <div className="mobile-rope-knot rope-knot z-10 mt-8 h-5 w-5 rounded-full md:ml-3 md:mt-10 md:h-7 md:w-7" />
+              <article className="shadow-watercolor relative overflow-hidden p-5 sm:p-8 md:p-10">
+                <div className="relative grid grid-cols-1 gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:gap-12">
+                  <div className="relative mx-auto flex h-full w-full max-w-sm items-center justify-center">
+                    <div className="shadow-watercolor relative z-10 h-52 w-52 overflow-hidden rounded-2xl bg-white p-5 sm:h-64 sm:w-64 sm:p-6">
+                      <div className="relative h-full w-full overflow-hidden rounded-xl border border-gray-100 bg-gray-50">
+                        <Image
+                          src={startup.logo}
+                          alt={startup.logoAlt}
+                          fill
+                          sizes="320px"
+                          className="object-contain p-4"
+                        />
+                      </div>
+                    </div>
                   </div>
-                ))}
-              </div>
 
-              <a
-                href="https://wiboostore.com"
-                target="_blank"
-                rel="noreferrer"
-                className="mx-auto flex w-fit items-center justify-center rounded-full bg-[#0F172A] px-6 py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-all hover:-translate-y-1 hover:bg-[#0284C7] hover:shadow-lg sm:px-8 sm:py-4 lg:mx-0"
-              >
-                {content.startup.visit}
-              </a>
+                  <div className="relative">
+                    <h3 className="section-readable mb-4 text-center text-3xl font-black leading-tight text-[#0F172A] md:text-5xl lg:text-left">
+                      {startup.title}
+                    </h3>
+                    <p className="section-readable mb-6 max-w-2xl text-base leading-relaxed text-[#475569] sm:mb-8 sm:text-lg">
+                      {startup.description}
+                    </p>
+
+                    <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      {startup.services.map((service) => (
+                        <div
+                          key={service}
+                          className="shadow-watercolor relative rounded-xl bg-white/90 px-6 py-4 transition-transform hover:-translate-y-1"
+                        >
+                          <span className="rope-knot absolute -left-2.5 top-1/2 h-5 w-5 -translate-y-1/2 rounded-full" />
+                          <p className="pl-3 text-sm font-bold text-[#1E293B]">{service}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <a
+                      href={startup.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mx-auto flex w-fit items-center justify-center rounded-full bg-[#0F172A] px-6 py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-all hover:-translate-y-1 hover:bg-[#0284C7] hover:shadow-lg sm:px-8 sm:py-4 lg:mx-0"
+                    >
+                      {startup.visit}
+                    </a>
+                  </div>
+                </div>
+              </article>
             </div>
-          </div>
-        </article>
+          ))}
+        </div>
       </section>
 
       <section id="activity" className={centeredSectionClass}>

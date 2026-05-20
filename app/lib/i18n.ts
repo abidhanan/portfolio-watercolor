@@ -84,7 +84,7 @@ const uiText = {
       startup: {
         title: "Startup",
         summary:
-          "This section highlights the digital business initiative I am building, from brand identity to product direction.",
+          "This section highlights the digital business initiatives I am building, from brand identity to product direction.",
       },
       activity: {
         title: "Activity",
@@ -104,16 +104,38 @@ const uiText = {
       closeLabel: "Close certificate",
     },
     startup: {
-      title: "Wiboost Store",
-      description:
-        "A comprehensive digital service hub in Indonesia for social media growth, game top-ups, data packages, and premium apps in one practical place.",
-      services: [
-        "Social media boosting services",
-        "Game top-ups",
-        "Data packages",
-        "Premium apps",
+      items: [
+        {
+          title: "Wiboost Store",
+          description:
+            "A comprehensive digital service hub in Indonesia for social media growth, game top-ups, data packages, and premium apps in one practical place.",
+          services: [
+            "Social media boosting services",
+            "Game top-ups",
+            "Data packages",
+            "Premium apps",
+          ],
+          visit: "Visit Wiboost Store",
+          href: "https://wiboostore.com",
+          logo: "/wiboostore-logo.jpeg",
+          logoAlt: "Wiboost Store logo",
+        },
+        {
+          title: "Nocoding",
+          description:
+            "A website development service for different website needs, helping people and brands build clean, practical, and ready-to-use websites.",
+          services: [
+            "Company profile websites",
+            "Portfolio websites",
+            "Online store websites",
+            "Landing pages",
+          ],
+          visit: "Visit Nocoding",
+          href: "https://nocoding.web.id",
+          logo: "/nocoding-logo.jpeg",
+          logoAlt: "Nocoding logo",
+        },
       ],
-      visit: "Visit Wiboost Store",
     },
     footer: {
       motivation: "\"Every difficulty is followed by ease.\"",
@@ -198,16 +220,38 @@ const uiText = {
       closeLabel: "Tutup sertifikat",
     },
     startup: {
-      title: "Wiboost Store",
-      description:
-        "Pusat layanan digital lengkap di Indonesia untuk pertumbuhan media sosial, top up game, paket data, dan aplikasi premium dalam satu tempat praktis.",
-      services: [
-        "Layanan suntik sosmed",
-        "Top up game",
-        "Paket data",
-        "Aplikasi premium",
+      items: [
+        {
+          title: "Wiboost Store",
+          description:
+            "Pusat layanan digital lengkap di Indonesia untuk pertumbuhan media sosial, top up game, paket data, dan aplikasi premium dalam satu tempat praktis.",
+          services: [
+            "Layanan suntik sosmed",
+            "Top up game",
+            "Paket data",
+            "Aplikasi premium",
+          ],
+          visit: "Kunjungi Wiboost Store",
+          href: "https://wiboostore.com",
+          logo: "/wiboostore-logo.jpeg",
+          logoAlt: "Logo Wiboost Store",
+        },
+        {
+          title: "Nocoding",
+          description:
+            "Jasa pembuatan segala jenis website untuk membantu personal, bisnis, dan brand membangun website yang rapi, praktis, dan siap digunakan.",
+          services: [
+            "Website company profile",
+            "Website portofolio",
+            "Website toko online",
+            "Landing page",
+          ],
+          visit: "Kunjungi Nocoding",
+          href: "https://nocoding.web.id",
+          logo: "/nocoding-logo.jpeg",
+          logoAlt: "Logo Nocoding",
+        },
       ],
-      visit: "Kunjungi Wiboost Store",
     },
     footer: {
       motivation: "\"Setiap kesulitan pasti ada kemudahan.\"",

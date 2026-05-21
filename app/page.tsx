@@ -354,7 +354,11 @@ export default function Home() {
                           alt={startup.logoAlt}
                           fill
                           sizes="320px"
-                          className="object-contain p-4"
+                          className={
+                            startup.logo === "/wiboostore-logo.jpeg"
+                              ? "object-cover"
+                              : "object-contain p-4"
+                          }
                         />
                       </div>
                     </div>

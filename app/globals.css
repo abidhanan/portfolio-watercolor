@@ -166,12 +166,13 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover 
 
 .startup-rope-stack {
   --startup-rope-x: var(--mobile-rope-x);
+  --startup-rope-start: 2.625rem;
 }
 
 .startup-rope-line {
   bottom: 2rem;
   left: calc(var(--startup-rope-x) - 0.225rem);
-  top: 2rem;
+  top: var(--startup-rope-start);
   z-index: 0;
 }
 
@@ -182,6 +183,7 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover 
 @media (min-width: 768px) {
   .startup-rope-stack {
     --startup-rope-x: 1.625rem;
+    --startup-rope-start: 3.375rem;
   }
 
   .startup-rope-knot {

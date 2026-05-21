@@ -209,6 +209,15 @@ export const careerItems: CareerItem[] = [
 
 export const certificateItems = [
   {
+    title: "Certificate of Web3 University Tour",
+    issuer: "Coinversity",
+    year: "May 2026",
+    issued: "Issued May 2026",
+    credentialId: "Associate",
+    image: "/certificate-web3-university-tour-coinversity.jpg",
+    desc: "In recognition of the role as Associate for the Web3 University Tour, contributing to the successful execution of program activities and supporting the coordination of event initiatives.",
+  },
+  {
     title: "Best GPA Achievement 3.97/4.00",
     issuer: "Sugeng Hartono University",
     year: "Feb 2026",
@@ -220,7 +229,7 @@ export const certificateItems = [
   {
     title: "Sui Developer Workshop",
     issuer: "Sui Foundation",
-    year: "Workshop Completion",
+    year: "Feb 2026",
     issued: "Certificate Workshop Completion",
     credentialId: "Modules 1-5",
     image: "/certificate-sui-workshop.jpg",

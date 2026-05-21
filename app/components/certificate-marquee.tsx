@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { X } from "lucide-react";
-import { useEffect, useState } from "react";
+import type { MouseEvent, PointerEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "./language-provider";
 
 type CertificateItem = {
@@ -21,6 +22,14 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
   const { content } = useLanguage();
   const [selectedCertificate, setSelectedCertificate] = useState<CertificateItem | null>(null);
   const [overlayTop, setOverlayTop] = useState(0);
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const dragStateRef = useRef({
+    active: false,
+    pointerId: -1,
+    scrollLeft: 0,
+    startX: 0,
+  });
+  const suppressClickRef = useRef(false);
 
   useEffect(() => {
     if (!selectedCertificate) {
@@ -54,9 +63,85 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
     setSelectedCertificate(certificate);
   }
 
+  function handlePointerDown(event: PointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "mouse" && event.button !== 0) {
+      return;
+    }
+
+    const scroller = scrollerRef.current;
+
+    if (!scroller) {
+      return;
+    }
+
+    dragStateRef.current = {
+      active: true,
+      pointerId: event.pointerId,
+      scrollLeft: scroller.scrollLeft,
+      startX: event.clientX,
+    };
+    suppressClickRef.current = false;
+    scroller.classList.add("is-dragging");
+    scroller.setPointerCapture(event.pointerId);
+  }
+
+  function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
+    const scroller = scrollerRef.current;
+    const dragState = dragStateRef.current;
+
+    if (!scroller || !dragState.active) {
+      return;
+    }
+
+    const deltaX = event.clientX - dragState.startX;
+
+    if (Math.abs(deltaX) > 6) {
+      suppressClickRef.current = true;
+    }
+
+    scroller.scrollLeft = dragState.scrollLeft - deltaX;
+  }
+
+  function stopDragging(event: PointerEvent<HTMLDivElement>) {
+    const scroller = scrollerRef.current;
+    const dragState = dragStateRef.current;
+
+    if (!scroller || !dragState.active || dragState.pointerId !== event.pointerId) {
+      return;
+    }
+
+    dragStateRef.current.active = false;
+    scroller.classList.remove("is-dragging");
+
+    if (scroller.hasPointerCapture(event.pointerId)) {
+      scroller.releasePointerCapture(event.pointerId);
+    }
+  }
+
+  function handleCertificateClick(
+    event: MouseEvent<HTMLButtonElement>,
+    certificate: CertificateItem,
+  ) {
+    if (suppressClickRef.current) {
+      event.preventDefault();
+      event.stopPropagation();
+      suppressClickRef.current = false;
+      return;
+    }
+
+    openCertificate(certificate);
+  }
+
   return (
     <>
-      <div className="certificate-marquee-mask relative left-1/2 w-screen -translate-x-1/2 overflow-hidden py-2">
+      <div
+        ref={scrollerRef}
+        className="certificate-marquee-mask certificate-marquee-scroller relative left-1/2 w-screen -translate-x-1/2 overflow-hidden py-2"
+        onPointerCancel={stopDragging}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={stopDragging}
+      >
         <div className="certificate-marquee-track flex w-max gap-5">
           {[...certificates, ...certificates].map((certificate, index) => {
             const isDuplicate = index >= certificates.length;
@@ -66,7 +151,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
                 key={`${certificate.title}-${certificate.year}-${index}`}
                 type="button"
                 tabIndex={isDuplicate ? -1 : 0}
-                onClick={() => openCertificate(certificate)}
+                onClick={(event) => handleCertificateClick(event, certificate)}
                 className="shadow-watercolor flex w-72 shrink-0 cursor-pointer flex-col rounded-xl border border-[#CFE2F3] bg-white p-4 text-left transition-transform hover:-translate-y-1 hover:shadow-lg md:w-80"
                 aria-hidden={isDuplicate}
                 aria-label={`${content.certificates.openLabel} ${certificate.title}`}

@@ -355,6 +355,13 @@ const careerId: Partial<(typeof careerItems)[number]>[] = [
 
 const certificateId: Partial<(typeof certificateItems)[number]>[] = [
   {
+    title: "Certificate of Web3 University Tour",
+    issuer: "Coinversity",
+    issued: "Diterbitkan Mei 2026",
+    credentialId: "Associate",
+    desc: "Sebagai pengakuan atas peran sebagai Associate dalam Web3 University Tour, berkontribusi pada keberhasilan pelaksanaan kegiatan program dan mendukung koordinasi inisiatif acara.",
+  },
+  {
     title: "Indeks Prestasi Terbaik 3,97/4,00",
     issuer: "Universitas Sugeng Hartono",
     issued: "Diterbitkan Feb 2026",

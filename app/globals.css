@@ -229,6 +229,7 @@ html.reveal-ready [data-scroll-reveal].is-revealed {
   cursor: grabbing;
 }
 
+.certificate-marquee-scroller.is-interacting .certificate-marquee-track,
 .certificate-marquee-scroller.is-dragging .certificate-marquee-track {
   animation-play-state: paused;
 }

@@ -25,6 +25,8 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const dragStateRef = useRef({
     active: false,
+    certificate: null as CertificateItem | null,
+    moved: false,
     pointerId: -1,
     scrollLeft: 0,
     startX: 0,
@@ -74,15 +76,23 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
       return;
     }
 
+    const certificateButton = (event.target as HTMLElement).closest<HTMLButtonElement>(
+      "[data-certificate-index]",
+    );
+    const certificateIndex = certificateButton?.dataset.certificateIndex
+      ? Number(certificateButton.dataset.certificateIndex)
+      : -1;
+
     dragStateRef.current = {
       active: true,
+      certificate: certificates[certificateIndex] ?? null,
+      moved: false,
       pointerId: event.pointerId,
       scrollLeft: scroller.scrollLeft,
       startX: event.clientX,
     };
     suppressClickRef.current = false;
-    scroller.classList.add("is-dragging");
-    scroller.setPointerCapture(event.pointerId);
+    scroller.classList.add("is-interacting");
   }
 
   function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
@@ -97,12 +107,21 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
 
     if (Math.abs(deltaX) > 6) {
       suppressClickRef.current = true;
+      dragState.moved = true;
+      scroller.classList.add("is-dragging");
+      event.preventDefault();
     }
 
     scroller.scrollLeft = dragState.scrollLeft - deltaX;
   }
 
-  function stopDragging(event: PointerEvent<HTMLDivElement>) {
+  function resetSuppressClick() {
+    window.setTimeout(() => {
+      suppressClickRef.current = false;
+    }, 0);
+  }
+
+  function finishPointerInteraction(event: PointerEvent<HTMLDivElement>, shouldOpen: boolean) {
     const scroller = scrollerRef.current;
     const dragState = dragStateRef.current;
 
@@ -110,12 +129,29 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
       return;
     }
 
-    dragStateRef.current.active = false;
-    scroller.classList.remove("is-dragging");
+    const certificateToOpen = shouldOpen && !dragState.moved ? dragState.certificate : null;
 
-    if (scroller.hasPointerCapture(event.pointerId)) {
-      scroller.releasePointerCapture(event.pointerId);
+    dragStateRef.current.active = false;
+    dragStateRef.current.certificate = null;
+    dragStateRef.current.moved = false;
+    scroller.classList.remove("is-dragging");
+    scroller.classList.remove("is-interacting");
+
+    if (certificateToOpen) {
+      suppressClickRef.current = true;
+      openCertificate(certificateToOpen);
+      resetSuppressClick();
+    } else if (suppressClickRef.current) {
+      resetSuppressClick();
     }
+  }
+
+  function stopDragging(event: PointerEvent<HTMLDivElement>) {
+    finishPointerInteraction(event, false);
+  }
+
+  function handlePointerUp(event: PointerEvent<HTMLDivElement>) {
+    finishPointerInteraction(event, true);
   }
 
   function handleCertificateClick(
@@ -139,8 +175,9 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
         className="certificate-marquee-mask certificate-marquee-scroller relative left-1/2 w-screen -translate-x-1/2 overflow-hidden py-2"
         onPointerCancel={stopDragging}
         onPointerDown={handlePointerDown}
+        onPointerLeave={stopDragging}
         onPointerMove={handlePointerMove}
-        onPointerUp={stopDragging}
+        onPointerUp={handlePointerUp}
       >
         <div className="certificate-marquee-track flex w-max gap-5">
           {[...certificates, ...certificates].map((certificate, index) => {
@@ -150,6 +187,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
               <button
                 key={`${certificate.title}-${certificate.year}-${index}`}
                 type="button"
+                data-certificate-index={index % certificates.length}
                 tabIndex={isDuplicate ? -1 : 0}
                 onClick={(event) => handleCertificateClick(event, certificate)}
                 className="shadow-watercolor flex w-72 shrink-0 cursor-pointer flex-col rounded-xl border border-[#CFE2F3] bg-white p-4 text-left transition-transform hover:-translate-y-1 hover:shadow-lg md:w-80"

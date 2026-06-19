@@ -257,7 +257,7 @@ const uiText = {
       motivation: "\"Setiap kesulitan pasti ada kemudahan.\"",
       contact: "Kontak",
       connect: "Mari Terhubung",
-      copyright: "© 2026 Abid Hanan Wicaksono - Dibuat dengan Next.js & Tailwind",
+      copyright: "© 2026 Abid Hanan Wicaksono - Dibuat dengan cinta.",
     },
   },
 } as const;

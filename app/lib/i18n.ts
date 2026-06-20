@@ -141,7 +141,7 @@ const uiText = {
       motivation: "\"Every difficulty is followed by ease.\"",
       contact: "Contact",
       connect: "Let's Connect",
-      copyright: "© 2026 Abid Hanan Wicaksono - Built with Next.js & Tailwind",
+      copyright: "© 2026 Abid Hanan Wicaksono - Made with love.",
     },
   },
   id: {

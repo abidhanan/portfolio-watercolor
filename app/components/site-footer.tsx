@@ -12,7 +12,7 @@ export function SiteFooter() {
       id="contact"
       className="paper-nav scroll-mt-28"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-7 md:px-10 xl:px-12">
+      <div className="mx-auto w-full max-w-7xl px-4 pt-6 pb-0 sm:px-6 sm:pt-7 sm:pb-0 md:px-10 xl:px-12">
         <div className="grid gap-5 lg:grid-cols-3 lg:items-start">
           <div className="flex flex-col items-center justify-start gap-2 text-center lg:items-start lg:text-left">
             <p className="section-readable text-lg font-black tracking-tight text-[#0F172A]">
@@ -46,7 +46,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <p className="section-readable mt-5 border-t border-[#DCEBF7] pt-4 text-center text-xs font-medium text-[#64748B] sm:text-sm">
+        <p className="section-readable mt-5 flex min-h-16 items-center justify-center border-t border-[#DCEBF7] text-center text-xs font-medium text-[#64748B] sm:text-sm">
           {content.footer.copyright}
         </p>
       </div>

@@ -54,6 +54,7 @@ export const techGroups: TechGroup[] = [
   {
     title: "Backend, API & Database",
     tools: [
+      { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
       { name: "Laravel", logo: "https://cdn.simpleicons.org/laravel/FF2D20" },
       { name: "REST API", logo: "https://cdn.simpleicons.org/openapiinitiative/6BA539" },
       { name: "Laravel Sanctum", logo: "https://cdn.simpleicons.org/laravel/FF2D20" },
@@ -96,11 +97,19 @@ export const techGroups: TechGroup[] = [
     ],
   },
   {
+    title: "Analytics & Tracking",
+    tools: [
+      { name: "Google Analytics 4", logo: "https://cdn.simpleicons.org/googleanalytics/E37400" },
+      { name: "Microsoft Clarity", logo: "/logo-clarity.svg" },
+    ],
+  },
+  {
     title: "Business & Service Integrations",
     tools: [
       { name: "Midtrans", mark: "M" },
       { name: "Digiflazz", mark: "D" },
       { name: "OrderSosmed API", mark: "OS" },
+      { name: "Resend", logo: "https://cdn.simpleicons.org/resend/000000" },
     ],
   },
 ];

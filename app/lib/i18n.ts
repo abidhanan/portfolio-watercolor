@@ -271,6 +271,7 @@ const techGroupTitlesId: Record<string, string> = {
   "Blockchain Ecosystems & SDK": "Ekosistem Blockchain & SDK",
   "Design & Collaboration": "Desain & Kolaborasi",
   "Deployment & Developer Workflow": "Deployment & Workflow Developer",
+  "Analytics & Tracking": "Analitik & Pelacakan",
   "Business & Service Integrations": "Integrasi Bisnis & Layanan",
 };
 

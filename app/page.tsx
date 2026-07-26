@@ -23,22 +23,25 @@ type LogoBadgeProps = {
   logo?: string;
   mark?: string;
   size?: "sm" | "md";
+  fill?: boolean;
 };
 
-function LogoBadge({ name, logo, mark, size = "md" }: LogoBadgeProps) {
+function LogoBadge({ name, logo, mark, size = "md", fill = false }: LogoBadgeProps) {
   const badgeSize = size === "sm" ? "h-12 w-12" : "h-14 w-14";
   const logoSize = size === "sm" ? "h-7 w-7" : "h-8 w-8";
 
   return (
     <span
-      className={`${badgeSize} flex shrink-0 items-center justify-center rounded-2xl border border-[#E2E8F0] bg-white shadow-sm`}
+      className={`${badgeSize} flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-sm`}
       title={name}
       aria-label={`${name} logo`}
     >
       {logo ? (
         <span
           aria-hidden="true"
-          className={`${logoSize} block bg-contain bg-center bg-no-repeat`}
+          className={`block bg-center bg-no-repeat ${
+            fill ? "h-full w-full bg-cover" : `${logoSize} bg-contain`
+          }`}
           style={{ backgroundImage: `url(${logo})` }}
         />
       ) : (
@@ -307,6 +310,7 @@ export default function Home() {
                     logo={item.companyLogo}
                     mark={item.companyMark}
                     size="sm"
+                    fill
                   />
                   <p className="w-fit rounded-full border border-[#E2E8F0] bg-[#F1F5F9] px-3 py-1 text-right text-[0.68rem] font-bold text-[#475569] sm:text-xs">
                     {item.period}

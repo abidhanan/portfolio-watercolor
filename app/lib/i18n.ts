@@ -285,7 +285,7 @@ const educationId: Partial<(typeof educationItems)[number]>[] = [
 
 const careerId: Partial<(typeof careerItems)[number]>[] = [
   {
-    period: "Apr 2026 - Sekarang",
+    period: "Apr 2026 - Jun 2026",
     company: "ARMchain - Paruh Waktu",
     desc: "Memperkenalkan solusi teknologi ARMchain kepada audiens global, mengedukasi komunitas tentang inovasi blockchain, dan mendukung pertumbuhan ekosistem melalui inisiatif strategis serta networking.",
     highlights: ["ARMchain", "Edukasi blockchain", "Pertumbuhan ekosistem"],
@@ -297,7 +297,7 @@ const careerId: Partial<(typeof careerItems)[number]>[] = [
     highlights: ["TikTok", "Optimasi konten", "Pertumbuhan audiens"],
   },
   {
-    period: "Jun 2023 - Sekarang",
+    period: "Jun 2023 - Jun 2026",
     company: "TikTok - Paruh Waktu",
     desc: "Berpengalaman dalam digital marketing sebagai affiliator, memanfaatkan TikTok untuk mendorong promosi produk dan penjualan melalui kampanye yang relevan dengan audiens serta berfokus pada konversi.",
     highlights: ["Affiliate marketing", "Promosi produk", "Konversi"],
@@ -307,19 +307,6 @@ const careerId: Partial<(typeof careerItems)[number]>[] = [
     company: "YouTube - Paruh Waktu",
     desc: "Content creator di YouTube yang memanfaatkan analitik media sosial untuk mengembangkan channel dan meningkatkan engagement penonton. Berfokus pada strategi konten berbasis performa dan insight audiens.",
     highlights: ["YouTube", "Insight audiens", "Pertumbuhan channel"],
-  },
-  {
-    period: "Apr 2022 - Sekarang",
-    role: "Entrepreneur",
-    company: "Instagram - Paruh Waktu",
-    desc: "Founder dan entrepreneur yang berfokus pada creative entrepreneurship serta digital marketing untuk produk digital. Mengembangkan dan memasarkan solusi digital yang mendorong engagement pelanggan dan pertumbuhan penjualan.",
-    highlights: ["Entrepreneurship", "Produk digital", "Pertumbuhan penjualan"],
-  },
-  {
-    period: "Mei 2020 - Sekarang",
-    company: "Instagram - Paruh Waktu",
-    desc: "Berpengalaman dalam digital marketing, khususnya strategi media sosial dan manajemen kampanye. Berfokus menghadirkan solusi pemasaran yang efektif untuk brand seperti Scarlett Whitening dan meningkatkan brand awareness.",
-    highlights: ["Digital marketing", "Manajemen kampanye", "Brand awareness"],
   },
   {
     period: "Mei 2019 - Sekarang",

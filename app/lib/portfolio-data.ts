@@ -117,7 +117,7 @@ export const educationItems = [
 
 export const careerItems: CareerItem[] = [
   {
-    period: "Apr 2026 - Present",
+    period: "Apr 2026 - Jun 2026",
     role: "Ambassador",
     company: "ARMchain - Part-time",
     companyLogo: "/logo-armchain.jpg",
@@ -133,7 +133,7 @@ export const careerItems: CareerItem[] = [
     highlights: ["TikTok", "Content optimization", "Audience growth"],
   },
   {
-    period: "Jun 2023 - Present",
+    period: "Jun 2023 - Jun 2026",
     role: "Affiliator",
     company: "TikTok - Part-time",
     companyLogo: "/logo-tiktok.jpg",
@@ -147,22 +147,6 @@ export const careerItems: CareerItem[] = [
     companyLogo: "https://cdn.simpleicons.org/youtube/FF0000",
     desc: "Content creator on YouTube, utilizing social media analytics to grow the channel and enhance viewer engagement. Focused on optimizing content strategies based on performance metrics and audience insights. Currently building a growing YouTube presence with data-driven content.",
     highlights: ["YouTube", "Audience insights", "Channel growth"],
-  },
-  {
-    period: "Apr 2022 - Present",
-    role: "Entrepreneur",
-    company: "Instagram - Part-time",
-    companyLogo: "/logo-instagram.jpg",
-    desc: "Founder and entrepreneur specializing in creative entrepreneurship and digital marketing for digital products. Developed and marketed innovative digital solutions, driving customer engagement and sales growth through scalable online products.",
-    highlights: ["Entrepreneurship", "Digital products", "Sales growth"],
-  },
-  {
-    period: "May 2020 - Present",
-    role: "Social Media Marketing",
-    company: "Instagram - Part-time",
-    companyLogo: "/logo-instagram.jpg",
-    desc: "Experienced in digital marketing, specializing in social media strategy and campaign management. Focused on delivering effective marketing solutions for brands like Scarlett Whitening and elevating brand awareness through targeted campaigns.",
-    highlights: ["Digital marketing", "Campaign management", "Brand awareness"],
   },
   {
     period: "May 2019 - Present",

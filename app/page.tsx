@@ -269,7 +269,7 @@ export default function Home() {
                         toolTone[(groupIndex + toolIndex) % toolTone.length]
                       }`}
                     >
-                      <LogoBadge name={tool.name} logo={tool.logo} mark={tool.mark} size="sm" />
+                      <LogoBadge name={tool.name} logo={tool.logo} mark={tool.mark} size="sm" fill={tool.square} />
                       <span>{tool.name}</span>
                     </div>
                   ))}

@@ -268,7 +268,6 @@ const techGroupTitlesId: Record<string, string> = {
   "Frontend Frameworks & UI": "Framework Frontend & UI",
   "Backend, API & Database": "Backend, API & Database",
   "Smart Contract Tooling": "Tools Smart Contract",
-  "Blockchain Ecosystems & SDK": "Ekosistem Blockchain & SDK",
   "Design & Collaboration": "Desain & Kolaborasi",
   "Deployment & Developer Workflow": "Deployment & Workflow Developer",
   "Analytics & Tracking": "Analitik & Pelacakan",

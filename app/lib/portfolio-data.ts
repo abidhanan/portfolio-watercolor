@@ -2,6 +2,7 @@ type TechTool = {
   name: string;
   logo?: string;
   mark?: string;
+  square?: boolean;
 };
 
 type TechGroup = {
@@ -25,8 +26,8 @@ export const techGroups: TechGroup[] = [
     tools: [
       { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
       { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-      { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-      { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+      { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", square: true },
+      { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", square: true },
     ],
   },
   {
@@ -48,7 +49,6 @@ export const techGroups: TechGroup[] = [
       { name: "Tailwind CSS", logo: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
       { name: "Vite", logo: "https://cdn.simpleicons.org/vite/646CFF" },
       { name: "Blade", logo: "https://cdn.simpleicons.org/laravel/FF2D20" },
-      { name: "React Query", logo: "https://cdn.simpleicons.org/reactquery/FF4154" },
     ],
   },
   {
@@ -57,8 +57,6 @@ export const techGroups: TechGroup[] = [
       { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
       { name: "Laravel", logo: "https://cdn.simpleicons.org/laravel/FF2D20" },
       { name: "REST API", logo: "https://cdn.simpleicons.org/openapiinitiative/6BA539" },
-      { name: "Laravel Sanctum", logo: "https://cdn.simpleicons.org/laravel/FF2D20" },
-      { name: "Eloquent ORM", logo: "https://cdn.simpleicons.org/laravel/FF2D20" },
       { name: "MySQL", logo: "https://cdn.simpleicons.org/mysql/4479A1" },
     ],
   },
@@ -67,18 +65,6 @@ export const techGroups: TechGroup[] = [
     tools: [
       { name: "Hardhat", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hardhat/hardhat-original.svg" },
       { name: "Foundry", logo: "https://getfoundry.sh/foundry-logo.png" },
-    ],
-  },
-  {
-    title: "Blockchain Ecosystems & SDK",
-    tools: [
-      { name: "Sui", logo: "https://cdn.simpleicons.org/sui/4DA2FF" },
-      { name: "Sui dApp Kit", logo: "https://cdn.simpleicons.org/sui/4DA2FF" },
-      { name: "Mysten Sui SDK", logo: "https://cdn.simpleicons.org/sui/4DA2FF" },
-      { name: "btcli", logo: "https://docs.bittensor.com/img/logo.svg" },
-      { name: "bittensor-sdk", logo: "https://docs.bittensor.com/img/logo.svg" },
-      { name: "Subtensor", logo: "https://docs.bittensor.com/img/logo.svg" },
-      { name: "NFT Marketplace", logo: "https://cdn.simpleicons.org/opensea/2081E2" },
     ],
   },
   {
@@ -106,9 +92,9 @@ export const techGroups: TechGroup[] = [
   {
     title: "Business & Service Integrations",
     tools: [
-      { name: "Midtrans", mark: "M" },
-      { name: "Digiflazz", mark: "D" },
-      { name: "OrderSosmed API", mark: "OS" },
+      { name: "Digiflazz", logo: "/logo-digiflazz.png", square: true },
+      { name: "OrderSosmed", logo: "/logo-ordersosmed.jpg", square: true },
+      { name: "Xoftware", logo: "/logo-xoftware.png", square: true },
       { name: "Resend", logo: "https://cdn.simpleicons.org/resend/000000" },
     ],
   },

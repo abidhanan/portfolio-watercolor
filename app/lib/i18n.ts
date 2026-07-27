@@ -364,7 +364,7 @@ const certificateId: Partial<(typeof certificateItems)[number]>[] = [
     issuer: "HIMATIKOM Universitas Lamappapoleonro",
     issued: "Diterbitkan Jul 2026",
     credentialId: "Pemateri",
-    desc: "Pemateri di Webinar Nasional cybersecurity research, membahas deepfake dan social engineering sebagai tantangan baru bagi mahasiswa informatika di era AI.",
+    desc: "Pemateri di Webinar Nasional cybersecurity, membahas deepfake dan social engineering di era AI.",
   },
   {
     title: "Certificate of Web3 University Tour",

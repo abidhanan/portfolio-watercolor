@@ -224,7 +224,7 @@ export const certificateItems = [
     issued: "Issued Jul 2026",
     credentialId: "Speaker",
     image: "/certificate-cybersecurity-webinar.jpg",
-    desc: "Speaker at a National Webinar on cybersecurity research, exploring deepfake and social engineering as new challenges for informatics students in the AI era.",
+    desc: "Speaker at a National Webinar on cybersecurity, exploring deepfake and social engineering in the AI era.",
   },
   {
     title: "Certificate of Web3 University Tour",

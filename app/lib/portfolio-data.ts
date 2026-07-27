@@ -117,7 +117,7 @@ export const careerItems: CareerItem[] = [
   {
     period: "Jul 2026 - Present",
     role: "Marketing & Developer",
-    company: "Helden Inc - Part-time",
+    company: "Helden Inc - Contract",
     companyLogo: "/logo-helden-inc.png",
     desc: "Driving marketing initiatives and building digital products for Helden Inc, a studio crafting gamified experiences for internal communication, blending growth-focused campaigns with hands-on development.",
     highlights: ["Marketing", "Development", "Gamification"],
@@ -125,7 +125,7 @@ export const careerItems: CareerItem[] = [
   {
     period: "Jul 2026 - Present",
     role: "Marketing & Developer",
-    company: "Helden HQ - Part-time",
+    company: "Helden HQ - Contract",
     companyLogo: "/logo-heldenhq.svg",
     logoPadded: true,
     desc: "Supporting Helden HQ as marketing and developer, handling the technology behind trainers' businesses so they can focus on teaching, while running campaigns that grow their reach.",
@@ -134,7 +134,7 @@ export const careerItems: CareerItem[] = [
   {
     period: "Jul 2026 - Present",
     role: "Marketing & Developer",
-    company: "Maua AI - Part-time",
+    company: "Maua AI - Contract",
     companyLogo: "/logo-maua.svg",
     desc: "Working as marketing and developer at Maua AI, a team that takes over digital work, building apps and automations while driving social media growth for clients.",
     highlights: ["AI automation", "App development", "Social growth"],
@@ -233,7 +233,7 @@ export const certificateItems = [
     issued: "Issued May 2026",
     credentialId: "Associate",
     image: "/certificate-web3-university-tour-coinversity.jpg",
-    desc: "In recognition of the role as Associate for the Web3 University Tour, contributing to the successful execution of program activities and supporting the coordination of event initiatives.",
+    desc: "Associate for the Web3 University Tour, supporting program activities and event coordination.",
   },
   {
     title: "Best GPA Achievement 3.97/4.00",
@@ -242,7 +242,7 @@ export const certificateItems = [
     issued: "Issued Feb 2026",
     credentialId: "6/STF/02/2026",
     image: "/certificate-best-gpa.jpg",
-    desc: "Best GPA Achievement certificate for the Computer Science Program, Faculty of Technology, Law, and Business, Sugeng Hartono University, Odd Semester 2025/2026.",
+    desc: "Best GPA Achievement for the Computer Science Program, Sugeng Hartono University (2025/2026).",
   },
   {
     title: "Sui Developer Workshop",
@@ -251,7 +251,7 @@ export const certificateItems = [
     issued: "Certificate Workshop Completion",
     credentialId: "Modules 1-5",
     image: "/certificate-sui-workshop.jpg",
-    desc: "For successfully completing the Sui Developer Workshop modules 1-5, including foundational concepts, hands-on development, and practical implementation within the Sui ecosystem.",
+    desc: "Completed Sui Developer Workshop modules 1-5, covering core concepts and hands-on Sui development.",
   },
   {
     title: "Data Science Course",
@@ -260,7 +260,7 @@ export const certificateItems = [
     issued: "Issued Jan 2026",
     credentialId: "2026/250/57666",
     image: "/certificate-data-science-bisa-ai.jpg",
-    desc: "Data Science certificate from BISA AI Academy for completing a free class with Data Science learning material.",
+    desc: "Data Science certificate from BISA AI Academy for completing a Data Science class.",
   },
   {
     title: "IDEONIC 2026",
@@ -269,7 +269,7 @@ export const certificateItems = [
     issued: "Issued Jan 2026",
     credentialId: "Certificate of Participation",
     image: "/certificate-ideonic-2026.jpg",
-    desc: "Certificate of Participation for joining IDEONIC 2026 International Competition \"Inspiring Ideas, Shaping the Future\" organized by Mercu Buana University (UMB), Jakarta, Indonesia.",
+    desc: "Participant in IDEONIC 2026 International Competition, organized by Mercu Buana University, Jakarta.",
   },
   {
     title: "Certificate of Graduation",
@@ -278,7 +278,7 @@ export const certificateItems = [
     issued: "Google Student Ambassador",
     credentialId: "Class of 2025",
     image: "/certificate-google-student-ambassador.jpg",
-    desc: "Certificate of completion for successful participation as a Google Student Ambassador, selected from a pool of 12,000 students nationwide, and for exceptional leadership in championing the adoption of Google AI within the campus community.",
+    desc: "Google Student Ambassador, selected from 12,000 students for championing Google AI on campus.",
   },
   {
     title: "Gemini Certified Student",
@@ -287,7 +287,7 @@ export const certificateItems = [
     issued: "Issued Oct 2025",
     credentialId: "Expires Oct 2028",
     image: "/certificate-gemini-certified-student.jpg",
-    desc: "Certificate Gemini Student for having demonstrated the knowledge, skills, and basic competencies needed to use Google AI.",
+    desc: "Gemini Certified Student, demonstrating the knowledge and skills needed to use Google AI.",
   },
   {
     title: "Konco Konco Ngonten",
@@ -350,7 +350,7 @@ export const certificateItems = [
     issued: "Issued Apr 2025",
     credentialId: "Participant",
     image: "/certificate-web3-university-tour-yogyakarta.jpg",
-    desc: "Participant certificate for Web3 University Tour Yogyakarta, an educational seminar organized by Binance Academy, Tokocrypto, and Coinvestasi.",
+    desc: "Participant in Web3 University Tour Yogyakarta by Binance Academy, Tokocrypto, and Coinvestasi.",
   },
   {
     title: "Empowering Industries with AI: Strategies for the New Era of Cyber Security",
@@ -359,7 +359,7 @@ export const certificateItems = [
     issued: "Issued Dec 2024",
     credentialId: "65909926-3188-40d5-ad83-730c332585f9",
     image: "/certificate-inixindo-ai-cyber-security.jpg",
-    desc: "Certificate of Attendance for Empowering Industries with AI: Strategies for the New Era of Cyber Security.",
+    desc: "Certificate of Attendance for Empowering Industries with AI in the New Era of Cyber Security.",
   },
 ];
 

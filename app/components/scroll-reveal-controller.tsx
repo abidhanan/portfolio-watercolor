@@ -45,10 +45,13 @@ export function ScrollRevealController() {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
+          const element = entry.target as HTMLElement;
+          // Toggle both ways so every box re-animates whenever it re-enters
+          // the viewport, whether scrolling down or back up.
           if (entry.isIntersecting) {
-            const element = entry.target as HTMLElement;
             element.classList.add("is-revealed");
-            observer.unobserve(element);
+          } else {
+            element.classList.remove("is-revealed");
           }
         }
       },
@@ -59,9 +62,7 @@ export function ScrollRevealController() {
     );
 
     for (const element of revealElements) {
-      if (!element.classList.contains("is-revealed")) {
-        observer.observe(element);
-      }
+      observer.observe(element);
     }
 
     return () => {

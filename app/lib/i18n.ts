@@ -286,19 +286,19 @@ const educationId: Partial<(typeof educationItems)[number]>[] = [
 const careerId: Partial<(typeof careerItems)[number]>[] = [
   {
     period: "Jul 2026 - Sekarang",
-    company: "Helden Inc - Paruh Waktu",
+    company: "Helden Inc - Kontrak",
     desc: "Menjalankan inisiatif marketing dan membangun produk digital untuk Helden Inc, studio yang menciptakan pengalaman gamifikasi untuk komunikasi internal, memadukan kampanye pertumbuhan dengan pengembangan secara langsung.",
     highlights: ["Marketing", "Pengembangan", "Gamifikasi"],
   },
   {
     period: "Jul 2026 - Sekarang",
-    company: "Helden HQ - Paruh Waktu",
+    company: "Helden HQ - Kontrak",
     desc: "Mendukung Helden HQ sebagai marketing dan developer, menangani teknologi di balik bisnis para trainer agar mereka fokus mengajar, sekaligus menjalankan kampanye untuk memperluas jangkauan.",
     highlights: ["Marketing", "Pengembangan web", "Automasi"],
   },
   {
     period: "Jul 2026 - Sekarang",
-    company: "Maua AI - Paruh Waktu",
+    company: "Maua AI - Kontrak",
     desc: "Bekerja sebagai marketing dan developer di Maua AI, tim yang mengambil alih pekerjaan digital, membangun aplikasi dan automasi sekaligus mendorong pertumbuhan media sosial klien.",
     highlights: ["Automasi AI", "Pengembangan aplikasi", "Pertumbuhan sosial"],
   },
@@ -371,37 +371,37 @@ const certificateId: Partial<(typeof certificateItems)[number]>[] = [
     issuer: "Coinversity",
     issued: "Diterbitkan Mei 2026",
     credentialId: "Associate",
-    desc: "Sebagai pengakuan atas peran sebagai Associate dalam Web3 University Tour, berkontribusi pada keberhasilan pelaksanaan kegiatan program dan mendukung koordinasi inisiatif acara.",
+    desc: "Associate untuk Web3 University Tour, mendukung pelaksanaan kegiatan program dan koordinasi acara.",
   },
   {
     title: "Indeks Prestasi Terbaik 3,97/4,00",
     issuer: "Universitas Sugeng Hartono",
     issued: "Diterbitkan Feb 2026",
-    desc: "Sertifikat Indeks Prestasi Terbaik untuk Program Studi Ilmu Komputer, Fakultas Teknologi, Hukum, dan Bisnis, Universitas Sugeng Hartono, Semester Ganjil 2025/2026.",
+    desc: "Indeks Prestasi Terbaik untuk Program Studi Ilmu Komputer, Universitas Sugeng Hartono (2025/2026).",
   },
   {
     issued: "Sertifikat Penyelesaian Workshop",
-    desc: "Berhasil menyelesaikan Sui Developer Workshop modul 1-5, termasuk konsep dasar, pengembangan langsung, dan implementasi praktis dalam ekosistem Sui.",
+    desc: "Menyelesaikan Sui Developer Workshop modul 1-5, mencakup konsep inti dan pengembangan langsung di ekosistem Sui.",
   },
   {
     issuer: "BISA AI Academy (PT BISA Artifisial Indonesia)",
     issued: "Diterbitkan Jan 2026",
-    desc: "Sertifikat Data Science dari BISA AI Academy karena telah menyelesaikan kelas gratis dengan materi Data Science.",
+    desc: "Sertifikat Data Science dari BISA AI Academy atas penyelesaian kelas Data Science.",
   },
   {
     issuer: "Universitas Mercu Buana",
     issued: "Diterbitkan Jan 2026",
-    desc: "Sertifikat partisipasi IDEONIC 2026 International Competition \"Inspiring Ideas, Shaping the Future\" yang diselenggarakan Universitas Mercu Buana (UMB), Jakarta, Indonesia.",
+    desc: "Peserta IDEONIC 2026 International Competition yang diselenggarakan Universitas Mercu Buana, Jakarta.",
   },
   {
     title: "Certificate of Graduation",
     issued: "Google Student Ambassador",
-    desc: "Sertifikat penyelesaian atas partisipasi sebagai Google Student Ambassador, terpilih dari 12.000 mahasiswa nasional, serta kepemimpinan dalam mendorong adopsi Google AI di komunitas kampus.",
+    desc: "Google Student Ambassador, terpilih dari 12.000 mahasiswa untuk mendorong adopsi Google AI di kampus.",
   },
   {
     issued: "Diterbitkan Okt 2025",
     credentialId: "Kedaluwarsa Okt 2028",
-    desc: "Sertifikat Gemini Student karena telah menunjukkan pengetahuan, keterampilan, dan kompetensi dasar untuk menggunakan Google AI.",
+    desc: "Gemini Certified Student, menunjukkan pengetahuan dan keterampilan untuk menggunakan Google AI.",
   },
   {
     issued: "Diterbitkan Agu 2025",
@@ -429,11 +429,11 @@ const certificateId: Partial<(typeof certificateItems)[number]>[] = [
   },
   {
     issued: "Diterbitkan Apr 2025",
-    desc: "Sertifikat peserta Web3 University Tour Yogyakarta, seminar edukatif yang diselenggarakan oleh Binance Academy, Tokocrypto, dan Coinvestasi.",
+    desc: "Peserta Web3 University Tour Yogyakarta oleh Binance Academy, Tokocrypto, dan Coinvestasi.",
   },
   {
     issued: "Diterbitkan Des 2024",
-    desc: "Sertifikat kehadiran untuk acara Empowering Industries with AI: Strategies for the New Era of Cyber Security.",
+    desc: "Sertifikat kehadiran Empowering Industries with AI di era baru cyber security.",
   },
 ];
 

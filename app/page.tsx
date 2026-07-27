@@ -24,11 +24,17 @@ type LogoBadgeProps = {
   mark?: string;
   size?: "sm" | "md";
   fill?: boolean;
+  padded?: boolean;
 };
 
-function LogoBadge({ name, logo, mark, size = "md", fill = false }: LogoBadgeProps) {
+function LogoBadge({ name, logo, mark, size = "md", fill = false, padded = false }: LogoBadgeProps) {
   const badgeSize = size === "sm" ? "h-12 w-12" : "h-14 w-14";
   const logoSize = size === "sm" ? "h-7 w-7" : "h-8 w-8";
+  const logoClass = fill
+    ? padded
+      ? "h-[85%] w-[85%] bg-contain"
+      : "h-full w-full bg-cover"
+    : `${logoSize} bg-contain`;
 
   return (
     <span
@@ -39,9 +45,7 @@ function LogoBadge({ name, logo, mark, size = "md", fill = false }: LogoBadgePro
       {logo ? (
         <span
           aria-hidden="true"
-          className={`block bg-center bg-no-repeat ${
-            fill ? "h-full w-full bg-cover" : `${logoSize} bg-contain`
-          }`}
+          className={`block bg-center bg-no-repeat ${logoClass}`}
           style={{ backgroundImage: `url(${logo})` }}
         />
       ) : (
@@ -265,11 +269,11 @@ export default function Home() {
                   {group.tools.map((tool, toolIndex) => (
                     <div
                       key={tool.name}
-                      className={`flex min-h-[6.25rem] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3 text-center text-xs font-bold shadow-sm transition-transform hover:-translate-y-1 sm:min-h-[7rem] sm:gap-3 sm:px-3 sm:py-4 sm:text-sm md:h-full ${
+                      className={`flex min-h-[7.5rem] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3 text-center text-xs font-bold shadow-sm transition-transform hover:-translate-y-1 sm:min-h-[8rem] sm:gap-3 sm:px-3 sm:py-4 sm:text-sm md:h-full md:min-h-[9rem] ${
                         toolTone[(groupIndex + toolIndex) % toolTone.length]
                       }`}
                     >
-                      <LogoBadge name={tool.name} logo={tool.logo} mark={tool.mark} size="sm" fill={tool.square} />
+                      <LogoBadge name={tool.name} logo={tool.logo} mark={tool.mark} size="sm" fill={tool.square} padded={tool.padded} />
                       <span>{tool.name}</span>
                     </div>
                   ))}

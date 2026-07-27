@@ -131,6 +131,7 @@ const socialItems = [
     label: "X",
     href: "https://x.com/ahawi_channel",
     icon: XIcon,
+    iconClassName: "scale-[0.85]",
   },
   {
     label: "Telegram",
@@ -187,7 +188,7 @@ export function SocialLinks({ size = "md", className = "", wrap = true }: Social
                 aria-hidden="true"
               />
             ) : (
-              <Icon className={iconSize} aria-hidden="true" />
+              <Icon className={`${iconSize} ${item.iconClassName ?? ""}`} aria-hidden="true" />
             )}
           </Link>
         );

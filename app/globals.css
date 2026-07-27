@@ -239,10 +239,6 @@ html.reveal-ready [data-scroll-reveal].is-revealed {
   will-change: transform;
 }
 
-.certificate-marquee-track:hover {
-  animation-play-state: paused;
-}
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 112px;

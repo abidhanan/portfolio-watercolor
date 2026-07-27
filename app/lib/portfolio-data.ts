@@ -3,6 +3,7 @@ type TechTool = {
   logo?: string;
   mark?: string;
   square?: boolean;
+  padded?: boolean;
 };
 
 type TechGroup = {
@@ -94,7 +95,7 @@ export const techGroups: TechGroup[] = [
     title: "Business & Service Integrations",
     tools: [
       { name: "Digiflazz", logo: "/logo-digiflazz.png" },
-      { name: "OrderSosmed", logo: "/logo-ordersosmed.jpg", square: true },
+      { name: "OrderSosmed", logo: "/logo-ordersosmed.jpg", square: true, padded: true },
       { name: "Xoftware", logo: "/logo-xoftware.png" },
       { name: "Resend", logo: "https://cdn.simpleicons.org/resend/000000" },
     ],

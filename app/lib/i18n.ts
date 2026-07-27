@@ -381,7 +381,7 @@ const certificateId: Partial<(typeof certificateItems)[number]>[] = [
   },
   {
     issued: "Sertifikat Penyelesaian Workshop",
-    desc: "Menyelesaikan Sui Developer Workshop modul 1-5, mencakup konsep inti dan pengembangan langsung di ekosistem Sui.",
+    desc: "Menyelesaikan Sui Developer Workshop modul 1-5 tentang konsep inti dan pengembangan Sui.",
   },
   {
     issuer: "BISA AI Academy (PT BISA Artifisial Indonesia)",
@@ -396,12 +396,12 @@ const certificateId: Partial<(typeof certificateItems)[number]>[] = [
   {
     title: "Certificate of Graduation",
     issued: "Google Student Ambassador",
-    desc: "Google Student Ambassador, terpilih dari 12.000 mahasiswa untuk mendorong adopsi Google AI di kampus.",
+    desc: "Google Student Ambassador, terpilih dari 12.000 mahasiswa, mendorong Google AI di kampus.",
   },
   {
     issued: "Diterbitkan Okt 2025",
     credentialId: "Kedaluwarsa Okt 2028",
-    desc: "Gemini Certified Student, menunjukkan pengetahuan dan keterampilan untuk menggunakan Google AI.",
+    desc: "Gemini Certified Student, menguasai keterampilan dasar penggunaan Google AI.",
   },
   {
     issued: "Diterbitkan Agu 2025",

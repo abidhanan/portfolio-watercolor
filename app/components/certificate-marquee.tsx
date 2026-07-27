@@ -94,7 +94,9 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
     const step = (ts: number) => {
       const span = copyWidthRef.current;
       const last = lastTsRef.current ?? ts;
-      const dt = (ts - last) / 1000;
+      // Clamp dt so returning from a backgrounded tab (where rAF is paused)
+      // advances by at most one frame instead of teleporting across the loop.
+      const dt = Math.min((ts - last) / 1000, 0.05);
       lastTsRef.current = ts;
 
       if (!prefersReducedMotion && !pointerDownRef.current && span > 0) {
@@ -142,6 +144,10 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
     offsetRef.current = span > 0
       ? (((startOffsetRef.current - delta) % span) + span) % span
       : 0;
+    // Apply immediately so dragging feels responsive even between rAF frames.
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translate3d(${-offsetRef.current}px, 0, 0)`;
+    }
   }
 
   function endPointer() {

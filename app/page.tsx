@@ -269,7 +269,7 @@ export default function Home() {
                   {group.tools.map((tool, toolIndex) => (
                     <div
                       key={tool.name}
-                      className={`flex min-h-[7.5rem] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3 text-center text-xs font-bold shadow-sm transition-transform hover:-translate-y-1 sm:min-h-[8rem] sm:gap-3 sm:px-3 sm:py-4 sm:text-sm md:h-full md:min-h-[9rem] ${
+                      className={`tool-box flex min-h-[7.5rem] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3 text-center text-xs font-bold shadow-sm transition-transform hover:-translate-y-1 sm:min-h-[8rem] sm:gap-3 sm:px-3 sm:py-4 sm:text-sm md:h-full md:min-h-[9rem] ${
                         toolTone[(groupIndex + toolIndex) % toolTone.length]
                       }`}
                     >
@@ -315,6 +315,7 @@ export default function Home() {
                     mark={item.companyMark}
                     size="sm"
                     fill={!item.logoContain}
+                    padded={item.logoPadded}
                   />
                   <p className="w-fit rounded-full border border-[#E2E8F0] bg-[#F1F5F9] px-3 py-1 text-right text-[0.68rem] font-bold text-[#475569] sm:text-xs">
                     {item.period}

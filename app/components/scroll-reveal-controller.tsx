@@ -5,6 +5,7 @@ import { useEffect } from "react";
 const revealSelectors = [
   "main section .shadow-watercolor",
   "main section article",
+  "main section .tool-box",
 ].join(",");
 
 function isInViewport(element: HTMLElement) {

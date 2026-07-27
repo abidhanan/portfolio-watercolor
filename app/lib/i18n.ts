@@ -298,8 +298,8 @@ const careerId: Partial<(typeof careerItems)[number]>[] = [
   },
   {
     period: "Jul 2026 - Sekarang",
-    company: "Maua - Paruh Waktu",
-    desc: "Bekerja sebagai marketing dan developer di Maua, tim bertenaga AI yang mengambil alih pekerjaan digital, membangun aplikasi dan automasi sekaligus mendorong pertumbuhan media sosial klien.",
+    company: "Maua AI - Paruh Waktu",
+    desc: "Bekerja sebagai marketing dan developer di Maua AI, tim yang mengambil alih pekerjaan digital, membangun aplikasi dan automasi sekaligus mendorong pertumbuhan media sosial klien.",
     highlights: ["Automasi AI", "Pengembangan aplikasi", "Pertumbuhan sosial"],
   },
   {
@@ -364,7 +364,7 @@ const certificateId: Partial<(typeof certificateItems)[number]>[] = [
     issuer: "HIMATIKOM Universitas Lamappapoleonro",
     issued: "Diterbitkan Jul 2026",
     credentialId: "Pemateri",
-    desc: "Diberikan sebagai pemateri dalam Webinar Nasional bertema \"Cybersecurity Research: Bedah Tuntas Deepfake dan Social Engineering sebagai Tantangan Baru bagi Mahasiswa Informatika di Era Artificial Intelligence\", yang diselenggarakan oleh Himpunan Mahasiswa Prodi Teknik Informatika bekerja sama dengan Universitas Lamappapoleonro, Universitas Putra Indonesia YPTK Padang, Institut Sains dan Teknologi Nasional, dan Universitas Sugeng Hartono.",
+    desc: "Pemateri di Webinar Nasional cybersecurity research, membahas deepfake dan social engineering sebagai tantangan baru bagi mahasiswa informatika di era AI.",
   },
   {
     title: "Certificate of Web3 University Tour",

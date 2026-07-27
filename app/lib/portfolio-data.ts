@@ -18,6 +18,7 @@ type CareerItem = {
   companyLogo?: string;
   companyMark?: string;
   logoContain?: boolean;
+  logoPadded?: boolean;
   desc: string;
   highlights: string[];
 };
@@ -126,16 +127,16 @@ export const careerItems: CareerItem[] = [
     role: "Marketing & Developer",
     company: "Helden HQ - Part-time",
     companyLogo: "/logo-heldenhq.svg",
-    logoContain: true,
+    logoPadded: true,
     desc: "Supporting Helden HQ as marketing and developer, handling the technology behind trainers' businesses so they can focus on teaching, while running campaigns that grow their reach.",
     highlights: ["Marketing", "Web development", "Automation"],
   },
   {
     period: "Jul 2026 - Present",
     role: "Marketing & Developer",
-    company: "Maua - Part-time",
-    companyLogo: "/logo-maua.png",
-    desc: "Working as marketing and developer at Maua, an AI-powered team that takes over digital work, building apps and automations while driving social media growth for clients.",
+    company: "Maua AI - Part-time",
+    companyLogo: "/logo-maua.svg",
+    desc: "Working as marketing and developer at Maua AI, a team that takes over digital work, building apps and automations while driving social media growth for clients.",
     highlights: ["AI automation", "App development", "Social growth"],
   },
   {
@@ -223,7 +224,7 @@ export const certificateItems = [
     issued: "Issued Jul 2026",
     credentialId: "Speaker",
     image: "/certificate-cybersecurity-webinar.jpg",
-    desc: "Awarded as a speaker at the National Webinar \"Cybersecurity Research: An In-Depth Look at Deepfake and Social Engineering as New Challenges for Informatics Students in the AI Era,\" held by the Informatics Engineering Student Association with Universitas Lamappapoleonro, Universitas Putra Indonesia YPTK Padang, Institut Sains dan Teknologi Nasional, and Universitas Sugeng Hartono.",
+    desc: "Speaker at a National Webinar on cybersecurity research, exploring deepfake and social engineering as new challenges for informatics students in the AI era.",
   },
   {
     title: "Certificate of Web3 University Tour",

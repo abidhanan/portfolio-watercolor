@@ -310,7 +310,7 @@ export default function Home() {
                     logo={item.companyLogo}
                     mark={item.companyMark}
                     size="sm"
-                    fill
+                    fill={!item.logoContain}
                   />
                   <p className="w-fit rounded-full border border-[#E2E8F0] bg-[#F1F5F9] px-3 py-1 text-right text-[0.68rem] font-bold text-[#475569] sm:text-xs">
                     {item.period}

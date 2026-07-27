@@ -93,7 +93,7 @@ const uiText = {
       },
     },
     education: {
-      semester: "4th Semester",
+      semester: "5th Semester",
       gpa: "GPA 3.97",
     },
     certificates: {
@@ -209,7 +209,7 @@ const uiText = {
       },
     },
     education: {
-      semester: "Semester 4",
+      semester: "Semester 5",
       gpa: "IPK 3,97",
     },
     certificates: {
@@ -279,28 +279,16 @@ const educationId: Partial<(typeof educationItems)[number]>[] = [
     year: "2024 - Sekarang",
     title: "S1 Ilmu Komputer",
     place: "Universitas Sugeng Hartono",
-    desc: "Mahasiswa semester 4 Ilmu Komputer dengan IPK 3,97, berfokus pada fondasi ilmu komputer, teknologi digital, komunikasi teknis, dan pertumbuhan profesional yang mendukung jalur Developer Relations.",
+    desc: "Mahasiswa semester 5 Ilmu Komputer dengan IPK 3,97, berfokus pada fondasi ilmu komputer, teknologi digital, komunikasi teknis, dan pertumbuhan profesional yang mendukung jalur Developer Relations.",
   },
 ];
 
 const careerId: Partial<(typeof careerItems)[number]>[] = [
   {
-    period: "Apr 2026 - Jun 2026",
-    company: "ARMchain - Paruh Waktu",
-    desc: "Memperkenalkan solusi teknologi ARMchain kepada audiens global, mengedukasi komunitas tentang inovasi blockchain, dan mendukung pertumbuhan ekosistem melalui inisiatif strategis serta networking.",
-    highlights: ["ARMchain", "Edukasi blockchain", "Pertumbuhan ekosistem"],
-  },
-  {
     period: "Jun 2023 - Sekarang",
     company: "TikTok - Paruh Waktu",
     desc: "Content creator di TikTok dengan fokus pada analitik media sosial untuk meningkatkan engagement dan visibilitas. Terampil memantau performa dan mengoptimalkan strategi konten untuk memperluas jangkauan serta interaksi brand.",
     highlights: ["TikTok", "Optimasi konten", "Pertumbuhan audiens"],
-  },
-  {
-    period: "Jun 2023 - Jun 2026",
-    company: "TikTok - Paruh Waktu",
-    desc: "Berpengalaman dalam digital marketing sebagai affiliator, memanfaatkan TikTok untuk mendorong promosi produk dan penjualan melalui kampanye yang relevan dengan audiens serta berfokus pada konversi.",
-    highlights: ["Affiliate marketing", "Promosi produk", "Konversi"],
   },
   {
     period: "Jun 2023 - Sekarang",
@@ -313,6 +301,18 @@ const careerId: Partial<(typeof careerItems)[number]>[] = [
     company: "Instagram - Paruh Waktu",
     desc: "Content creator dengan keahlian pada analitik media sosial, peningkatan engagement, dan pembangunan audiens yang loyal. Terampil membuat konten berbasis data untuk meningkatkan visibilitas dan interaksi.",
     highlights: ["Instagram", "Strategi konten", "Analitik sosial"],
+  },
+  {
+    period: "Apr 2026 - Jun 2026",
+    company: "ARMchain - Paruh Waktu",
+    desc: "Memperkenalkan solusi teknologi ARMchain kepada audiens global, mengedukasi komunitas tentang inovasi blockchain, dan mendukung pertumbuhan ekosistem melalui inisiatif strategis serta networking.",
+    highlights: ["ARMchain", "Edukasi blockchain", "Pertumbuhan ekosistem"],
+  },
+  {
+    period: "Jun 2023 - Jun 2026",
+    company: "TikTok - Paruh Waktu",
+    desc: "Berpengalaman dalam digital marketing sebagai affiliator, memanfaatkan TikTok untuk mendorong promosi produk dan penjualan melalui kampanye yang relevan dengan audiens serta berfokus pada konversi.",
+    highlights: ["Affiliate marketing", "Promosi produk", "Konversi"],
   },
   {
     period: "Des 2025 - Feb 2026",

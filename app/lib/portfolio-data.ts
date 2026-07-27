@@ -16,6 +16,7 @@ type CareerItem = {
   company: string;
   companyLogo?: string;
   companyMark?: string;
+  logoContain?: boolean;
   desc: string;
   highlights: string[];
 };
@@ -26,15 +27,15 @@ export const techGroups: TechGroup[] = [
     tools: [
       { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
       { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-      { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", square: true },
-      { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", square: true },
+      { name: "JavaScript", logo: "/logo-javascript.svg", square: true },
+      { name: "TypeScript", logo: "/logo-typescript.svg", square: true },
     ],
   },
   {
     title: "Programming Languages",
     tools: [
       { name: "Solidity", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" },
-      { name: "Move", mark: "M" },
+      { name: "Move", logo: "/logo-move.svg" },
       { name: "Rust", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" },
       { name: "Go", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" },
       { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
@@ -92,9 +93,9 @@ export const techGroups: TechGroup[] = [
   {
     title: "Business & Service Integrations",
     tools: [
-      { name: "Digiflazz", logo: "/logo-digiflazz.png", square: true },
+      { name: "Digiflazz", logo: "/logo-digiflazz.png" },
       { name: "OrderSosmed", logo: "/logo-ordersosmed.jpg", square: true },
-      { name: "Xoftware", logo: "/logo-xoftware.png", square: true },
+      { name: "Xoftware", logo: "/logo-xoftware.png" },
       { name: "Resend", logo: "https://cdn.simpleicons.org/resend/000000" },
     ],
   },
@@ -105,20 +106,12 @@ export const educationItems = [
     year: "2024 - Present",
     title: "Bachelor of Computer Science",
     place: "Sugeng Hartono University",
-    desc: "A 4th-semester Computer Science student with a GPA of 3.97, focused on computer science fundamentals, digital technology, technical communication, and professional growth that supports a Developer Relations path.",
+    desc: "A 5th-semester Computer Science student with a GPA of 3.97, focused on computer science fundamentals, digital technology, technical communication, and professional growth that supports a Developer Relations path.",
     logo: "/logo-ush.png",
   },
 ];
 
 export const careerItems: CareerItem[] = [
-  {
-    period: "Apr 2026 - Jun 2026",
-    role: "Ambassador",
-    company: "ARMchain - Part-time",
-    companyLogo: "/logo-armchain.jpg",
-    desc: "Introducing ARMchain's technological solutions to a global audience, educating the community on blockchain innovation, and supporting ecosystem growth through strategic initiatives and networking.",
-    highlights: ["ARMchain", "Blockchain education", "Ecosystem growth"],
-  },
   {
     period: "Jun 2023 - Present",
     role: "Content Creator",
@@ -128,18 +121,11 @@ export const careerItems: CareerItem[] = [
     highlights: ["TikTok", "Content optimization", "Audience growth"],
   },
   {
-    period: "Jun 2023 - Jun 2026",
-    role: "Affiliator",
-    company: "TikTok - Part-time",
-    companyLogo: "/logo-tiktok.jpg",
-    desc: "Experienced in digital marketing as an affiliator, leveraging TikTok to drive product promotions and sales. Specializing in showcasing products and generating revenue through affiliate marketing with campaigns that drive conversions.",
-    highlights: ["Affiliate marketing", "Product promotion", "Conversions"],
-  },
-  {
     period: "Jun 2023 - Present",
     role: "Content Creator",
     company: "YouTube - Part-time",
     companyLogo: "https://cdn.simpleicons.org/youtube/FF0000",
+    logoContain: true,
     desc: "Content creator on YouTube, utilizing social media analytics to grow the channel and enhance viewer engagement. Focused on optimizing content strategies based on performance metrics and audience insights. Currently building a growing YouTube presence with data-driven content.",
     highlights: ["YouTube", "Audience insights", "Channel growth"],
   },
@@ -150,6 +136,22 @@ export const careerItems: CareerItem[] = [
     companyLogo: "/logo-instagram.jpg",
     desc: "Passionate content creator with expertise in social media analytics, driving engagement, and building a dedicated audience. Skilled in creating insightful data-driven content to enhance visibility and interaction. Currently managing Instagram content to optimize reach and growth.",
     highlights: ["Instagram", "Content strategy", "Social analytics"],
+  },
+  {
+    period: "Apr 2026 - Jun 2026",
+    role: "Ambassador",
+    company: "ARMchain - Part-time",
+    companyLogo: "/logo-armchain.jpg",
+    desc: "Introducing ARMchain's technological solutions to a global audience, educating the community on blockchain innovation, and supporting ecosystem growth through strategic initiatives and networking.",
+    highlights: ["ARMchain", "Blockchain education", "Ecosystem growth"],
+  },
+  {
+    period: "Jun 2023 - Jun 2026",
+    role: "Affiliator",
+    company: "TikTok - Part-time",
+    companyLogo: "/logo-tiktok.jpg",
+    desc: "Experienced in digital marketing as an affiliator, leveraging TikTok to drive product promotions and sales. Specializing in showcasing products and generating revenue through affiliate marketing with campaigns that drive conversions.",
+    highlights: ["Affiliate marketing", "Product promotion", "Conversions"],
   },
   {
     period: "Dec 2025 - Feb 2026",
@@ -181,6 +183,7 @@ export const careerItems: CareerItem[] = [
     role: "Affiliator",
     company: "Shopee - Part-time",
     companyLogo: "https://cdn.simpleicons.org/shopee/EE4D2D",
+    logoContain: true,
     desc: "Affiliator on Shopee, promoting products through strategic digital marketing campaigns. Expert in curating product collections and driving sales through affiliate marketing. Focused on leveraging Shopee's platform to create effective campaigns that boost conversions.",
     highlights: ["Shopee", "Affiliate campaigns", "Product curation"],
   },

@@ -114,6 +114,31 @@ export const educationItems = [
 
 export const careerItems: CareerItem[] = [
   {
+    period: "Jul 2026 - Present",
+    role: "Marketing & Developer",
+    company: "Helden Inc - Part-time",
+    companyLogo: "/logo-helden-inc.png",
+    desc: "Driving marketing initiatives and building digital products for Helden Inc, a studio crafting gamified experiences for internal communication, blending growth-focused campaigns with hands-on development.",
+    highlights: ["Marketing", "Development", "Gamification"],
+  },
+  {
+    period: "Jul 2026 - Present",
+    role: "Marketing & Developer",
+    company: "Helden HQ - Part-time",
+    companyLogo: "/logo-heldenhq.svg",
+    logoContain: true,
+    desc: "Supporting Helden HQ as marketing and developer, handling the technology behind trainers' businesses so they can focus on teaching, while running campaigns that grow their reach.",
+    highlights: ["Marketing", "Web development", "Automation"],
+  },
+  {
+    period: "Jul 2026 - Present",
+    role: "Marketing & Developer",
+    company: "Maua - Part-time",
+    companyLogo: "/logo-maua.png",
+    desc: "Working as marketing and developer at Maua, an AI-powered team that takes over digital work, building apps and automations while driving social media growth for clients.",
+    highlights: ["AI automation", "App development", "Social growth"],
+  },
+  {
     period: "Jun 2023 - Present",
     role: "Content Creator",
     company: "TikTok - Part-time",
@@ -191,6 +216,15 @@ export const careerItems: CareerItem[] = [
 ];
 
 export const certificateItems = [
+  {
+    title: "Cybersecurity Research National Webinar",
+    issuer: "HIMATIKOM Universitas Lamappapoleonro",
+    year: "Jul 2026",
+    issued: "Issued Jul 2026",
+    credentialId: "Speaker",
+    image: "/certificate-cybersecurity-webinar.jpg",
+    desc: "Awarded as a speaker at the National Webinar \"Cybersecurity Research: An In-Depth Look at Deepfake and Social Engineering as New Challenges for Informatics Students in the AI Era,\" held by the Informatics Engineering Student Association with Universitas Lamappapoleonro, Universitas Putra Indonesia YPTK Padang, Institut Sains dan Teknologi Nasional, and Universitas Sugeng Hartono.",
+  },
   {
     title: "Certificate of Web3 University Tour",
     issuer: "Coinversity",

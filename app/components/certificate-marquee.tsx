@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { X } from "lucide-react";
-import { useEffect, useState } from "react";
+import type { PointerEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "./language-provider";
 
 type CertificateItem = {
@@ -17,10 +18,25 @@ type CertificateMarqueeProps = {
   certificates: CertificateItem[];
 };
 
+// Seconds for the marquee to advance by one full copy of the list.
+const LOOP_SECONDS = 60;
+// Pointer travel (px) beyond which an interaction counts as a drag, not a click.
+const DRAG_THRESHOLD = 6;
+
 export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
   const { content } = useLanguage();
   const [selectedCertificate, setSelectedCertificate] = useState<CertificateItem | null>(null);
   const [overlayTop, setOverlayTop] = useState(0);
+
+  const trackRef = useRef<HTMLDivElement>(null);
+  const offsetRef = useRef(0);
+  const copyWidthRef = useRef(0);
+  const rafRef = useRef(0);
+  const lastTsRef = useRef<number | null>(null);
+  const pointerDownRef = useRef(false);
+  const startXRef = useRef(0);
+  const startOffsetRef = useRef(0);
+  const suppressClickRef = useRef(false);
 
   useEffect(() => {
     if (!selectedCertificate) {
@@ -49,15 +65,109 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
     };
   }, [selectedCertificate]);
 
+  // Single position model: one rAF loop drives the track transform. Auto-scroll
+  // and manual drag both mutate the same `offset`, so they can never desync.
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) {
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const measure = () => {
+      // Distance from the first card to the first card of the duplicated copy —
+      // the exact seamless wrap distance (independent of card width / gap).
+      const first = track.children[0] as HTMLElement | undefined;
+      const copyStart = track.children[certificates.length] as HTMLElement | undefined;
+      if (first && copyStart) {
+        copyWidthRef.current = copyStart.offsetLeft - first.offsetLeft;
+      }
+    };
+
+    const wrap = (value: number, span: number) =>
+      span > 0 ? ((value % span) + span) % span : 0;
+
+    measure();
+    offsetRef.current = wrap(offsetRef.current, copyWidthRef.current);
+
+    const step = (ts: number) => {
+      const span = copyWidthRef.current;
+      const last = lastTsRef.current ?? ts;
+      const dt = (ts - last) / 1000;
+      lastTsRef.current = ts;
+
+      if (!prefersReducedMotion && !pointerDownRef.current && span > 0) {
+        offsetRef.current = wrap(offsetRef.current + (span / LOOP_SECONDS) * dt, span);
+      }
+
+      track.style.transform = `translate3d(${-offsetRef.current}px, 0, 0)`;
+      rafRef.current = requestAnimationFrame(step);
+    };
+
+    rafRef.current = requestAnimationFrame(step);
+    window.addEventListener("resize", measure);
+
+    return () => {
+      cancelAnimationFrame(rafRef.current);
+      window.removeEventListener("resize", measure);
+      lastTsRef.current = null;
+    };
+  }, [certificates.length]);
+
   function openCertificate(certificate: CertificateItem) {
     setOverlayTop(document.querySelector("header")?.getBoundingClientRect().height ?? 0);
     setSelectedCertificate(certificate);
   }
 
+  function handlePointerDown(event: PointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "mouse" && event.button !== 0) {
+      return;
+    }
+    pointerDownRef.current = true;
+    suppressClickRef.current = false;
+    startXRef.current = event.clientX;
+    startOffsetRef.current = offsetRef.current;
+  }
+
+  function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
+    if (!pointerDownRef.current) {
+      return;
+    }
+    const delta = event.clientX - startXRef.current;
+    if (Math.abs(delta) > DRAG_THRESHOLD) {
+      suppressClickRef.current = true;
+    }
+    const span = copyWidthRef.current;
+    offsetRef.current = span > 0
+      ? (((startOffsetRef.current - delta) % span) + span) % span
+      : 0;
+  }
+
+  function endPointer() {
+    pointerDownRef.current = false;
+    lastTsRef.current = null;
+  }
+
+  function handleCardClick(certificate: CertificateItem) {
+    if (suppressClickRef.current) {
+      suppressClickRef.current = false;
+      return;
+    }
+    openCertificate(certificate);
+  }
+
   return (
     <>
-      <div className="certificate-marquee-mask relative left-1/2 w-screen -translate-x-1/2 overflow-hidden py-2">
-        <div className="certificate-marquee-track flex w-max gap-5">
+      <div
+        className="certificate-marquee-mask certificate-marquee-viewport relative left-1/2 w-screen -translate-x-1/2 overflow-hidden py-2"
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={endPointer}
+        onPointerCancel={endPointer}
+        onPointerLeave={endPointer}
+      >
+        <div ref={trackRef} className="certificate-marquee-track flex w-max gap-5">
           {[...certificates, ...certificates].map((certificate, index) => {
             const isDuplicate = index >= certificates.length;
 
@@ -66,7 +176,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
                 key={`${certificate.title}-${certificate.year}-${index}`}
                 type="button"
                 tabIndex={isDuplicate ? -1 : 0}
-                onClick={() => openCertificate(certificate)}
+                onClick={() => handleCardClick(certificate)}
                 className="shadow-watercolor flex w-72 shrink-0 cursor-pointer flex-col rounded-xl border border-[#CFE2F3] bg-white p-4 text-left transition-transform hover:-translate-y-1 hover:shadow-lg md:w-80"
                 aria-hidden={isDuplicate}
                 aria-label={`${content.certificates.openLabel} ${certificate.title}`}
@@ -79,6 +189,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
                         alt={`${content.certificates.imageAlt} ${certificate.title}`}
                         fill
                         sizes="320px"
+                        draggable={false}
                         className="object-contain p-2"
                       />
                     </div>

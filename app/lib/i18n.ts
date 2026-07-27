@@ -285,6 +285,24 @@ const educationId: Partial<(typeof educationItems)[number]>[] = [
 
 const careerId: Partial<(typeof careerItems)[number]>[] = [
   {
+    period: "Jul 2026 - Sekarang",
+    company: "Helden Inc - Paruh Waktu",
+    desc: "Menjalankan inisiatif marketing dan membangun produk digital untuk Helden Inc, studio yang menciptakan pengalaman gamifikasi untuk komunikasi internal, memadukan kampanye pertumbuhan dengan pengembangan secara langsung.",
+    highlights: ["Marketing", "Pengembangan", "Gamifikasi"],
+  },
+  {
+    period: "Jul 2026 - Sekarang",
+    company: "Helden HQ - Paruh Waktu",
+    desc: "Mendukung Helden HQ sebagai marketing dan developer, menangani teknologi di balik bisnis para trainer agar mereka fokus mengajar, sekaligus menjalankan kampanye untuk memperluas jangkauan.",
+    highlights: ["Marketing", "Pengembangan web", "Automasi"],
+  },
+  {
+    period: "Jul 2026 - Sekarang",
+    company: "Maua - Paruh Waktu",
+    desc: "Bekerja sebagai marketing dan developer di Maua, tim bertenaga AI yang mengambil alih pekerjaan digital, membangun aplikasi dan automasi sekaligus mendorong pertumbuhan media sosial klien.",
+    highlights: ["Automasi AI", "Pengembangan aplikasi", "Pertumbuhan sosial"],
+  },
+  {
     period: "Jun 2023 - Sekarang",
     company: "TikTok - Paruh Waktu",
     desc: "Content creator di TikTok dengan fokus pada analitik media sosial untuk meningkatkan engagement dan visibilitas. Terampil memantau performa dan mengoptimalkan strategi konten untuk memperluas jangkauan serta interaksi brand.",
@@ -341,6 +359,13 @@ const careerId: Partial<(typeof careerItems)[number]>[] = [
 ];
 
 const certificateId: Partial<(typeof certificateItems)[number]>[] = [
+  {
+    title: "Webinar Nasional Cybersecurity Research",
+    issuer: "HIMATIKOM Universitas Lamappapoleonro",
+    issued: "Diterbitkan Jul 2026",
+    credentialId: "Pemateri",
+    desc: "Diberikan sebagai pemateri dalam Webinar Nasional bertema \"Cybersecurity Research: Bedah Tuntas Deepfake dan Social Engineering sebagai Tantangan Baru bagi Mahasiswa Informatika di Era Artificial Intelligence\", yang diselenggarakan oleh Himpunan Mahasiswa Prodi Teknik Informatika bekerja sama dengan Universitas Lamappapoleonro, Universitas Putra Indonesia YPTK Padang, Institut Sains dan Teknologi Nasional, dan Universitas Sugeng Hartono.",
+  },
   {
     title: "Certificate of Web3 University Tour",
     issuer: "Coinversity",

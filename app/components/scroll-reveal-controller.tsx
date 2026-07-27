@@ -33,7 +33,7 @@ export function ScrollRevealController() {
       sectionCounters.set(section ?? element, sectionIndex + 1);
 
       element.dataset.scrollReveal = "";
-      element.style.setProperty("--reveal-delay", `${Math.min(sectionIndex * 35, 140)}ms`);
+      element.style.setProperty("--reveal-delay", `${Math.min(sectionIndex * 60, 300)}ms`);
 
       if (isInViewport(element)) {
         element.classList.add("is-revealed");
@@ -45,13 +45,10 @@ export function ScrollRevealController() {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          const element = entry.target as HTMLElement;
-          // Toggle both ways so every box re-animates whenever it re-enters
-          // the viewport, whether scrolling down or back up.
           if (entry.isIntersecting) {
+            const element = entry.target as HTMLElement;
             element.classList.add("is-revealed");
-          } else {
-            element.classList.remove("is-revealed");
+            observer.unobserve(element);
           }
         }
       },
@@ -62,7 +59,9 @@ export function ScrollRevealController() {
     );
 
     for (const element of revealElements) {
-      observer.observe(element);
+      if (!element.classList.contains("is-revealed")) {
+        observer.observe(element);
+      }
     }
 
     return () => {

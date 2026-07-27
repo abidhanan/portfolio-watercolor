@@ -211,29 +211,6 @@ html.reveal-ready [data-scroll-reveal].is-revealed {
   mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
 
-.certificate-marquee-scroller {
-  cursor: grab;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  overscroll-behavior-x: contain;
-  scrollbar-width: none;
-  touch-action: pan-y;
-  user-select: none;
-}
-
-.certificate-marquee-scroller::-webkit-scrollbar {
-  display: none;
-}
-
-.certificate-marquee-scroller.is-dragging {
-  cursor: grabbing;
-}
-
-.certificate-marquee-scroller.is-interacting .certificate-marquee-track,
-.certificate-marquee-scroller.is-dragging .certificate-marquee-track {
-  animation-play-state: paused;
-}
-
 .certificate-marquee-track {
   animation: certificate-marquee 60s linear infinite;
   will-change: transform;

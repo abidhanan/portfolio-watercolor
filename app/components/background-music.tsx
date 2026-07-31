@@ -47,14 +47,6 @@ export function BackgroundMusic() {
   }, []);
 
   useEffect(() => {
-    const autoplayTimer = window.setTimeout(() => {
-      void playMusic();
-    }, 50);
-
-    return () => window.clearTimeout(autoplayTimer);
-  }, [playMusic]);
-
-  useEffect(() => {
     const playAfterFirstInteraction = () => {
       const audio = audioRef.current;
 
@@ -96,9 +88,8 @@ export function BackgroundMusic() {
       <audio
         ref={audioRef}
         src={audioSource}
-        autoPlay
         loop
-        preload="auto"
+        preload="none"
         onCanPlay={() => {
           if (!isPlaying && !userPausedRef.current) {
             void playMusic();
@@ -119,9 +110,9 @@ export function BackgroundMusic() {
         className="fixed bottom-5 right-5 z-[120] flex h-12 w-12 items-center justify-center rounded-2xl border border-[#DCEBF7] bg-white/90 text-[#0F172A] shadow-lg backdrop-blur-md transition duration-200 hover:-translate-y-0.5 hover:bg-white hover:shadow-xl"
       >
         {isPlaying ? (
-          <Volume2 className="h-6 w-6 text-[#0284C7]" aria-hidden="true" />
+          <Volume2 className="h-6 w-6 text-[#075985]" aria-hidden="true" />
         ) : isBlocked ? (
-          <Play className="h-6 w-6 text-[#0284C7]" aria-hidden="true" />
+          <Play className="h-6 w-6 text-[#075985]" aria-hidden="true" />
         ) : (
           <VolumeX className="h-6 w-6 text-[#64748B]" aria-hidden="true" />
         )}

@@ -185,7 +185,6 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
                 onClick={() => handleCardClick(certificate)}
                 className="shadow-watercolor flex w-72 shrink-0 cursor-pointer flex-col rounded-xl border border-[#CFE2F3] bg-white p-4 text-left transition-transform hover:-translate-y-1 hover:shadow-lg md:w-80"
                 aria-hidden={isDuplicate}
-                aria-label={`${content.certificates.openLabel} ${certificate.title}`}
               >
                 <div className="relative mb-4 h-48 overflow-hidden rounded-xl border border-[#DCEBF7] bg-white md:h-56">
                   {certificate.image ? (

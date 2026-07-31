@@ -86,7 +86,7 @@ function LanguageToggle({ className = "" }: { className?: string }) {
             onClick={() => setLanguage(option.code as Language)}
             className={`rounded-full px-2.5 py-1 text-[0.68rem] font-black uppercase tracking-[0.08em] transition-all sm:px-3 sm:text-xs ${
               isActive
-                ? "bg-[#0284C7] text-white shadow-sm"
+                ? "bg-[#0369A1] text-white shadow-sm"
                 : "text-[#475569] hover:bg-[#E0F2FE] hover:text-[#0369A1]"
             }`}
             aria-pressed={isActive}
@@ -215,7 +215,7 @@ export function SiteNav() {
             onClick={(event) => handleSectionClick(event, "/#home")}
             className="section-readable w-fit text-lg font-extrabold tracking-tight text-[#0F172A] sm:text-xl"
           >
-            {content.brand.prefix} <span className="text-[#0284C7]">{content.brand.accent}</span>
+            {content.brand.prefix} <span className="text-[#075985]">{content.brand.accent}</span>
           </Link>
 
           <div className="flex items-center gap-2 md:hidden">
@@ -253,7 +253,7 @@ export function SiteNav() {
                   onClick={(event) => handleSectionClick(event, item.href)}
                   className={`site-nav-link relative whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-bold transition-all duration-300 sm:px-4 sm:py-2 sm:text-sm ${
                     isActive
-                      ? "site-nav-link-active bg-[#0284C7] text-white shadow-md"
+                      ? "site-nav-link-active bg-[#0369A1] text-white shadow-md"
                       : "text-[#475569] hover:bg-[#E0F2FE] hover:text-[#0369A1]"
                   }`}
                 >
@@ -279,7 +279,7 @@ export function SiteNav() {
                   onClick={(event) => handleSectionClick(event, item.href)}
                   className={`site-nav-link relative flex w-full items-center justify-between gap-3 rounded-lg px-4 py-3 text-sm font-bold transition-all duration-300 ${
                     isActive
-                      ? "site-nav-link-active bg-[#0284C7] text-white shadow-md"
+                      ? "site-nav-link-active bg-[#0369A1] text-white shadow-md"
                       : "text-[#475569] hover:bg-[#E0F2FE] hover:text-[#0369A1]"
                   }`}
                 >

@@ -7,7 +7,7 @@ import { RotatingRoleBadge } from "./components/rotating-role-badge";
 
 const toolTone = [
   "border-[#E0F2FE] bg-[#F0F9FF] text-[#0369A1]",
-  "border-[#BAE6FD] bg-[#E0F2FE] text-[#0284C7]",
+  "border-[#BAE6FD] bg-[#E0F2FE] text-[#075985]",
   "border-[#FEF08A] bg-[#FEF9C3] text-[#A16207]",
   "border-[#E2E8F0] bg-[#F8FAFC] text-[#334155]",
 ];
@@ -40,6 +40,7 @@ function LogoBadge({ name, logo, mark, size = "md", fill = false, padded = false
     <span
       className={`${badgeSize} flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-sm`}
       title={name}
+      role="img"
       aria-label={`${name} logo`}
     >
       {logo ? (
@@ -49,7 +50,7 @@ function LogoBadge({ name, logo, mark, size = "md", fill = false, padded = false
           style={{ backgroundImage: `url(${logo})` }}
         />
       ) : (
-        <span className="text-sm font-black text-[#0284C7]">{mark ?? name.slice(0, 2)}</span>
+        <span className="text-sm font-black text-[#075985]">{mark ?? name.slice(0, 2)}</span>
       )}
     </span>
   );
@@ -66,9 +67,9 @@ function SectionHeader({ title, summary }: SectionHeaderProps) {
       <div className="relative flex flex-col gap-3 md:flex-row md:items-center md:gap-0">
         <div className="section-readable shadow-watercolor relative z-20 flex w-full max-w-full items-center justify-center gap-3 rounded-full border border-[#BAE6FD] bg-[#F0F9FF]/95 px-4 py-2.5 sm:w-fit sm:px-5">
           <span className="rope-knot h-3.5 w-3.5 shrink-0 rounded-full" aria-hidden="true" />
-          <p className="text-center text-xs font-black uppercase tracking-[0.1em] text-[#0369A1] sm:whitespace-nowrap sm:text-sm sm:tracking-[0.14em]">
+          <h2 className="text-center text-xs font-black uppercase tracking-[0.1em] text-[#0369A1] sm:whitespace-nowrap sm:text-sm sm:tracking-[0.14em]">
             {title}
-          </p>
+          </h2>
           <span className="rope-knot absolute -right-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
         </div>
         <div className="rope-line-x hidden w-12 shrink-0 md:block" aria-hidden="true" />
@@ -98,14 +99,14 @@ export default function Home() {
         className={`${homeSectionClass} flex flex-col items-center justify-between gap-8 md:flex-row md:gap-12`}
       >
         <div className="w-full space-y-4 text-center md:w-1/2 md:space-y-6 md:text-left">
-          <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF]/90 px-3 py-1.5 text-xs font-bold text-[#0284C7] shadow-sm backdrop-blur-sm sm:text-sm md:justify-start md:px-4">
+          <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF]/90 px-3 py-1.5 text-xs font-bold text-[#075985] shadow-sm backdrop-blur-sm sm:text-sm md:justify-start md:px-4">
             <span>{content.home.badge}</span>
             <RotatingRoleBadge />
           </div>
           <h1 className="home-title-outline section-readable text-[2.75rem] font-extrabold leading-[1.05] text-[#0F172A] sm:text-5xl md:text-6xl md:leading-tight lg:text-7xl">
             {content.home.intro}
             <br />
-            <span className="home-role-outline text-[#0284C7]">{content.home.role}</span>
+            <span className="home-role-outline text-[#075985]">{content.home.role}</span>
           </h1>
           <p className="home-copy-outline section-readable mx-auto max-w-lg text-base font-bold leading-relaxed text-[#334155] sm:text-lg md:mx-0">
             {content.home.description}
@@ -233,7 +234,7 @@ export default function Home() {
                     <h3 className="mb-2 text-2xl font-bold text-[#0F172A]">{item.title}</h3>
                     <p className="mb-3 font-semibold text-[#0369A1]">{item.place}</p>
                     <div className="mb-4 flex flex-wrap gap-2">
-                      <span className="rounded-full border border-[#BAE6FD] bg-[#F0F9FF] px-4 py-1.5 text-xs font-bold text-[#0284C7]">
+                      <span className="rounded-full border border-[#BAE6FD] bg-[#F0F9FF] px-4 py-1.5 text-xs font-bold text-[#075985]">
                         {content.education.semester}
                       </span>
                       <span className="rounded-full border border-[#FEF08A] bg-[#FEF9C3] px-4 py-1.5 text-xs font-bold text-[#A16207]">
@@ -322,7 +323,7 @@ export default function Home() {
                   </p>
                 </div>
                 <h3 className="mb-2 text-xl font-bold text-[#0F172A]">{item.role}</h3>
-                <p className="mb-4 font-bold text-[#0284C7]">{item.company}</p>
+                <p className="mb-4 font-bold text-[#075985]">{item.company}</p>
                 <p className="mb-6 leading-relaxed text-[#475569] flex-grow">{item.desc}</p>
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {item.highlights.map((highlight) => (
@@ -424,7 +425,7 @@ export default function Home() {
               >
                 <h3 className="mb-3 text-lg font-bold text-[#0F172A] sm:text-xl">{activity.title}</h3>
                 {activity.organization ? (
-                  <p className="mb-2 text-sm font-bold text-[#0284C7]">{activity.organization}</p>
+                  <p className="mb-2 text-sm font-bold text-[#075985]">{activity.organization}</p>
                 ) : null}
                 {activity.category ? (
                   <p className="mb-4 w-fit rounded-full border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-1 text-xs font-bold text-[#475569]">

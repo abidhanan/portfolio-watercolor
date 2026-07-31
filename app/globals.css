@@ -19,7 +19,7 @@ footer [class*="rounded-3xl"][class*="border"] {
     radial-gradient(circle at 18% 22%, rgba(226, 232, 240, 0.4), transparent 20rem),
     radial-gradient(circle at 82% 76%, rgba(246, 224, 158, 0.2), transparent 20rem),
     linear-gradient(rgba(255, 255, 255, 0.6), rgba(248, 250, 252, 0.4)),
-    url("/crumpled-paper.jpg") !important;
+    url("/crumpled-paper.webp") !important;
   background-position: center;
   background-repeat: repeat;
   background-size: cover, cover, cover, 400px auto;
@@ -36,7 +36,7 @@ footer [class*="rounded-3xl"][class*="border"] {
 main [class*="rounded-full"][class*="border"],
 footer [class*="rounded-full"][class*="border"] {
   background-color: rgba(255, 255, 255, 0.95) !important;
-  background-image: url("/crumpled-paper.jpg") !important;
+  background-image: url("/crumpled-paper.webp") !important;
   background-blend-mode: soft-light;
   background-size: 300px auto;
   border-color: rgba(203, 213, 225, 0.8) !important;
@@ -248,7 +248,7 @@ body::before {
   height: 100lvh;
   min-height: 100svh;
   z-index: -10;
-  background-image: url("/watercolor-beach.jpg");
+  background-image: url("/watercolor-beach.webp");
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;

@@ -8,7 +8,10 @@ import { SiteFooter } from "./components/site-footer";
 import { SiteNav } from "./components/site-nav";
 
 // Memuat Google Font agar konsisten di Desktop dan Mobile
-const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap" });
+
+// Fully static so Vercel serves a cached, compressed document (fast TTFB).
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "Abid Hanan - DevRel",

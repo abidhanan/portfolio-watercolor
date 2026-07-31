@@ -286,19 +286,7 @@ const educationId: Partial<(typeof educationItems)[number]>[] = [
 const careerId: Partial<(typeof careerItems)[number]>[] = [
   {
     period: "Jul 2026 - Sekarang",
-    company: "Helden Inc - Kontrak",
-    desc: "Menjalankan inisiatif marketing dan membangun produk digital untuk Helden Inc, studio yang menciptakan pengalaman gamifikasi untuk komunikasi internal, memadukan kampanye pertumbuhan dengan pengembangan secara langsung.",
-    highlights: ["Marketing", "Pengembangan", "Gamifikasi"],
-  },
-  {
-    period: "Jul 2026 - Sekarang",
-    company: "Helden HQ - Kontrak",
-    desc: "Mendukung Helden HQ sebagai marketing dan developer, menangani teknologi di balik bisnis para trainer agar mereka fokus mengajar, sekaligus menjalankan kampanye untuk memperluas jangkauan.",
-    highlights: ["Marketing", "Pengembangan web", "Automasi"],
-  },
-  {
-    period: "Jul 2026 - Sekarang",
-    company: "Maua AI - Kontrak",
+    company: "Maua AI - Magang",
     desc: "Bekerja sebagai marketing dan developer di Maua AI, tim yang mengambil alih pekerjaan digital, membangun aplikasi dan automasi sekaligus mendorong pertumbuhan media sosial klien.",
     highlights: ["Automasi AI", "Pengembangan aplikasi", "Pertumbuhan sosial"],
   },

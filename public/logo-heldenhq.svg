@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 -2 58 58">
-  <!-- HELDEN HQ badge mark: black tag, white outline, HELDEN-white "H" + HQ-yellow bar -->
-  <path d="M10 8 h44 a4 4 0 0 1 4 4 v34 a4 4 0 0 1 -4 4 h-38 l-10 -10 v-32 a4 4 0 0 1 4 -4 z"
-        fill="#14110C" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round"/>
-  <text x="30" y="45" text-anchor="middle"
-        font-family="'Arial Black', Impact, 'Arial Narrow', sans-serif"
-        font-weight="900" font-size="40" fill="#FFFFFF">H</text>
-  <rect x="46" y="40" width="9" height="7" fill="#FFD400"/>
-</svg>

@@ -87,7 +87,7 @@ function LanguageToggle({ className = "" }: { className?: string }) {
             className={`rounded-full px-2.5 py-1 text-[0.68rem] font-black uppercase tracking-[0.08em] transition-all sm:px-3 sm:text-xs ${
               isActive
                 ? "bg-[#0369A1] text-white shadow-sm"
-                : "text-[#475569] hover:bg-[#E0F2FE] hover:text-[#0369A1]"
+                : "text-[#334155] hover:bg-[#E0F2FE] hover:text-[#0369A1]"
             }`}
             aria-pressed={isActive}
           >
@@ -254,7 +254,7 @@ export function SiteNav() {
                   className={`site-nav-link relative whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-bold transition-all duration-300 sm:px-4 sm:py-2 sm:text-sm ${
                     isActive
                       ? "site-nav-link-active bg-[#0369A1] text-white shadow-md"
-                      : "text-[#475569] hover:bg-[#E0F2FE] hover:text-[#0369A1]"
+                      : "text-[#334155] hover:bg-[#E0F2FE] hover:text-[#0369A1]"
                   }`}
                 >
                   {item.label}
@@ -280,7 +280,7 @@ export function SiteNav() {
                   className={`site-nav-link relative flex w-full items-center justify-between gap-3 rounded-lg px-4 py-3 text-sm font-bold transition-all duration-300 ${
                     isActive
                       ? "site-nav-link-active bg-[#0369A1] text-white shadow-md"
-                      : "text-[#475569] hover:bg-[#E0F2FE] hover:text-[#0369A1]"
+                      : "text-[#334155] hover:bg-[#E0F2FE] hover:text-[#0369A1]"
                   }`}
                 >
                   <span className="flex items-center gap-3">

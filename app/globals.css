@@ -57,14 +57,14 @@ footer [class*="rounded-full"][class*="border"] {
 
 .site-nav-link-active,
 html:has(#contact:target) .site-nav-link[data-nav-target="contact"] {
-  background-color: #0284C7 !important;
+  background-color: #0369A1 !important;
   color: #FFFFFF !important;
   box-shadow: 0 10px 18px -12px rgba(2, 132, 199, 0.65) !important;
 }
 
 html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]) {
   background-color: transparent !important;
-  color: #475569 !important;
+  color: #334155 !important;
   box-shadow: none !important;
 }
 

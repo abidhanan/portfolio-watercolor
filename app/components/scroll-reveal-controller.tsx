@@ -2,21 +2,46 @@
 
 import { useEffect } from "react";
 
-// Every box/container that should animate on scroll. Tailwind v4 keeps rotate /
-// translate in their own CSS properties, so our transform-based reveal never
-// clobbers positioned or rotated elements (hero photos, full-width breakouts).
-const revealSelectors = [
-  "main section .shadow-watercolor",
-  "main section article",
-  "main section .tool-box",
-  "main section .home-photo-card",
-  "main section#about .rounded-full",
-  "footer .shadow-watercolor",
-].join(",");
-
 function isInViewport(element: HTMLElement) {
   const rect = element.getBoundingClientRect();
   return rect.top < window.innerHeight * 0.95 && rect.bottom > window.innerHeight * 0.05;
+}
+
+// Collect every box-like content element across all sections + footer.
+function collectRevealElements(): HTMLElement[] {
+  const set = new Set<HTMLElement>();
+
+  // Guaranteed content containers.
+  document
+    .querySelectorAll<HTMLElement>(
+      "main section .shadow-watercolor, main section article, main section .tool-box, main section .home-photo-card, footer .shadow-watercolor",
+    )
+    .forEach((el) => set.add(el));
+
+  // Any other box-like element — detected from CSS only, so it does not depend
+  // on layout being finished (which previously dropped below-fold cards). This
+  // picks up contact icons, badges, image tiles, and anything else with a card
+  // look across every section and the footer.
+  document.querySelectorAll<HTMLElement>("main section *, footer *").forEach((el) => {
+    const cs = getComputedStyle(el);
+    const hasShadow = cs.boxShadow !== "none";
+    const rounded = parseFloat(cs.borderTopLeftRadius) > 0;
+    const bordered = parseFloat(cs.borderTopWidth) > 0;
+    const hasFill =
+      cs.backgroundColor !== "rgba(0, 0, 0, 0)" && cs.backgroundColor !== "transparent";
+    if (hasShadow || (rounded && (bordered || hasFill))) {
+      set.add(el);
+    }
+  });
+
+  return [...set].filter((el) => {
+    // The marquee cards scroll horizontally and any open dialog is separate.
+    if (el.closest(".certificate-marquee-track, [role='dialog']")) return false;
+    // Decorative rope connectors/knots are part of the theme, not content boxes.
+    const cls = typeof el.className === "string" ? el.className : "";
+    if (/rope/.test(cls)) return false;
+    return true;
+  });
 }
 
 export function ScrollRevealController() {
@@ -25,13 +50,7 @@ export function ScrollRevealController() {
       return;
     }
 
-    const revealElements = Array.from(
-      document.querySelectorAll<HTMLElement>(revealSelectors),
-    ).filter((element) => {
-      // The marquee cards scroll horizontally and any open dialog is separate.
-      return !element.closest(".certificate-marquee-track, [role='dialog']");
-    });
-
+    const revealElements = collectRevealElements();
     const groupCounters = new Map<Element, number>();
 
     for (const element of revealElements) {
@@ -40,7 +59,7 @@ export function ScrollRevealController() {
       groupCounters.set(group, index + 1);
 
       element.dataset.scrollReveal = "";
-      element.style.setProperty("--reveal-delay", `${Math.min(index * 55, 300)}ms`);
+      element.style.setProperty("--reveal-delay", `${Math.min(index * 45, 320)}ms`);
 
       // Pre-reveal what's already on screen so there's no fade-out flicker on load.
       if (isInViewport(element)) {
@@ -64,7 +83,7 @@ export function ScrollRevealController() {
         }
       },
       {
-        rootMargin: "0px 0px -12% 0px",
+        rootMargin: "0px 0px -10% 0px",
         threshold: 0,
       },
     );

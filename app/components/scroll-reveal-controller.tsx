@@ -36,11 +36,7 @@ function collectRevealElements(): HTMLElement[] {
 
   return [...set].filter((el) => {
     // The marquee cards scroll horizontally and any open dialog is separate.
-    if (el.closest(".certificate-marquee-track, [role='dialog']")) return false;
-    // Decorative rope connectors/knots are part of the theme, not content boxes.
-    const cls = typeof el.className === "string" ? el.className : "";
-    if (/rope/.test(cls)) return false;
-    return true;
+    return !el.closest(".certificate-marquee-track, [role='dialog']");
   });
 }
 

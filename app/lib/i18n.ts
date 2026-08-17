@@ -48,12 +48,10 @@ const uiText = {
       contact: "Contact",
     } satisfies Record<NavKey, string>,
     home: {
-      badge: "Open to Work",
       intro: "I'm Abid Hanan",
       role: "Developer Relations",
       description:
         "I connect technology, communities, and business goals through clear communication, developer education, and meaningful collaboration.",
-      roles: ["Developer Relations", "Full Stack Developer", "Blockchain Developer"],
     },
     about: {
       eyebrow: "About Me",
@@ -164,12 +162,10 @@ const uiText = {
       contact: "Kontak",
     } satisfies Record<NavKey, string>,
     home: {
-      badge: "Terbuka untuk Kerja",
       intro: "Saya Abid Hanan",
       role: "Developer Relations",
       description:
         "Saya menghubungkan teknologi, komunitas, dan tujuan bisnis melalui komunikasi yang jelas, edukasi developer, dan kolaborasi yang bermakna.",
-      roles: ["Developer Relations", "Full Stack Developer", "Blockchain Developer"],
     },
     about: {
       eyebrow: "Tentang Saya",

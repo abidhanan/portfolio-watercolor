@@ -18,6 +18,10 @@ const revealSelectors = [
   "main section#home .inline-flex",
   "main section#home h1",
   "main section#home p",
+  // Footer (desktop only — the controller doesn't run on mobile). The footer is
+  // clipped (overflow-hidden) so the reveal's translateY can't extend the page.
+  "footer .grid > div",
+  "footer > div > p",
 ].join(",");
 
 function isInViewport(element: HTMLElement) {

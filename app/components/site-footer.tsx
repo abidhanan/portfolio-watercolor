@@ -10,7 +10,7 @@ export function SiteFooter() {
   return (
     <footer
       id="contact"
-      className="paper-nav scroll-mt-28"
+      className="paper-nav scroll-mt-28 overflow-hidden"
     >
       <div className="mx-auto w-full max-w-7xl px-4 pt-6 pb-0 sm:px-6 sm:pt-7 sm:pb-0 md:px-10 xl:px-12">
         <div className="grid gap-5 lg:grid-cols-3 lg:items-start">

@@ -196,6 +196,11 @@ html.reveal-ready [data-scroll-reveal] {
   transform: translateY(24px);
 }
 
+/* Fade-only variant (footer): opacity, no translateY. */
+html.reveal-ready [data-scroll-reveal="fade"] {
+  transform: none;
+}
+
 /* Transition lives on the revealed state only: elements animate IN when they
    enter the viewport, but hide instantly (off-screen) when they leave — half
    the transitions during scroll, so scrolling stays smooth. */

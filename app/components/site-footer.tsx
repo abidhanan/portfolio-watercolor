@@ -10,9 +10,9 @@ export function SiteFooter() {
   return (
     <footer
       id="contact"
-      className="paper-nav scroll-mt-28 overflow-hidden"
+      className="paper-nav scroll-mt-28 flex min-h-[38svh] items-center"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 pt-6 pb-0 sm:px-6 sm:pt-7 sm:pb-0 md:px-10 xl:px-12">
+      <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 md:px-10 md:py-12 xl:px-12">
         <div className="grid gap-5 lg:grid-cols-3 lg:items-start">
           <div className="flex flex-col items-center justify-start gap-2 text-center lg:items-start lg:text-left">
             <p className="section-readable text-lg font-black tracking-tight text-[#0F172A]">

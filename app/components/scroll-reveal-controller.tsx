@@ -49,7 +49,9 @@ export function ScrollRevealController() {
       const index = groupCounters.get(group) ?? 0;
       groupCounters.set(group, index + 1);
 
-      element.dataset.scrollReveal = "";
+      // Footer fades in (opacity only) — a translateY on the very last element
+      // extends the page and its IO can't fire at the bottom edge.
+      element.dataset.scrollReveal = element.closest("footer") ? "fade" : "";
       element.style.setProperty("--reveal-delay", `${Math.min(index * 25, 100)}ms`);
       if (inView[i]) {
         element.classList.add("is-revealed");
@@ -72,7 +74,8 @@ export function ScrollRevealController() {
         }
       },
       {
-        rootMargin: "0px 0px -10% 0px",
+        // No bottom exclusion, so the last elements (footer) can still reveal.
+        rootMargin: "0px 0px 0px 0px",
         threshold: 0,
       },
     );

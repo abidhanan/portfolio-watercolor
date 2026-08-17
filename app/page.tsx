@@ -329,7 +329,7 @@ export default function Home() {
                   {item.highlights.map((highlight) => (
                     <span
                       key={highlight}
-                      className="rounded-full border border-[#E2E8F0] bg-white px-3 py-1 text-xs font-bold text-[#334155] shadow-sm"
+                      className="reveal-chip rounded-full border border-[#E2E8F0] bg-white px-3 py-1 text-xs font-bold text-[#334155] shadow-sm"
                     >
                       {highlight}
                     </span>

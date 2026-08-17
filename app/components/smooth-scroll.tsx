@@ -12,10 +12,12 @@ export function SmoothScroll() {
     }
 
     const lenis = new Lenis({
-      lerp: 0.09, // eased, slightly "held" feel
+      lerp: 0.06, // lower = more eased / "held" feel
+      wheelMultiplier: 0.9,
       smoothWheel: true,
       syncTouch: true, // apply the same eased feel to touch (mobile)
-      syncTouchLerp: 0.08,
+      syncTouchLerp: 0.06,
+      touchMultiplier: 0.9,
       anchors: true, // smooth in-page anchor navigation
     });
     setLenis(lenis);

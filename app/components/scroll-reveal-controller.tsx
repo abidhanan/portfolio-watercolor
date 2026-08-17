@@ -23,9 +23,8 @@ const revealSelectors = [
   // Logos / images
   "main section img",
   "main section [role='img']",
-  // Footer
-  "footer p",
-  "footer a[href]",
+  // Skill / highlight tags
+  "main section .reveal-chip",
 ].join(",");
 
 function isInViewport(element: HTMLElement) {

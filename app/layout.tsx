@@ -15,7 +15,7 @@ export const dynamic = "force-static";
 
 const siteUrl = "https://www.abidhanan.my.id";
 const description =
-  "Abid Hanan Wicaksono (AHAWI) is a Developer Relations professional, Full Stack & Blockchain developer, and content creator from Indonesia. Explore his portfolio: experience, certifications, skills, and projects.";
+  "Abid Hanan Wicaksono (AHAWI) is a Developer Relations professional and content creator from Indonesia. Explore his portfolio: experience, certifications, skills, and projects.";
 
 const socialProfiles = [
   "https://www.instagram.com/ahawi_channel",
@@ -30,7 +30,7 @@ const socialProfiles = [
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Abid Hanan Wicaksono — Developer Relations & Blockchain Developer",
+    default: "Abid Hanan Wicaksono — Developer Relations",
     template: "%s | Abid Hanan Wicaksono",
   },
   description,
@@ -45,8 +45,6 @@ export const metadata: Metadata = {
     "ahawi_channel",
     "Developer Relations",
     "DevRel",
-    "Blockchain Developer",
-    "Full Stack Developer",
     "Web3 Developer",
     "Solidity",
     "React",
@@ -72,7 +70,7 @@ export const metadata: Metadata = {
     firstName: "Abid Hanan",
     lastName: "Wicaksono",
     username: "ahawi_channel",
-    title: "Abid Hanan Wicaksono — Developer Relations & Blockchain Developer",
+    title: "Abid Hanan Wicaksono — Developer Relations",
     description,
     url: siteUrl,
     siteName: "Abid Hanan Wicaksono",
@@ -82,13 +80,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Abid Hanan Wicaksono — Developer Relations & Blockchain Developer",
+        alt: "Abid Hanan Wicaksono — Developer Relations",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abid Hanan Wicaksono — Developer Relations & Blockchain Developer",
+    title: "Abid Hanan Wicaksono — Developer Relations",
     description,
     images: ["/og-image.png"],
     creator: "@ahawi_channel",
@@ -113,7 +111,7 @@ const jsonLd = {
       image: `${siteUrl}/og-image.png`,
       jobTitle: "Developer Relations",
       description:
-        "Abid Hanan Wicaksono is a Developer Relations professional, Full Stack and Blockchain developer, and content creator from Indonesia who connects technology, communities, and business goals through developer education and content creation.",
+        "Abid Hanan Wicaksono is a Developer Relations professional and content creator from Indonesia who connects technology, communities, and business goals through developer education and content creation.",
       email: "abidhanan0904@gmail.com",
       knowsAbout: [
         "Developer Relations",
@@ -148,7 +146,7 @@ const jsonLd = {
       "@type": "ProfilePage",
       "@id": `${siteUrl}/#webpage`,
       url: siteUrl,
-      name: "Abid Hanan Wicaksono — Developer Relations & Blockchain Developer",
+      name: "Abid Hanan Wicaksono — Developer Relations",
       isPartOf: { "@id": `${siteUrl}/#website` },
       about: { "@id": `${siteUrl}/#person` },
       inLanguage: "en",

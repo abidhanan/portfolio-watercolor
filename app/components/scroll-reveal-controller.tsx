@@ -41,7 +41,7 @@ export function ScrollRevealController() {
       groupCounters.set(group, index + 1);
 
       element.dataset.scrollReveal = "";
-      element.style.setProperty("--reveal-delay", `${Math.min(index * 45, 320)}ms`);
+      element.style.setProperty("--reveal-delay", `${Math.min(index * 25, 100)}ms`);
       if (inView[i]) {
         element.classList.add("is-revealed");
       }

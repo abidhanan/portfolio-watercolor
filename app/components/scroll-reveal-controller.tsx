@@ -14,6 +14,7 @@ const revealSelectors = [
   "main section .rope-line-x",
   "main section .rope-line-vertical",
   "main section#about .rounded-full",
+  "main section#home .inline-flex",
   "footer a[href]",
 ].join(",");
 

@@ -5,7 +5,6 @@ import { X } from "lucide-react";
 import type { PointerEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "./language-provider";
-import { getLenis } from "../lib/smooth-scroll";
 
 type CertificateItem = {
   title: string;
@@ -56,13 +55,11 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
 
     syncOverlayTop();
     document.body.style.overflow = "hidden";
-    getLenis()?.stop();
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("resize", syncOverlayTop);
 
     return () => {
       document.body.style.overflow = "";
-      getLenis()?.start();
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("resize", syncOverlayTop);
     };

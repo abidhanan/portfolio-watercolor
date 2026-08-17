@@ -34,10 +34,6 @@ function isInViewport(element: HTMLElement) {
 
 export function ScrollRevealController() {
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
-
     const revealElements = Array.from(
       document.querySelectorAll<HTMLElement>(revealSelectors),
     ).filter((element) => !element.closest(".certificate-marquee-track, [role='dialog']"));

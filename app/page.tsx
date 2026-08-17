@@ -100,7 +100,6 @@ export default function Home() {
       >
         <div className="w-full space-y-4 text-center md:w-1/2 md:space-y-6 md:text-left">
           <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF]/90 px-3 py-1.5 text-xs font-bold text-[#075985] shadow-sm backdrop-blur-sm sm:text-sm md:justify-start md:px-4">
-            <span>{content.home.badge}</span>
             <RotatingRoleBadge />
           </div>
           <h1 className="home-title-outline section-readable text-[2.75rem] font-extrabold leading-[1.05] text-[#0F172A] sm:text-5xl md:text-6xl md:leading-tight lg:text-7xl">

@@ -125,7 +125,7 @@ export const careerItems: CareerItem[] = [
   {
     period: "Jun 2023 - Present",
     role: "Content Creator",
-    company: "TikTok - Part-time",
+    company: "TikTok - Part time",
     companyLogo: "/logo-tiktok.webp",
     desc: "Content creator on TikTok with a focus on social media analytics to boost engagement and visibility. Skilled in tracking performance and optimizing content strategies to maximize reach. Currently developing creative content to grow the audience and enhance brand interaction.",
     highlights: ["TikTok", "Content optimization", "Audience growth"],
@@ -133,7 +133,7 @@ export const careerItems: CareerItem[] = [
   {
     period: "Jun 2023 - Present",
     role: "Content Creator",
-    company: "YouTube - Part-time",
+    company: "YouTube - Part time",
     companyLogo: "/logos/youtube-FF0000.svg",
     logoContain: true,
     desc: "Content creator on YouTube, utilizing social media analytics to grow the channel and enhance viewer engagement. Focused on optimizing content strategies based on performance metrics and audience insights. Currently building a growing YouTube presence with data-driven content.",
@@ -142,7 +142,7 @@ export const careerItems: CareerItem[] = [
   {
     period: "May 2019 - Present",
     role: "Content Creator",
-    company: "Instagram - Part-time",
+    company: "Instagram - Part time",
     companyLogo: "/logo-instagram.webp",
     desc: "Passionate content creator with expertise in social media analytics, driving engagement, and building a dedicated audience. Skilled in creating insightful data-driven content to enhance visibility and interaction. Currently managing Instagram content to optimize reach and growth.",
     highlights: ["Instagram", "Content strategy", "Social analytics"],
@@ -150,7 +150,7 @@ export const careerItems: CareerItem[] = [
   {
     period: "Apr 2026 - Jun 2026",
     role: "Ambassador",
-    company: "ARMchain - Part-time",
+    company: "ARMchain - Contract",
     companyLogo: "/logo-armchain.webp",
     desc: "Introducing ARMchain's technological solutions to a global audience, educating the community on blockchain innovation, and supporting ecosystem growth through strategic initiatives and networking.",
     highlights: ["ARMchain", "Blockchain education", "Ecosystem growth"],
@@ -158,7 +158,7 @@ export const careerItems: CareerItem[] = [
   {
     period: "Jun 2023 - Jun 2026",
     role: "Affiliator",
-    company: "TikTok - Part-time",
+    company: "TikTok - Part time",
     companyLogo: "/logo-tiktok.webp",
     desc: "Experienced in digital marketing as an affiliator, leveraging TikTok to drive product promotions and sales. Specializing in showcasing products and generating revenue through affiliate marketing with campaigns that drive conversions.",
     highlights: ["Affiliate marketing", "Product promotion", "Conversions"],
@@ -175,7 +175,7 @@ export const careerItems: CareerItem[] = [
   {
     period: "Oct 2025 - Feb 2026",
     role: "Associate Marketing",
-    company: "Coinversity - Part-time",
+    company: "Coinversity - Contract",
     companyLogo: "/logo-coinversity.webp",
     desc: "Bridging the gap to the future of the internet through simple, accurate, and inspiring Web3 education for everyone.",
     highlights: ["Coinversity", "Web3 education", "Marketing"],
@@ -191,7 +191,7 @@ export const careerItems: CareerItem[] = [
   {
     period: "Jun 2022 - Jun 2024",
     role: "Affiliator",
-    company: "Shopee - Part-time",
+    company: "Shopee - Part time",
     companyLogo: "/logos/shopee-EE4D2D.svg",
     logoContain: true,
     desc: "Affiliator on Shopee, promoting products through strategic digital marketing campaigns. Expert in curating product collections and driving sales through affiliate marketing. Focused on leveraging Shopee's platform to create effective campaigns that boost conversions.",

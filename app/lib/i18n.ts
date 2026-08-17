@@ -58,7 +58,7 @@ const uiText = {
     about: {
       eyebrow: "About Me",
       summaryLabel: "Identity & DevRel Values",
-      body: "I am Abid Hanan Wicaksono, a Developer Relations professional with a diverse background in technology, business, Web3, blockchain, and digital marketing. I turn complex technical ideas into clear stories, useful resources, and mutually valuable collaboration opportunities while staying grounded in communication, community, and meaningful social impact.",
+      body: "I am Abid Hanan Wicaksono, a Developer Relations professional with a diverse background in technology, business, and digital marketing. I turn complex technical ideas into clear stories, useful resources, and mutually valuable collaboration opportunities while staying grounded in communication, community, and meaningful social impact.",
     },
     sections: {
       education: {
@@ -174,7 +174,7 @@ const uiText = {
     about: {
       eyebrow: "Tentang Saya",
       summaryLabel: "Identitas & Nilai DevRel",
-      body: "Saya Abid Hanan Wicaksono, seorang profesional Developer Relations dengan latar belakang beragam di bidang teknologi, bisnis, Web3, blockchain, dan digital marketing. Saya mengubah ide teknis yang kompleks menjadi cerita yang jelas, sumber daya yang berguna, dan peluang kolaborasi yang saling bernilai, dengan tetap berpijak pada komunikasi, komunitas, dan dampak sosial yang bermakna.",
+      body: "Saya Abid Hanan Wicaksono, seorang profesional Developer Relations dengan latar belakang beragam di bidang teknologi, bisnis, dan digital marketing. Saya mengubah ide teknis yang kompleks menjadi cerita yang jelas, sumber daya yang berguna, dan peluang kolaborasi yang saling bernilai, dengan tetap berpijak pada komunikasi, komunitas, dan dampak sosial yang bermakna.",
     },
     sections: {
       education: {

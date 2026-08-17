@@ -27,6 +27,11 @@ function isInViewport(element: HTMLElement) {
 
 export function ScrollRevealController() {
   useEffect(() => {
+    // No scroll-reveal animations on mobile — content just shows normally.
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      return;
+    }
+
     const revealElements = Array.from(
       document.querySelectorAll<HTMLElement>(revealSelectors),
     ).filter((element) => !element.closest(".certificate-marquee-track, [role='dialog']"));

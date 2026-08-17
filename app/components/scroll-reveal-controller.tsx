@@ -2,10 +2,10 @@
 
 import { useEffect } from "react";
 
-// Every box/container that should animate on scroll. A static selector list is
-// used (rather than a getComputedStyle scan) so setup is cheap and does not
-// force layout/reflow. Inner tiles inherit the animation from their card.
+// Everything that should animate on scroll — boxes, text and logos. A static
+// selector list keeps setup cheap (no getComputedStyle / forced reflow).
 const revealSelectors = [
+  // Boxes / containers
   "main section .shadow-watercolor",
   "main section article",
   "main section .tool-box",
@@ -15,6 +15,16 @@ const revealSelectors = [
   "main section .rope-line-vertical",
   "main section#about .rounded-full",
   "main section#home .inline-flex",
+  // Text
+  "main section h1",
+  "main section h2",
+  "main section h3",
+  "main section p",
+  // Logos / images
+  "main section img",
+  "main section [role='img']",
+  // Footer
+  "footer p",
   "footer a[href]",
 ].join(",");
 

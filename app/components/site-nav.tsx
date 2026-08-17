@@ -267,7 +267,10 @@ export function SiteNav() {
 
         {/* Navigasi Mobile (Tampil saat Hamburger di-klik) */}
         {isMenuOpen && (
-          <div className="absolute left-4 right-4 top-full z-50 mt-2 flex max-h-[calc(100svh-5rem)] flex-col gap-2 overflow-y-auto rounded-2xl border border-[#DCEBF7] bg-white/95 p-3 shadow-2xl backdrop-blur-xl md:hidden">
+          <div
+            data-lenis-prevent
+            className="absolute left-4 right-4 top-full z-50 mt-2 flex max-h-[calc(100svh-5rem)] flex-col gap-2 overflow-y-auto rounded-2xl border border-[#DCEBF7] bg-white/95 p-3 shadow-2xl md:hidden"
+          >
             {navItems.map((item) => {
               const isActive = activeHref === item.href;
               return (

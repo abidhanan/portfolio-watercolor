@@ -6,6 +6,7 @@ import { LanguageProvider } from "./components/language-provider";
 import { ScrollRevealController } from "./components/scroll-reveal-controller";
 import { SiteFooter } from "./components/site-footer";
 import { SiteNav } from "./components/site-nav";
+import { SmoothScroll } from "./components/smooth-scroll";
 
 // Memuat Google Font agar konsisten di Desktop dan Mobile
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap" });
@@ -169,6 +170,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <LanguageProvider>
+          <SmoothScroll />
           <SiteNav />
           {children}
           <SiteFooter />

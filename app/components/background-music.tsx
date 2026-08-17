@@ -107,7 +107,7 @@ export function BackgroundMusic() {
         aria-pressed={isPlaying}
         title={buttonLabel}
         onClick={handleToggleMusic}
-        className="fixed bottom-5 right-5 z-[120] flex h-12 w-12 items-center justify-center rounded-2xl border border-[#DCEBF7] bg-white/90 text-[#0F172A] shadow-lg backdrop-blur-md transition duration-200 hover:-translate-y-0.5 hover:bg-white hover:shadow-xl"
+        className="fixed bottom-5 right-5 z-[120] flex h-12 w-12 items-center justify-center rounded-2xl border border-[#DCEBF7] bg-white/95 text-[#0F172A] shadow-lg transition duration-200 hover:-translate-y-0.5 hover:bg-white hover:shadow-xl"
       >
         {isPlaying ? (
           <Volume2 className="h-6 w-6 text-[#075985]" aria-hidden="true" />

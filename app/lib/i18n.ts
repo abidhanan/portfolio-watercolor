@@ -355,11 +355,32 @@ const certificateId: Partial<(typeof certificateItems)[number]>[] = [
     desc: "Pemateri di Webinar Nasional cybersecurity, membahas deepfake dan social engineering di era AI.",
   },
   {
+    title: "JobReady: Employability Skills",
+    issuer: "Wadhwani Foundation",
+    issued: "Diterbitkan Jun 2026",
+    credentialId: "Level Basic",
+    desc: "JobReady: Employability Skills (Level Basic) dari Wadhwani Foundation — 75 jam pelatihan.",
+  },
+  {
     title: "Certificate of Web3 University Tour",
     issuer: "Coinversity",
     issued: "Diterbitkan Mei 2026",
     credentialId: "Associate",
     desc: "Associate untuk Web3 University Tour, mendukung pelaksanaan kegiatan program dan koordinasi acara.",
+  },
+  {
+    title: "Python Programming Basics",
+    issuer: "ITI Mahara-Tech",
+    issued: "Diterbitkan Mar 2026",
+    credentialId: "7JzKBRmoB3",
+    desc: "Menyelesaikan Python Programming Basics di ITI Mahara-Tech, mencakup dasar-dasar Python.",
+  },
+  {
+    title: "Computer Network Fundamentals",
+    issuer: "ITI Mahara-Tech",
+    issued: "Diterbitkan Mar 2026",
+    credentialId: "aHhB6HdFC3",
+    desc: "Menyelesaikan Computer Network Fundamentals di ITI Mahara-Tech, mencakup dasar jaringan komputer.",
   },
   {
     title: "Indeks Prestasi Terbaik 3,97/4,00",

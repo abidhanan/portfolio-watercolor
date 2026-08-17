@@ -107,11 +107,41 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
       rafRef.current = requestAnimationFrame(step);
     };
 
-    rafRef.current = requestAnimationFrame(step);
+    // Only run the animation loop while the marquee is on/near screen, so it
+    // doesn't steal main-thread time (and cause scroll jank) elsewhere.
+    const start = () => {
+      if (rafRef.current) return;
+      lastTsRef.current = null;
+      rafRef.current = requestAnimationFrame(step);
+    };
+    const stop = () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = 0;
+      }
+    };
+
+    const viewport = track.parentElement;
+    const io = viewport
+      ? new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) start();
+            else stop();
+          },
+          { rootMargin: "300px 0px" },
+        )
+      : null;
+    if (io && viewport) {
+      io.observe(viewport);
+    } else {
+      start();
+    }
+
     window.addEventListener("resize", measure);
 
     return () => {
-      cancelAnimationFrame(rafRef.current);
+      stop();
+      io?.disconnect();
       window.removeEventListener("resize", measure);
       lastTsRef.current = null;
     };

@@ -2,10 +2,10 @@
 
 import { useEffect } from "react";
 
-// Everything that should animate on scroll — boxes, text and logos. A static
-// selector list keeps setup cheap (no getComputedStyle / forced reflow).
+// Animate at the container level so each box carries its own text + logo along
+// (reliable). Deeply nesting a reveal on every inner element made child reveals
+// fire unreliably on mobile — some never animated — so we avoid that here.
 const revealSelectors = [
-  // Boxes / containers
   "main section .shadow-watercolor",
   "main section article",
   "main section .tool-box",
@@ -14,17 +14,10 @@ const revealSelectors = [
   "main section .rope-line-x",
   "main section .rope-line-vertical",
   "main section#about .rounded-full",
+  // Standalone hero content (not inside a card)
   "main section#home .inline-flex",
-  // Text
-  "main section h1",
-  "main section h2",
-  "main section h3",
-  "main section p",
-  // Logos / images
-  "main section img",
-  "main section [role='img']",
-  // Skill / highlight tags
-  "main section .reveal-chip",
+  "main section#home h1",
+  "main section#home p",
 ].join(",");
 
 function isInViewport(element: HTMLElement) {

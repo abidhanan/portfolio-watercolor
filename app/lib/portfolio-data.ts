@@ -438,4 +438,11 @@ export const activityItems: ActivityItem[] = [
     image: "/activity-ngabuburit-computational-thinking.jpg",
     desc: "On Friday, February 20, 2026, I had the opportunity to be a speaker at NgabuburIT with the theme \"Innovation in Sharing, Inspiring the Next Generation through Computational Thinking.\" I shared how Computational Thinking can be applied in daily life with the girls at Aisyah Orphanage, helping them build systematic thinking skills for the future.",
   },
+  {
+    title: "Daily Stand Up",
+    organization: "Maua AI",
+    category: "Solo Techno Park",
+    image: "/activity-maua-daily-standup.jpg",
+    desc: "Joined Maua AI's daily stand-up at Solo Techno Park, a short daily sync where the team aligns on priorities, shares progress and blockers, and plans the day's work. As part of this AI-powered team, these sessions keep our app development and social-media growth moving in the same direction while strengthening collaboration and communication across the team.",
+  },
 ];

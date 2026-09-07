@@ -1,18 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2d7a50"/>
-      <stop offset="100%" stop-color="#5cc98a"/>
-    </linearGradient>
-  </defs>
-  <rect width="32" height="32" fill="url(#g)"/>
-  <g transform="translate(16,16)" fill="white" opacity="0.93">
-    <ellipse cx="0" cy="-5.5" rx="3" ry="4.5" transform="rotate(0)"/>
-    <ellipse cx="0" cy="-5.5" rx="3" ry="4.5" transform="rotate(72)"/>
-    <ellipse cx="0" cy="-5.5" rx="3" ry="4.5" transform="rotate(144)"/>
-    <ellipse cx="0" cy="-5.5" rx="3" ry="4.5" transform="rotate(216)"/>
-    <ellipse cx="0" cy="-5.5" rx="3" ry="4.5" transform="rotate(288)"/>
-    <circle cx="0" cy="0" r="2.8" fill="white" opacity="1"/>
-    <circle cx="0" cy="0" r="1.6" fill="#3b9b62" opacity="0.7"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="maua">
+  <!-- Marka merek maua. — tanda `m.` di atas kotak tinta, satu identitas dengan
+       favicon.png, apple-touch-icon.png, dan marka inline di apps/board/index.html.
+       Hurufnya digambar sebagai goresan, bukan <text>, karena favicon dirender tanpa
+       webfont: <text> akan disubstitusi font sistem dan bentuknya berubah per mesin. -->
+  <rect width="64" height="64" rx="14" fill="#14130f"/>
+  <g fill="none" stroke="#fffdf8" stroke-width="6.6" stroke-linecap="butt">
+    <path d="M14.6 45.5V21.2"/>
+    <path d="M14.6 30.1a7.3 7.3 0 0 1 14.6 0v15.4"/>
+    <path d="M29.2 30.1a7.3 7.3 0 0 1 14.6 0v15.4"/>
   </g>
+  <circle cx="52.6" cy="42.2" r="4.3" fill="#e60000"/>
 </svg>

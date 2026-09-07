@@ -490,6 +490,12 @@ const activityId: Partial<(typeof activityItems)[number]>[] = [
     category: "Panti Asuhan Aisyah",
     desc: "Pada Jumat, 20 Februari 2026, saya berkesempatan menjadi pembicara di NgabuburIT dengan tema \"Inovasi dalam Berbagi, Menginspirasi Generasi dengan Computational Thinking.\" Saya membagikan penerapan Computational Thinking dalam kehidupan sehari-hari kepada adik-adik di Panti Asuhan Aisyah untuk membantu mereka membangun kemampuan berpikir sistematis untuk masa depan.",
   },
+  {
+    title: "Daily Stand Up",
+    organization: "Maua AI",
+    category: "Solo Techno Park",
+    desc: "Mengikuti daily stand-up Maua AI di Solo Techno Park, sesi sinkronisasi singkat tempat tim menyelaraskan prioritas, berbagi progres dan kendala, serta merencanakan pekerjaan hari itu. Sebagai bagian dari tim berbasis AI, sesi ini menjaga pengembangan aplikasi dan pertumbuhan media sosial tetap searah sekaligus memperkuat kolaborasi dan komunikasi antar tim.",
+  },
 ];
 
 function localizePortfolioData(language: Language) {

@@ -1,9 +1,21 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
   images: {
+    ...(process.env.NEXT_PUBLIC_ASSET_BASE_URL
+      ? { loader: "custom" as const, loaderFile: "./app/lib/cdn-image-loader.ts" }
+      : {}),
+    deviceSizes: [384, 512, 640, 768, 1024, 1280, 1600, 2000],
+    imageSizes: [96, 192, 256],
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
+  },
+  async headers() {
+    return [{
+      source: "/:path*\\.(webp|svg|png|mpeg)",
+      headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+    }];
   },
 };
 

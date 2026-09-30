@@ -61,6 +61,7 @@ export const techGroups: TechGroup[] = [
       { name: "Laravel", logo: "/logos/laravel-FF2D20.svg" },
       { name: "REST API", logo: "/logos/openapiinitiative-6BA539.svg" },
       { name: "MySQL", logo: "/logos/mysql-4479A1.svg" },
+      { name: "Supabase", logo: "/logos/supabase.svg" },
     ],
   },
   {
@@ -99,6 +100,7 @@ export const techGroups: TechGroup[] = [
       { name: "OrderSosmed", logo: "/logo-ordersosmed.webp", square: true, padded: true },
       { name: "Xoftware", logo: "/logo-xoftware.webp" },
       { name: "Resend", logo: "/logos/resend-000000.svg" },
+      { name: "Buffer", logo: "/logos/buffer.svg" },
     ],
   },
 ];
@@ -109,7 +111,7 @@ export const educationItems = [
     title: "Bachelor of Computer Science",
     place: "Sugeng Hartono University",
     desc: "A 5th-semester Computer Science student with a GPA of 3.97, focused on computer science fundamentals, digital technology, technical communication, and professional growth that supports a Developer Relations path.",
-    logo: "/logo-ush.png",
+    logo: "/logo-ush.webp",
   },
 ];
 
@@ -206,7 +208,7 @@ export const certificateItems = [
     year: "Jul 2026",
     issued: "Issued Jul 2026",
     credentialId: "Speaker",
-    image: "/certificate-cybersecurity-webinar.jpg",
+    image: "/certificate-cybersecurity-webinar.webp",
     desc: "Speaker at a National Webinar on cybersecurity, exploring deepfake and social engineering in the AI era.",
   },
   {
@@ -215,7 +217,7 @@ export const certificateItems = [
     year: "Jun 2026",
     issued: "Issued Jun 2026",
     credentialId: "Basic Level",
-    image: "/certificate-wadhwani-jobready.jpg",
+    image: "/certificate-wadhwani-jobready.webp",
     desc: "JobReady: Employability Skills (Basic Level) by Wadhwani Foundation — 75 hours of training.",
   },
   {
@@ -224,7 +226,7 @@ export const certificateItems = [
     year: "May 2026",
     issued: "Issued May 2026",
     credentialId: "Associate",
-    image: "/certificate-web3-university-tour-coinversity.jpg",
+    image: "/certificate-web3-university-tour-coinversity.webp",
     desc: "Associate for the Web3 University Tour, supporting program activities and event coordination.",
   },
   {
@@ -233,7 +235,7 @@ export const certificateItems = [
     year: "Mar 2026",
     issued: "Issued Mar 2026",
     credentialId: "7JzKBRmoB3",
-    image: "/certificate-python-basics.jpg",
+    image: "/certificate-python-basics.webp",
     desc: "Completed Python Programming Basics at ITI Mahara-Tech, covering core Python fundamentals.",
   },
   {
@@ -242,7 +244,7 @@ export const certificateItems = [
     year: "Mar 2026",
     issued: "Issued Mar 2026",
     credentialId: "aHhB6HdFC3",
-    image: "/certificate-computer-network.jpg",
+    image: "/certificate-computer-network.webp",
     desc: "Completed Computer Network Fundamentals at ITI Mahara-Tech, covering core networking concepts.",
   },
   {
@@ -251,7 +253,7 @@ export const certificateItems = [
     year: "Feb 2026",
     issued: "Issued Feb 2026",
     credentialId: "6/STF/02/2026",
-    image: "/certificate-best-gpa.jpg",
+    image: "/certificate-best-gpa.webp",
     desc: "Best GPA Achievement for the Computer Science Program, Sugeng Hartono University (2025/2026).",
   },
   {
@@ -260,7 +262,7 @@ export const certificateItems = [
     year: "Feb 2026",
     issued: "Certificate Workshop Completion",
     credentialId: "Modules 1-5",
-    image: "/certificate-sui-workshop.jpg",
+    image: "/certificate-sui-workshop.webp",
     desc: "Completed Sui Developer Workshop modules 1-5, covering core concepts and hands-on Sui development.",
   },
   {
@@ -269,7 +271,7 @@ export const certificateItems = [
     year: "Jan 2026",
     issued: "Issued Jan 2026",
     credentialId: "2026/250/57666",
-    image: "/certificate-data-science-bisa-ai.jpg",
+    image: "/certificate-data-science-bisa-ai.webp",
     desc: "Data Science certificate from BISA AI Academy for completing a Data Science class.",
   },
   {
@@ -278,7 +280,7 @@ export const certificateItems = [
     year: "Jan 2026",
     issued: "Issued Jan 2026",
     credentialId: "Certificate of Participation",
-    image: "/certificate-ideonic-2026.jpg",
+    image: "/certificate-ideonic-2026.webp",
     desc: "Participant in IDEONIC 2026 International Competition, organized by Mercu Buana University, Jakarta.",
   },
   {
@@ -287,7 +289,7 @@ export const certificateItems = [
     year: "Class of 2025",
     issued: "Google Student Ambassador",
     credentialId: "Class of 2025",
-    image: "/certificate-google-student-ambassador.jpg",
+    image: "/certificate-google-student-ambassador.webp",
     desc: "Google Student Ambassador, selected from 12,000 students for championing Google AI on campus.",
   },
   {
@@ -296,7 +298,7 @@ export const certificateItems = [
     year: "Oct 2025 - Oct 2028",
     issued: "Issued Oct 2025",
     credentialId: "Expires Oct 2028",
-    image: "/certificate-gemini-certified-student.jpg",
+    image: "/certificate-gemini-certified-student.webp",
     desc: "Gemini Certified Student, demonstrating the knowledge and skills needed to use Google AI.",
   },
   {
@@ -305,7 +307,7 @@ export const certificateItems = [
     year: "Aug 2025",
     issued: "Issued Aug 2025",
     credentialId: "Projek-D VOL.4 2025",
-    image: "/certificate-konco-konco-ngonten.jpg",
+    image: "/certificate-konco-konco-ngonten.webp",
     desc: "Konco Konco Ngonten certificate from Projek-D VOL.4 2025.",
   },
   {
@@ -314,7 +316,7 @@ export const certificateItems = [
     year: "Aug 2025",
     issued: "Issued Aug 2025",
     credentialId: "1078108",
-    image: "/certificate-0g-builder.jpg",
+    image: "/certificate-0g-builder.webp",
     desc: "Certificate of 0G Builder as a Certified 0G Builder.",
   },
   {
@@ -323,7 +325,7 @@ export const certificateItems = [
     year: "Aug 2025",
     issued: "Issued Aug 2025",
     credentialId: "1059217",
-    image: "/certificate-0g-learner.jpg",
+    image: "/certificate-0g-learner.webp",
     desc: "Certificate of 0G Learner as a Certified 0G Learner.",
   },
   {
@@ -332,7 +334,7 @@ export const certificateItems = [
     year: "Aug 2025",
     issued: "Issued Aug 2025",
     credentialId: "1012200",
-    image: "/certificate-ethereum-builder.jpg",
+    image: "/certificate-ethereum-builder.webp",
     desc: "Certificate of Ethereum Builder as a Certified Ethereum Builder.",
   },
   {
@@ -341,7 +343,7 @@ export const certificateItems = [
     year: "Jun 2025",
     issued: "Issued Jun 2025",
     credentialId: "1005535",
-    image: "/certificate-ethereum-learner.jpg",
+    image: "/certificate-ethereum-learner.webp",
     desc: "Certificate of Ethereum Learner as a Certified Ethereum Learner.",
   },
   {
@@ -350,7 +352,7 @@ export const certificateItems = [
     year: "May 2025",
     issued: "Issued May 2025",
     credentialId: "013-SR(PS)/IYC/Inventify-Center/V/2025",
-    image: "/certificate-international-youthpreneur.jpg",
+    image: "/certificate-international-youthpreneur.webp",
     desc: "International Youthpreuner Competition certificate for receiving a Bronze Medal.",
   },
   {
@@ -359,7 +361,7 @@ export const certificateItems = [
     year: "Apr 2025",
     issued: "Issued Apr 2025",
     credentialId: "Participant",
-    image: "/certificate-web3-university-tour-yogyakarta.jpg",
+    image: "/certificate-web3-university-tour-yogyakarta.webp",
     desc: "Participant in Web3 University Tour Yogyakarta by Binance Academy, Tokocrypto, and Coinvestasi.",
   },
   {
@@ -368,7 +370,7 @@ export const certificateItems = [
     year: "Dec 2024",
     issued: "Issued Dec 2024",
     credentialId: "65909926-3188-40d5-ad83-730c332585f9",
-    image: "/certificate-inixindo-ai-cyber-security.jpg",
+    image: "/certificate-inixindo-ai-cyber-security.webp",
     desc: "Certificate of Attendance for Empowering Industries with AI in the New Era of Cyber Security.",
   },
 ];
@@ -386,63 +388,63 @@ export const activityItems: ActivityItem[] = [
     title: "Together for Humanity: Distributing 10,000 Food Packages in Solo",
     organization: "Indonesian Red Cross (PMI)",
     category: "Vastenburg Fortress",
-    image: "/activity-pmi-food-packages.jpg",
+    image: "/activity-pmi-food-packages.webp",
     desc: "Contributed as a representative of KSR Unit Markas PMI Surakarta in the distribution of 10,000 food packages for people in need, organized by the Solo Together Forever community at Vastenburg Fortress. This initiative strengthened my commitment to humanitarian efforts, solidarity, and social care.",
   },
   {
     title: "Youth Entrepreneurship Training Program 2025",
     organization: "Youth and Sports Office (Dispora) & Government of Surakarta",
     category: "Riyadi Palace Hotel, Solo",
-    image: "/activity-youth-entrepreneurship-training-2025.jpg",
+    image: "/activity-youth-entrepreneurship-training-2025.webp",
     desc: "Participated in the Youth Entrepreneurship Training Program from April 14-16, 2025, designed to build character and fundamental entrepreneurial skills for young people entering the business world. The program included inspiration from city leaders and young entrepreneurs, followed by a closing visit to Griya Dhahar RB on April 17, 2025, as an example of innovative and sustainable culinary business management.",
   },
   {
     title: "WEB3 University Tour 2025",
     organization: "Coinvestasi, Binance Academy, and Tokocrypto",
     category: "Gadjah Mada University",
-    image: "/activity-web3-university-tour-2025.jpg",
+    image: "/activity-web3-university-tour-2025.webp",
     desc: "Joined WEB3 University Tour on Tuesday, April 29, 2025 at Gadjah Mada University, gaining insights into blockchain technology, the growing Web3 ecosystem, and career opportunities in crypto and the digital economy. This event was also a chance to connect with industry experts and Web3 enthusiasts from diverse backgrounds.",
   },
   {
     title: "Google Student Ambassador Inauguration Day",
     organization: "Google Indonesia",
     category: "MGP Space, SCBD Park, South Jakarta",
-    image: "/activity-google-student-ambassador-inauguration.jpg",
+    image: "/activity-google-student-ambassador-inauguration.webp",
     desc: "Joined the inauguration of 800 Google Student Ambassadors from across Indonesia on Monday, September 29, 2025. The event expanded my network and deepened my insight into Google's Gemini AI features, which will later be shared with students and friends on campus.",
   },
   {
     title: "Google Office Visit",
     organization: "Google Indonesia",
     category: "Pacific Century Place Tower, SCBD, South Jakarta",
-    image: "/activity-google-office-visit.jpg",
+    image: "/activity-google-office-visit.webp",
     desc: "Visited the Google Indonesia office on the 43rd and 45th floors of Pacific Century Place Tower on Tuesday, September 30, 2025, as part of the Google Student Ambassador program. During the visit, we were introduced to Google's departments and office facilities while learning more about the working environment behind Google's products and community initiatives.",
   },
   {
     title: "Unlocking the Potential of Gemini AI as a Student Study Companion",
     organization: "Google Student Ambassador",
     category: "Sugeng Hartono University",
-    image: "/activity-gemini-ai-study-companion.jpg",
+    image: "/activity-gemini-ai-study-companion.webp",
     desc: "Held a seminar at Sugeng Hartono University on Friday, October 31, 2025 to introduce Gemini AI features as a student learning companion. As a Google Student Ambassador, I shared how Gemini AI can help campus friends handle daily assignments and study more effectively.",
   },
   {
     title: "Google Student Ambassador Graduation",
     organization: "Google Indonesia",
     category: "Ciputra Artpreneur",
-    image: "/activity-google-student-ambassador-graduation.jpg",
+    image: "/activity-google-student-ambassador-graduation.webp",
     desc: "Completed six months as a Google Student Ambassador after carrying out the mission to adopt Gemini AI technology on campus at Sugeng Hartono University. Becoming a Google Student Ambassador and reaching the top 200 among 12,000 applicants across Indonesia became one of my biggest achievements as a content creator.",
   },
   {
     title: "NgabuburIT: Exploring Technology, Weaving Togetherness",
     organization: "HIMAKOM Sugeng Hartono University",
     category: "Aisyah Orphanage",
-    image: "/activity-ngabuburit-computational-thinking.jpg",
+    image: "/activity-ngabuburit-computational-thinking.webp",
     desc: "On Friday, February 20, 2026, I had the opportunity to be a speaker at NgabuburIT with the theme \"Innovation in Sharing, Inspiring the Next Generation through Computational Thinking.\" I shared how Computational Thinking can be applied in daily life with the girls at Aisyah Orphanage, helping them build systematic thinking skills for the future.",
   },
   {
     title: "Daily Stand Up",
     organization: "Maua AI",
     category: "Solo Techno Park",
-    image: "/activity-maua-daily-standup.jpg",
+    image: "/activity-maua-daily-standup.webp",
     desc: "Joined Maua AI's daily stand-up at Solo Techno Park, a short daily sync where the team aligns on priorities, shares progress and blockers, and plans the day's work. As part of this AI-powered team, these sessions keep our app development and social-media growth moving in the same direction while strengthening collaboration and communication across the team.",
   },
 ];

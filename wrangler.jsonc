@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "abidhanan-portfolio-cdn",
+  "compatibility_date": "2026-09-30",
+  "assets": {
+    "directory": "./.cloudflare/assets",
+    "not_found_handling": "none"
+  }
+}

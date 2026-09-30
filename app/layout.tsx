@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import type { CSSProperties } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { BackgroundMusic } from "./components/background-music";
@@ -6,14 +7,16 @@ import { LanguageProvider } from "./components/language-provider";
 import { ScrollRevealController } from "./components/scroll-reveal-controller";
 import { SiteFooter } from "./components/site-footer";
 import { SiteNav } from "./components/site-nav";
+import { assetBaseUrl, assetUrl } from "./lib/assets";
 
 // Memuat Google Font agar konsisten di Desktop dan Mobile
-const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap" });
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "optional" });
 
 // Fully static so Vercel serves a cached, compressed document (fast TTFB).
 export const dynamic = "force-static";
 
 const siteUrl = "https://www.abidhanan.my.id";
+const title = "Abid Hanan - DevRel";
 const description =
   "Abid Hanan Wicaksono (AHAWI) is a Developer Relations professional and content creator from Indonesia. Explore his portfolio: experience, certifications, skills, and projects.";
 
@@ -30,11 +33,13 @@ const socialProfiles = [
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Abid Hanan Wicaksono — Developer Relations",
-    template: "%s | Abid Hanan Wicaksono",
+    default: title,
+    template: "%s | Abid Hanan - DevRel",
   },
   description,
-  applicationName: "Abid Hanan Wicaksono Portfolio",
+  applicationName: title,
+  referrer: "strict-origin-when-cross-origin",
+  formatDetection: { telephone: false, address: false, email: false },
   authors: [{ name: "Abid Hanan Wicaksono", url: siteUrl }],
   creator: "Abid Hanan Wicaksono",
   publisher: "Abid Hanan Wicaksono",
@@ -70,11 +75,12 @@ export const metadata: Metadata = {
     firstName: "Abid Hanan",
     lastName: "Wicaksono",
     username: "ahawi_channel",
-    title: "Abid Hanan Wicaksono — Developer Relations",
+    title,
     description,
     url: siteUrl,
     siteName: "Abid Hanan Wicaksono",
     locale: "en_US",
+    alternateLocale: ["id_ID"],
     images: [
       {
         url: "/og-image.png",
@@ -86,7 +92,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abid Hanan Wicaksono — Developer Relations",
+    title,
     description,
     images: ["/og-image.png"],
     creator: "@ahawi_channel",
@@ -99,6 +105,13 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#F0F7FA",
+  colorScheme: "light",
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -108,7 +121,7 @@ const jsonLd = {
       name: "Abid Hanan Wicaksono",
       alternateName: ["Abid Hanan", "AHAWI"],
       url: siteUrl,
-      image: `${siteUrl}/og-image.png`,
+      image: `${siteUrl}/abid-profile.webp`,
       jobTitle: "Developer Relations",
       description:
         "Abid Hanan Wicaksono is a Developer Relations professional and content creator from Indonesia who connects technology, communities, and business goals through developer education and content creation.",
@@ -149,6 +162,7 @@ const jsonLd = {
       name: "Abid Hanan Wicaksono — Developer Relations",
       isPartOf: { "@id": `${siteUrl}/#website` },
       about: { "@id": `${siteUrl}/#person` },
+      mainEntity: { "@id": `${siteUrl}/#person` },
       inLanguage: "en",
     },
   ],
@@ -161,12 +175,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plusJakarta.className} min-h-screen bg-[#F0F7FA] text-[#1E293B]`}>
+      <head>
+        {assetBaseUrl ? <link rel="preconnect" href={assetBaseUrl} crossOrigin="anonymous" /> : null}
+      </head>
+      <body
+        className={`${plusJakarta.className} min-h-screen bg-[#F0F7FA] text-[#1E293B]`}
+        style={{
+          "--paper-texture": `url("${assetUrl("/crumpled-paper.webp")}")`,
+          "--beach-background": `url("${assetUrl("/watercolor-beach.webp")}")`,
+        } as CSSProperties}
+      >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
         <LanguageProvider>
+          <a href="#main-content" className="skip-link">Skip to content</a>
           <SiteNav />
           {children}
           <SiteFooter />

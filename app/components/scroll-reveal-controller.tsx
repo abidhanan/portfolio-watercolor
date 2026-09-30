@@ -32,7 +32,7 @@ function isInViewport(element: HTMLElement) {
 export function ScrollRevealController() {
   useEffect(() => {
     // No scroll-reveal animations on mobile — content just shows normally.
-    if (window.matchMedia("(max-width: 767px)").matches) {
+    if (window.matchMedia("(max-width: 767px), (prefers-reduced-motion: reduce)").matches) {
       return;
     }
 

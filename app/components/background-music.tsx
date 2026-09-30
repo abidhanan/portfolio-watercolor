@@ -2,8 +2,9 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Play, Volume2, VolumeX } from "lucide-react";
+import { assetUrl } from "../lib/assets";
 
-const audioSource = "/background-song.mpeg";
+const audioSource = assetUrl("/background-song.mpeg");
 const audioVolume = 0.45;
 
 export function BackgroundMusic() {

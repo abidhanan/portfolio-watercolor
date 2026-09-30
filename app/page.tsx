@@ -31,9 +31,9 @@ function LogoBadge({ name, logo, mark, size = "md", fill = false, padded = false
   const logoSize = size === "sm" ? "h-7 w-7" : "h-8 w-8";
   const logoClass = fill
     ? padded
-      ? "h-[85%] w-[85%] bg-contain"
-      : "h-full w-full bg-cover"
-    : `${logoSize} bg-contain`;
+      ? "h-[85%] w-[85%] object-contain"
+      : "h-full w-full object-cover"
+    : `${logoSize} object-contain`;
 
   return (
     <span
@@ -43,10 +43,13 @@ function LogoBadge({ name, logo, mark, size = "md", fill = false, padded = false
       aria-label={`${name} logo`}
     >
       {logo ? (
-        <span
+        <Image
+          src={logo}
+          alt=""
+          width={size === "sm" ? 48 : 56}
+          height={size === "sm" ? 48 : 56}
           aria-hidden="true"
-          className={`block bg-center bg-no-repeat ${logoClass}`}
-          style={{ backgroundImage: `url(${logo})` }}
+          className={logoClass}
         />
       ) : (
         <span className="text-sm font-black text-[#075985]">{mark ?? name.slice(0, 2)}</span>
@@ -56,17 +59,18 @@ function LogoBadge({ name, logo, mark, size = "md", fill = false, padded = false
 }
 
 type SectionHeaderProps = {
+  id: string;
   title: string;
   summary: string;
 };
 
-function SectionHeader({ title, summary }: SectionHeaderProps) {
+function SectionHeader({ id, title, summary }: SectionHeaderProps) {
   return (
-    <div className="relative mb-8 max-w-5xl md:mb-12">
+    <header className="relative mb-8 max-w-5xl md:mb-12">
       <div className="relative flex flex-col gap-3 md:flex-row md:items-center md:gap-0">
         <div className="section-readable shadow-watercolor relative z-20 flex w-full max-w-full items-center justify-center gap-3 rounded-full border border-[#BAE6FD] bg-[#F0F9FF]/95 px-4 py-2.5 sm:w-fit sm:px-5">
           <span className="rope-knot h-3.5 w-3.5 shrink-0 rounded-full" aria-hidden="true" />
-          <h2 className="text-center text-xs font-black uppercase tracking-[0.1em] text-[#0369A1] sm:whitespace-nowrap sm:text-sm sm:tracking-[0.14em]">
+          <h2 id={id} className="text-center text-xs font-black uppercase tracking-[0.1em] text-[#0369A1] sm:whitespace-nowrap sm:text-sm sm:tracking-[0.14em]">
             {title}
           </h2>
           <span className="rope-knot absolute -right-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
@@ -77,7 +81,7 @@ function SectionHeader({ title, summary }: SectionHeaderProps) {
           <p className="text-sm leading-relaxed text-[#334155] md:text-base">{summary}</p>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 
@@ -92,13 +96,14 @@ export default function Home() {
   } = content.portfolio;
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:px-10 md:py-12 xl:px-12">
+    <main id="main-content" tabIndex={-1} className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:px-10 md:py-12 xl:px-12">
       <section
         id="home"
+        aria-labelledby="home-heading"
         className={`${homeSectionClass} flex flex-col items-center justify-between gap-8 md:flex-row md:gap-12`}
       >
         <div className="w-full space-y-4 text-center md:w-1/2 md:space-y-6 md:text-left">
-          <h1 className="home-title-outline section-readable text-[2.75rem] font-extrabold leading-[1.05] text-[#0F172A] sm:text-5xl md:text-6xl md:leading-tight lg:text-7xl">
+          <h1 id="home-heading" className="home-title-outline section-readable text-[2.75rem] font-extrabold leading-[1.05] text-[#0F172A] sm:text-5xl md:text-6xl md:leading-tight lg:text-7xl">
             {content.home.intro}
             <br />
             <span className="home-role-outline text-[#075985]">{content.home.role}</span>
@@ -111,7 +116,7 @@ export default function Home() {
           <div className="home-photo-card absolute left-3 top-24 z-10 -rotate-[10deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_18px_36px_-18px_rgba(15,23,42,0.5)] sm:left-10 sm:top-28 sm:p-3 sm:pb-7 md:left-5 md:top-44 lg:left-10 lg:top-44">
             <div className="relative h-[12.25rem] w-[9.2rem] overflow-hidden rounded-md bg-gray-100 sm:h-[15rem] sm:w-[11rem] md:h-[16rem] md:w-[11.5rem] lg:h-[17rem] lg:w-[12rem]">
               <Image
-                src="/home-gemini-seminar.jpg"
+                src="/home-gemini-seminar.webp"
                 alt="Abid Hanan Wicaksono at a Gemini AI seminar"
                 fill
                 sizes="(min-width: 1024px) 208px, (min-width: 768px) 192px, 176px"
@@ -122,10 +127,10 @@ export default function Home() {
           <div className="home-photo-card absolute left-1/2 top-5 z-30 -translate-x-1/2 rotate-[2deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_26px_54px_-22px_rgba(15,23,42,0.6)] sm:top-6 sm:p-3 sm:pb-7 md:top-16 lg:top-16">
             <div className="relative h-[12.25rem] w-[9.2rem] overflow-hidden rounded-md bg-gray-100 sm:h-[15rem] sm:w-[11rem] md:h-[16rem] md:w-[11.5rem] lg:h-[17rem] lg:w-[12rem]">
               <Image
-                src="/home-google-office.jpeg"
+                src="/home-google-office.webp"
                 alt="Abid Hanan Wicaksono during a Google Office visit"
                 fill
-                priority
+                preload
                 sizes="(min-width: 1024px) 208px, (min-width: 768px) 192px, 176px"
                 className="scale-[1.08] object-cover object-[32%_58%]"
               />
@@ -134,7 +139,7 @@ export default function Home() {
           <div className="home-photo-card absolute right-3 top-24 z-20 rotate-[10deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_18px_36px_-18px_rgba(15,23,42,0.5)] sm:right-10 sm:top-28 sm:p-3 sm:pb-7 md:right-5 md:top-44 lg:right-10 lg:top-44">
             <div className="relative h-[12.25rem] w-[9.2rem] overflow-hidden rounded-md bg-gray-100 sm:h-[15rem] sm:w-[11rem] md:h-[16rem] md:w-[11.5rem] lg:h-[17rem] lg:w-[12rem]">
               <Image
-                src="/home-ngabuburit-speaker.jpeg"
+                src="/home-ngabuburit-speaker.webp"
                 alt="Abid Hanan Wicaksono as a speaker"
                 fill
                 sizes="(min-width: 1024px) 208px, (min-width: 768px) 192px, 176px"
@@ -145,7 +150,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className={centeredSectionClass}>
+      <section id="about" aria-labelledby="about-heading" className={centeredSectionClass}>
         <div className="relative mx-auto w-full max-w-5xl pt-4 md:pt-8">
           <div className="relative flex flex-col items-center gap-7 md:flex-row md:items-start md:gap-12">
             
@@ -153,10 +158,10 @@ export default function Home() {
             <div className="relative z-20 flex shrink-0 flex-col items-center md:pt-16">
               <div className="relative h-44 w-44 overflow-hidden rounded-full border-[6px] border-white bg-[#E0F2FE] shadow-2xl sm:h-56 sm:w-56 md:h-64 md:w-64">
                 <Image 
-                  src="/abid-profile.jpeg" 
+                  src="/abid-profile.webp"
                   alt="Abid Hanan Wicaksono" 
                   fill 
-                  sizes="512px" 
+                  sizes="(min-width: 768px) 256px, (min-width: 640px) 224px, 176px"
                   className="scale-150 object-cover object-[50%_54%]" 
                 />
               </div>
@@ -172,7 +177,7 @@ export default function Home() {
                   
                   <div className="relative z-20 flex items-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF] px-4 py-2.5 shadow-md sm:gap-3 sm:px-6">
                     <span className="rope-knot h-3.5 w-3.5 shrink-0 rounded-full" aria-hidden="true" />
-                    <span className="text-xs font-black uppercase tracking-[0.12em] text-[#0369A1] sm:text-sm md:text-base md:tracking-[0.14em]">{content.about.eyebrow}</span>
+                    <h2 id="about-heading" className="text-xs font-black uppercase tracking-[0.12em] text-[#0369A1] sm:text-sm md:text-base md:tracking-[0.14em]">{content.about.eyebrow}</h2>
                     <div className="rope-knot absolute -right-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
                   </div>
                   
@@ -200,8 +205,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="education" className={centeredSectionClass}>
+      <section id="education" aria-labelledby="education-heading" className={centeredSectionClass}>
         <SectionHeader
+          id="education-heading"
           title={content.sections.education.title}
           summary={content.sections.education.summary}
         />
@@ -245,8 +251,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="tools" className={centeredSectionClass}>
+      <section id="tools" aria-labelledby="tools-heading" className={centeredSectionClass}>
         <SectionHeader
+          id="tools-heading"
           title={content.sections.tools.title}
           summary={content.sections.tools.summary}
         />
@@ -261,9 +268,9 @@ export default function Home() {
                 <h3 className="mb-5 text-xl font-bold leading-tight text-[#0F172A] sm:mb-6 sm:text-2xl md:min-h-[3.75rem]">
                   {group.title}
                 </h3>
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:auto-rows-fr">
+                <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:auto-rows-fr">
                   {group.tools.map((tool, toolIndex) => (
-                    <div
+                    <li
                       key={tool.name}
                       className={`tool-box flex min-h-[7.5rem] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3 text-center text-xs font-bold shadow-sm transition-transform hover:-translate-y-1 sm:min-h-[8rem] sm:gap-3 sm:px-3 sm:py-4 sm:text-sm md:h-full md:min-h-[9rem] ${
                         toolTone[(groupIndex + toolIndex) % toolTone.length]
@@ -271,25 +278,27 @@ export default function Home() {
                     >
                       <LogoBadge name={tool.name} logo={tool.logo} mark={tool.mark} size="sm" fill={tool.square} padded={tool.padded} />
                       <span>{tool.name}</span>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="certificates" className={centeredSectionClass}>
+      <section id="certificates" aria-labelledby="certificates-heading" className={centeredSectionClass}>
         <SectionHeader
+          id="certificates-heading"
           title={content.sections.certificates.title}
           summary={content.sections.certificates.summary}
         />
         <CertificateMarquee certificates={certificateItems} />
       </section>
 
-      <section id="career" className={centeredSectionClass}>
+      <section id="career" aria-labelledby="career-heading" className={centeredSectionClass}>
         <SectionHeader
+          id="career-heading"
           title={content.sections.career.title}
           summary={content.sections.career.summary}
         />
@@ -336,8 +345,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="startup" className={centeredSectionClass}>
+      <section id="startup" aria-labelledby="startup-heading" className={centeredSectionClass}>
         <SectionHeader
+          id="startup-heading"
           title={content.sections.startup.title}
           summary={content.sections.startup.summary}
         />
@@ -360,7 +370,7 @@ export default function Home() {
                           fill
                           sizes="320px"
                           className={
-                            startup.logo === "/wiboostore-logo.jpeg"
+                            startup.logo === "/wiboostore-logo.webp"
                               ? "object-cover"
                               : "object-contain p-4"
                           }
@@ -405,8 +415,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="activity" className={centeredSectionClass}>
+      <section id="activity" aria-labelledby="activity-heading" className={centeredSectionClass}>
         <SectionHeader
+          id="activity-heading"
           title={content.sections.activity.title}
           summary={content.sections.activity.summary}
         />

@@ -42,3 +42,9 @@ next-env.d.ts
 
 # Lighthouse reports
 lh-*.json
+
+# Generated CDN assets and browser audit artifacts
+/.cloudflare/
+/.wrangler/
+/output/
+/.playwright-cli/

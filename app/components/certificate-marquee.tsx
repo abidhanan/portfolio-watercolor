@@ -208,14 +208,18 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
             const isDuplicate = index >= certificates.length;
 
             return (
-              <button
+              <article
                 key={`${certificate.title}-${certificate.year}-${index}`}
-                type="button"
-                tabIndex={isDuplicate ? -1 : 0}
-                onClick={() => handleCardClick(certificate)}
-                className="shadow-watercolor flex w-72 shrink-0 cursor-pointer flex-col rounded-xl border border-[#CFE2F3] bg-white p-4 text-left transition-transform hover:-translate-y-1 hover:shadow-lg md:w-80"
+                className="shadow-watercolor relative flex w-72 shrink-0 flex-col rounded-xl border border-[#CFE2F3] bg-white p-4 text-left transition-transform hover:-translate-y-1 hover:shadow-lg md:w-80"
                 aria-hidden={isDuplicate}
               >
+                <button
+                  type="button"
+                  tabIndex={isDuplicate ? -1 : 0}
+                  onClick={() => handleCardClick(certificate)}
+                  className="absolute inset-0 z-10 cursor-pointer rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0369A1]"
+                  aria-label={`${content.certificates.imageAlt} ${certificate.title}`}
+                />
                 <div className="relative mb-4 h-48 overflow-hidden rounded-xl border border-[#DCEBF7] bg-white md:h-56">
                   {certificate.image ? (
                     <div className="relative h-full w-full">
@@ -256,7 +260,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
                     {certificate.desc}
                   </p>
                 </div>
-              </button>
+              </article>
             );
           })}
         </div>
@@ -290,7 +294,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
                 fill
                 sizes="70vw"
                 className="object-contain p-3"
-                priority
+                loading="eager"
               />
             </div>
             <div className="flex flex-col justify-center p-4 md:p-6">

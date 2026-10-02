@@ -83,6 +83,7 @@ export const techGroups: TechGroup[] = [
     tools: [
       { name: "GitHub", logo: "/logos/github-181717.svg" },
       { name: "Vercel", logo: "/logos/vercel-000000.svg" },
+      { name: "Cloudflare", logo: "/logos/cloudflare-F38020.svg" },
       { name: "Discord Webhook", logo: "/logos/discord-5865F2.svg" },
     ],
   },
@@ -202,6 +203,15 @@ export const careerItems: CareerItem[] = [
 ];
 
 export const certificateItems = [
+  {
+    title: "Best Semester GPA Achievement 4.00/4.00",
+    issuer: "Sugeng Hartono University",
+    year: "Aug 2026",
+    issued: "Issued Aug 2026",
+    credentialId: "43/STF/02/2026",
+    image: "/certificate-best-semester-index.webp",
+    desc: "Best Semester GPA Achievement for Semester IV of the Computer Science Program, Faculty of Technology, Law and Business, Sugeng Hartono University (2025/2026 even term), with a perfect semester GPA of 4.00/4.00.",
+  },
   {
     title: "Cybersecurity Research National Webinar",
     issuer: "HIMATIKOM Universitas Lamappapoleonro",

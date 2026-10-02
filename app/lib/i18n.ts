@@ -344,6 +344,13 @@ const careerId: Partial<(typeof careerItems)[number]>[] = [
 
 const certificateId: Partial<(typeof certificateItems)[number]>[] = [
   {
+    title: "Indeks Prestasi Semester Terbaik 4,00/4,00",
+    issuer: "Universitas Sugeng Hartono",
+    issued: "Diterbitkan Agu 2026",
+    credentialId: "43/STF/02/2026",
+    desc: "Indeks Prestasi Semester Terbaik untuk Semester IV Program Studi Ilmu Komputer, Fakultas Teknologi Hukum dan Bisnis, Universitas Sugeng Hartono (Periode Genap 2025/2026), dengan IP Semester sempurna 4,00/4,00.",
+  },
+  {
     title: "Webinar Nasional Cybersecurity Research",
     issuer: "HIMATIKOM Universitas Lamappapoleonro",
     issued: "Diterbitkan Jul 2026",

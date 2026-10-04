@@ -248,8 +248,12 @@ footer [class*="rounded-3xl"][class*="border"] {
   outline-offset: -9px;
 }
 @media (min-width: 768px) {
-  .hero-plaque { padding: 2rem 2.25rem; }
+  .hero-plaque { padding: 2.25rem 2.5rem; }
 }
+.hero-plaque { margin-top: 2.25rem; }
+/* ropes hang from a knot down into the top edge; sit behind the card face */
+.hero-hang { z-index: 0; }
+.hero-hang .rope-line-vertical { margin-top: -2px; }
 .hero-plaque .home-title-outline,
 .hero-plaque .home-role-outline,
 .hero-plaque .home-copy-outline {
@@ -273,7 +277,7 @@ button[aria-pressed].fixed.bottom-5 svg { color: #8a3a1a !important; }
   white-space: nowrap;
 }
 @media (max-width: 767px) {
-  .hero-plaque { padding: 1.25rem 0.9rem; }
+  .hero-plaque { padding: 1.7rem 0.9rem; }
 }
 
 /* Cards lift slightly like a picked-up note */

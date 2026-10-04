@@ -102,7 +102,20 @@ export default function Home() {
         aria-labelledby="home-heading"
         className={`${homeSectionClass} flex flex-col items-center justify-evenly gap-8 md:flex-row md:justify-between md:gap-12`}
       >
-        <div className="hero-plaque w-full space-y-4 text-center md:w-1/2 md:space-y-6 md:text-left">
+        <div className="hero-plaque relative w-full space-y-4 text-center md:w-1/2 md:space-y-6 md:text-left">
+          {/* hanging rope + brass rivets, same materials as the other sections */}
+          <div aria-hidden="true" className="hero-hang pointer-events-none absolute -top-9 left-[16%] flex flex-col items-center">
+            <span className="rope-knot h-3.5 w-3.5 rounded-full" />
+            <span className="rope-line-vertical h-6" />
+          </div>
+          <div aria-hidden="true" className="hero-hang pointer-events-none absolute -top-9 right-[16%] flex flex-col items-center">
+            <span className="rope-knot h-3.5 w-3.5 rounded-full" />
+            <span className="rope-line-vertical h-6" />
+          </div>
+          <span aria-hidden="true" className="rope-knot absolute left-3.5 top-3.5 h-3 w-3 rounded-full" />
+          <span aria-hidden="true" className="rope-knot absolute right-3.5 top-3.5 h-3 w-3 rounded-full" />
+          <span aria-hidden="true" className="rope-knot absolute bottom-3.5 left-3.5 h-3 w-3 rounded-full" />
+          <span aria-hidden="true" className="rope-knot absolute bottom-3.5 right-3.5 h-3 w-3 rounded-full" />
           <h1 id="home-heading" className="hero-title home-title-outline section-readable font-extrabold text-[#0F172A]">
             {content.home.intro}
             <br />

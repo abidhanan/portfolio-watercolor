@@ -179,9 +179,10 @@ export default function RootLayout({
         {assetBaseUrl ? <link rel="preconnect" href={assetBaseUrl} crossOrigin="anonymous" /> : null}
       </head>
       <body
-        className={`${lora.variable} ${playfair.variable} min-h-screen bg-[#d2a96d] text-[#3a2616]`}
+        className={`${lora.variable} ${playfair.variable} min-h-screen bg-[#F0F7FA] text-[#3a2616]`}
         style={{
           "--paper-texture": `url("${assetUrl("/crumpled-paper.webp")}")`,
+          "--beach-background": `url("${assetUrl("/watercolor-beach.webp")}")`,
         } as CSSProperties}
       >
         <script

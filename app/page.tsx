@@ -14,7 +14,7 @@ const toolTone = [
 const sectionFrameClass =
   "mb-28 scroll-mt-36 py-10 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:py-10";
 const homeSectionClass =
-  "mb-28 scroll-mt-36 pb-10 pt-2 md:-mt-6 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:pb-10 md:pt-0";
+  "mb-28 min-h-[calc(100svh-5rem)] scroll-mt-36 pb-10 pt-2 md:-mt-6 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:pb-10 md:pt-0";
 const centeredSectionClass = `${sectionFrameClass} flex flex-col justify-center`;
 
 type LogoBadgeProps = {
@@ -100,7 +100,7 @@ export default function Home() {
       <section
         id="home"
         aria-labelledby="home-heading"
-        className={`${homeSectionClass} flex flex-col items-center justify-between gap-8 md:flex-row md:gap-12`}
+        className={`${homeSectionClass} flex flex-col items-center justify-evenly gap-8 md:flex-row md:justify-between md:gap-12`}
       >
         <div className="w-full space-y-4 text-center md:w-1/2 md:space-y-6 md:text-left">
           <h1 id="home-heading" className="home-title-outline section-readable text-[2.75rem] font-extrabold leading-[1.05] text-[#0F172A] sm:text-5xl md:text-6xl md:leading-tight lg:text-7xl">
@@ -112,7 +112,7 @@ export default function Home() {
             {content.home.description}
           </p>
         </div>
-        <div className="home-photo-stack relative isolate mt-2 h-[360px] w-full max-w-[25rem] overflow-visible sm:h-[430px] sm:max-w-[35rem] md:mt-0 md:h-[500px] md:w-1/2 md:max-w-[39rem] lg:h-[520px] lg:max-w-[42rem]">
+        <div className="home-photo-stack relative isolate mt-2 h-[400px] w-full max-w-[25rem] overflow-visible sm:h-[430px] sm:max-w-[35rem] md:mt-0 md:h-[500px] md:w-1/2 md:max-w-[39rem] lg:h-[520px] lg:max-w-[42rem]">
           <div className="home-photo-card absolute left-3 top-24 z-10 -rotate-[10deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_18px_36px_-18px_rgba(15,23,42,0.5)] sm:left-10 sm:top-28 sm:p-3 sm:pb-7 md:left-5 md:top-44 lg:left-10 lg:top-44">
             <div className="relative h-[12.25rem] w-[9.2rem] overflow-hidden rounded-md bg-gray-100 sm:h-[15rem] sm:w-[11rem] md:h-[16rem] md:w-[11.5rem] lg:h-[17rem] lg:w-[12rem]">
               <Image

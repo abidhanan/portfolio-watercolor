@@ -103,7 +103,7 @@ export default function Home() {
         className={`${homeSectionClass} flex flex-col items-center justify-evenly gap-8 md:flex-row md:justify-between md:gap-12`}
       >
         <div className="hero-plaque w-full space-y-4 text-center md:w-1/2 md:space-y-6 md:text-left">
-          <h1 id="home-heading" className="home-title-outline section-readable text-[2.75rem] font-extrabold leading-[1.05] text-[#0F172A] sm:text-5xl md:text-6xl md:leading-tight lg:text-7xl">
+          <h1 id="home-heading" className="hero-title home-title-outline section-readable font-extrabold text-[#0F172A]">
             {content.home.intro}
             <br />
             <span className="home-role-outline text-[#075985]">{content.home.role}</span>

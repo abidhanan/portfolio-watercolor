@@ -265,6 +265,17 @@ button[aria-pressed].fixed.bottom-5 {
 }
 button[aria-pressed].fixed.bottom-5 svg { color: #8a3a1a !important; }
 
+/* Hero title: each line stays on one row, sized to the plaque width */
+.hero-plaque { container-type: inline-size; }
+.hero-title {
+  font-size: clamp(1.25rem, 10cqw, 4.5rem);
+  line-height: 1.12;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .hero-plaque { padding: 1.25rem 0.9rem; }
+}
+
 /* Cards lift slightly like a picked-up note */
 .shadow-watercolor { transition: transform 200ms ease; }
 @media (hover: hover) {

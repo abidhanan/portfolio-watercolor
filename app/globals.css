@@ -233,6 +233,38 @@ footer [class*="rounded-3xl"][class*="border"] {
   outline: none !important;
 }
 
+/* Hero text sits on a paper plaque so it stays readable over the watercolor image */
+.hero-plaque {
+  padding: 1.5rem 1.25rem;
+  background-color: #fbf5e6;
+  background-image:
+    linear-gradient(rgba(255, 252, 242, 0.9), rgba(247, 238, 216, 0.92)),
+    var(--paper-texture, url("/crumpled-paper.webp"));
+  background-size: cover, 400px auto;
+  border: 1px solid rgba(120, 82, 36, 0.55);
+  border-radius: 14px;
+  box-shadow: var(--skeu-card);
+  outline: 2px dashed rgba(139, 90, 43, 0.5);
+  outline-offset: -9px;
+}
+@media (min-width: 768px) {
+  .hero-plaque { padding: 2rem 2.25rem; }
+}
+.hero-plaque .home-title-outline,
+.hero-plaque .home-role-outline,
+.hero-plaque .home-copy-outline {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Music button: glossy round metal key */
+button[aria-pressed].fixed.bottom-5 {
+  border: 1px solid #6f767e !important;
+  background-color: #d3d8de !important;
+  background-image: linear-gradient(180deg, #f4f6f8 0%, #c9ced4 100%) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 -2px 4px rgba(0, 0, 0, 0.15) inset, 0 4px 8px -1px rgba(40, 22, 5, 0.5) !important;
+}
+button[aria-pressed].fixed.bottom-5 svg { color: #8a3a1a !important; }
+
 /* Cards lift slightly like a picked-up note */
 .shadow-watercolor { transition: transform 200ms ease; }
 @media (hover: hover) {

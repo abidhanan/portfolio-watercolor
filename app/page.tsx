@@ -102,7 +102,7 @@ export default function Home() {
         aria-labelledby="home-heading"
         className={`${homeSectionClass} flex flex-col items-center justify-evenly gap-8 md:flex-row md:justify-between md:gap-12`}
       >
-        <div className="w-full space-y-4 text-center md:w-1/2 md:space-y-6 md:text-left">
+        <div className="hero-plaque w-full space-y-4 text-center md:w-1/2 md:space-y-6 md:text-left">
           <h1 id="home-heading" className="home-title-outline section-readable text-[2.75rem] font-extrabold leading-[1.05] text-[#0F172A] sm:text-5xl md:text-6xl md:leading-tight lg:text-7xl">
             {content.home.intro}
             <br />

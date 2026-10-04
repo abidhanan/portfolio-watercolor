@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import type { CSSProperties } from "react";
 import { Lora, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { BackgroundMusic } from "./components/background-music";
 import { LanguageProvider } from "./components/language-provider";
 import { ScrollRevealController } from "./components/scroll-reveal-controller";
 import { SiteFooter } from "./components/site-footer";
@@ -194,6 +195,7 @@ export default function RootLayout({
           <SiteNav />
           {children}
           <SiteFooter />
+          <BackgroundMusic />
           <ScrollRevealController />
         </LanguageProvider>
       </body>

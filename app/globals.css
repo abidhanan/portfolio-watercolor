@@ -2,11 +2,31 @@
 
 @layer utilities {
   .shadow-watercolor {
-    box-shadow: 0 10px 30px -5px rgba(14, 56, 122, 0.08), 0 8px 15px -6px rgba(14, 56, 122, 0.04);
+    box-shadow: var(--clay-shadow);
   }
 }
 
-/* Kertas Premium bertekstur cerah dengan sentuhan Coastal */
+/* ============ CLAYMORPHISM ============
+   Puffy pastel surfaces: big radii, no borders, soft tinted drop shadows
+   plus inner highlight/shade to fake a molded-clay volume. */
+:root {
+  --clay-ink: 99, 102, 241;
+  --clay-shadow:
+    14px 16px 32px rgba(var(--clay-ink), 0.2),
+    -10px -10px 26px rgba(255, 255, 255, 0.95),
+    inset 7px 7px 16px rgba(255, 255, 255, 0.95),
+    inset -9px -9px 18px rgba(var(--clay-ink), 0.14);
+  --clay-shadow-sm:
+    8px 9px 18px rgba(var(--clay-ink), 0.2),
+    -6px -6px 16px rgba(255, 255, 255, 0.95),
+    inset 4px 4px 9px rgba(255, 255, 255, 0.95),
+    inset -5px -5px 10px rgba(var(--clay-ink), 0.14);
+  --clay-shadow-pressed:
+    inset 6px 6px 14px rgba(var(--clay-ink), 0.22),
+    inset -6px -6px 14px rgba(255, 255, 255, 0.9);
+}
+
+/* Cards */
 .shadow-watercolor,
 main [class*="rounded-xl"][class*="border"],
 main [class*="rounded-2xl"][class*="border"],
@@ -14,56 +34,84 @@ main [class*="rounded-3xl"][class*="border"],
 footer [class*="rounded-xl"][class*="border"],
 footer [class*="rounded-2xl"][class*="border"],
 footer [class*="rounded-3xl"][class*="border"] {
-  background-color: rgba(255, 253, 249, 0.95) !important;
-  background-image:
-    radial-gradient(circle at 18% 22%, rgba(226, 232, 240, 0.4), transparent 20rem),
-    radial-gradient(circle at 82% 76%, rgba(246, 224, 158, 0.2), transparent 20rem),
-    linear-gradient(rgba(255, 255, 255, 0.6), rgba(248, 250, 252, 0.4)),
-    var(--paper-texture, url("/crumpled-paper.webp")) !important;
-  background-position: center;
-  background-repeat: repeat;
-  background-size: cover, cover, cover, 400px auto;
-  background-blend-mode: soft-light;
-  border-color: rgba(203, 213, 225, 0.6) !important;
-  border-width: 1px !important;
-  border-radius: 16px !important;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.9),
-    0 12px 24px -10px rgba(15, 23, 42, 0.08),
-    0 4px 10px -4px rgba(15, 23, 42, 0.04);
+  background-color: #f3f6ff !important;
+  background-image: linear-gradient(145deg, #ffffff 0%, #eaf0ff 100%) !important;
+  border: 0 !important;
+  border-radius: 32px !important;
+  box-shadow: var(--clay-shadow) !important;
 }
 
+/* Cards nested in cards get a smaller clay volume */
+.shadow-watercolor [class*="rounded-xl"][class*="border"],
+.shadow-watercolor [class*="rounded-2xl"][class*="border"] {
+  border-radius: 22px !important;
+  box-shadow: var(--clay-shadow-sm) !important;
+}
+
+/* Pills / chips / badges keep their own pastel colour, puffed up */
 main [class*="rounded-full"][class*="border"],
 footer [class*="rounded-full"][class*="border"] {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  background-image: var(--paper-texture, url("/crumpled-paper.webp")) !important;
-  background-blend-mode: soft-light;
-  background-size: 300px auto;
-  border-color: rgba(203, 213, 225, 0.8) !important;
-  border-width: 1px !important;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 1),
-    0 6px 16px -8px rgba(15, 23, 42, 0.1);
+  border: 0 !important;
+  box-shadow: var(--clay-shadow-sm) !important;
+}
+main [class*="rounded-full"][class*="border"]:not([class*="bg-"]),
+footer [class*="rounded-full"][class*="border"]:not([class*="bg-"]) {
+  background-color: #f3f6ff !important;
+  background-image: linear-gradient(145deg, #ffffff, #eaf0ff) !important;
 }
 
-/* Navigasi efek kaca buram (Frosted Sea Glass) */
-.paper-nav {
-  /* Solid (no backdrop-filter): a blurred sticky bar repaints every scroll
-     frame and is the main cause of scroll jank, especially on mobile. */
-  background-color: rgba(249, 251, 253, 0.97) !important;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
-  box-shadow: 0 6px 28px -12px rgba(15, 23, 42, 0.12);
+/* Photo cards */
+.home-photo-card {
+  border: 0 !important;
+  border-radius: 28px !important;
+  background: linear-gradient(145deg, #ffffff, #eaf0ff) !important;
+  box-shadow: var(--clay-shadow) !important;
 }
+.home-photo-card > div { border-radius: 20px !important; }
+
+/* Navigation: a floating clay slab */
+.paper-nav {
+  background-color: rgba(238, 243, 255, 0.92) !important;
+  background-image: linear-gradient(180deg, #ffffff 0%, #e9efff 100%) !important;
+  border: 0 !important;
+  box-shadow:
+    0 14px 30px -8px rgba(var(--clay-ink), 0.25),
+    inset 0 -6px 12px rgba(var(--clay-ink), 0.1),
+    inset 0 6px 12px rgba(255, 255, 255, 0.95);
+}
+header.paper-nav { border-radius: 0 0 36px 36px; }
+footer.paper-nav {
+  background-image: linear-gradient(180deg, #f2f5ff 0%, #d9e2ff 100%) !important;
+  border-radius: 44px 44px 0 0;
+  box-shadow:
+    0 -14px 30px -8px rgba(var(--clay-ink), 0.22),
+    inset 0 6px 12px rgba(255, 255, 255, 0.95),
+    inset 0 -6px 12px rgba(var(--clay-ink), 0.08);
+}
+
+.site-nav-link {
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.site-nav-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--clay-shadow-sm);
+}
+.site-nav-link:active { transform: translateY(1px); box-shadow: var(--clay-shadow-pressed); }
 
 .site-nav-link-active,
 html:has(#contact:target) .site-nav-link[data-nav-target="contact"] {
-  background-color: #0369A1 !important;
+  background-color: #6f9bff !important;
+  background-image: linear-gradient(145deg, #8fb4ff 0%, #7c83ff 100%) !important;
   color: #FFFFFF !important;
-  box-shadow: 0 10px 18px -12px rgba(2, 132, 199, 0.65) !important;
+  box-shadow:
+    7px 8px 16px rgba(var(--clay-ink), 0.35),
+    inset 3px 3px 7px rgba(255, 255, 255, 0.55),
+    inset -4px -4px 9px rgba(60, 60, 200, 0.35) !important;
 }
 
 html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]) {
   background-color: transparent !important;
+  background-image: none !important;
   color: #334155 !important;
   box-shadow: none !important;
 }
@@ -73,45 +121,33 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover 
   color: #0369A1 !important;
 }
 
-/* Text Shadow cerah untuk keterbacaan di atas background laut */
-.section-readable {
-  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+/* Interactive cards press like clay */
+.shadow-watercolor { transition: transform 220ms ease, box-shadow 220ms ease; }
+@media (hover: hover) {
+  .shadow-watercolor:hover { transform: translateY(-4px) scale(1.01); }
 }
 
-/* Soft shadow tanpa outline putih agar judul tetap bersih di desktop dan mobile */
+/* Text: soft embossed instead of hard white outlines */
+.section-readable { text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9); }
 .home-title-outline {
-  text-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  text-shadow: 0 3px 0 rgba(255, 255, 255, 0.95), 0 10px 18px rgba(var(--clay-ink), 0.22);
 }
-
 .home-role-outline {
-  text-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+  text-shadow: 0 3px 0 rgba(255, 255, 255, 0.95), 0 10px 18px rgba(var(--clay-ink), 0.3);
 }
-
 .home-copy-outline {
-  font-weight: 600;
-  text-shadow:
-    -1px -1px 0 rgba(255, 255, 255, 0.95),
-    1px -1px 0 rgba(255, 255, 255, 0.95),
-    -1px 1px 0 rgba(255, 255, 255, 0.95),
-    1px 1px 0 rgba(255, 255, 255, 0.95),
-    0 8px 18px rgba(15, 23, 42, 0.12);
+  font-weight: 700;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.95), 0 6px 14px rgba(var(--clay-ink), 0.14);
 }
 
-/* Tali Tambang Realistis (Warna Rami/Jute Natural) */
+/* Tali tambang -> tabung & bola clay */
 .rope-line-x {
-  background-color: #D4B595;
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.3) 0 2px,
-    transparent 2px 4px,
-    rgba(139, 90, 43, 0.4) 4px 6px,
-    transparent 6px 8px
-  );
+  background: linear-gradient(180deg, #ffe0cf 0%, #ffb99a 100%);
   box-shadow:
-    inset 0 1px 1px rgba(255, 255, 255, 0.4),
-    inset 0 -1px 2px rgba(94, 64, 33, 0.3),
-    0 2px 4px rgba(0, 0, 0, 0.05);
-  height: 0.45rem;
+    3px 4px 8px rgba(255, 140, 100, 0.35),
+    inset 0 2px 3px rgba(255, 255, 255, 0.85),
+    inset 0 -2px 3px rgba(220, 110, 70, 0.3);
+  height: 0.6rem;
   margin-left: -0.2rem;
   margin-right: -0.2rem;
   position: relative;
@@ -120,28 +156,22 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover 
 }
 
 .rope-line-vertical {
-  width: 0.45rem;
-  background-color: #D4B595;
-  background-image: repeating-linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.3) 0 2px,
-    transparent 2px 4px,
-    rgba(139, 90, 43, 0.4) 4px 6px,
-    transparent 6px 8px
-  );
+  width: 0.6rem;
+  background: linear-gradient(90deg, #ffe0cf 0%, #ffb99a 100%);
   border-radius: 999px;
   box-shadow:
-    inset 1px 0 1px rgba(255, 255, 255, 0.4),
-    inset -1px 0 2px rgba(94, 64, 33, 0.3),
-    1px 2px 4px rgba(0, 0, 0, 0.05);
+    4px 3px 8px rgba(255, 140, 100, 0.35),
+    inset 2px 0 3px rgba(255, 255, 255, 0.85),
+    inset -2px 0 3px rgba(220, 110, 70, 0.3);
 }
 
 .rope-knot {
-  background: radial-gradient(circle at 30% 30%, #E8D5B5 0%, #C4A47C 40%, #8B5A2B 100%) !important;
-  border: 1px solid #A67C52 !important;
+  background: radial-gradient(circle at 30% 28%, #ffffff 0%, #ffd9c7 32%, #ff9f80 100%) !important;
+  border: 0 !important;
   box-shadow:
-    inset 0 2px 3px rgba(255, 255, 255, 0.4),
-    0 3px 6px rgba(15, 23, 42, 0.15) !important;
+    4px 6px 10px rgba(255, 120, 80, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.8),
+    inset -3px -3px 6px rgba(210, 90, 50, 0.35) !important;
 }
 
 .mobile-rope-stack {
@@ -241,7 +271,7 @@ body {
   position: relative;
   isolation: isolate;
   overflow-x: hidden;
-  background-color: #F0F7FA;
+  background-color: #e9efff;
 }
 
 /* Fix untuk background mobile agar tidak lompat/bergerak saat discroll */
@@ -254,9 +284,12 @@ body::before {
   height: 100lvh;
   min-height: 100svh;
   z-index: -10;
-  background-image: var(--beach-background, url("/watercolor-beach.webp"));
-  background-position: center top;
-  background-size: cover;
+  background-image:
+    radial-gradient(circle at 12% 14%, rgba(255, 196, 214, 0.75) 0, transparent 26rem),
+    radial-gradient(circle at 88% 10%, rgba(190, 170, 255, 0.7) 0, transparent 28rem),
+    radial-gradient(circle at 78% 82%, rgba(160, 220, 255, 0.75) 0, transparent 30rem),
+    radial-gradient(circle at 14% 88%, rgba(255, 226, 170, 0.7) 0, transparent 26rem),
+    linear-gradient(160deg, #e3ecff 0%, #efe6ff 50%, #ffe9f1 100%);
   background-repeat: no-repeat;
   pointer-events: none;
   /* Promote to its own compositor layer so the fixed background is not
@@ -305,7 +338,5 @@ body > footer {
   body::before {
     height: 120svh;
     min-height: 120svh;
-    background-size: auto 120svh;
-    background-position: center top;
   }
 }

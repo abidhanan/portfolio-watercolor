@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { CSSProperties } from "react";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import { BackgroundMusic } from "./components/background-music";
 import { LanguageProvider } from "./components/language-provider";
@@ -10,7 +10,7 @@ import { SiteNav } from "./components/site-nav";
 import { assetBaseUrl, assetUrl } from "./lib/assets";
 
 // Memuat Google Font agar konsisten di Desktop dan Mobile
-const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "optional" });
+const nunito = Nunito({ subsets: ["latin"], display: "optional" });
 
 // Fully static so Vercel serves a cached, compressed document (fast TTFB).
 export const dynamic = "force-static";
@@ -179,10 +179,9 @@ export default function RootLayout({
         {assetBaseUrl ? <link rel="preconnect" href={assetBaseUrl} crossOrigin="anonymous" /> : null}
       </head>
       <body
-        className={`${plusJakarta.className} min-h-screen bg-[#F0F7FA] text-[#1E293B]`}
+        className={`${nunito.className} min-h-screen bg-[#e9efff] text-[#1E293B]`}
         style={{
           "--paper-texture": `url("${assetUrl("/crumpled-paper.webp")}")`,
-          "--beach-background": `url("${assetUrl("/watercolor-beach.webp")}")`,
         } as CSSProperties}
       >
         <script

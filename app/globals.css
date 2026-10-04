@@ -2,31 +2,31 @@
 
 @layer utilities {
   .shadow-watercolor {
-    box-shadow: var(--clay-shadow);
+    box-shadow: var(--skeu-card);
   }
 }
 
-/* ============ CLAYMORPHISM ============
-   Puffy pastel surfaces: big radii, no borders, soft tinted drop shadows
-   plus inner highlight/shade to fake a molded-clay volume. */
+/* ============ SKEUOMORPHISM ============
+   Real-world materials: oak desk, stitched paper cards, glossy glass buttons,
+   brushed-metal bars, brass rivets, letterpress type. */
 :root {
-  --clay-ink: 99, 102, 241;
-  --clay-shadow:
-    14px 16px 32px rgba(var(--clay-ink), 0.2),
-    -10px -10px 26px rgba(255, 255, 255, 0.95),
-    inset 7px 7px 16px rgba(255, 255, 255, 0.95),
-    inset -9px -9px 18px rgba(var(--clay-ink), 0.14);
-  --clay-shadow-sm:
-    8px 9px 18px rgba(var(--clay-ink), 0.2),
-    -6px -6px 16px rgba(255, 255, 255, 0.95),
-    inset 4px 4px 9px rgba(255, 255, 255, 0.95),
-    inset -5px -5px 10px rgba(var(--clay-ink), 0.14);
-  --clay-shadow-pressed:
-    inset 6px 6px 14px rgba(var(--clay-ink), 0.22),
-    inset -6px -6px 14px rgba(255, 255, 255, 0.9);
+  --skeu-card:
+    0 1px 0 rgba(255, 255, 255, 0.85) inset,
+    0 -2px 6px rgba(120, 80, 30, 0.12) inset,
+    0 2px 2px rgba(50, 28, 8, 0.35),
+    0 14px 22px -6px rgba(50, 28, 8, 0.5);
+  --skeu-inner:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 2px 5px rgba(50, 28, 8, 0.28);
+  --skeu-button:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 -2px 4px rgba(0, 0, 0, 0.12) inset,
+    0 1px 1px rgba(40, 22, 5, 0.4),
+    0 4px 8px -2px rgba(40, 22, 5, 0.4);
+  --gloss: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.25) 48%, rgba(255, 255, 255, 0) 52%, rgba(0, 0, 0, 0.06) 100%);
 }
 
-/* Cards */
+/* Paper cards with leather-style stitching */
 .shadow-watercolor,
 main [class*="rounded-xl"][class*="border"],
 main [class*="rounded-2xl"][class*="border"],
@@ -34,79 +34,100 @@ main [class*="rounded-3xl"][class*="border"],
 footer [class*="rounded-xl"][class*="border"],
 footer [class*="rounded-2xl"][class*="border"],
 footer [class*="rounded-3xl"][class*="border"] {
-  background-color: #f3f6ff !important;
-  background-image: linear-gradient(145deg, #ffffff 0%, #eaf0ff 100%) !important;
-  border: 0 !important;
-  border-radius: 32px !important;
-  box-shadow: var(--clay-shadow) !important;
+  background-color: #fbf5e6 !important;
+  background-image:
+    linear-gradient(rgba(255, 252, 242, 0.82), rgba(247, 238, 216, 0.86)),
+    var(--paper-texture, url("/crumpled-paper.webp")) !important;
+  background-size: cover, 400px auto !important;
+  background-blend-mode: normal, multiply;
+  border: 1px solid rgba(120, 82, 36, 0.55) !important;
+  border-radius: 14px !important;
+  box-shadow: var(--skeu-card) !important;
+  outline: 2px dashed rgba(139, 90, 43, 0.5);
+  outline-offset: -9px;
 }
 
-/* Cards nested in cards get a smaller clay volume */
+/* Inner cards: plain paper slips, no stitching */
 .shadow-watercolor [class*="rounded-xl"][class*="border"],
 .shadow-watercolor [class*="rounded-2xl"][class*="border"] {
-  border-radius: 22px !important;
-  box-shadow: var(--clay-shadow-sm) !important;
+  background-image: linear-gradient(180deg, #ffffff, #f4ecd8) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--skeu-inner) !important;
+  outline: none;
 }
 
-/* Pills / chips / badges keep their own pastel colour, puffed up */
+/* Pills & chips: glossy glass buttons (keep their own colour) */
 main [class*="rounded-full"][class*="border"],
 footer [class*="rounded-full"][class*="border"] {
-  border: 0 !important;
-  box-shadow: var(--clay-shadow-sm) !important;
+  background-image: var(--gloss) !important;
+  background-blend-mode: normal;
+  border: 1px solid rgba(60, 45, 25, 0.35) !important;
+  box-shadow: var(--skeu-button) !important;
 }
 main [class*="rounded-full"][class*="border"]:not([class*="bg-"]),
 footer [class*="rounded-full"][class*="border"]:not([class*="bg-"]) {
-  background-color: #f3f6ff !important;
-  background-image: linear-gradient(145deg, #ffffff, #eaf0ff) !important;
+  background-color: #f6efe0 !important;
 }
 
-/* Photo cards */
+/* Polaroid-style photo cards */
 .home-photo-card {
-  border: 0 !important;
-  border-radius: 28px !important;
-  background: linear-gradient(145deg, #ffffff, #eaf0ff) !important;
-  box-shadow: var(--clay-shadow) !important;
+  border: 1px solid rgba(90, 60, 25, 0.35) !important;
+  border-radius: 3px !important;
+  background: #fffdf7 !important;
+  outline: none !important;
+  box-shadow:
+    0 1px 0 #fff inset,
+    0 3px 3px rgba(40, 22, 5, 0.35),
+    0 18px 26px -8px rgba(40, 22, 5, 0.6) !important;
 }
-.home-photo-card > div { border-radius: 20px !important; }
+.home-photo-card > div { border-radius: 1px !important; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset; }
 
-/* Navigation: a floating clay slab */
+/* Brushed-metal bars */
 .paper-nav {
-  background-color: rgba(238, 243, 255, 0.92) !important;
-  background-image: linear-gradient(180deg, #ffffff 0%, #e9efff 100%) !important;
+  background-color: #d9dde2 !important;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.22) 0 1px, rgba(0, 0, 0, 0.035) 1px 2px),
+    linear-gradient(180deg, #f4f6f8 0%, #d3d8de 48%, #bcc3cb 100%) !important;
   border: 0 !important;
-  box-shadow:
-    0 14px 30px -8px rgba(var(--clay-ink), 0.25),
-    inset 0 -6px 12px rgba(var(--clay-ink), 0.1),
-    inset 0 6px 12px rgba(255, 255, 255, 0.95);
 }
-header.paper-nav { border-radius: 0 0 36px 36px; }
-footer.paper-nav {
-  background-image: linear-gradient(180deg, #f2f5ff 0%, #d9e2ff 100%) !important;
-  border-radius: 44px 44px 0 0;
+header.paper-nav {
+  border-bottom: 1px solid #7b838c !important;
   box-shadow:
-    0 -14px 30px -8px rgba(var(--clay-ink), 0.22),
-    inset 0 6px 12px rgba(255, 255, 255, 0.95),
-    inset 0 -6px 12px rgba(var(--clay-ink), 0.08);
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 -2px 4px rgba(0, 0, 0, 0.12) inset,
+    0 8px 18px -4px rgba(40, 22, 5, 0.55);
+}
+footer.paper-nav {
+  border-top: 1px solid #7b838c !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 -8px 18px -4px rgba(40, 22, 5, 0.45);
 }
 
 .site-nav-link {
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  transition: box-shadow 120ms ease, transform 120ms ease;
 }
 .site-nav-link:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--clay-shadow-sm);
+  background-image: var(--gloss);
+  box-shadow: var(--skeu-button);
 }
-.site-nav-link:active { transform: translateY(1px); box-shadow: var(--clay-shadow-pressed); }
+.site-nav-link:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35) inset;
+}
 
 .site-nav-link-active,
 html:has(#contact:target) .site-nav-link[data-nav-target="contact"] {
-  background-color: #6f9bff !important;
-  background-image: linear-gradient(145deg, #8fb4ff 0%, #7c83ff 100%) !important;
+  background-color: #1e7fc8 !important;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.12) 50%, rgba(0, 0, 0, 0.08) 52%, rgba(0, 0, 0, 0.18) 100%) !important;
   color: #FFFFFF !important;
+  text-shadow: 0 -1px 0 rgba(0, 40, 90, 0.6);
+  border: 1px solid #0b4f86;
   box-shadow:
-    7px 8px 16px rgba(var(--clay-ink), 0.35),
-    inset 3px 3px 7px rgba(255, 255, 255, 0.55),
-    inset -4px -4px 9px rgba(60, 60, 200, 0.35) !important;
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 2px 3px rgba(20, 20, 40, 0.5),
+    0 4px 8px -2px rgba(20, 20, 40, 0.4) !important;
 }
 
 html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]) {
@@ -114,6 +135,7 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]) {
   background-image: none !important;
   color: #334155 !important;
   box-shadow: none !important;
+  border-color: transparent !important;
 }
 
 html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover {
@@ -121,33 +143,40 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover 
   color: #0369A1 !important;
 }
 
-/* Interactive cards press like clay */
-.shadow-watercolor { transition: transform 220ms ease, box-shadow 220ms ease; }
+/* Cards lift slightly like a picked-up note */
+.shadow-watercolor { transition: transform 200ms ease; }
 @media (hover: hover) {
-  .shadow-watercolor:hover { transform: translateY(-4px) scale(1.01); }
+  .shadow-watercolor:hover { transform: translateY(-3px) rotate(-0.15deg); }
 }
 
-/* Text: soft embossed instead of hard white outlines */
-.section-readable { text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9); }
+/* Letterpress / embossed type on the wood */
+.section-readable { text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55); }
 .home-title-outline {
-  text-shadow: 0 3px 0 rgba(255, 255, 255, 0.95), 0 10px 18px rgba(var(--clay-ink), 0.22);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7), 0 -1px 0 rgba(0, 0, 0, 0.25), 0 3px 6px rgba(60, 35, 10, 0.25);
 }
 .home-role-outline {
-  text-shadow: 0 3px 0 rgba(255, 255, 255, 0.95), 0 10px 18px rgba(var(--clay-ink), 0.3);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7), 0 -1px 0 rgba(0, 20, 40, 0.3), 0 3px 6px rgba(60, 35, 10, 0.25);
 }
 .home-copy-outline {
   font-weight: 700;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.95), 0 6px 14px rgba(var(--clay-ink), 0.14);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
-/* Tali tambang -> tabung & bola clay */
+/* Tali Tambang Realistis (Warna Rami/Jute Natural) */
 .rope-line-x {
-  background: linear-gradient(180deg, #ffe0cf 0%, #ffb99a 100%);
+  background-color: #D4B595;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.3) 0 2px,
+    transparent 2px 4px,
+    rgba(139, 90, 43, 0.4) 4px 6px,
+    transparent 6px 8px
+  );
   box-shadow:
-    3px 4px 8px rgba(255, 140, 100, 0.35),
-    inset 0 2px 3px rgba(255, 255, 255, 0.85),
-    inset 0 -2px 3px rgba(220, 110, 70, 0.3);
-  height: 0.6rem;
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    inset 0 -1px 2px rgba(94, 64, 33, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 0.45rem;
   margin-left: -0.2rem;
   margin-right: -0.2rem;
   position: relative;
@@ -156,22 +185,30 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover 
 }
 
 .rope-line-vertical {
-  width: 0.6rem;
-  background: linear-gradient(90deg, #ffe0cf 0%, #ffb99a 100%);
+  width: 0.45rem;
+  background-color: #D4B595;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0 2px,
+    transparent 2px 4px,
+    rgba(139, 90, 43, 0.4) 4px 6px,
+    transparent 6px 8px
+  );
   border-radius: 999px;
   box-shadow:
-    4px 3px 8px rgba(255, 140, 100, 0.35),
-    inset 2px 0 3px rgba(255, 255, 255, 0.85),
-    inset -2px 0 3px rgba(220, 110, 70, 0.3);
+    inset 1px 0 1px rgba(255, 255, 255, 0.4),
+    inset -1px 0 2px rgba(94, 64, 33, 0.3),
+    1px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .rope-knot {
-  background: radial-gradient(circle at 30% 28%, #ffffff 0%, #ffd9c7 32%, #ff9f80 100%) !important;
-  border: 0 !important;
+  /* brass rivet */
+  background: radial-gradient(circle at 32% 28%, #fff6c8 0%, #e3b94f 35%, #9a6b12 78%, #6e4a08 100%) !important;
+  border: 1px solid #5c3d06 !important;
   box-shadow:
-    4px 6px 10px rgba(255, 120, 80, 0.4),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.8),
-    inset -3px -3px 6px rgba(210, 90, 50, 0.35) !important;
+    inset 0 1px 2px rgba(255, 255, 255, 0.7),
+    inset 0 -2px 3px rgba(60, 35, 0, 0.45),
+    0 3px 5px rgba(40, 20, 0, 0.5) !important;
 }
 
 .mobile-rope-stack {
@@ -271,7 +308,7 @@ body {
   position: relative;
   isolation: isolate;
   overflow-x: hidden;
-  background-color: #e9efff;
+  background-color: #d2a96d;
 }
 
 /* Fix untuk background mobile agar tidak lompat/bergerak saat discroll */
@@ -285,12 +322,11 @@ body::before {
   min-height: 100svh;
   z-index: -10;
   background-image:
-    radial-gradient(circle at 12% 14%, rgba(255, 196, 214, 0.75) 0, transparent 26rem),
-    radial-gradient(circle at 88% 10%, rgba(190, 170, 255, 0.7) 0, transparent 28rem),
-    radial-gradient(circle at 78% 82%, rgba(160, 220, 255, 0.75) 0, transparent 30rem),
-    radial-gradient(circle at 14% 88%, rgba(255, 226, 170, 0.7) 0, transparent 26rem),
-    linear-gradient(160deg, #e3ecff 0%, #efe6ff 50%, #ffe9f1 100%);
-  background-repeat: no-repeat;
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.008 0.45' numOctaves='4' seed='3'/><feColorMatrix values='0 0 0 0 0.33  0 0 0 0 0.19  0 0 0 0 0.07  0 0 0 1.5 -0.4'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"),
+    repeating-linear-gradient(90deg, transparent 0 238px, rgba(60, 34, 10, 0.32) 238px 240px, rgba(255, 235, 195, 0.25) 240px 241px),
+    radial-gradient(ellipse at 50% 0%, rgba(255, 240, 205, 0.45), transparent 60%),
+    linear-gradient(180deg, #e4c593 0%, #d2a96d 55%, #c29a5e 100%);
+  background-repeat: repeat, repeat, no-repeat, no-repeat;
   pointer-events: none;
   /* Promote to its own compositor layer so the fixed background is not
      repainted on every scroll frame (smoother scrolling on all devices). */

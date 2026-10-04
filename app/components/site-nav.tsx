@@ -72,7 +72,7 @@ function LanguageToggle({ className = "" }: { className?: string }) {
 
   return (
     <div
-      className={`flex items-center gap-1 rounded-full border border-[#DCEBF7] bg-white/90 p-1 shadow-sm ${className}`}
+      className={`lang-toggle flex items-center gap-1 rounded-full p-1 ${className}`}
       role="group"
       aria-label={content.languageToggle.label}
     >
@@ -86,8 +86,8 @@ function LanguageToggle({ className = "" }: { className?: string }) {
             onClick={() => setLanguage(option.code as Language)}
             className={`rounded-full px-2.5 py-1 text-[0.68rem] font-black uppercase tracking-[0.08em] transition-all sm:px-3 sm:text-xs ${
               isActive
-                ? "bg-[#0369A1] text-white shadow-sm"
-                : "text-[#334155] hover:bg-[#E0F2FE] hover:text-[#0369A1]"
+                ? "lang-toggle-active text-white"
+                : "lang-toggle-idle text-[#334155]"
             }`}
             aria-pressed={isActive}
           >
@@ -104,7 +104,33 @@ export function SiteNav() {
   const [activeHref, setActiveHref] = useState("/#home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const clickedHrefRef = useRef<string | null>(null);
+  const navRef = useRef<HTMLElement | null>(null);
   const navItems = content.navItems;
+
+  // Close the mobile menu by tapping/clicking anywhere outside it, or pressing Escape.
+  useEffect(() => {
+    if (!isMenuOpen) {
+      return;
+    }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
 
   useEffect(() => {
     let animationFrame: number | null = null;
@@ -208,7 +234,7 @@ export function SiteNav() {
 
   return (
     <header className="paper-nav sticky top-0 z-50">
-      <nav aria-label="Main navigation" className="relative mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4 md:px-10 xl:px-12">
+      <nav ref={navRef} aria-label="Main navigation" className="relative mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4 md:px-10 xl:px-12">
         <div className="flex items-center justify-between">
           <Link
             href="/#home"

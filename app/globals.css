@@ -143,6 +143,89 @@ html:has(#contact:target) .site-nav-link:not([data-nav-target="contact"]):hover 
   color: #0369A1 !important;
 }
 
+/* ============ SKEUOMORPHIC TYPOGRAPHY & INK COLOURS ============
+   Serif book type + warm sepia/ink tones to match the oak / paper / brass theme. */
+body {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif;
+  color: #3a2616;
+}
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  letter-spacing: 0;
+}
+
+/* navy / slate -> espresso & walnut ink */
+[class*="text-[#0F172A]"], [class*="text-[#1E293B]"], [class*="text-[#102A43]"] { color: #2a170a !important; }
+[class*="text-[#334155]"], [class*="text-[#334E68]"], [class*="text-[#475569]"], [class*="text-[#2C5282]"] { color: #4d3420 !important; }
+[class*="text-[#64748B]"] { color: #7a6247 !important; }
+/* blue accents -> burnt sienna / oxblood */
+[class*="text-[#075985]"], [class*="text-[#0369A1]"], [class*="text-[#2B6CB0]"], [class*="text-[#0ea5e9]"] { color: #8a3a1a !important; }
+[class*="text-[#A16207]"], [class*="text-[#977418]"] { color: #8a5a0b !important; }
+
+/* embossed ink on paper cards, debossed on wood */
+.shadow-watercolor h1, .shadow-watercolor h2, .shadow-watercolor h3, .shadow-watercolor h4 {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+.paper-nav, .paper-nav a, .paper-nav p { text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85); }
+.home-role-outline { color: #8a3a1a !important; }
+.home-title-outline { color: #2a170a !important; }
+
+/* active nav button: polished leather-red glass instead of blue */
+.site-nav-link-active,
+html:has(#contact:target) .site-nav-link[data-nav-target="contact"] {
+  background-color: #a3481f !important;
+  border-color: #5e2509 !important;
+  text-shadow: 0 -1px 0 rgba(60, 15, 0, 0.7) !important;
+}
+
+@media (min-width: 768px) and (max-width: 1180px) {
+  header.paper-nav .site-nav-link { font-size: 0.72rem; padding-left: 0.6rem; padding-right: 0.6rem; }
+}
+
+/* Language toggle: recessed metal slot with glossy leather-red / brass-lit keys */
+.lang-toggle {
+  background: linear-gradient(180deg, #a9b0b8 0%, #c9ced4 100%);
+  border: 1px solid #6f767e;
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.4) inset,
+    0 1px 0 rgba(255, 255, 255, 0.9);
+}
+.lang-toggle button {
+  font-family: var(--font-body), Georgia, serif;
+  border: 1px solid transparent;
+  transition: box-shadow 120ms ease, transform 120ms ease;
+}
+.lang-toggle-idle {
+  color: #4d3420 !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+.lang-toggle-idle:hover {
+  background-image: var(--gloss);
+  box-shadow: var(--skeu-button);
+}
+.lang-toggle-active {
+  background-color: #a3481f;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.12) 50%, rgba(0, 0, 0, 0.08) 52%, rgba(0, 0, 0, 0.2) 100%);
+  border-color: #5e2509 !important;
+  text-shadow: 0 -1px 0 rgba(60, 15, 0, 0.7);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 2px 3px rgba(20, 20, 40, 0.5);
+}
+
+/* Mobile dropdown menu: stitched paper sheet instead of white glass */
+#mobile-navigation {
+  background-color: #fbf5e6 !important;
+  background-image:
+    linear-gradient(rgba(255, 252, 242, 0.85), rgba(247, 238, 216, 0.9)),
+    var(--paper-texture, url("/crumpled-paper.webp")) !important;
+  background-size: cover, 400px auto !important;
+  border: 1px solid rgba(120, 82, 36, 0.55) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--skeu-card) !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
 /* Cards lift slightly like a picked-up note */
 .shadow-watercolor { transition: transform 200ms ease; }
 @media (hover: hover) {

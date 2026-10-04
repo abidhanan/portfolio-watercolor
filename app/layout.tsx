@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { CSSProperties } from "react";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Lora, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { BackgroundMusic } from "./components/background-music";
 import { LanguageProvider } from "./components/language-provider";
 import { ScrollRevealController } from "./components/scroll-reveal-controller";
 import { SiteFooter } from "./components/site-footer";
@@ -10,7 +9,8 @@ import { SiteNav } from "./components/site-nav";
 import { assetBaseUrl, assetUrl } from "./lib/assets";
 
 // Memuat Google Font agar konsisten di Desktop dan Mobile
-const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "optional" });
+const lora = Lora({ subsets: ["latin"], display: "optional", variable: "--font-body" });
+const playfair = Playfair_Display({ subsets: ["latin"], display: "optional", variable: "--font-display" });
 
 // Fully static so Vercel serves a cached, compressed document (fast TTFB).
 export const dynamic = "force-static";
@@ -179,7 +179,7 @@ export default function RootLayout({
         {assetBaseUrl ? <link rel="preconnect" href={assetBaseUrl} crossOrigin="anonymous" /> : null}
       </head>
       <body
-        className={`${plusJakarta.className} min-h-screen bg-[#d2a96d] text-[#1E293B]`}
+        className={`${lora.variable} ${playfair.variable} min-h-screen bg-[#d2a96d] text-[#3a2616]`}
         style={{
           "--paper-texture": `url("${assetUrl("/crumpled-paper.webp")}")`,
         } as CSSProperties}
@@ -193,7 +193,6 @@ export default function RootLayout({
           <SiteNav />
           {children}
           <SiteFooter />
-          <BackgroundMusic />
           <ScrollRevealController />
         </LanguageProvider>
       </body>

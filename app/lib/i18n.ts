@@ -106,11 +106,11 @@ const uiText = {
         {
           title: "Wiboost Store",
           description:
-            "A comprehensive digital service hub in Indonesia for social media growth, game top-ups, data packages, and premium apps in one practical place.",
+            "A platform for social media boosting, game top-ups, mobile operator data packages, and premium apps, with a fast, secure, and convenient process.",
           services: [
             "Social media boosting services",
             "Game top-ups",
-            "Data packages",
+            "Mobile operator data packages",
             "Premium apps",
           ],
           visit: "Visit Wiboost Store",
@@ -121,12 +121,12 @@ const uiText = {
         {
           title: "Nocoding",
           description:
-            "A website development service for different website needs, helping people and brands build clean, practical, and ready-to-use websites.",
+            "Fast, affordable, and satisfying website, application, and automation development services.",
           services: [
-            "Company profile websites",
-            "Portfolio websites",
-            "Online store websites",
-            "Landing pages",
+            "Personal Portfolio / CV",
+            "Landing Page / Company Profile",
+            "Information & Operational Systems",
+            "Automation",
           ],
           visit: "Visit Nocoding",
           href: "https://nocoding.web.id",
@@ -220,11 +220,11 @@ const uiText = {
         {
           title: "Wiboost Store",
           description:
-            "Pusat layanan digital lengkap di Indonesia untuk pertumbuhan media sosial, top up game, paket data, dan aplikasi premium dalam satu tempat praktis.",
+            "Platform penyedia layanan suntik sosmed, top up game, paket data operator, dan aplikasi premium dengan proses cepat, aman, dan praktis.",
           services: [
             "Layanan suntik sosmed",
             "Top up game",
-            "Paket data",
+            "Paket data operator",
             "Aplikasi premium",
           ],
           visit: "Kunjungi Wiboost Store",
@@ -235,12 +235,12 @@ const uiText = {
         {
           title: "Nocoding",
           description:
-            "Jasa pembuatan segala jenis website untuk membantu personal, bisnis, dan brand membangun website yang rapi, praktis, dan siap digunakan.",
+            "Jasa pembuatan website, aplikasi, dan automasi yang cepat, terjangkau, dan memuaskan.",
           services: [
-            "Website company profile",
-            "Website portofolio",
-            "Website toko online",
-            "Landing page",
+            "Portofolio / CV Pribadi",
+            "Landing Page / Profil Perusahaan",
+            "Sistem Informasi & Operasional",
+            "Automasi",
           ],
           visit: "Kunjungi Nocoding",
           href: "https://nocoding.web.id",

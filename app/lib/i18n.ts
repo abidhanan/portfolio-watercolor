@@ -165,12 +165,12 @@ const uiText = {
       intro: "Saya Abid Hanan",
       role: "Developer Relations",
       description:
-        "Saya menghubungkan teknologi, komunitas, dan tujuan bisnis melalui komunikasi yang jelas, edukasi developer, dan kolaborasi yang bermakna.",
+        "Saya menghubungkan teknologi dengan komunitas melalui komunikasi yang jelas, edukatif, dan kolaborasi yang bermakna.",
     },
     about: {
       eyebrow: "Tentang Saya",
-      summaryLabel: "Identitas & Nilai DevRel",
-      body: "Saya Abid Hanan Wicaksono, seorang profesional Developer Relations dengan latar belakang beragam di bidang teknologi, bisnis, dan digital marketing. Saya mengubah ide teknis yang kompleks menjadi cerita yang jelas, sumber daya yang berguna, dan peluang kolaborasi yang saling bernilai, dengan tetap berpijak pada komunikasi, komunitas, dan dampak sosial yang bermakna.",
+      summaryLabel: "Identitas & Nilai",
+      body: "Saya Abid Hanan Wicaksono, seorang Developer Relations dengan latar belakang beragam di bidang teknologi, bisnis, dan marketing. Saya mengubah ide teknis yang kompleks menjadi cerita yang jelas, sumber daya yang berguna, dan peluang kolaborasi yang saling bernilai, dengan tetap berpijak pada komunikasi, komunitas, dan dampak sosial yang bermakna.",
     },
     sections: {
       education: {
@@ -196,7 +196,7 @@ const uiText = {
       startup: {
         title: "Startup",
         summary:
-          "Bagian ini menampilkan inisiatif bisnis digital yang sedang saya bangun, dari identitas brand sampai arah produk.",
+          "Inisiatif bisnis digital yang sedang saya bangun, dari identitas brand sampai arah produk.",
       },
       activity: {
         title: "Aktivitas",
@@ -250,7 +250,7 @@ const uiText = {
       ],
     },
     footer: {
-      motivation: "\"Setiap kesulitan pasti ada kemudahan.\"",
+      motivation: "\"Sesudah kesulitan pasti ada kemudahan.\"",
       contact: "Kontak",
       connect: "Mari Terhubung",
       copyright: "© 2026 Abid Hanan Wicaksono - Dibuat dengan cinta.",
@@ -275,7 +275,7 @@ const educationId: Partial<(typeof educationItems)[number]>[] = [
     year: "2024 - Sekarang",
     title: "S1 Ilmu Komputer",
     place: "Universitas Sugeng Hartono",
-    desc: "Mahasiswa semester 5 Ilmu Komputer dengan IPK 3,97, berfokus pada fondasi ilmu komputer, teknologi digital, komunikasi teknis, dan pertumbuhan profesional yang mendukung jalur Developer Relations.",
+    desc: "Mahasiswa semester 5 Ilmu Komputer dengan IPK 3,97, yang berfokus pada fondasi ilmu komputer, teknologi digital, komunikasi teknis, dan pertumbuhan profesional.",
   },
 ];
 

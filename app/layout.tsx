@@ -84,10 +84,11 @@ export const metadata: Metadata = {
     alternateLocale: ["id_ID"],
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image-watercolor.png",
         width: 1200,
         height: 630,
-        alt: "Abid Hanan Wicaksono — Developer Relations",
+        type: "image/png",
+        alt: "Abid Hanan — Developer Relations, watercolor portfolio with photos from speaking events and a Google Office visit",
       },
     ],
   },
@@ -95,7 +96,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og-image.png"],
+    images: [
+      {
+        url: "/og-image-watercolor.png",
+        alt: "Abid Hanan — Developer Relations, watercolor portfolio with photos from speaking events and a Google Office visit",
+      },
+    ],
     creator: "@ahawi_channel",
   },
   icons: {

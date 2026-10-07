@@ -16,8 +16,6 @@ const containerSelectors = [
   "main section .rope-line-vertical",
   "main section .certificate-marquee-viewport",
   "main section#about .rounded-full",
-  // Footer (desktop only — the controller doesn't run on mobile). The footer is
-  // clipped (overflow-hidden) so the reveal's translateY can't extend the page.
   "footer .grid > div",
   "footer > div > p",
 ].join(",");
@@ -41,8 +39,8 @@ function isInViewport(element: HTMLElement) {
 
 export function ScrollRevealController() {
   useEffect(() => {
-    // No scroll-reveal animations on mobile — content just shows normally.
-    if (window.matchMedia("(max-width: 767px), (prefers-reduced-motion: reduce)").matches) {
+    // Respect reduced-motion: content just shows normally.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
     }
 

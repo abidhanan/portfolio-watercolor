@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://www.abidhanan.my.id";
+const siteUrl = "https://abidhanan.my.id";
 
 // Search + AI/LLM crawlers we explicitly welcome so answers about
 // "Abid Hanan Wicaksono" can be sourced from this site.

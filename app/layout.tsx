@@ -16,7 +16,7 @@ const playfair = Playfair_Display({ subsets: ["latin"], display: "optional", var
 // Fully static so Vercel serves a cached, compressed document (fast TTFB).
 export const dynamic = "force-static";
 
-const siteUrl = "https://www.abidhanan.my.id";
+const siteUrl = "https://abidhanan.my.id";
 const title = "Abid Hanan - DevRel";
 const description =
   "Abid Hanan Wicaksono (AHAWI) is a Developer Relations professional and content creator from Indonesia. Explore his portfolio: experience, certifications, skills, and projects.";
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     alternateLocale: ["id_ID"],
     images: [
       {
-        url: "/og-image-watercolor.jpg",
+        url: `${siteUrl}/og-image-watercolor.jpg`,
         secureUrl: `${siteUrl}/og-image-watercolor.jpg`,
         width: 1200,
         height: 630,
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "/og-image-watercolor.jpg",
+        url: `${siteUrl}/og-image-watercolor.jpg`,
         alt: "Abid Hanan — Developer Relations, watercolor portfolio with photos from speaking events and a Google Office visit",
       },
     ],
@@ -107,13 +107,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon-64x64.png", sizes: "64x64", type: "image/png" },
-      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: `${siteUrl}/favicon-64x64.png`, sizes: "64x64", type: "image/png" },
+      { url: `${siteUrl}/favicon-32x32.png`, sizes: "32x32", type: "image/png" },
     ],
-    shortcut: "/favicon.ico",
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: `${siteUrl}/favicon.ico`,
+    apple: [{ url: `${siteUrl}/apple-touch-icon.png`, sizes: "180x180", type: "image/png" }],
   },
   category: "technology",
 };

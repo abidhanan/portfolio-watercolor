@@ -18,7 +18,9 @@ npm audit --omit=dev
 ```
 
 Production uses the existing Vercel project `ahawi-portofolio`, at
-https://www.abidhanan.my.id. The GitHub production branch is `master`.
+https://abidhanan.my.id. The apex domain serves the application directly, with
+no redirect to `www`. Canonical, sharing image, and icon URLs use this same domain.
+The `www` domain remains accessible. The GitHub production branch is `master`.
 
 ## Images
 

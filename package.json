@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "images:optimize": "node scripts/optimize-images.mjs",
+    "icons:prepare": "node scripts/prepare-favicons.mjs",
     "cdn:prepare": "node scripts/prepare-cdn.mjs",
     "cdn:deploy": "npm run cdn:prepare && wrangler deploy"
   },

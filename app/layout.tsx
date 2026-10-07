@@ -17,9 +17,9 @@ const playfair = Playfair_Display({ subsets: ["latin"], display: "optional", var
 export const dynamic = "force-static";
 
 const siteUrl = "https://abidhanan.my.id";
-const title = "Abid Hanan - DevRel";
+const title = "Abid Hanan Wicaksono";
 const description =
-  "Abid Hanan Wicaksono (AHAWI) is a Developer Relations professional and content creator from Indonesia. Explore his portfolio: experience, certifications, skills, and projects.";
+  "Abid Hanan Wicaksono adalah seorang Developer Relations yang berpengalaman dalam menghubungkan teknologi dengan komunitas.";
 
 const socialProfiles = [
   "https://www.instagram.com/ahawi_channel",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: title,
-    template: "%s | Abid Hanan - DevRel",
+    template: "%s | Abid Hanan Wicaksono",
   },
   description,
   applicationName: title,
@@ -135,7 +135,7 @@ const jsonLd = {
       image: `${siteUrl}/abid-profile.webp`,
       jobTitle: "Developer Relations",
       description:
-        "Abid Hanan Wicaksono is a Developer Relations professional and content creator from Indonesia who connects technology, communities, and business goals through developer education and content creation.",
+        "Abid Hanan Wicaksono adalah seorang Developer Relations yang berpengalaman dalam menghubungkan teknologi dengan komunitas.",
       email: "abidhanan0904@gmail.com",
       knowsAbout: [
         "Developer Relations",

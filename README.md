@@ -23,7 +23,7 @@ https://www.abidhanan.my.id. The GitHub production branch is `master`.
 ## Images
 
 Photographs, certificates, and raster logos use WebP. The social sharing image
-and browser icon retain PNG for compatibility. Images below the fold load
+uses a compact 1200 × 630 JPEG, and the browser icon retains PNG. Images below the fold load
 lazily; the central hero image is preloaded.
 
 `npm run images:optimize` converts new JPEGs (and `logo-ush.png`) in `public` to

@@ -84,10 +84,11 @@ export const metadata: Metadata = {
     alternateLocale: ["id_ID"],
     images: [
       {
-        url: "/og-image-watercolor.png",
+        url: "/og-image-watercolor.jpg",
+        secureUrl: `${siteUrl}/og-image-watercolor.jpg`,
         width: 1200,
         height: 630,
-        type: "image/png",
+        type: "image/jpeg",
         alt: "Abid Hanan — Developer Relations, watercolor portfolio with photos from speaking events and a Google Office visit",
       },
     ],
@@ -98,7 +99,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "/og-image-watercolor.png",
+        url: "/og-image-watercolor.jpg",
         alt: "Abid Hanan — Developer Relations, watercolor portfolio with photos from speaking events and a Google Office visit",
       },
     ],

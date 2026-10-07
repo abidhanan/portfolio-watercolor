@@ -2,10 +2,10 @@ import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
-// Keep social-sharing PNGs and the app icon for crawler/browser compatibility.
+// Keep social-sharing JPEGs/PNGs and the app icon for crawler/browser compatibility.
 const directory = path.resolve("public");
 const files = (await readdir(directory)).filter(
-  (file) => /\.jpe?g$/i.test(file) || file === "logo-ush.png",
+  (file) => !file.startsWith("og-image") && (/\.jpe?g$/i.test(file) || file === "logo-ush.png"),
 );
 let originalBytes = 0;
 let optimizedBytes = 0;

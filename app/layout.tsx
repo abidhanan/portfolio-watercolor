@@ -20,6 +20,7 @@ const siteUrl = "https://abidhanan.my.id";
 const title = "Abid Hanan Wicaksono";
 const description =
   "Developer Relations yang berpengalaman dalam menghubungkan teknologi dengan komunitas.";
+const socialImageUrl = `${siteUrl}/abid-hanan-social-preview.jpg`;
 
 const socialProfiles = [
   "https://www.instagram.com/ahawi_channel",
@@ -84,8 +85,8 @@ export const metadata: Metadata = {
     alternateLocale: ["id_ID"],
     images: [
       {
-        url: `${siteUrl}/og-image-watercolor.jpg`,
-        secureUrl: `${siteUrl}/og-image-watercolor.jpg`,
+        url: socialImageUrl,
+        secureUrl: socialImageUrl,
         width: 1200,
         height: 630,
         type: "image/jpeg",
@@ -99,7 +100,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: `${siteUrl}/og-image-watercolor.jpg`,
+        url: socialImageUrl,
         alt: "Abid Hanan — Developer Relations, watercolor portfolio with photos from speaking events and a Google Office visit",
       },
     ],

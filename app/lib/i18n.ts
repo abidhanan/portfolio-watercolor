@@ -51,12 +51,12 @@ const uiText = {
       intro: "I'm Abid Hanan",
       role: "Developer Relations",
       description:
-        "I connect technology, communities, and business goals through clear communication, developer education, and meaningful collaboration.",
+        "I connect technology with communities through clear, educational communication and meaningful collaboration.",
     },
     about: {
       eyebrow: "About Me",
-      summaryLabel: "Identity & DevRel Values",
-      body: "I am Abid Hanan Wicaksono, a Developer Relations professional with a diverse background in technology, business, and digital marketing. I turn complex technical ideas into clear stories, useful resources, and mutually valuable collaboration opportunities while staying grounded in communication, community, and meaningful social impact.",
+      summaryLabel: "Identity & Values",
+      body: "I am Abid Hanan Wicaksono, a Developer Relations specialist with a diverse background in technology, business, and marketing. I turn complex technical ideas into clear stories, useful resources, and mutually valuable collaboration opportunities while staying grounded in communication, community, and meaningful social impact.",
     },
     sections: {
       education: {
@@ -82,7 +82,7 @@ const uiText = {
       startup: {
         title: "Startup",
         summary:
-          "This section highlights the digital business initiatives I am building, from brand identity to product direction.",
+          "Digital business initiatives I am building, from brand identity to product direction.",
       },
       activity: {
         title: "Activity",
@@ -136,7 +136,7 @@ const uiText = {
       ],
     },
     footer: {
-      motivation: "\"Every difficulty is followed by ease.\"",
+      motivation: "\"After every difficulty comes ease.\"",
       contact: "Contact",
       connect: "Let's Connect",
       copyright: "© 2026 Abid Hanan Wicaksono - Made with love.",

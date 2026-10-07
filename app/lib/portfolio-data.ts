@@ -111,7 +111,7 @@ export const educationItems = [
     year: "2024 - Present",
     title: "Bachelor of Computer Science",
     place: "Sugeng Hartono University",
-    desc: "A 5th-semester Computer Science student with a GPA of 3.97, focused on computer science fundamentals, digital technology, technical communication, and professional growth that supports a Developer Relations path.",
+    desc: "A 5th-semester Computer Science student with a GPA of 3.97, focused on computer science fundamentals, digital technology, technical communication, and professional growth.",
     logo: "/logo-ush.webp",
   },
 ];

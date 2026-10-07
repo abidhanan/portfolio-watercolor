@@ -19,7 +19,7 @@ export const dynamic = "force-static";
 const siteUrl = "https://abidhanan.my.id";
 const title = "Abid Hanan Wicaksono";
 const description =
-  "Abid Hanan Wicaksono adalah seorang Developer Relations yang berpengalaman dalam menghubungkan teknologi dengan komunitas.";
+  "Developer Relations yang berpengalaman dalam menghubungkan teknologi dengan komunitas.";
 
 const socialProfiles = [
   "https://www.instagram.com/ahawi_channel",
@@ -135,7 +135,7 @@ const jsonLd = {
       image: `${siteUrl}/abid-profile.webp`,
       jobTitle: "Developer Relations",
       description:
-        "Abid Hanan Wicaksono adalah seorang Developer Relations yang berpengalaman dalam menghubungkan teknologi dengan komunitas.",
+        "Developer Relations yang berpengalaman dalam menghubungkan teknologi dengan komunitas.",
       email: "abidhanan0904@gmail.com",
       knowsAbout: [
         "Developer Relations",

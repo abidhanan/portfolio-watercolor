@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
     ...(process.env.NEXT_PUBLIC_ASSET_BASE_URL
       ? { loader: "custom" as const, loaderFile: "./app/lib/cdn-image-loader.ts" }
       : {}),
-    deviceSizes: [640, 1024, 1600],
-    imageSizes: [96, 192, 256, 384],
+    deviceSizes: [640, 1280],
+    imageSizes: [96, 192, 384],
     formats: ["image/avif", "image/webp"],
     qualities: [60, 75],
     minimumCacheTTL: 31536000,

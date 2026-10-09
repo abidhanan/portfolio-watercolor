@@ -27,9 +27,9 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
   const { content } = useLanguage();
   const [selectedCertificate, setSelectedCertificate] = useState<CertificateItem | null>(null);
   const [overlayTop, setOverlayTop] = useState(0);
-  // The seamless-loop copy of the cards is only needed once the marquee is moving,
-  // so it is mounted after hydration instead of being shipped in the initial HTML.
-  const [showCopy, setShowCopy] = useState(false);
+  // The cards (and their seamless-loop copy) sit below the fold, so they are mounted
+  // shortly after hydration instead of being shipped in the HTML.
+  const [ready, setReady] = useState(false);
 
   const trackRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
@@ -42,7 +42,8 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
   const suppressClickRef = useRef(false);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setShowCopy(true), 0);
+    // A short delay lets hydration and the first paint finish before the cards mount.
+    const timer = window.setTimeout(() => setReady(true), 300);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -153,7 +154,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
       window.removeEventListener("resize", measure);
       lastTsRef.current = null;
     };
-  }, [certificates.length, showCopy]);
+  }, [certificates.length, ready]);
 
   function openCertificate(certificate: CertificateItem) {
     setOverlayTop(document.querySelector("header")?.getBoundingClientRect().height ?? 0);
@@ -204,7 +205,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
   return (
     <>
       <div
-        className="certificate-marquee-mask certificate-marquee-viewport relative left-1/2 w-screen -translate-x-1/2 overflow-hidden py-2"
+        className="certificate-marquee-mask certificate-marquee-viewport relative left-1/2 min-h-[469px] w-screen -translate-x-1/2 overflow-hidden py-2 md:min-h-[501px]"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={endPointer}
@@ -212,7 +213,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
         onPointerLeave={endPointer}
       >
         <div ref={trackRef} className="certificate-marquee-track flex w-max gap-5">
-          {(showCopy ? [...certificates, ...certificates] : certificates).map((certificate, index) => {
+          {(ready ? [...certificates, ...certificates] : []).map((certificate, index) => {
             const isDuplicate = index >= certificates.length;
 
             return (

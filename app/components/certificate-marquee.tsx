@@ -28,9 +28,10 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
   const [selectedCertificate, setSelectedCertificate] = useState<CertificateItem | null>(null);
   const [overlayTop, setOverlayTop] = useState(0);
   // The cards (and their seamless-loop copy) sit below the fold, so they are mounted
-  // shortly after hydration instead of being shipped in the HTML.
+  // when the marquee nears the viewport instead of being shipped in the HTML.
   const [ready, setReady] = useState(false);
 
+  const viewportRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
   const copyWidthRef = useRef(0);
@@ -42,9 +43,24 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
   const suppressClickRef = useRef(false);
 
   useEffect(() => {
-    // A short delay lets hydration and the first paint finish before the cards mount.
-    const timer = window.setTimeout(() => setReady(true), 300);
-    return () => window.clearTimeout(timer);
+    // Mount the cards only when the marquee is about to scroll into view, so their
+    // rendering cost stays out of the page-load window.
+    const viewport = viewportRef.current;
+    if (!viewport || typeof IntersectionObserver === "undefined") {
+      const timer = window.setTimeout(() => setReady(true), 0);
+      return () => window.clearTimeout(timer);
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setReady(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "800px 0px" },
+    );
+    observer.observe(viewport);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -205,6 +221,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
   return (
     <>
       <div
+        ref={viewportRef}
         className="certificate-marquee-mask certificate-marquee-viewport relative left-1/2 min-h-[469px] w-screen -translate-x-1/2 overflow-hidden py-2 md:min-h-[501px]"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}

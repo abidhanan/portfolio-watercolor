@@ -16,6 +16,8 @@ const sectionFrameClass =
 const homeSectionClass =
   "mb-28 min-h-[calc(100svh-5rem)] scroll-mt-36 pb-10 pt-2 md:-mt-6 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:pb-10 md:pt-0";
 const centeredSectionClass = `${sectionFrameClass} flex flex-col justify-center`;
+// Below-the-fold sections skip layout/paint until they are near the viewport (see globals.css).
+const lazySectionClass = `${centeredSectionClass} lazy-section`;
 
 type LogoBadgeProps = {
   name: string;
@@ -132,6 +134,8 @@ export default function Home() {
                 src="/home-gemini-seminar.webp"
                 alt="Abid Hanan Wicaksono at a Gemini AI seminar"
                 fill
+                loading="eager"
+                quality={60}
                 sizes="(min-width: 1024px) 208px, (min-width: 768px) 192px, 176px"
                 className="scale-[1.03] object-cover object-[52%_42%]"
               />
@@ -144,6 +148,7 @@ export default function Home() {
                 alt="Abid Hanan Wicaksono during a Google Office visit"
                 fill
                 preload
+                quality={60}
                 sizes="(min-width: 1024px) 208px, (min-width: 768px) 192px, 176px"
                 className="scale-[1.08] object-cover object-[32%_58%]"
               />
@@ -155,6 +160,8 @@ export default function Home() {
                 src="/home-ngabuburit-speaker.webp"
                 alt="Abid Hanan Wicaksono as a speaker"
                 fill
+                loading="eager"
+                quality={60}
                 sizes="(min-width: 1024px) 208px, (min-width: 768px) 192px, 176px"
                 className="scale-[1.08] object-cover object-[52%_66%]"
               />
@@ -174,6 +181,7 @@ export default function Home() {
                   src="/abid-profile.webp"
                   alt="Abid Hanan Wicaksono" 
                   fill 
+                  quality={60}
                   sizes="(min-width: 768px) 256px, (min-width: 640px) 224px, 176px"
                   className="scale-150 object-cover object-[50%_54%]" 
                 />
@@ -218,7 +226,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="education" aria-labelledby="education-heading" className={centeredSectionClass}>
+      <section id="education" aria-labelledby="education-heading" className={lazySectionClass}>
         <SectionHeader
           id="education-heading"
           title={content.sections.education.title}
@@ -264,7 +272,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="tools" aria-labelledby="tools-heading" className={centeredSectionClass}>
+      <section id="tools" aria-labelledby="tools-heading" className={lazySectionClass}>
         <SectionHeader
           id="tools-heading"
           title={content.sections.tools.title}
@@ -309,7 +317,7 @@ export default function Home() {
         <CertificateMarquee certificates={certificateItems} />
       </section>
 
-      <section id="career" aria-labelledby="career-heading" className={centeredSectionClass}>
+      <section id="career" aria-labelledby="career-heading" className={lazySectionClass}>
         <SectionHeader
           id="career-heading"
           title={content.sections.career.title}
@@ -358,7 +366,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="startup" aria-labelledby="startup-heading" className={centeredSectionClass}>
+      <section id="startup" aria-labelledby="startup-heading" className={lazySectionClass}>
         <SectionHeader
           id="startup-heading"
           title={content.sections.startup.title}
@@ -428,7 +436,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="activity" aria-labelledby="activity-heading" className={centeredSectionClass}>
+      <section id="activity" aria-labelledby="activity-heading" className={lazySectionClass}>
         <SectionHeader
           id="activity-heading"
           title={content.sections.activity.title}

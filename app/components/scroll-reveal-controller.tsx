@@ -32,7 +32,20 @@ const innerSelectors = [
 const skipSelector =
   ".certificate-marquee-track, [role='dialog'], .tool-box *, .tool-box [role='img']";
 
-function isInViewport(element: HTMLElement) {
+// Elements inside a skipped (content-visibility) section are never on screen;
+// answering from the section's own box avoids forcing that section to lay out.
+function isInViewport(element: HTMLElement, sectionBelowFold: Map<Element, boolean>) {
+  const section = element.closest(".lazy-section");
+  if (section) {
+    let below = sectionBelowFold.get(section);
+    if (below === undefined) {
+      below = section.getBoundingClientRect().top >= window.innerHeight;
+      sectionBelowFold.set(section, below);
+    }
+    if (below) {
+      return false;
+    }
+  }
   const rect = element.getBoundingClientRect();
   return rect.top < window.innerHeight * 0.95 && rect.bottom > window.innerHeight * 0.05;
 }
@@ -90,7 +103,8 @@ export function ScrollRevealController() {
       }
 
       // Read phase (all layout reads together) then write phase — avoids thrash.
-      const inView = fresh.map(isInViewport);
+      const sectionBelowFold = new Map<Element, boolean>();
+      const inView = fresh.map((element) => isInViewport(element, sectionBelowFold));
       const groupCounters = new Map<Element, number>();
 
       fresh.forEach((element, i) => {

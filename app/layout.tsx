@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { CSSProperties } from "react";
-import { Lora, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { BackgroundMusic } from "./components/background-music";
 import { LanguageProvider } from "./components/language-provider";
@@ -9,9 +9,23 @@ import { SiteFooter } from "./components/site-footer";
 import { SiteNav } from "./components/site-nav";
 import { assetBaseUrl, assetUrl } from "./lib/assets";
 
-// Memuat Google Font agar konsisten di Desktop dan Mobile
-const lora = Lora({ subsets: ["latin"], display: "optional", variable: "--font-body" });
-const playfair = Playfair_Display({ subsets: ["latin"], display: "optional", variable: "--font-display" });
+// Self-hosted, Latin-subset variable fonts (no render-blocking third-party request, ~13 KB lighter).
+const lora = localFont({
+  src: "./fonts/lora-latin.woff2",
+  weight: "400 700",
+  display: "optional",
+  variable: "--font-body",
+  adjustFontFallback: "Times New Roman",
+  fallback: ["Georgia", "serif"],
+});
+const playfair = localFont({
+  src: "./fonts/playfair-display-latin.woff2",
+  weight: "400 900",
+  display: "optional",
+  variable: "--font-display",
+  adjustFontFallback: "Times New Roman",
+  fallback: ["Georgia", "serif"],
+});
 
 // Fully static so Vercel serves a cached, compressed document (fast TTFB).
 export const dynamic = "force-static";
@@ -193,8 +207,8 @@ export default function RootLayout({
       <body
         className={`${lora.variable} ${playfair.variable} min-h-screen bg-[#F0F7FA] text-[#3a2616]`}
         style={{
-          "--paper-texture": `url("${assetUrl("/crumpled-paper.webp")}")`,
-          "--beach-background": `url("${assetUrl("/watercolor-beach.webp")}")`,
+          "--paper-texture": `url("${assetUrl("/crumpled-paper-lite.webp")}")`,
+          "--beach-background": `url("${assetUrl("/watercolor-beach-lite.webp")}")`,
         } as CSSProperties}
       >
         <script

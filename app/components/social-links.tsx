@@ -1,5 +1,4 @@
 import type { SVGProps } from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 type BrandIconProps = SVGProps<SVGSVGElement>;
@@ -170,7 +169,7 @@ export function SocialLinks({ size = "md", className = "", wrap = true }: Social
       {socialItems.map((item) => {
         const Icon = item.icon;
         return (
-          <Link
+          <a
             key={item.label}
             href={item.href}
             target="_blank"
@@ -190,7 +189,7 @@ export function SocialLinks({ size = "md", className = "", wrap = true }: Social
             ) : (
               <Icon className={`${iconSize} ${item.iconClassName ?? ""}`} aria-hidden="true" />
             )}
-          </Link>
+          </a>
         );
       })}
     </div>

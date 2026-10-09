@@ -37,7 +37,7 @@ footer [class*="rounded-3xl"][class*="border"] {
   background-color: #fbf5e6 !important;
   background-image:
     linear-gradient(rgba(255, 252, 242, 0.82), rgba(247, 238, 216, 0.86)),
-    var(--paper-texture, url("/crumpled-paper.webp")) !important;
+    var(--paper-texture, url("/crumpled-paper-lite.webp")) !important;
   background-size: cover, 400px auto !important;
   background-blend-mode: normal, multiply;
   border: 1px solid rgba(120, 82, 36, 0.55) !important;
@@ -218,7 +218,7 @@ html:has(#contact:target) .site-nav-link[data-nav-target="contact"] {
   background-color: #fbf5e6 !important;
   background-image:
     linear-gradient(rgba(255, 252, 242, 0.85), rgba(247, 238, 216, 0.9)),
-    var(--paper-texture, url("/crumpled-paper.webp")) !important;
+    var(--paper-texture, url("/crumpled-paper-lite.webp")) !important;
   background-size: cover, 400px auto !important;
   border: 1px solid rgba(120, 82, 36, 0.55) !important;
   border-radius: 12px !important;
@@ -239,7 +239,7 @@ footer [class*="rounded-3xl"][class*="border"] {
   background-color: #fbf5e6;
   background-image:
     linear-gradient(rgba(255, 252, 242, 0.9), rgba(247, 238, 216, 0.92)),
-    var(--paper-texture, url("/crumpled-paper.webp"));
+    var(--paper-texture, url("/crumpled-paper-lite.webp"));
   background-size: cover, 400px auto;
   border: 1px solid rgba(120, 82, 36, 0.55);
   border-radius: 14px;
@@ -422,6 +422,36 @@ html.reveal-ready [data-scroll-reveal].is-revealed {
   transition-delay: var(--reveal-delay, 0ms);
 }
 
+/* Below-the-fold sections: skip layout and paint until near the viewport. The
+   negative margin + padding widen the paint-containment box so card shadows are
+   not clipped, without moving any content. */
+main > section.lazy-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1100px;
+  margin-inline: -0.75rem;
+  padding-inline: 0.75rem;
+}
+
+/* Rough rendered heights, so the scrollbar barely jumps while sections get
+   measured for real (`auto` then remembers each one). Mobile first. */
+#education { contain-intrinsic-size: auto 730px; }
+#tools { contain-intrinsic-size: auto 3650px; }
+#career { contain-intrinsic-size: auto 5050px; }
+#startup { contain-intrinsic-size: auto 1950px; }
+#activity { contain-intrinsic-size: auto 5950px; }
+@media (min-width: 768px) {
+  #education { contain-intrinsic-size: auto 680px; }
+  #tools { contain-intrinsic-size: auto 2400px; }
+  #career { contain-intrinsic-size: auto 2400px; }
+  #startup { contain-intrinsic-size: auto 1250px; }
+  #activity { contain-intrinsic-size: auto 2250px; }
+}
+
+/* Set on the first nav click so section sizes are real before measuring them. */
+html.sections-rendered main > section.lazy-section {
+  content-visibility: visible;
+}
+
 .certificate-marquee-mask {
   mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
@@ -463,7 +493,7 @@ body::before {
   height: 100lvh;
   min-height: 100svh;
   z-index: -10;
-  background-image: var(--beach-background, url("/watercolor-beach.webp"));
+  background-image: var(--beach-background, url("/watercolor-beach-lite.webp"));
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;

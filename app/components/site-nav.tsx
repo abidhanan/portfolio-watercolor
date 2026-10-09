@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import { Menu, X } from "lucide-react";
@@ -192,6 +191,8 @@ export function SiteNav() {
     }
 
     event.preventDefault();
+    // Lay out every below-the-fold section so the measurements below are exact.
+    document.documentElement.classList.add("sections-rendered");
     clickedHrefRef.current = href;
     setActiveHref(href);
     setIsMenuOpen(false);
@@ -236,13 +237,13 @@ export function SiteNav() {
     <header className="paper-nav sticky top-0 z-50">
       <nav ref={navRef} aria-label="Main navigation" className="relative mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4 md:px-10 xl:px-12">
         <div className="flex items-center justify-between">
-          <Link
-            href="/#home"
+          <a
+            href="#home"
             onClick={(event) => handleSectionClick(event, "/#home")}
             className="section-readable w-fit text-lg font-extrabold tracking-tight text-[#0F172A] sm:text-xl"
           >
             {content.brand.prefix} <span className="text-[#075985]">{content.brand.accent}</span>
-          </Link>
+          </a>
 
           <div className="flex items-center gap-2 md:hidden">
             <LanguageToggle />
@@ -273,7 +274,7 @@ export function SiteNav() {
             {navItems.map((item) => {
               const isActive = activeHref === item.href;
               return (
-                <Link
+                <a
                   key={item.href}
                   href={item.href}
                   data-nav-target={item.href.slice(2)}
@@ -286,7 +287,7 @@ export function SiteNav() {
                   }`}
                 >
                   {item.label}
-                </Link>
+                </a>
               );
             })}
             <LanguageToggle className="ml-1" />
@@ -299,7 +300,7 @@ export function SiteNav() {
             {navItems.map((item) => {
               const isActive = activeHref === item.href;
               return (
-                <Link
+                <a
                   key={item.href}
                   href={item.href}
                   data-nav-target={item.href.slice(2)}
@@ -320,7 +321,7 @@ export function SiteNav() {
                     />
                     <span>{item.label}</span>
                   </span>
-                </Link>
+                </a>
               );
             })}
           </div>

@@ -27,6 +27,9 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
   const { content } = useLanguage();
   const [selectedCertificate, setSelectedCertificate] = useState<CertificateItem | null>(null);
   const [overlayTop, setOverlayTop] = useState(0);
+  // The seamless-loop copy of the cards is only needed once the marquee is moving,
+  // so it is mounted after hydration instead of being shipped in the initial HTML.
+  const [showCopy, setShowCopy] = useState(false);
 
   const trackRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
@@ -37,6 +40,11 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
   const startXRef = useRef(0);
   const startOffsetRef = useRef(0);
   const suppressClickRef = useRef(false);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setShowCopy(true), 0);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (!selectedCertificate) {
@@ -145,7 +153,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
       window.removeEventListener("resize", measure);
       lastTsRef.current = null;
     };
-  }, [certificates.length]);
+  }, [certificates.length, showCopy]);
 
   function openCertificate(certificate: CertificateItem) {
     setOverlayTop(document.querySelector("header")?.getBoundingClientRect().height ?? 0);
@@ -204,7 +212,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
         onPointerLeave={endPointer}
       >
         <div ref={trackRef} className="certificate-marquee-track flex w-max gap-5">
-          {[...certificates, ...certificates].map((certificate, index) => {
+          {(showCopy ? [...certificates, ...certificates] : certificates).map((certificate, index) => {
             const isDuplicate = index >= certificates.length;
 
             return (

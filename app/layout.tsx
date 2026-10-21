@@ -8,6 +8,7 @@ import { ScrollRevealController } from "./components/scroll-reveal-controller";
 import { SiteFooter } from "./components/site-footer";
 import { SiteNav } from "./components/site-nav";
 import { assetBaseUrl, assetUrl } from "./lib/assets";
+import { contactEmail, faq, sections, siteUrl, socialProfiles, summary, ventures } from "./lib/site";
 
 // Self-hosted, Latin-subset variable fonts (no render-blocking third-party request, ~13 KB lighter).
 const lora = localFont({
@@ -30,21 +31,10 @@ const playfair = localFont({
 // Fully static so Vercel serves a cached, compressed document (fast TTFB).
 export const dynamic = "force-static";
 
-const siteUrl = "https://abidhanan.my.id";
-const title = "Abid Hanan Wicaksono";
+const title = "Abid Hanan Wicaksono | Developer Relations";
 const description =
-  "Developer Relations yang berpengalaman dalam menghubungkan teknologi dengan komunitas.";
+  "Abid Hanan Wicaksono, Developer Relations asal Surakarta, Indonesia. Menghubungkan teknologi dengan komunitas lewat komunikasi yang jelas dan edukasi developer.";
 const socialImageUrl = `${siteUrl}/abid-hanan-social-preview-id.jpg`;
-
-const socialProfiles = [
-  "https://www.instagram.com/ahawi_channel",
-  "https://www.tiktok.com/@ahawi_channel",
-  "https://youtube.com/@ahawichannel",
-  "https://x.com/ahawi_channel",
-  "https://t.me/ahawi_channel",
-  "https://github.com/abidhanan",
-  "https://www.linkedin.com/in/abid-hanan-wicaksono-6a9326326/",
-];
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -53,7 +43,7 @@ export const metadata: Metadata = {
     template: "%s | Abid Hanan Wicaksono",
   },
   description,
-  applicationName: title,
+  applicationName: "Abid Hanan Wicaksono",
   referrer: "strict-origin-when-cross-origin",
   formatDetection: { telephone: false, address: false, email: false },
   authors: [{ name: "Abid Hanan Wicaksono", url: siteUrl }],
@@ -72,6 +62,12 @@ export const metadata: Metadata = {
     "Next.js",
     "Laravel",
     "Indonesia developer",
+    "Developer Relations Indonesia",
+    "Surakarta",
+    "Wiboost Store",
+    "Nocoding",
+    "I Need Save",
+    "I Need Barcode",
     "portfolio",
   ],
   alternates: { canonical: "/" },
@@ -104,7 +100,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Abid Hanan — Developer Relations, portofolio cat air dengan foto acara pembicara dan kunjungan ke Google Office",
+        alt: "Abid Hanan, Developer Relations. Portofolio cat air dengan foto acara pembicara dan kunjungan ke Google Office",
       },
     ],
   },
@@ -115,7 +111,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: socialImageUrl,
-        alt: "Abid Hanan — Developer Relations, portofolio cat air dengan foto acara pembicara dan kunjungan ke Google Office",
+        alt: "Abid Hanan, Developer Relations. Portofolio cat air dengan foto acara pembicara dan kunjungan ke Google Office",
       },
     ],
     creator: "@ahawi_channel",
@@ -138,22 +134,48 @@ export const viewport: Viewport = {
   colorScheme: "light",
 };
 
+const personId = `${siteUrl}/#person`;
+const websiteId = `${siteUrl}/#website`;
+const pageId = `${siteUrl}/#webpage`;
+
+// Structured data for search engines and AI answer engines. Answers in `faq`
+// mirror what the page says, and every entity links back to the Person node.
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Person",
-      "@id": `${siteUrl}/#person`,
+      "@id": personId,
       name: "Abid Hanan Wicaksono",
-      alternateName: ["Abid Hanan", "AHAWI"],
+      givenName: "Abid Hanan",
+      familyName: "Wicaksono",
+      alternateName: ["Abid Hanan", "AHAWI", "ahawi_channel"],
       url: siteUrl,
-      image: `${siteUrl}/abid-profile.webp`,
+      mainEntityOfPage: { "@id": pageId },
+      image: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/abid-profile.webp`,
+        width: 563,
+        height: 1000,
+      },
       jobTitle: "Developer Relations",
-      description:
-        "Developer Relations yang berpengalaman dalam menghubungkan teknologi dengan komunitas.",
-      email: "abidhanan0904@gmail.com",
+      hasOccupation: {
+        "@type": "Occupation",
+        name: "Developer Relations",
+        occupationLocation: { "@type": "Country", name: "Indonesia" },
+        skills: "Developer education, community building, technical communication, Web3, full stack development",
+      },
+      description: [
+        { "@language": "en", "@value": summary.en },
+        { "@language": "id", "@value": summary.id },
+      ],
+      email: contactEmail,
+      knowsLanguage: ["id", "en"],
       knowsAbout: [
         "Developer Relations",
+        "Developer Education",
+        "Community Building",
+        "Technical Communication",
         "Full Stack Development",
         "Blockchain",
         "Web3",
@@ -164,32 +186,73 @@ const jsonLd = {
         "Laravel",
         "Rust",
         "Content Creation",
-        "Developer Education",
+        "Social Media Marketing",
       ],
-      alumniOf: { "@type": "CollegeOrUniversity", name: "Sugeng Hartono University" },
+      homeLocation: {
+        "@type": "Place",
+        name: "Surakarta, Indonesia",
+        address: { "@type": "PostalAddress", addressLocality: "Surakarta", addressCountry: "ID" },
+      },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Sugeng Hartono University",
+      },
       worksFor: { "@type": "Organization", name: "Maua AI" },
-      nationality: "Indonesian",
-      address: { "@type": "PostalAddress", addressCountry: "ID" },
-      sameAs: socialProfiles,
+      nationality: { "@type": "Country", name: "Indonesia" },
+      sameAs: socialProfiles.map((profile) => profile.url),
     },
+    ...ventures.map((venture) => ({
+      "@type": venture.type,
+      "@id": `${venture.url}/#${venture.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+      name: venture.name,
+      url: venture.url,
+      description: venture.description,
+      founder: { "@id": personId },
+      ...(venture.type === "WebApplication"
+        ? {
+            applicationCategory: "UtilitiesApplication",
+            operatingSystem: "Any (web browser)",
+            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          }
+        : {}),
+    })),
     {
       "@type": "WebSite",
-      "@id": `${siteUrl}/#website`,
+      "@id": websiteId,
       url: siteUrl,
-      name: "Abid Hanan Wicaksono — Portfolio",
-      description,
-      inLanguage: "en",
-      publisher: { "@id": `${siteUrl}/#person` },
+      name: "Abid Hanan Wicaksono | Portfolio",
+      inLanguage: ["id", "en"],
+      publisher: { "@id": personId },
     },
     {
       "@type": "ProfilePage",
-      "@id": `${siteUrl}/#webpage`,
+      "@id": pageId,
       url: siteUrl,
-      name: "Abid Hanan Wicaksono — Developer Relations",
-      isPartOf: { "@id": `${siteUrl}/#website` },
-      about: { "@id": `${siteUrl}/#person` },
-      mainEntity: { "@id": `${siteUrl}/#person` },
+      name: "Abid Hanan Wicaksono | Developer Relations",
+      isPartOf: { "@id": websiteId },
+      about: { "@id": personId },
+      mainEntity: { "@id": personId },
+      inLanguage: ["id", "en"],
+      dateModified: new Date().toISOString(),
+      primaryImageOfPage: { "@type": "ImageObject", url: socialImageUrl, width: 1200, height: 630 },
+      hasPart: sections.map((section) => ({
+        "@type": "WebPageElement",
+        "@id": `${siteUrl}/#${section.id}`,
+        name: section.name,
+        url: `${siteUrl}/#${section.id}`,
+        description: section.description,
+      })),
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/#faq`,
       inLanguage: "en",
+      isPartOf: { "@id": websiteId },
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
     },
   ],
 };

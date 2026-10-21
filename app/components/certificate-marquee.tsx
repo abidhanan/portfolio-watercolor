@@ -101,7 +101,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const measure = () => {
-      // Distance from the first card to the first card of the duplicated copy —
+      // Distance from the first card to the first card of the duplicated copy:
       // the exact seamless wrap distance (independent of card width / gap).
       const first = track.children[0] as HTMLElement | undefined;
       const copyStart = track.children[certificates.length] as HTMLElement | undefined;

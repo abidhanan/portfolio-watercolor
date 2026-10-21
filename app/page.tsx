@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { CertificateMarquee } from "./components/certificate-marquee";
 import { useLanguage } from "./components/language-provider";
+import { assetUrl } from "./lib/assets";
 
 const toolTone = [
   "border-[#E0F2FE] bg-[#F0F9FF] text-[#0369A1]",
@@ -45,11 +46,16 @@ function LogoBadge({ name, logo, mark, size = "md", fill = false, padded = false
       aria-label={`${name} logo`}
     >
       {logo ? (
-        <Image
-          src={logo}
+        // Tiny logos (a few KB): a plain <img> skips the image optimizer and its
+        // client component, which keeps the HTML and hydration work smaller.
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={assetUrl(logo)}
           alt=""
           width={size === "sm" ? 48 : 56}
           height={size === "sm" ? 48 : 56}
+          loading="lazy"
+          decoding="async"
           aria-hidden="true"
           className={logoClass}
         />

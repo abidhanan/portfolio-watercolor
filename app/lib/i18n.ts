@@ -420,7 +420,7 @@ const certificateId: Partial<(typeof certificateItems)[number]>[] = [
     issuer: "Wadhwani Foundation",
     issued: "Diterbitkan Jun 2026",
     credentialId: "Level Basic",
-    desc: "JobReady: Employability Skills (Level Basic) dari Wadhwani Foundation — 75 jam pelatihan.",
+    desc: "JobReady: Employability Skills (Level Basic) dari Wadhwani Foundation, 75 jam pelatihan.",
   },
   {
     title: "Certificate of Web3 University Tour",

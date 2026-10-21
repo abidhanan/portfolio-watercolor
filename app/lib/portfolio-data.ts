@@ -228,7 +228,7 @@ export const certificateItems = [
     issued: "Issued Jun 2026",
     credentialId: "Basic Level",
     image: "/certificate-wadhwani-jobready.webp",
-    desc: "JobReady: Employability Skills (Basic Level) by Wadhwani Foundation — 75 hours of training.",
+    desc: "JobReady: Employability Skills (Basic Level) by Wadhwani Foundation, 75 hours of training.",
   },
   {
     title: "Certificate of Web3 University Tour",

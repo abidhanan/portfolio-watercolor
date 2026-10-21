@@ -411,7 +411,7 @@ html.reveal-ready [data-scroll-reveal="inner"] {
 }
 
 /* Transition lives on the revealed state only: elements animate IN when they
-   enter the viewport, but hide instantly (off-screen) when they leave — half
+   enter the viewport, but hide instantly (off-screen) when they leave, half
    the transitions during scroll, so scrolling stays smooth. */
 html.reveal-ready [data-scroll-reveal].is-revealed {
   opacity: 1;

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="maua">
-  <!-- Marka merek maua. — tanda `m.` di atas kotak tinta, satu identitas dengan
+  <!-- Marka merek maua: tanda `m.` di atas kotak tinta, satu identitas dengan
        favicon.png, apple-touch-icon.png, dan marka inline di apps/board/index.html.
        Hurufnya digambar sebagai goresan, bukan <text>, karena favicon dirender tanpa
        webfont: <text> akan disubstitusi font sistem dan bentuknya berubah per mesin. -->

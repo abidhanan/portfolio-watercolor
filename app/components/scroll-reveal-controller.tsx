@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 // Containers animate as a unit (box + its logo/rope carried along). Their
 // content then animates a beat later (see innerSelectors), so every part of a
-// section reveals on scroll — not just the boxes.
+// section reveals on scroll, not just the boxes.
 const containerSelectors = [
   "main section .shadow-watercolor",
   "main section article",
@@ -64,7 +64,7 @@ export function ScrollRevealController() {
         for (const entry of entries) {
           const element = entry.target as HTMLElement;
           // Toggle both ways so every element re-animates whenever it re-enters
-          // the viewport — scrolling down or back up.
+          // the viewport, scrolling down or back up.
           if (entry.isIntersecting) {
             element.classList.add("is-revealed");
           } else {
@@ -102,7 +102,7 @@ export function ScrollRevealController() {
         return;
       }
 
-      // Read phase (all layout reads together) then write phase — avoids thrash.
+      // Read phase (all layout reads together) then write phase, avoids thrash.
       const sectionBelowFold = new Map<Element, boolean>();
       const inView = fresh.map((element) => isInViewport(element, sectionBelowFold));
       const groupCounters = new Map<Element, number>();
@@ -115,7 +115,7 @@ export function ScrollRevealController() {
         const index = groupCounters.get(group) ?? 0;
         groupCounters.set(group, index + 1);
 
-        // Footer fades in (opacity only) — a translateY on the very last element
+        // Footer fades in (opacity only), a translateY on the very last element
         // extends the page and its IO can't fire at the bottom edge.
         element.dataset.scrollReveal = element.closest("footer") ? "fade" : isInner ? "inner" : "";
         element.style.setProperty(
@@ -130,23 +130,47 @@ export function ScrollRevealController() {
       });
     };
 
-    scan();
-    document.documentElement.classList.add("reveal-ready");
+    // Start on idle so the work (a few hundred element reads) stays out of the
+    // hydration and first-paint window. Nothing is hidden before this runs, so
+    // content is never invisible while waiting.
+    let mutationObserver: MutationObserver | null = null;
+    const begin = () => {
+      scan();
+      document.documentElement.classList.add("reveal-ready");
 
-    // Runs as a microtask, before the browser paints, so remounted items never
-    // flash in un-animated.
-    const mutationObserver = new MutationObserver(scan);
-    mutationObserver.observe(document.querySelector("main") ?? document.body, {
-      childList: true,
-      subtree: true,
-    });
-    const footer = document.querySelector("footer");
-    if (footer) {
-      mutationObserver.observe(footer, { childList: true, subtree: true });
+      // Runs as a microtask, before the browser paints, so remounted items never
+      // flash in un-animated.
+      mutationObserver = new MutationObserver(scan);
+      mutationObserver.observe(document.querySelector("main") ?? document.body, {
+        childList: true,
+        subtree: true,
+      });
+      const footer = document.querySelector("footer");
+      if (footer) {
+        mutationObserver.observe(footer, { childList: true, subtree: true });
+      }
+    };
+
+    const idleWindow = window as Window & {
+      requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+      cancelIdleCallback?: (handle: number) => void;
+    };
+    let idleHandle: number | undefined;
+    let timer: number | undefined;
+    if (idleWindow.requestIdleCallback) {
+      idleHandle = idleWindow.requestIdleCallback(begin, { timeout: 1200 });
+    } else {
+      timer = window.setTimeout(begin, 200);
     }
 
     return () => {
-      mutationObserver.disconnect();
+      if (idleHandle !== undefined) {
+        idleWindow.cancelIdleCallback?.(idleHandle);
+      }
+      if (timer !== undefined) {
+        window.clearTimeout(timer);
+      }
+      mutationObserver?.disconnect();
       observer.disconnect();
       document.documentElement.classList.remove("reveal-ready");
       for (const element of document.querySelectorAll<HTMLElement>("[data-scroll-reveal]")) {

@@ -27,23 +27,69 @@ type LanguageContextValue = {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 const languageStorageKey = "portfolio-language";
 const knownCodes = new Set(languageOptions.map((option) => option.code));
+const canonicalLanguageCodes = new Map(
+  languageOptions.map((option) => [option.code.toLowerCase(), option.code]),
+);
+
+function matchSupportedLanguage(language: string): string | null {
+  const normalizedLanguage = language.trim().replaceAll("_", "-").toLowerCase();
+  const exactMatch = canonicalLanguageCodes.get(normalizedLanguage);
+  if (exactMatch) {
+    return exactMatch;
+  }
+
+  const [baseLanguage, ...subtags] = normalizedLanguage.split("-");
+  if (baseLanguage === "zh") {
+    const usesTraditionalChinese = subtags.some((subtag) =>
+      ["hant", "tw", "hk", "mo"].includes(subtag),
+    );
+    return usesTraditionalChinese ? "zh-TW" : "zh-CN";
+  }
+
+  return canonicalLanguageCodes.get(baseLanguage) ?? null;
+}
+
+function getDeviceLanguage(): string {
+  const deviceLanguages = navigator.languages?.length
+    ? navigator.languages
+    : [navigator.language];
+
+  for (const deviceLanguage of deviceLanguages) {
+    const supportedLanguage = matchSupportedLanguage(deviceLanguage);
+    if (supportedLanguage) {
+      return supportedLanguage;
+    }
+  }
+
+  return "en";
+}
 
 function getStoredLanguage(): string {
   if (typeof window === "undefined") {
     return "en";
   }
 
-  const storedLanguage = window.localStorage.getItem(languageStorageKey);
-  return storedLanguage && knownCodes.has(storedLanguage) ? storedLanguage : "en";
+  try {
+    const storedLanguage = window.localStorage.getItem(languageStorageKey);
+    if (storedLanguage && knownCodes.has(storedLanguage)) {
+      return storedLanguage;
+    }
+  } catch {
+    // Some privacy modes block localStorage; device language still works.
+  }
+
+  return getDeviceLanguage();
 }
 
 function subscribeToLanguageChange(callback: () => void) {
   window.addEventListener("portfolio-language-change", callback);
   window.addEventListener("storage", callback);
+  window.addEventListener("languagechange", callback);
 
   return () => {
     window.removeEventListener("portfolio-language-change", callback);
     window.removeEventListener("storage", callback);
+    window.removeEventListener("languagechange", callback);
   };
 }
 

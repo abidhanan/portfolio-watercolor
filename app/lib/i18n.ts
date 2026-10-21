@@ -155,7 +155,7 @@ const uiText = {
             "100+ barcode formats",
             "Custom design",
             "Bulk generation",
-            "Print-ready PNG",
+            "Print ready PNG",
           ],
           visit: "Visit I Need Barcode",
           href: "https://ineedbarcode.com",

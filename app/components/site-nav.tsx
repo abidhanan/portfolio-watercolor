@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "./language-provider";
-import { languageOptions, navSections, type Language } from "../lib/i18n";
+import { navSections } from "../lib/i18n";
+import { LanguageDropdown } from "./language-dropdown";
 
 function getHrefFromHash() {
   if (typeof window === "undefined" || !window.location.hash) {
@@ -64,38 +65,6 @@ function getActiveHrefFromPage() {
   }
 
   return currentHref;
-}
-
-function LanguageToggle({ className = "" }: { className?: string }) {
-  const { language, setLanguage, content } = useLanguage();
-
-  return (
-    <div
-      className={`lang-toggle flex items-center gap-1 rounded-full p-1 ${className}`}
-      role="group"
-      aria-label={content.languageToggle.label}
-    >
-      {languageOptions.map((option) => {
-        const isActive = language === option.code;
-
-        return (
-          <button
-            key={option.code}
-            type="button"
-            onClick={() => setLanguage(option.code as Language)}
-            className={`rounded-full px-2.5 py-1 text-[0.68rem] font-black uppercase tracking-[0.08em] transition-all sm:px-3 sm:text-xs ${
-              isActive
-                ? "lang-toggle-active text-white"
-                : "lang-toggle-idle text-[#334155]"
-            }`}
-            aria-pressed={isActive}
-          >
-            {option.label}
-          </button>
-        );
-      })}
-    </div>
-  );
 }
 
 export function SiteNav() {
@@ -246,7 +215,7 @@ export function SiteNav() {
           </a>
 
           <div className="flex items-center gap-2 md:hidden">
-            <LanguageToggle />
+            <LanguageDropdown />
             <button
               type="button"
               className="flex items-center justify-center rounded-lg p-2 text-[#0F172A] transition-colors hover:bg-gray-100"
@@ -290,7 +259,7 @@ export function SiteNav() {
                 </a>
               );
             })}
-            <LanguageToggle className="ml-1" />
+            <LanguageDropdown className="ml-1" />
           </div>
         </div>
 

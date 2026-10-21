@@ -226,6 +226,25 @@ html:has(#contact:target) .site-nav-link[data-nav-target="contact"] {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
+/* Language dropdown panel: stitched paper sheet, same material as the mobile menu */
+.lang-menu {
+  background-color: #fbf5e6;
+  background-image:
+    linear-gradient(rgba(255, 252, 242, 0.88), rgba(247, 238, 216, 0.92)),
+    var(--paper-texture, url("/crumpled-paper-lite.webp"));
+  background-size: cover, 400px auto;
+  border: 1px solid rgba(120, 82, 36, 0.55);
+  border-radius: 12px;
+  box-shadow: var(--skeu-card);
+  list-style: none;
+}
+.lang-menu-item:hover,
+.lang-menu-item:focus-visible {
+  background-image: var(--gloss);
+  box-shadow: var(--skeu-button);
+  outline: none;
+}
+
 /* Footer boxes (social logos): plain, no stitching */
 footer [class*="rounded-xl"][class*="border"],
 footer [class*="rounded-2xl"][class*="border"],

@@ -8,9 +8,32 @@ import {
 
 export type Language = "en" | "id";
 
-export const languageOptions: { code: Language; label: string }[] = [
-  { code: "id", label: "ID" },
-  { code: "en", label: "EN" },
+// `id` and `en` are written by hand. Every other language is a machine
+// translation of the English content, stored in public/i18n/<code>.json.
+export const languageOptions: { code: string; short: string; label: string }[] = [
+  { code: "id", short: "ID", label: "Bahasa Indonesia" },
+  { code: "en", short: "EN", label: "English" },
+  { code: "ms", short: "MS", label: "Bahasa Melayu" },
+  { code: "fil", short: "FIL", label: "Filipino" },
+  { code: "vi", short: "VI", label: "Tiếng Việt" },
+  { code: "th", short: "TH", label: "ไทย" },
+  { code: "zh-CN", short: "中文", label: "简体中文" },
+  { code: "zh-TW", short: "中文", label: "繁體中文" },
+  { code: "ja", short: "JA", label: "日本語" },
+  { code: "ko", short: "KO", label: "한국어" },
+  { code: "hi", short: "HI", label: "हिन्दी" },
+  { code: "bn", short: "BN", label: "বাংলা" },
+  { code: "ar", short: "AR", label: "العربية" },
+  { code: "tr", short: "TR", label: "Türkçe" },
+  { code: "es", short: "ES", label: "Español" },
+  { code: "pt", short: "PT", label: "Português" },
+  { code: "fr", short: "FR", label: "Français" },
+  { code: "de", short: "DE", label: "Deutsch" },
+  { code: "it", short: "IT", label: "Italiano" },
+  { code: "nl", short: "NL", label: "Nederlands" },
+  { code: "pl", short: "PL", label: "Polski" },
+  { code: "uk", short: "UK", label: "Українська" },
+  { code: "ru", short: "RU", label: "Русский" },
 ];
 
 export const navSections = [

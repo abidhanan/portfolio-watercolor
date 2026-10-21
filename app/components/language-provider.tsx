@@ -5,31 +5,36 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useState,
   useSyncExternalStore,
   type ReactNode,
 } from "react";
 import {
   getPortfolioContent,
-  type Language,
+  languageOptions,
   type PortfolioContent,
 } from "../lib/i18n";
+import { buildTranslatedContent, loadTranslation, type FlatTranslation } from "../lib/translate";
 
 type LanguageContextValue = {
-  language: Language;
-  setLanguage: (language: Language) => void;
+  language: string;
+  setLanguage: (language: string) => void;
+  // Starts downloading a language ahead of time (for example on hover).
+  preloadLanguage: (language: string) => void;
   content: PortfolioContent;
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 const languageStorageKey = "portfolio-language";
+const knownCodes = new Set(languageOptions.map((option) => option.code));
 
-function getStoredLanguage(): Language {
+function getStoredLanguage(): string {
   if (typeof window === "undefined") {
     return "en";
   }
 
   const storedLanguage = window.localStorage.getItem(languageStorageKey);
-  return storedLanguage === "id" || storedLanguage === "en" ? storedLanguage : "en";
+  return storedLanguage && knownCodes.has(storedLanguage) ? storedLanguage : "en";
 }
 
 function subscribeToLanguageChange(callback: () => void) {
@@ -43,28 +48,73 @@ function subscribeToLanguageChange(callback: () => void) {
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const language = useSyncExternalStore<Language>(
+  const language = useSyncExternalStore<string>(
     subscribeToLanguageChange,
     getStoredLanguage,
     () => "en",
   );
-  const content = useMemo(() => getPortfolioContent(language), [language]);
+  const [translations, setTranslations] = useState<Record<string, FlatTranslation>>({});
 
-  const setLanguage = (nextLanguage: Language) => {
-    window.localStorage.setItem(languageStorageKey, nextLanguage);
-    window.dispatchEvent(new Event("portfolio-language-change"));
+  const content = useMemo(() => {
+    if (language === "en" || language === "id") {
+      return getPortfolioContent(language);
+    }
+    const translation = translations[language];
+    return translation ? buildTranslatedContent(translation) : getPortfolioContent("en");
+  }, [language, translations]);
+
+  const preloadLanguage = (code: string) => {
+    if (code !== "en" && code !== "id") {
+      void loadTranslation(code);
+    }
   };
 
+  const setLanguage = (nextLanguage: string) => {
+    const commit = () => {
+      window.localStorage.setItem(languageStorageKey, nextLanguage);
+      window.dispatchEvent(new Event("portfolio-language-change"));
+    };
+
+    if (nextLanguage === "en" || nextLanguage === "id") {
+      commit();
+      return;
+    }
+
+    // Switch only once the translation is in memory, so the page never flashes
+    // back to English while the (small) file downloads.
+    void loadTranslation(nextLanguage).then((translation) => {
+      if (translation) {
+        setTranslations((current) => ({ ...current, [nextLanguage]: translation }));
+      }
+      commit();
+    });
+  };
+
+  // A stored language is restored on load, so fetch its translation here too.
   useEffect(() => {
     document.documentElement.lang = language;
-  }, [language]);
+    if (language === "en" || language === "id" || translations[language]) {
+      return;
+    }
+    let cancelled = false;
+    void loadTranslation(language).then((translation) => {
+      if (!cancelled && translation) {
+        setTranslations((current) => ({ ...current, [language]: translation }));
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [language, translations]);
 
   const value = useMemo(
     () => ({
       language,
       setLanguage,
+      preloadLanguage,
       content,
     }),
+    // setLanguage and preloadLanguage only use module-level state and the setter.
     [content, language],
   );
 

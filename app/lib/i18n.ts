@@ -130,7 +130,7 @@ const uiText = {
           ],
           visit: "Visit Nocoding",
           href: "https://nocoding.web.id",
-          logo: "/nocoding-logo.webp",
+          logo: "/nocoding-logo-dark.webp",
           logoAlt: "Nocoding logo",
         },
         {
@@ -141,7 +141,6 @@ const uiText = {
             "Video downloads",
             "Photo downloads",
             "MP3 audio downloads",
-            "TikTok, Instagram, Facebook & more",
           ],
           visit: "Visit I Need Save",
           href: "https://ineedsave.com",
@@ -274,7 +273,7 @@ const uiText = {
           ],
           visit: "Kunjungi Nocoding",
           href: "https://nocoding.web.id",
-          logo: "/nocoding-logo.webp",
+          logo: "/nocoding-logo-dark.webp",
           logoAlt: "Logo Nocoding",
         },
         {
@@ -285,7 +284,6 @@ const uiText = {
             "Unduh video",
             "Unduh foto",
             "Unduh audio MP3",
-            "TikTok, Instagram, Facebook & lainnya",
           ],
           visit: "Kunjungi I Need Save",
           href: "https://ineedsave.com",

@@ -437,7 +437,7 @@ main > section.lazy-section {
 #education { contain-intrinsic-size: auto 730px; }
 #tools { contain-intrinsic-size: auto 3650px; }
 #career { contain-intrinsic-size: auto 5050px; }
-#startup { contain-intrinsic-size: auto 3560px; }
+#startup { contain-intrinsic-size: auto 3470px; }
 #activity { contain-intrinsic-size: auto 5950px; }
 @media (min-width: 768px) {
   #education { contain-intrinsic-size: auto 680px; }

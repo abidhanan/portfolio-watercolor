@@ -133,6 +133,36 @@ const uiText = {
           logo: "/nocoding-logo.webp",
           logoAlt: "Nocoding logo",
         },
+        {
+          title: "I Need Save",
+          description:
+            "Download videos, photos, and audio from TikTok, Instagram, Facebook, and hundreds of other sites for free.",
+          services: [
+            "Video downloads",
+            "Photo downloads",
+            "MP3 audio downloads",
+            "TikTok, Instagram, Facebook & more",
+          ],
+          visit: "Visit I Need Save",
+          href: "https://ineedsave.com",
+          logo: "/logo-ineedsave.svg",
+          logoAlt: "I Need Save logo",
+        },
+        {
+          title: "I Need Barcode",
+          description:
+            "Create barcodes and QR codes for free with no sign-up. Supports 100+ formats, custom design, bulk generation, and print-ready PNG downloads.",
+          services: [
+            "100+ barcode formats",
+            "Custom design",
+            "Bulk generation",
+            "Print-ready PNG",
+          ],
+          visit: "Visit I Need Barcode",
+          href: "https://ineedbarcode.com",
+          logo: "/logo-ineedbarcode.svg",
+          logoAlt: "I Need Barcode logo",
+        },
       ],
     },
     footer: {
@@ -246,6 +276,36 @@ const uiText = {
           href: "https://nocoding.web.id",
           logo: "/nocoding-logo.webp",
           logoAlt: "Logo Nocoding",
+        },
+        {
+          title: "I Need Save",
+          description:
+            "Unduh video, foto, dan audio dari TikTok, Instagram, Facebook, dan ratusan situs lainnya secara gratis.",
+          services: [
+            "Unduh video",
+            "Unduh foto",
+            "Unduh audio MP3",
+            "TikTok, Instagram, Facebook & lainnya",
+          ],
+          visit: "Kunjungi I Need Save",
+          href: "https://ineedsave.com",
+          logo: "/logo-ineedsave.svg",
+          logoAlt: "Logo I Need Save",
+        },
+        {
+          title: "I Need Barcode",
+          description:
+            "Buat barcode dan QR Code gratis tanpa daftar. Mendukung 100+ format, desain kustom, pembuatan massal, dan unduhan PNG siap cetak.",
+          services: [
+            "100+ format barcode",
+            "Desain kustom",
+            "Pembuatan massal",
+            "PNG siap cetak",
+          ],
+          visit: "Kunjungi I Need Barcode",
+          href: "https://ineedbarcode.com",
+          logo: "/logo-ineedbarcode.svg",
+          logoAlt: "Logo I Need Barcode",
         },
       ],
     },

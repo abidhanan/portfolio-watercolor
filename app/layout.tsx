@@ -31,7 +31,7 @@ const playfair = localFont({
 // Fully static so Vercel serves a cached, compressed document (fast TTFB).
 export const dynamic = "force-static";
 
-const title = "Abid Hanan Wicaksono | Developer Relations";
+const title = "Abid Hanan Wicaksono - Developer Relations";
 const description =
   "Abid Hanan Wicaksono, Developer Relations asal Surakarta, Indonesia. Menghubungkan teknologi dengan komunitas lewat komunikasi yang jelas dan edukasi developer.";
 const socialImageUrl = `${siteUrl}/abid-hanan-social-preview-id.jpg`;
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: title,
-    template: "%s | Abid Hanan Wicaksono",
+    template: "%s - Abid Hanan Wicaksono",
   },
   description,
   applicationName: "Abid Hanan Wicaksono",
@@ -220,7 +220,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": websiteId,
       url: siteUrl,
-      name: "Abid Hanan Wicaksono | Portfolio",
+      name: "Abid Hanan Wicaksono - Portfolio",
       inLanguage: ["id", "en"],
       publisher: { "@id": personId },
     },
@@ -228,7 +228,7 @@ const jsonLd = {
       "@type": "ProfilePage",
       "@id": pageId,
       url: siteUrl,
-      name: "Abid Hanan Wicaksono | Developer Relations",
+      name: "Abid Hanan Wicaksono - Developer Relations",
       isPartOf: { "@id": websiteId },
       about: { "@id": personId },
       mainEntity: { "@id": personId },

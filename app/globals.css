@@ -434,11 +434,11 @@ main > section.lazy-section {
 
 /* Rough rendered heights, so the scrollbar barely jumps while sections get
    measured for real (`auto` then remembers each one). Mobile first. */
-#education { contain-intrinsic-size: auto 730px; }
-#tools { contain-intrinsic-size: auto 3650px; }
-#career { contain-intrinsic-size: auto 5050px; }
-#startup { contain-intrinsic-size: auto 3470px; }
-#activity { contain-intrinsic-size: auto 5950px; }
+#education { contain-intrinsic-size: auto 700px; }
+#tools { contain-intrinsic-size: auto 3620px; }
+#career { contain-intrinsic-size: auto 4900px; }
+#startup { contain-intrinsic-size: auto 3440px; }
+#activity { contain-intrinsic-size: auto 5860px; }
 @media (min-width: 768px) {
   #education { contain-intrinsic-size: auto 680px; }
   #tools { contain-intrinsic-size: auto 2400px; }

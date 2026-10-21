@@ -13,7 +13,7 @@ const toolTone = [
 ];
 
 const sectionFrameClass =
-  "mb-28 scroll-mt-36 py-10 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:py-10";
+  "mb-12 scroll-mt-28 py-6 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:py-10";
 const homeSectionClass =
   "mb-28 min-h-[calc(100svh-5rem)] scroll-mt-36 pb-10 pt-2 md:-mt-6 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:pb-10 md:pt-0";
 const centeredSectionClass = `${sectionFrameClass} flex flex-col justify-center`;

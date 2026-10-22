@@ -22,6 +22,18 @@ https://abidhanan.my.id. The apex domain serves the application directly, with
 no redirect to `www`. Canonical, sharing image, and icon URLs use this same domain.
 The `www` domain remains accessible. The GitHub production branch is `master`.
 
+## Analytics
+
+Google Analytics 4 and Microsoft Clarity load after the page becomes interactive.
+Configure both public IDs in Vercel for Production, Preview, and Development:
+
+```text
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_CLARITY_PROJECT_ID=xxxxxxxxxx
+```
+
+The integrations stay disabled when their IDs are missing or malformed.
+
 ## Images
 
 Photographs, certificates, and raster logos use WebP. The social sharing image

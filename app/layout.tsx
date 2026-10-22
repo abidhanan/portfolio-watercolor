@@ -5,6 +5,7 @@ import "./globals.css";
 import { BackgroundMusic } from "./components/background-music";
 import { LanguageProvider } from "./components/language-provider";
 import { ScrollRevealController } from "./components/scroll-reveal-controller";
+import { SiteAnalytics } from "./components/site-analytics";
 import { SiteFooter } from "./components/site-footer";
 import { SiteNav } from "./components/site-nav";
 import { assetBaseUrl, assetUrl } from "./lib/assets";
@@ -286,6 +287,7 @@ export default function RootLayout({
           <BackgroundMusic />
           <ScrollRevealController />
         </LanguageProvider>
+        <SiteAnalytics />
       </body>
     </html>
   );

@@ -61,6 +61,7 @@ export const techGroups: TechGroup[] = [
       { name: "Laravel", logo: "/logos/laravel-FF2D20.svg" },
       { name: "REST API", logo: "/logos/openapiinitiative-6BA539.svg" },
       { name: "MySQL", logo: "/logos/mysql-4479A1.svg" },
+      { name: "Upstash", logo: "/logos/upstash-00C98D.svg" },
       { name: "Supabase", logo: "/logos/supabase.svg" },
     ],
   },

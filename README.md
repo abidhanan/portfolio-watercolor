@@ -17,15 +17,32 @@ npm run build
 npm audit --omit=dev
 ```
 
-Production uses the existing Vercel project `ahawi-portofolio`, at
-https://abidhanan.my.id. The apex domain serves the application directly, with
-no redirect to `www`. Canonical, sharing image, and icon URLs use this same domain.
-The `www` domain remains accessible. The GitHub production branch is `master`.
+Production runs on the `abidhanan-portfolio` Cloudflare Worker at
+https://abidhanan.my.id. The apex domain serves the application directly and
+`www` redirects to the apex domain. Canonical, sharing image, and icon URLs use
+the apex domain. The GitHub production branch is `master`.
+
+## Cloudflare Worker
+
+The portfolio is exported as static HTML and served through Cloudflare Workers
+Static Assets. Deploy with:
+
+```sh
+npm run cloudflare:deploy
+```
+
+The Cloudflare build keeps GA4 and Clarity enabled. Their public IDs can be
+overridden through `NEXT_PUBLIC_GA_MEASUREMENT_ID` and
+`NEXT_PUBLIC_CLARITY_PROJECT_ID`.
+
+Upstash is not required for this site. The portfolio has no dynamic API,
+sessions, rate limits, or server-side data that need external Redis storage.
 
 ## Analytics
 
 Google Analytics 4 and Microsoft Clarity load after the page becomes interactive.
-Configure both public IDs in Vercel for Production, Preview, and Development:
+Configure both public IDs in the deployment environment when overriding the
+defaults:
 
 ```text
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX

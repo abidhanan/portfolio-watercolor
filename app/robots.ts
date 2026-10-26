@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 const siteUrl = "https://abidhanan.my.id";
 
 // Search + AI/LLM crawlers we explicitly welcome so answers about

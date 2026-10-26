@@ -8,8 +8,11 @@
     "start": "next start",
     "lint": "eslint",
     "images:optimize": "node scripts/optimize-images.mjs",
+    "cloudflare:build": "node scripts/build-cloudflare.mjs",
+    "cloudflare:dev": "npm run cloudflare:build && wrangler dev",
+    "cloudflare:deploy": "npm run cloudflare:build && wrangler deploy",
     "cdn:prepare": "node scripts/prepare-cdn.mjs",
-    "cdn:deploy": "npm run cdn:prepare && wrangler deploy"
+    "cdn:deploy": "npm run cdn:prepare && wrangler deploy --config wrangler.cdn.jsonc"
   },
   "dependencies": {
     "lucide-react": "^1.14.0",

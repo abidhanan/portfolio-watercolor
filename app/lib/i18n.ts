@@ -153,7 +153,7 @@ const uiText = {
           ],
           visit: "Visit Nocoding",
           href: "https://nocoding.web.id",
-          logo: "/nocoding-logo-brand.webp",
+          logo: "/nocoding-logo-grid.webp",
           logoAlt: "Nocoding logo",
         },
         {
@@ -296,7 +296,7 @@ const uiText = {
           ],
           visit: "Kunjungi Nocoding",
           href: "https://nocoding.web.id",
-          logo: "/nocoding-logo-brand.webp",
+          logo: "/nocoding-logo-grid.webp",
           logoAlt: "Logo Nocoding",
         },
         {

@@ -24,3 +24,22 @@ for (const file of files) {
 }
 console.log(JSON.stringify({ files: files.length, originalBytes, optimizedBytes,
   savedPercent: Math.round((1 - optimizedBytes / originalBytes) * 100) }));
+
+const responsiveVariants = [
+  ["home-gemini-seminar.webp", "home-gemini-seminar-card.webp", 320, 54],
+  ["home-google-office.webp", "home-google-office-card.webp", 320, 54],
+  ["home-ngabuburit-speaker.webp", "home-ngabuburit-speaker-card.webp", 320, 54],
+  ["abid-profile.webp", "abid-profile-card.webp", 360, 60],
+  ["logo-ush.webp", "logo-ush-small.webp", 128, 60],
+];
+
+for (const [source, destination, width, quality] of responsiveVariants) {
+  const input = await readFile(path.join(directory, source));
+  const output = await sharp(input)
+    .rotate()
+    .resize({ width, withoutEnlargement: true })
+    .webp({ quality, effort: 6 })
+    .toBuffer();
+  await writeFile(path.join(directory, destination), output);
+  console.log(`${source} -> ${destination}: ${input.length} -> ${output.length} bytes`);
+}

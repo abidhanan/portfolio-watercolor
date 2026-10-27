@@ -15,6 +15,7 @@ import { contactEmail, faq, sections, siteUrl, socialProfiles, summary, ventures
 const lora = localFont({
   src: "./fonts/lora-latin.woff2",
   weight: "400 700",
+  preload: false,
   display: "optional",
   variable: "--font-body",
   adjustFontFallback: "Times New Roman",
@@ -23,6 +24,7 @@ const lora = localFont({
 const playfair = localFont({
   src: "./fonts/playfair-display-latin.woff2",
   weight: "400 900",
+  preload: false,
   display: "optional",
   variable: "--font-display",
   adjustFontFallback: "Times New Roman",

@@ -14,6 +14,7 @@ function Flag({ code }: { code: string }) {
       alt=""
       width={20}
       height={15}
+      loading="lazy"
       decoding="async"
       className="h-[15px] w-5 shrink-0 rounded-[2px] object-cover ring-1 ring-black/20"
     />

@@ -1,5 +1,6 @@
 const IMMUTABLE_ASSET = /\/_next\/static\//;
 const MEDIA_ASSET = /\.(?:avif|gif|ico|jpe?g|mpeg|mp3|png|svg|webp|woff2?)$/i;
+const DEPLOYMENT_VERSION = "2026-10-28-seo-performance-v10";
 
 const worker = {
   async fetch(request, env) {
@@ -10,7 +11,12 @@ const worker = {
       return Response.redirect(url, 308);
     }
 
-    const response = await env.ASSETS.fetch(request);
+    const assetUrl = new URL(request.url);
+    if (!MEDIA_ASSET.test(assetUrl.pathname)) {
+      assetUrl.searchParams.set("__portfolio_version", DEPLOYMENT_VERSION);
+    }
+
+    const response = await env.ASSETS.fetch(new Request(assetUrl, request));
     const headers = new Headers(response.headers);
 
     headers.set("X-Content-Type-Options", "nosniff");
@@ -20,6 +26,7 @@ const worker = {
       "camera=(), microphone=(), geolocation=(), interest-cohort=()",
     );
     headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+    headers.set("X-Portfolio-Version", DEPLOYMENT_VERSION);
 
     if (IMMUTABLE_ASSET.test(url.pathname)) {
       headers.set("Cache-Control", "public, max-age=31536000, immutable");

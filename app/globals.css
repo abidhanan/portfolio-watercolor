@@ -154,6 +154,17 @@ h1, h2, h3, h4, .font-display {
   letter-spacing: 0;
 }
 
+@media (max-width: 767px) {
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: Georgia, "Times New Roman", serif;
+  }
+}
+
 /* navy / slate -> espresso & walnut ink */
 [class*="text-[#0F172A]"], [class*="text-[#1E293B]"], [class*="text-[#102A43]"] { color: #2a170a !important; }
 [class*="text-[#334155]"], [class*="text-[#334E68]"], [class*="text-[#475569]"], [class*="text-[#2C5282]"] { color: #4d3420 !important; }

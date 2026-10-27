@@ -138,7 +138,7 @@ const uiText = {
           ],
           visit: "Visit Wiboost Store",
           href: "https://wiboostore.com",
-          logo: "/wiboostore-logo.webp",
+          logo: "/wiboostore-logo-v2.webp",
           logoAlt: "Wiboost Store logo",
         },
         {
@@ -281,7 +281,7 @@ const uiText = {
           ],
           visit: "Kunjungi Wiboost Store",
           href: "https://wiboostore.com",
-          logo: "/wiboostore-logo.webp",
+          logo: "/wiboostore-logo-v2.webp",
           logoAlt: "Logo Wiboost Store",
         },
         {

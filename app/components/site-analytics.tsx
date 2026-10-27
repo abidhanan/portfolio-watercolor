@@ -1,4 +1,6 @@
-import Script from "next/script";
+"use client";
+
+import { useEffect } from "react";
 
 const googleAnalyticsId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
 const clarityProjectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID?.trim();
@@ -13,40 +15,57 @@ const validClarityProjectId =
     : null;
 
 export function SiteAnalytics() {
-  if (!validGoogleAnalyticsId && !validClarityProjectId) {
-    return null;
-  }
+  useEffect(() => {
+    if (!validGoogleAnalyticsId && !validClarityProjectId) {
+      return;
+    }
 
-  return (
-    <>
-      {validGoogleAnalyticsId ? (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${validGoogleAnalyticsId}`}
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', ${JSON.stringify(validGoogleAnalyticsId)});
-            `}
-          </Script>
-        </>
-      ) : null}
+    let loaded = false;
+    const events: (keyof WindowEventMap)[] = ["pointerdown", "keydown", "touchstart"];
 
-      {validClarityProjectId ? (
-        <Script id="microsoft-clarity" strategy="afterInteractive">
-          {`
-            (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", ${JSON.stringify(validClarityProjectId)});
-          `}
-        </Script>
-      ) : null}
-    </>
-  );
+    const loadAnalytics = () => {
+      if (loaded) return;
+      loaded = true;
+      events.forEach((event) => window.removeEventListener(event, loadAnalytics));
+
+      if (validGoogleAnalyticsId) {
+        const analyticsWindow = window as Window & {
+          dataLayer?: unknown[];
+          gtag?: (...args: unknown[]) => void;
+        };
+        analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
+        analyticsWindow.gtag = (...args: unknown[]) => analyticsWindow.dataLayer?.push(args);
+        analyticsWindow.gtag("js", new Date());
+        analyticsWindow.gtag("config", validGoogleAnalyticsId);
+
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${validGoogleAnalyticsId}`;
+        document.head.appendChild(script);
+      }
+
+      if (validClarityProjectId) {
+        const clarityWindow = window as Window & {
+          clarity?: ((...args: unknown[]) => void) & { q?: unknown[][] };
+        };
+        clarityWindow.clarity = clarityWindow.clarity || ((...args: unknown[]) => {
+          (clarityWindow.clarity!.q ||= []).push(args);
+        });
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = `https://www.clarity.ms/tag/${validClarityProjectId}`;
+        document.head.appendChild(script);
+      }
+    };
+
+    events.forEach((event) => window.addEventListener(event, loadAnalytics, { once: true, passive: true }));
+    const timer = window.setTimeout(loadAnalytics, 15000);
+
+    return () => {
+      window.clearTimeout(timer);
+      events.forEach((event) => window.removeEventListener(event, loadAnalytics));
+    };
+  }, []);
+
+  return null;
 }

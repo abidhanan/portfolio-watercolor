@@ -6,15 +6,13 @@ import { useEffect } from "react";
 // content then animates a beat later (see innerSelectors), so every part of a
 // section reveals on scroll, not just the boxes.
 const containerSelectors = [
-  "main section .shadow-watercolor",
-  "main section article",
-  "main section .tool-box",
-  "main section .home-photo-card",
-  "main section .hero-plaque",
-  "main section .rope-knot",
-  "main section .rope-line-x",
-  "main section .rope-line-vertical",
-  "main section .certificate-marquee-viewport",
+  "main section:not(#home) .shadow-watercolor",
+  "main section:not(#home) article",
+  "main section:not(#home) .tool-box",
+  "main section:not(#home) .rope-knot",
+  "main section:not(#home) .rope-line-x",
+  "main section:not(#home) .rope-line-vertical",
+  "main section:not(#home) .certificate-marquee-viewport",
   "main section#about .rounded-full",
   "footer .grid > div",
   "footer > div > p",
@@ -23,10 +21,8 @@ const containerSelectors = [
 // Text, badges and logos inside a box. They get a smaller offset and a stagger
 // so the box settles first and its content follows.
 const innerSelectors = [
-  "main section#home h1",
-  "main section#home p",
-  "main section :is(.shadow-watercolor, article) :is(h2, h3, p)",
-  "main section :is(.shadow-watercolor, article) :is(span.rounded-full, [role='img'], .reveal-inner)",
+  "main section:not(#home) :is(.shadow-watercolor, article) :is(h2, h3, p)",
+  "main section:not(#home) :is(.shadow-watercolor, article) :is(span.rounded-full, [role='img'], .reveal-inner)",
 ].join(",");
 
 const skipSelector =

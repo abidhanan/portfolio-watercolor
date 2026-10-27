@@ -28,6 +28,7 @@ export const sections = [
   { id: "certificates", name: "Licenses & Certificates", description: "Credentials, awards, and learning milestones." },
   { id: "career", name: "Career", description: "Work experience, ambassador roles, and creative roles." },
   { id: "startup", name: "Startup", description: "Digital businesses he is building." },
+  { id: "faq", name: "FAQ", description: "Direct answers about his profile, skills, products, and contact details." },
   { id: "activity", name: "Activity", description: "Community, speaking, and learning activities." },
 ];
 
@@ -65,6 +66,34 @@ export const faq = [
   {
     question: "How can I contact Abid Hanan Wicaksono?",
     answer: `Email ${contactEmail}, or message him on LinkedIn, GitHub, Instagram, YouTube, TikTok, X, or Telegram (@ahawi_channel).`,
+  },
+];
+
+export const faqId = [
+  { question: "Siapa Abid Hanan Wicaksono?", answer: summary.id },
+  {
+    question: "Apa pekerjaan Abid Hanan Wicaksono?",
+    answer: "Ia bekerja sebagai Marketing & Developer intern di Maua AI sejak Juli 2026, membangun aplikasi dan automasi serta membantu pertumbuhan media sosial klien. Ia juga membuat konten di TikTok, YouTube, dan Instagram.",
+  },
+  {
+    question: "Apa pendidikan Abid Hanan Wicaksono?",
+    answer: "Ia menempuh S1 Ilmu Komputer di Universitas Sugeng Hartono sejak 2024. Saat ini ia berada di semester 5 dengan IPK 3,97 dari 4,00.",
+  },
+  {
+    question: "Apa pengalaman ambassador dan komunitasnya?",
+    answer: "Ia pernah menjadi Google Student Ambassador, Ambassador ARMchain dan FLOQ, serta Associate Marketing di Coinversity.",
+  },
+  {
+    question: "Produk apa yang dibangun Abid Hanan Wicaksono?",
+    answer: "Wiboost Store, Nocoding, I Need Save, dan I Need Barcode.",
+  },
+  {
+    question: "Teknologi apa yang digunakan Abid Hanan Wicaksono?",
+    answer: "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, dan Cloudflare.",
+  },
+  {
+    question: "Bagaimana cara menghubungi Abid Hanan Wicaksono?",
+    answer: `Kirim email ke ${contactEmail}, atau hubungi melalui LinkedIn, GitHub, Instagram, YouTube, TikTok, X, dan Telegram dengan nama pengguna @ahawi_channel.`,
   },
 ];
 

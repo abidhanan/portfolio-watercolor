@@ -4,6 +4,7 @@ import Image from "next/image";
 import { CertificateMarquee } from "./components/certificate-marquee";
 import { useLanguage } from "./components/language-provider";
 import { assetUrl } from "./lib/assets";
+import { faq, faqId } from "./lib/site";
 
 const toolTone = [
   "border-[#E0F2FE] bg-[#F0F9FF] text-[#0369A1]",
@@ -94,7 +95,8 @@ function SectionHeader({ id, title, summary }: SectionHeaderProps) {
 }
 
 export default function Home() {
-  const { content } = useLanguage();
+  const { content, language } = useLanguage();
+  const visibleFaq = language === "id" ? faqId : faq;
   const {
     activityItems,
     careerItems,
@@ -137,10 +139,10 @@ export default function Home() {
           <div className="home-photo-card absolute left-3 top-24 z-10 -rotate-[10deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_18px_36px_-18px_rgba(15,23,42,0.5)] sm:left-10 sm:top-28 sm:p-3 sm:pb-7 md:left-5 md:top-44 lg:left-10 lg:top-44">
             <div className="relative h-[12.25rem] w-[9.2rem] overflow-hidden rounded-md bg-gray-100 sm:h-[15rem] sm:w-[11rem] md:h-[16rem] md:w-[11.5rem] lg:h-[17rem] lg:w-[12rem]">
               <Image
-                src="/home-gemini-seminar.webp"
+                src="/home-gemini-seminar-card.webp"
                 alt="Abid Hanan Wicaksono at a Gemini AI seminar"
                 fill
-                loading="eager"
+                loading="lazy"
                 quality={60}
                 sizes="(min-width: 1024px) 208px, (min-width: 768px) 192px, 176px"
                 className="scale-[1.03] object-cover object-[52%_42%]"
@@ -150,7 +152,7 @@ export default function Home() {
           <div className="home-photo-card absolute left-1/2 top-5 z-30 -translate-x-1/2 rotate-[2deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_26px_54px_-22px_rgba(15,23,42,0.6)] sm:top-6 sm:p-3 sm:pb-7 md:top-16 lg:top-16">
             <div className="relative h-[12.25rem] w-[9.2rem] overflow-hidden rounded-md bg-gray-100 sm:h-[15rem] sm:w-[11rem] md:h-[16rem] md:w-[11.5rem] lg:h-[17rem] lg:w-[12rem]">
               <Image
-                src="/home-google-office.webp"
+                src="/home-google-office-card.webp"
                 alt="Abid Hanan Wicaksono during a Google Office visit"
                 fill
                 preload
@@ -163,10 +165,10 @@ export default function Home() {
           <div className="home-photo-card absolute right-3 top-24 z-20 rotate-[10deg] rounded-xl border border-white/90 bg-white p-2 pb-5 shadow-[0_18px_36px_-18px_rgba(15,23,42,0.5)] sm:right-10 sm:top-28 sm:p-3 sm:pb-7 md:right-5 md:top-44 lg:right-10 lg:top-44">
             <div className="relative h-[12.25rem] w-[9.2rem] overflow-hidden rounded-md bg-gray-100 sm:h-[15rem] sm:w-[11rem] md:h-[16rem] md:w-[11.5rem] lg:h-[17rem] lg:w-[12rem]">
               <Image
-                src="/home-ngabuburit-speaker.webp"
+                src="/home-ngabuburit-speaker-card.webp"
                 alt="Abid Hanan Wicaksono as a speaker"
                 fill
-                loading="eager"
+                loading="lazy"
                 quality={60}
                 sizes="(min-width: 1024px) 208px, (min-width: 768px) 192px, 176px"
                 className="scale-[1.08] object-cover object-[52%_66%]"
@@ -176,7 +178,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" aria-labelledby="about-heading" className={centeredSectionClass}>
+      <section id="about" aria-labelledby="about-heading" className={lazySectionClass}>
         <div className="relative mx-auto w-full max-w-5xl pt-4 md:pt-8">
           <div className="relative flex flex-col items-center gap-7 md:flex-row md:items-start md:gap-12">
             
@@ -184,7 +186,7 @@ export default function Home() {
             <div className="relative z-20 flex shrink-0 flex-col items-center md:pt-16">
               <div className="relative h-44 w-44 overflow-hidden rounded-full border-[6px] border-white bg-[#E0F2FE] shadow-2xl sm:h-56 sm:w-56 md:h-64 md:w-64">
                 <Image 
-                  src="/abid-profile.webp"
+                  src="/abid-profile-card.webp"
                   alt="Abid Hanan Wicaksono" 
                   fill 
                   quality={60}
@@ -250,7 +252,7 @@ export default function Home() {
                 <div className="flex flex-col gap-6 md:flex-row md:items-center">
                   <div className="mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-2xl border border-[#E2E8F0] bg-white p-3 shadow-sm md:mx-0 md:h-28 md:w-28">
                     <Image
-                      src={item.logo}
+                      src={item.logo === "/logo-ush.webp" ? "/logo-ush-small.webp" : item.logo}
                       alt="Sugeng Hartono University logo"
                       width={96}
                       height={96}
@@ -314,7 +316,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="certificates" aria-labelledby="certificates-heading" className={centeredSectionClass}>
+      <section id="certificates" aria-labelledby="certificates-heading" className={lazySectionClass}>
         <SectionHeader
           id="certificates-heading"
           title={content.sections.certificates.title}
@@ -434,6 +436,28 @@ export default function Home() {
                 </div>
               </article>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="faq" aria-labelledby="faq-heading" className={lazySectionClass}>
+        <SectionHeader
+          id="faq-heading"
+          title={language === "id" ? "Pertanyaan Umum" : "Frequently Asked Questions"}
+          summary={
+            language === "id"
+              ? "Jawaban ringkas tentang profil, pengalaman, keahlian, produk, dan cara menghubungi Abid Hanan Wicaksono."
+              : "Concise answers about Abid Hanan Wicaksono's profile, experience, skills, products, and contact details."
+          }
+        />
+        <div className="grid gap-4 md:grid-cols-2">
+          {visibleFaq.map((item) => (
+            <article key={item.question} className="shadow-watercolor p-5 sm:p-6">
+              <h3 className="mb-3 text-lg font-black leading-snug text-[#0F172A]">
+                {item.question}
+              </h3>
+              <p className="leading-relaxed text-[#475569]">{item.answer}</p>
+            </article>
           ))}
         </div>
       </section>

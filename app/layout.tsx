@@ -126,6 +126,13 @@ export const metadata: Metadata = {
     apple: [{ url: `${siteUrl}/apple-touch-icon.png`, sizes: "180x180", type: "image/png" }],
   },
   category: "technology",
+  manifest: "/manifest.webmanifest",
+  other: {
+    "geo.region": "ID-JT",
+    "geo.placename": "Surakarta",
+    "geo.position": "-7.5755;110.8243",
+    ICBM: "-7.5755, 110.8243",
+  },
 };
 
 export const viewport: Viewport = {
@@ -236,6 +243,10 @@ const jsonLd = {
       inLanguage: ["id", "en"],
       dateModified: new Date().toISOString(),
       primaryImageOfPage: { "@type": "ImageObject", url: socialImageUrl, width: 1200, height: 630 },
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: ["#home-heading", ".home-copy-outline", "#about-heading", "#faq-heading"],
+      },
       hasPart: sections.map((section) => ({
         "@type": "WebPageElement",
         "@id": `${siteUrl}/#${section.id}`,
@@ -267,6 +278,12 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {assetBaseUrl ? <link rel="preconnect" href={assetBaseUrl} crossOrigin="anonymous" /> : null}
+        <link
+          rel="preload"
+          as="image"
+          href={assetUrl("/crumpled-paper-lite.webp")}
+          fetchPriority="high"
+        />
       </head>
       <body
         className={`${lora.variable} ${playfair.variable} min-h-screen bg-[#F0F7FA] text-[#3a2616]`}

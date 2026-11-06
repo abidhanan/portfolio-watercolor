@@ -93,6 +93,8 @@ export const techGroups: TechGroup[] = [
     tools: [
       { name: "Google Analytics 4", logo: "/logos/googleanalytics-E37400.svg" },
       { name: "Microsoft Clarity", logo: "/logo-clarity.svg" },
+      { name: "Google Search Console", logo: "/logos/google-search-console-458CF5.svg" },
+      { name: "Bing Webmaster Tools", logo: "/logos/bing-258FFA.svg" },
     ],
   },
   {
@@ -103,6 +105,7 @@ export const techGroups: TechGroup[] = [
       { name: "Xoftware", logo: "/logo-xoftware.webp" },
       { name: "Resend", logo: "/logos/resend-000000.svg" },
       { name: "Buffer", logo: "/logos/buffer.svg" },
+      { name: "Composio", logo: "/logos/composio.webp", square: true },
     ],
   },
 ];

@@ -70,7 +70,7 @@ export function LanguageDropdown({ className = "" }: { className?: string }) {
         <ul
           role="listbox"
           aria-label={content.languageToggle.label}
-          className="lang-menu absolute rounded-xl border border-[#785224]/55 bg-[#fbf5e6] shadow-2xl right-0 top-full z-[60] mt-2 max-h-[min(24rem,70svh)] w-56 overflow-y-auto p-1.5"
+          className="lang-menu absolute rounded-xl border border-[#785224]/55 bg-[#fbf5e6] shadow-2xl right-0 top-full z-[60] mt-2 max-h-[min(24rem,70svh)] w-56 overflow-y-auto overscroll-contain p-1.5"
         >
           {languageOptions.map((option) => {
             const isActive = option.code === language;

@@ -66,15 +66,16 @@ type SectionHeaderProps = {
   id: string;
   title: string;
   summary: string;
+  uppercase?: boolean;
 };
 
-function SectionHeader({ id, title, summary }: SectionHeaderProps) {
+function SectionHeader({ id, title, summary, uppercase = false }: SectionHeaderProps) {
   return (
     <header className="relative mb-8 max-w-5xl md:mb-12">
       <div className="relative flex flex-col gap-3 md:flex-row md:items-center md:gap-0">
         <div className="section-readable shadow-watercolor relative z-20 flex w-full max-w-full items-center justify-center gap-3 rounded-full border border-[#BAE6FD] bg-[#F0F9FF]/95 px-4 py-2.5 sm:w-fit sm:px-5">
           <span className="rope-knot h-3.5 w-3.5 shrink-0 rounded-full" aria-hidden="true" />
-          <h2 id={id} className="text-center text-xs font-black uppercase tracking-[0.1em] text-[#0369A1] sm:whitespace-nowrap sm:text-sm sm:tracking-[0.14em]">
+          <h2 id={id} className={`text-center text-xs font-black text-[#0369A1] sm:whitespace-nowrap sm:text-sm ${uppercase ? "uppercase tracking-[0.1em] sm:tracking-[0.14em]" : "tracking-[0.02em]"}`}>
             {title}
           </h2>
           <span className="rope-knot absolute -right-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
@@ -196,24 +197,18 @@ export default function Home() {
               
               <div className="relative flex w-full flex-col items-center md:items-start">
                 
-                {/* Pills Row */}
-                <div className="relative z-20 flex w-full flex-col items-center justify-center gap-3 md:ml-6 md:w-auto md:flex-row md:gap-0 md:whitespace-nowrap">
-                  
-                  <div className="relative z-20 flex items-center gap-2 rounded-full border border-[#BAE6FD] bg-[#F0F9FF] px-4 py-2.5 shadow-md sm:gap-3 sm:px-6">
+                {/* Header pills: same look as every other section header */}
+                <div className="relative flex w-full flex-col items-center gap-3 md:flex-row md:items-center md:gap-0">
+                  <div className="section-readable shadow-watercolor relative z-20 flex w-full max-w-full items-center justify-center gap-3 rounded-full border border-[#BAE6FD] bg-[#F0F9FF]/95 px-4 py-2.5 sm:w-fit sm:px-5">
                     <span className="rope-knot h-3.5 w-3.5 shrink-0 rounded-full" aria-hidden="true" />
-                    <h2 id="about-heading" className="text-xs font-black uppercase tracking-[0.12em] text-[#0369A1] sm:text-sm md:text-base md:tracking-[0.14em]">{content.about.eyebrow}</h2>
-                    <div className="rope-knot absolute -right-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
+                    <h2 id="about-heading" className="text-center text-xs font-black tracking-[0.02em] text-[#0369A1] sm:whitespace-nowrap sm:text-sm">{content.about.eyebrow}</h2>
+                    <span className="rope-knot absolute -right-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
                   </div>
-                  
-                  <div className="rope-line-x z-10 hidden w-5 sm:w-16 md:block md:w-20" />
-
-                  <div className="relative flex flex-col items-center z-20">
-                    <div className="relative z-20 rounded-full border border-[#E2E8F0] bg-white/95 px-4 py-2.5 shadow-md sm:px-6">
-                      <div className="rope-knot absolute -left-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
-                      <span className="text-xs font-bold text-[#334155] sm:text-sm md:text-base">{content.about.summaryLabel}</span>
-                    </div>
+                  <div className="rope-line-x hidden w-12 shrink-0 md:block" aria-hidden="true" />
+                  <div className="section-readable shadow-watercolor relative z-20 rounded-2xl border border-[#E2E8F0] bg-white/95 px-4 py-3 md:rounded-full md:px-6 md:py-3.5">
+                    <span className="rope-knot absolute -left-2.5 top-1/2 hidden h-5 w-5 -translate-y-1/2 rounded-full md:block" />
+                    <p className="text-sm leading-relaxed text-[#334155] md:text-base">{content.about.summaryLabel}</p>
                   </div>
-
                 </div>
 
                 {/* Canvas Box */}
@@ -433,6 +428,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="faq" aria-labelledby="faq-heading" className={lazySectionClass}>
+        <SectionHeader
+          id="faq-heading"
+          title="FAQ"
+          uppercase
+          summary={
+            language === "id"
+              ? "Ringkasan tentang profil Abid Hanan Wicaksono."
+              : "Concise answers about Abid Hanan Wicaksono's profile, experience, skills, products, and contact details."
+          }
+        />
+        <div className="grid gap-4 md:grid-cols-2">
+          {visibleFaq.map((item) => (
+            <article key={item.question} className="shadow-watercolor p-5 sm:p-6">
+              <h3 className="mb-3 text-lg font-black leading-snug text-[#0F172A]">
+                {item.question}
+              </h3>
+              <p className="leading-relaxed text-[#475569]">{item.answer}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="activity" aria-labelledby="activity-heading" className={lazySectionClass}>
         <SectionHeader
           id="activity-heading"
@@ -476,27 +494,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="faq" aria-labelledby="faq-heading" className={lazySectionClass}>
-        <SectionHeader
-          id="faq-heading"
-          title="FAQ"
-          summary={
-            language === "id"
-              ? "Jawaban ringkas tentang profil, pengalaman, keahlian, produk, dan cara menghubungi Abid Hanan Wicaksono."
-              : "Concise answers about Abid Hanan Wicaksono's profile, experience, skills, products, and contact details."
-          }
-        />
-        <div className="grid gap-4 md:grid-cols-2">
-          {visibleFaq.map((item) => (
-            <article key={item.question} className="shadow-watercolor p-5 sm:p-6">
-              <h3 className="mb-3 text-lg font-black leading-snug text-[#0F172A]">
-                {item.question}
-              </h3>
-              <p className="leading-relaxed text-[#475569]">{item.answer}</p>
-            </article>
-          ))}
-        </div>
-      </section>
     </main>
   );
 }

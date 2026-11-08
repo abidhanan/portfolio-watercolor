@@ -34,7 +34,7 @@ function getActiveHrefFromPage() {
   const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
   const isAtPageEnd = maxScroll > 0 && window.scrollY >= maxScroll - 8;
 
-  // The footer (contact) sits right below the FAQ, so both highlight "FAQ".
+  // The footer (contact) sits below the last section, so it keeps "Activity" lit.
   const footerRect = document.getElementById("contact")?.getBoundingClientRect();
   const footerIsVisible =
     Boolean(footerRect) &&
@@ -42,7 +42,7 @@ function getActiveHrefFromPage() {
     footerRect!.bottom >= 12;
 
   if (isAtPageEnd || footerIsVisible) {
-    return "/#faq";
+    return "/#activity";
   }
 
   if (window.scrollY < 24) {

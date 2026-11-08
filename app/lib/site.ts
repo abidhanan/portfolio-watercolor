@@ -18,7 +18,7 @@ export const socialProfiles = [
 
 export const summary = {
   en: "Abid Hanan Wicaksono (also known as AHAWI) is a Developer Relations specialist from Surakarta, Indonesia, with a background in technology, business, and marketing. He connects technology with communities through clear, educational communication and meaningful collaboration.",
-  id: "Abid Hanan Wicaksono (dikenal juga sebagai AHAWI) adalah Developer Relations asal Surakarta, Indonesia, dengan latar belakang teknologi, bisnis, dan marketing. Ia menghubungkan teknologi dengan komunitas melalui komunikasi yang jelas, edukatif, dan kolaborasi yang bermakna.",
+  id: "Abid Hanan Wicaksono (dikenal juga sebagai Ahawi) adalah Developer Relations asal Surakarta, Jawa Tengah, Indonesia, dengan latar belakang teknologi, bisnis, dan marketing. Ia menghubungkan teknologi dengan komunitas melalui komunikasi yang jelas, edukatif, dan kolaborasi yang bermakna.",
 };
 
 export const sections = [
@@ -28,8 +28,8 @@ export const sections = [
   { id: "certificates", name: "Licenses & Certificates", description: "Credentials, awards, and learning milestones." },
   { id: "career", name: "Career", description: "Work experience, ambassador roles, and creative roles." },
   { id: "startup", name: "Startup", description: "Digital businesses he is building." },
-  { id: "activity", name: "Activity", description: "Community, speaking, and learning activities." },
   { id: "faq", name: "FAQ", description: "Direct answers about his profile, skills, products, and contact details." },
+  { id: "activity", name: "Activity", description: "Community, speaking, and learning activities." },
 ];
 
 // Question-and-answer pairs written as short, self-contained answers.
@@ -84,8 +84,8 @@ export const faqId = [
     answer: "Ia pernah menjadi Google Student Ambassador, Ambassador ARMchain dan FLOQ, serta Associate Marketing di Coinversity.",
   },
   {
-    question: "Produk apa yang dibangun Abid Hanan Wicaksono?",
-    answer: "Wiboost Store, Nocoding, I Need Save, I Need Barcode, dan I Need Convert.",
+    question: "Bisnis apa yang dimiliki Abid Hanan Wicaksono?",
+    answer: "Ia merupakan Founder dan CEO Wiboost Store (Platform penyedia layanan suntik sosmed, top up game, paket data operator, dan aplikasi premium) dan Nocoding (Jasa pembuatan website, aplikasi, dan automasi).",
   },
   {
     question: "Teknologi apa yang digunakan Abid Hanan Wicaksono?",

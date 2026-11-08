@@ -44,8 +44,8 @@ export const navSections = [
   { key: "certificates", href: "/#certificates" },
   { key: "career", href: "/#career" },
   { key: "startup", href: "/#startup" },
-  { key: "activity", href: "/#activity" },
   { key: "faq", href: "/#faq" },
+  { key: "activity", href: "/#activity" },
 ] as const;
 
 type NavKey = (typeof navSections)[number]["key"];

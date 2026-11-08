@@ -236,7 +236,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
             return (
               <article
                 key={`${certificate.title}-${certificate.year}-${index}`}
-                className="shadow-watercolor relative flex w-72 shrink-0 flex-col rounded-xl border border-[#CFE2F3] bg-white p-4 text-left transition-transform hover:-translate-y-1 hover:shadow-lg md:w-80"
+                className="shadow-watercolor relative flex w-72 shrink-0 flex-col rounded-xl border border-[#CFE2F3] bg-white p-4 text-left transition-transform hover:shadow-lg md:w-80"
                 aria-hidden={isDuplicate}
               >
                 <button

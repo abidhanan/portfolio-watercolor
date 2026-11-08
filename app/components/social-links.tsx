@@ -175,7 +175,7 @@ export function SocialLinks({ size = "md", className = "", wrap = true }: Social
             target="_blank"
             rel="noreferrer"
             aria-label={item.label}
-            className={`${boxSize} flex shrink-0 items-center justify-center rounded-2xl border border-[#DCEBF7] bg-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md`}
+            className={`${boxSize} flex shrink-0 items-center justify-center rounded-2xl border border-[#DCEBF7] bg-white shadow-sm transition duration-200 hover:shadow-md`}
           >
             {item.imageSrc ? (
               <Image

@@ -105,7 +105,7 @@ export const techGroups: TechGroup[] = [
       { name: "Xoftware", logo: "/logo-xoftware.webp" },
       { name: "Resend", logo: "/logos/resend-000000.svg" },
       { name: "Buffer", logo: "/logos/buffer.svg" },
-      { name: "Composio", logo: "/logos/composio.webp", square: true },
+      { name: "Composio", logo: "/logos/composio-mark.webp" },
     ],
   },
 ];

@@ -311,9 +311,26 @@ button[aria-pressed].fixed.bottom-5 svg { color: #8a3a1a !important; }
 }
 
 /* Cards lift slightly like a picked-up note */
-.shadow-watercolor { transition: transform 200ms ease; }
+.shadow-watercolor { transition: box-shadow 200ms ease; }
+/* Hover feedback must NOT move the element: a box that slides away from the
+   cursor loses :hover, drops back, regains :hover... and visibly vibrates.
+   So hover = stronger shadow only; every hover translate/scale is neutralised. */
 @media (hover: hover) {
-  .shadow-watercolor:hover { transform: translateY(-3px) rotate(-0.15deg); }
+  main .shadow-watercolor:hover,
+  main .shadow-watercolor .tool-box:hover,
+  main .tool-box:hover {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.9) inset,
+      0 3px 3px rgba(50, 28, 8, 0.4),
+      0 18px 28px -6px rgba(50, 28, 8, 0.55) !important;
+  }
+}
+[class*="hover:-translate-y"]:hover,
+[class*="hover:translate-y"]:hover,
+[class*="hover:scale"]:not(img):hover {
+  translate: 0 0 !important;
+  scale: 1 !important;
+  transform: none !important;
 }
 
 /* Letterpress / embossed type on the wood */
@@ -577,4 +594,46 @@ body > footer {
     background-size: auto 120svh;
     background-position: center top;
   }
+}
+
+/* "Visit" button: polished leather-red key with a brass rim, same material as
+   the active nav key. Hover only brightens the gloss (no movement, no blue);
+   press sinks it into the page. */
+.visit-btn {
+  position: relative;
+  border-radius: 9999px;
+  color: #fff6e6 !important;
+  background-color: #a3481f;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.12) 50%, rgba(0, 0, 0, 0.08) 52%, rgba(0, 0, 0, 0.22) 100%);
+  border: 1px solid #5e2509;
+  text-shadow: 0 -1px 0 rgba(60, 15, 0, 0.75);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 0 0 2px #d9b36a,
+    0 0 0 3px #7a5a22,
+    0 3px 3px 3px rgba(50, 28, 8, 0.4),
+    0 10px 16px -2px rgba(50, 28, 8, 0.5);
+  transition: box-shadow 140ms ease, background-color 140ms ease, filter 140ms ease;
+}
+.visit-btn:hover {
+  background-color: #b5552a;
+  filter: brightness(1.08) saturate(1.05);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 0 0 2px #ecc87e,
+    0 0 0 3px #7a5a22,
+    0 4px 4px 3px rgba(50, 28, 8, 0.45),
+    0 14px 22px -2px rgba(50, 28, 8, 0.55);
+}
+.visit-btn:active {
+  filter: brightness(0.95);
+  box-shadow:
+    0 3px 8px rgba(40, 10, 0, 0.6) inset,
+    0 0 0 2px #d9b36a,
+    0 0 0 3px #7a5a22,
+    0 1px 2px 3px rgba(50, 28, 8, 0.4);
+}
+.visit-btn:focus-visible {
+  outline: 2px solid #fff6e6;
+  outline-offset: 5px;
 }

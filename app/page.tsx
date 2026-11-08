@@ -6,12 +6,7 @@ import { useLanguage } from "./components/language-provider";
 import { assetUrl } from "./lib/assets";
 import { faq, faqId } from "./lib/site";
 
-const toolTone = [
-  "border-[#E0F2FE] bg-[#F0F9FF] text-[#0369A1]",
-  "border-[#BAE6FD] bg-[#E0F2FE] text-[#075985]",
-  "border-[#FEF08A] bg-[#FEF9C3] text-[#A16207]",
-  "border-[#E2E8F0] bg-[#F8FAFC] text-[#334155]",
-];
+const toolTone = "border-[#E2E8F0] bg-[#F8FAFC] text-[#334155]";
 
 const sectionFrameClass =
   "mb-28 scroll-mt-36 py-10 md:mb-28 md:min-h-[calc(100svh-5.5rem)] md:scroll-mt-28 md:py-10";
@@ -301,9 +296,7 @@ export default function Home() {
                   {group.tools.map((tool, toolIndex) => (
                     <li
                       key={tool.name}
-                      className={`tool-box flex min-h-[7.5rem] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3 text-center text-xs font-bold shadow-sm transition-transform hover:-translate-y-1 sm:min-h-[8rem] sm:gap-3 sm:px-3 sm:py-4 sm:text-sm md:h-full md:min-h-[9rem] ${
-                        toolTone[(groupIndex + toolIndex) % toolTone.length]
-                      }`}
+                      className={`tool-box flex min-h-[7.5rem] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3 text-center text-xs font-bold shadow-sm transition-transform sm:min-h-[8rem] sm:gap-3 sm:px-3 sm:py-4 sm:text-sm md:h-full md:min-h-[9rem] ${toolTone}`}
                     >
                       <LogoBadge name={tool.name} logo={tool.logo} mark={tool.mark} size="sm" fill={tool.square} padded={tool.padded} />
                       <span>{tool.name}</span>
@@ -340,7 +333,7 @@ export default function Home() {
             >
               <div className="mobile-rope-knot rope-knot z-10 mt-5 h-5 w-5 rounded-full md:hidden" />
               <article
-                className="shadow-watercolor flex h-full flex-col p-5 transition-transform hover:-translate-y-2 sm:p-6"
+                className="shadow-watercolor flex h-full flex-col p-5 transition-transform sm:p-6"
               >
                 <div className="mb-5 flex items-start justify-between gap-3 sm:mb-6 sm:gap-4">
                   <LogoBadge
@@ -416,7 +409,7 @@ export default function Home() {
                       {startup.services.map((service) => (
                         <div
                           key={service}
-                          className="shadow-watercolor relative rounded-xl bg-white/90 px-6 py-4 transition-transform hover:-translate-y-1"
+                          className="shadow-watercolor relative rounded-xl bg-white/90 px-6 py-4 transition-transform"
                         >
                           <span className="rope-knot absolute -left-2.5 top-1/2 h-5 w-5 -translate-y-1/2 rounded-full" />
                           <p className="pl-3 text-sm font-bold text-[#1E293B]">{service}</p>
@@ -428,7 +421,7 @@ export default function Home() {
                       href={startup.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="mx-auto flex w-fit items-center justify-center rounded-full bg-[#0F172A] px-6 py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-all hover:-translate-y-1 hover:bg-[#0284C7] hover:shadow-lg sm:px-8 sm:py-4 lg:mx-0"
+                      className="visit-btn mx-auto flex w-fit items-center justify-center px-6 py-3.5 text-sm font-bold uppercase tracking-widest sm:px-8 sm:py-4 lg:mx-0"
                     >
                       {startup.visit}
                     </a>
@@ -474,7 +467,7 @@ export default function Home() {
             <div key={activity.title} className="mobile-rope-item relative grid grid-cols-[2.5rem_1fr] gap-0 md:block">
               <div className="mobile-rope-knot rope-knot z-10 mt-5 h-5 w-5 rounded-full md:hidden" />
               <article
-                className="shadow-watercolor flex h-full flex-col p-4 transition-transform hover:-translate-y-2 sm:p-5"
+                className="shadow-watercolor flex h-full flex-col p-4 transition-transform sm:p-5"
               >
                 <h3 className="mb-3 text-lg font-bold text-[#0F172A] sm:text-xl">{activity.title}</h3>
                 {activity.organization ? (

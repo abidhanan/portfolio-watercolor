@@ -34,15 +34,15 @@ function getActiveHrefFromPage() {
   const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
   const isAtPageEnd = maxScroll > 0 && window.scrollY >= maxScroll - 8;
 
-  const contactSection = document.getElementById("contact");
-  const contactRect = contactSection?.getBoundingClientRect();
-  const contactIsVisible =
-    Boolean(contactRect) &&
-    contactRect!.top <= window.innerHeight - 12 &&
-    contactRect!.bottom >= 12;
+  // The footer (contact) sits right below the FAQ, so both highlight "FAQ".
+  const footerRect = document.getElementById("contact")?.getBoundingClientRect();
+  const footerIsVisible =
+    Boolean(footerRect) &&
+    footerRect!.top <= window.innerHeight - 12 &&
+    footerRect!.bottom >= 12;
 
-  if (isAtPageEnd || contactIsVisible) {
-    return "/#contact";
+  if (isAtPageEnd || footerIsVisible) {
+    return "/#faq";
   }
 
   if (window.scrollY < 24) {
@@ -184,12 +184,6 @@ export function SiteNav() {
     const sectionRect = section.getBoundingClientRect();
     const sectionTop = sectionRect.top + window.scrollY;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-
-    if (href === "/#contact") {
-      keepAddressClean();
-      window.scrollTo({ top: maxScroll, behavior: "smooth" });
-      return;
-    }
 
     const availableHeight = window.innerHeight - headerHeight;
     const centerOffset = Math.max(0, (availableHeight - sectionRect.height) / 2);

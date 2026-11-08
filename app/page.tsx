@@ -433,28 +433,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="faq" aria-labelledby="faq-heading" className={lazySectionClass}>
-        <SectionHeader
-          id="faq-heading"
-          title={language === "id" ? "Pertanyaan Umum" : "Frequently Asked Questions"}
-          summary={
-            language === "id"
-              ? "Jawaban ringkas tentang profil, pengalaman, keahlian, produk, dan cara menghubungi Abid Hanan Wicaksono."
-              : "Concise answers about Abid Hanan Wicaksono's profile, experience, skills, products, and contact details."
-          }
-        />
-        <div className="grid gap-4 md:grid-cols-2">
-          {visibleFaq.map((item) => (
-            <article key={item.question} className="shadow-watercolor p-5 sm:p-6">
-              <h3 className="mb-3 text-lg font-black leading-snug text-[#0F172A]">
-                {item.question}
-              </h3>
-              <p className="leading-relaxed text-[#475569]">{item.answer}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section id="activity" aria-labelledby="activity-heading" className={lazySectionClass}>
         <SectionHeader
           id="activity-heading"
@@ -494,6 +472,28 @@ export default function Home() {
                 ) : null}
               </article>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="faq" aria-labelledby="faq-heading" className={lazySectionClass}>
+        <SectionHeader
+          id="faq-heading"
+          title="FAQ"
+          summary={
+            language === "id"
+              ? "Jawaban ringkas tentang profil, pengalaman, keahlian, produk, dan cara menghubungi Abid Hanan Wicaksono."
+              : "Concise answers about Abid Hanan Wicaksono's profile, experience, skills, products, and contact details."
+          }
+        />
+        <div className="grid gap-4 md:grid-cols-2">
+          {visibleFaq.map((item) => (
+            <article key={item.question} className="shadow-watercolor p-5 sm:p-6">
+              <h3 className="mb-3 text-lg font-black leading-snug text-[#0F172A]">
+                {item.question}
+              </h3>
+              <p className="leading-relaxed text-[#475569]">{item.answer}</p>
+            </article>
           ))}
         </div>
       </section>

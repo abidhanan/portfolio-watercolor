@@ -45,7 +45,7 @@ export const navSections = [
   { key: "career", href: "/#career" },
   { key: "startup", href: "/#startup" },
   { key: "activity", href: "/#activity" },
-  { key: "contact", href: "/#contact" },
+  { key: "faq", href: "/#faq" },
 ] as const;
 
 type NavKey = (typeof navSections)[number]["key"];
@@ -68,7 +68,7 @@ const uiText = {
       career: "Career",
       startup: "Startup",
       activity: "Activity",
-      contact: "Contact",
+      faq: "FAQ",
     } satisfies Record<NavKey, string>,
     home: {
       intro: "I'm Abid Hanan",
@@ -226,7 +226,7 @@ const uiText = {
       career: "Karier",
       startup: "Startup",
       activity: "Aktivitas",
-      contact: "Kontak",
+      faq: "FAQ",
     } satisfies Record<NavKey, string>,
     home: {
       intro: "Saya Abid Hanan",

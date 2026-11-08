@@ -28,8 +28,8 @@ export const sections = [
   { id: "certificates", name: "Licenses & Certificates", description: "Credentials, awards, and learning milestones." },
   { id: "career", name: "Career", description: "Work experience, ambassador roles, and creative roles." },
   { id: "startup", name: "Startup", description: "Digital businesses he is building." },
-  { id: "faq", name: "FAQ", description: "Direct answers about his profile, skills, products, and contact details." },
   { id: "activity", name: "Activity", description: "Community, speaking, and learning activities." },
+  { id: "faq", name: "FAQ", description: "Direct answers about his profile, skills, products, and contact details." },
 ];
 
 // Question-and-answer pairs written as short, self-contained answers.
@@ -61,7 +61,7 @@ export const faq = [
   {
     question: "Which technologies does he use?",
     answer:
-      "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, and Cloudflare.",
+      "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare, and Docker.",
   },
   {
     question: "How can I contact Abid Hanan Wicaksono?",
@@ -89,7 +89,7 @@ export const faqId = [
   },
   {
     question: "Teknologi apa yang digunakan Abid Hanan Wicaksono?",
-    answer: "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, dan Cloudflare.",
+    answer: "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare, dan Docker.",
   },
   {
     question: "Bagaimana cara menghubungi Abid Hanan Wicaksono?",

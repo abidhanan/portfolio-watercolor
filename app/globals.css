@@ -499,10 +499,6 @@ html.sections-rendered main > section.lazy-section {
   content-visibility: visible;
 }
 
-.certificate-marquee-mask {
-  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
-}
-
 .certificate-marquee-viewport {
   cursor: grab;
   touch-action: pan-y;
@@ -596,44 +592,37 @@ body > footer {
   }
 }
 
-/* "Visit" button: polished leather-red key with a brass rim, same material as
-   the active nav key. Hover only brightens the gloss (no movement, no blue);
-   press sinks it into the page. */
+/* "Visit" button: exactly the active-nav key (leather-red glossy glass). Hover
+   only brightens (no movement, no blue); press sinks it into the page. */
 .visit-btn {
-  position: relative;
   border-radius: 9999px;
-  color: #fff6e6 !important;
+  color: #ffffff !important;
   background-color: #a3481f;
-  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.12) 50%, rgba(0, 0, 0, 0.08) 52%, rgba(0, 0, 0, 0.22) 100%);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.12) 50%, rgba(0, 0, 0, 0.08) 52%, rgba(0, 0, 0, 0.18) 100%);
   border: 1px solid #5e2509;
-  text-shadow: 0 -1px 0 rgba(60, 15, 0, 0.75);
+  text-shadow: 0 -1px 0 rgba(60, 15, 0, 0.7);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.6) inset,
-    0 0 0 2px #d9b36a,
-    0 0 0 3px #7a5a22,
-    0 3px 3px 3px rgba(50, 28, 8, 0.4),
-    0 10px 16px -2px rgba(50, 28, 8, 0.5);
-  transition: box-shadow 140ms ease, background-color 140ms ease, filter 140ms ease;
+    0 2px 3px rgba(20, 20, 40, 0.5),
+    0 4px 8px -2px rgba(20, 20, 40, 0.4);
+  transition: box-shadow 120ms ease, filter 120ms ease;
 }
 .visit-btn:hover {
-  background-color: #b5552a;
-  filter: brightness(1.08) saturate(1.05);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.7) inset,
-    0 0 0 2px #ecc87e,
-    0 0 0 3px #7a5a22,
-    0 4px 4px 3px rgba(50, 28, 8, 0.45),
-    0 14px 22px -2px rgba(50, 28, 8, 0.55);
+  filter: brightness(1.1);
 }
 .visit-btn:active {
   filter: brightness(0.95);
-  box-shadow:
-    0 3px 8px rgba(40, 10, 0, 0.6) inset,
-    0 0 0 2px #d9b36a,
-    0 0 0 3px #7a5a22,
-    0 1px 2px 3px rgba(50, 28, 8, 0.4);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35) inset;
 }
 .visit-btn:focus-visible {
-  outline: 2px solid #fff6e6;
-  outline-offset: 5px;
+  outline: 2px solid #5e2509;
+  outline-offset: 3px;
+}
+
+/* The certificate marquee is wider than the content column (edge to edge), so
+   its section must not paint-contain/clip it like the other lazy sections. */
+main > section#certificates.lazy-section {
+  content-visibility: visible;
+  margin-inline: 0;
+  padding-inline: 0;
 }

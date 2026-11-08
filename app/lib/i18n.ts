@@ -56,7 +56,7 @@ const uiText = {
       label: "Language",
     },
     brand: {
-      prefix: "AHAWI",
+      prefix: "Ahawi",
       accent: "Portfolio",
     },
     nav: {
@@ -214,7 +214,7 @@ const uiText = {
       label: "Bahasa",
     },
     brand: {
-      prefix: "AHAWI",
+      prefix: "Ahawi",
       accent: "Portofolio",
     },
     nav: {

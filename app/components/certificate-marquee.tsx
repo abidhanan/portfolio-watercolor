@@ -222,7 +222,7 @@ export function CertificateMarquee({ certificates }: CertificateMarqueeProps) {
     <>
       <div
         ref={viewportRef}
-        className="certificate-marquee-mask certificate-marquee-viewport relative left-1/2 min-h-[469px] w-screen -translate-x-1/2 overflow-hidden py-2 md:min-h-[501px]"
+        className="certificate-marquee-viewport relative left-1/2 -mb-10 -mt-4 min-h-[533px] w-screen -translate-x-1/2 overflow-hidden pb-14 pt-6 md:min-h-[565px]"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={endPointer}

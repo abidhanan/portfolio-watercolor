@@ -63,10 +63,6 @@ export const faq = [
     answer:
       "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare, and Docker.",
   },
-  {
-    question: "How can I contact Abid Hanan Wicaksono?",
-    answer: `Email ${contactEmail}, or message him on LinkedIn, GitHub, Instagram, YouTube, TikTok, X, or Telegram (@ahawi_channel).`,
-  },
 ];
 
 export const faqId = [
@@ -90,10 +86,6 @@ export const faqId = [
   {
     question: "Teknologi apa yang digunakan Abid Hanan Wicaksono?",
     answer: "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare, dan Docker.",
-  },
-  {
-    question: "Bagaimana cara menghubungi Abid Hanan Wicaksono?",
-    answer: `Kirim email ke ${contactEmail}, atau hubungi melalui LinkedIn, GitHub, Instagram, YouTube, TikTok, X, dan Telegram dengan nama pengguna @ahawi_channel.`,
   },
 ];
 

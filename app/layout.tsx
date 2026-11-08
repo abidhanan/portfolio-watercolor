@@ -129,6 +129,9 @@ export const metadata: Metadata = {
     apple: [{ url: `${siteUrl}/apple-touch-icon.png`, sizes: "180x180", type: "image/png" }],
   },
   category: "technology",
+  verification: {
+    other: { "msvalidate.01": "69DD1B2C5376C0D216CED52C9BB4579F" },
+  },
   manifest: "/manifest.webmanifest",
   other: {
     "geo.region": "ID-JT",

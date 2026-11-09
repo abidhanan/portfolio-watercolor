@@ -156,50 +156,6 @@ const uiText = {
           logo: "/nocoding-logo-grid.webp",
           logoAlt: "Nocoding logo",
         },
-        {
-          title: "I Need Save",
-          description:
-            "Download videos, photos, and audio from TikTok, Instagram, Facebook, and hundreds of other sites for free.",
-          services: [
-            "Video downloads",
-            "Photo downloads",
-            "MP3 audio downloads",
-          ],
-          visit: "Visit",
-          href: "https://ineedsave.com",
-          logo: "/logo-ineedsave.svg",
-          logoAlt: "I Need Save logo",
-        },
-        {
-          title: "I Need Barcode",
-          description:
-            "Create barcodes and QR codes for free with no sign-up. Supports 100+ formats, custom design, bulk generation, and print-ready PNG downloads.",
-          services: [
-            "100+ barcode formats",
-            "Custom design",
-            "Bulk generation",
-            "Print ready PNG",
-          ],
-          visit: "Visit",
-          href: "https://ineedbarcode.com",
-          logo: "/logo-ineedbarcode.svg",
-          logoAlt: "I Need Barcode logo",
-        },
-        {
-          title: "I Need Convert",
-          description:
-            "Convert images, video, audio, documents, PDFs, spreadsheets, and data to any format for free.",
-          services: [
-            "Image conversion",
-            "Video & audio",
-            "PDF & documents",
-            "Spreadsheets & data",
-          ],
-          visit: "Visit",
-          href: "https://ineedconvert.com",
-          logo: "/logo-ineedconvert.svg",
-          logoAlt: "I Need Convert logo",
-        },
       ],
     },
     footer: {
@@ -313,50 +269,6 @@ const uiText = {
           href: "https://nocoding.web.id",
           logo: "/nocoding-logo-grid.webp",
           logoAlt: "Logo Nocoding",
-        },
-        {
-          title: "I Need Save",
-          description:
-            "Unduh video, foto, dan audio dari TikTok, Instagram, Facebook, dan ratusan situs lainnya secara gratis.",
-          services: [
-            "Unduh video",
-            "Unduh foto",
-            "Unduh audio MP3",
-          ],
-          visit: "Kunjungi",
-          href: "https://ineedsave.com",
-          logo: "/logo-ineedsave.svg",
-          logoAlt: "Logo I Need Save",
-        },
-        {
-          title: "I Need Barcode",
-          description:
-            "Buat barcode dan QR Code gratis tanpa daftar. Mendukung 100+ format, desain kustom, pembuatan massal, dan unduhan PNG siap cetak.",
-          services: [
-            "100+ format barcode",
-            "Desain kustom",
-            "Pembuatan massal",
-            "PNG siap cetak",
-          ],
-          visit: "Kunjungi",
-          href: "https://ineedbarcode.com",
-          logo: "/logo-ineedbarcode.svg",
-          logoAlt: "Logo I Need Barcode",
-        },
-        {
-          title: "I Need Convert",
-          description:
-            "Konversi gambar, video, audio, dokumen, PDF, spreadsheet, dan data ke format apa pun secara gratis.",
-          services: [
-            "Konversi gambar",
-            "Video & audio",
-            "PDF & dokumen",
-            "Spreadsheet & data",
-          ],
-          visit: "Kunjungi",
-          href: "https://ineedconvert.com",
-          logo: "/logo-ineedconvert.svg",
-          logoAlt: "Logo I Need Convert",
         },
       ],
     },

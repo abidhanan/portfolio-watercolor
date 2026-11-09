@@ -54,9 +54,9 @@ export const faq = [
       "He was a Google Student Ambassador (September 2025 to February 2026, selected from 12,000 students), an Ambassador for ARMchain and FLOQ, and Associate Marketing at Coinversity.",
   },
   {
-    question: "Which startups and products has he built?",
+    question: "What businesses does Abid Hanan Wicaksono own?",
     answer:
-      "Wiboost Store (social media boosting, game top-ups, data packages, premium apps), Nocoding (website, application, and automation development), I Need Save (a free media downloader), I Need Barcode (a free barcode and QR code generator), and I Need Convert (a free file converter).",
+      "He is the Founder and CEO of Wiboost Store (a platform for social media boosting, game top-ups, mobile operator data packages, and premium apps) and Nocoding (website, application, and automation development services).",
   },
   {
     question: "Which technologies does he use?",
@@ -102,26 +102,5 @@ export const ventures = [
     url: "https://nocoding.web.id",
     type: "Organization",
     description: "Fast, affordable website, application, and automation development services.",
-  },
-  {
-    name: "I Need Save",
-    url: "https://ineedsave.com",
-    type: "WebApplication",
-    description:
-      "Free downloader for videos, photos, and audio from TikTok, Instagram, Facebook, and hundreds of other sites.",
-  },
-  {
-    name: "I Need Barcode",
-    url: "https://ineedbarcode.com",
-    type: "WebApplication",
-    description:
-      "Free barcode and QR code generator with 100+ formats, custom design, bulk generation, and print ready PNG downloads.",
-  },
-  {
-    name: "I Need Convert",
-    url: "https://ineedconvert.com",
-    type: "WebApplication",
-    description:
-      "Free file converter for images, video, audio, documents, PDFs, spreadsheets, and data.",
   },
 ];

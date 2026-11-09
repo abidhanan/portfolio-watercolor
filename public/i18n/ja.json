@@ -140,5 +140,19 @@
  "portfolio/activityItems/5/desc": "2025年10月31日(金)、Sugeng Hartono Universityで、学生の学習パートナーとしてのGemini AIの機能を紹介するセミナーを開催しました。Google Student Ambassadorとして、Gemini AIがキャンパスの仲間の日々の課題や効果的な学習にどう役立つかを共有しました。",
  "portfolio/activityItems/6/desc": "Sugeng Hartono UniversityのキャンパスでGemini AI技術を広めるという使命を果たし、Google Student Ambassadorとしての6か月を修了しました。インドネシア全土の12,000人の応募者の中で上位200人に入ってGoogle Student Ambassadorになれたことは、コンテンツクリエイターとしての最大の成果の一つとなりました。",
  "portfolio/activityItems/7/desc": "2026年2月20日(金)、「共有におけるイノベーション、計算論的思考で次世代を鼓舞する」をテーマにしたNgabuburITに講師として登壇する機会をいただきました。Aisyah孤児院の女の子たちと、計算論的思考を日常生活でどう活かせるかを共有し、将来に向けた体系的な思考力を育む手助けをしました。",
- "portfolio/activityItems/8/desc": "Solo Techno Parkで行われるMaua AIの朝会に参加しました。チームが優先事項を揃え、進捗や障害を共有し、その日の作業を計画する短い日次ミーティングです。AIを活用するこのチームの一員として、この時間がアプリ開発とSNS成長を同じ方向に進め、チーム全体の協力とコミュニケーションを強めてくれています。"
+ "portfolio/activityItems/8/desc": "Solo Techno Parkで行われるMaua AIの朝会に参加しました。チームが優先事項を揃え、進捗や障害を共有し、その日の作業を計画する短い日次ミーティングです。AIを活用するこのチームの一員として、この時間がアプリ開発とSNS成長を同じ方向に進め、チーム全体の協力とコミュニケーションを強めてくれています。",
+ "faq/title": "FAQ",
+ "faq/summary": "Abid Hanan Wicaksono のプロフィールの概要。",
+ "faq/items/0/question": "Abid Hanan Wicaksono とは誰ですか？",
+ "faq/items/0/answer": "Abid Hanan Wicaksono（通称 Ahawi）は、インドネシア・中部ジャワ州スラカルタ出身のデベロッパーリレーションズ専門家で、テクノロジー、ビジネス、マーケティングのバックグラウンドを持っています。わかりやすく教育的なコミュニケーションと有意義な協業を通じて、テクノロジーとコミュニティをつなぎます。",
+ "faq/items/1/question": "Abid Hanan Wicaksono は何をしていますか？",
+ "faq/items/1/answer": "Maua AI でマーケティング＆デベロッパーのインターンとして働き（2026年7月から）、アプリや自動化の開発とクライアントのSNS成長支援を行っています。TikTok、YouTube、Instagram でコンテンツも制作しています。",
+ "faq/items/2/question": "Abid Hanan Wicaksono は何を学んでいますか？",
+ "faq/items/2/answer": "Sugeng Hartono 大学でコンピュータサイエンスの学士課程に在籍しています（2024年〜現在）。現在5学期目で、GPA は 4.00 満点中 3.97 です。",
+ "faq/items/3/question": "どのようなアンバサダーやコミュニティの役割を務めましたか？",
+ "faq/items/3/answer": "Google Student Ambassador（2025年9月〜2026年2月、12,000人の学生から選出）、ARMchain と FLOQ のアンバサダー、Coinversity のアソシエイトマーケティングを務めました。",
+ "faq/items/4/question": "Abid Hanan Wicaksono はどのような事業を持っていますか？",
+ "faq/items/4/answer": "Wiboost Store（SNSブースト、ゲームのチャージ、通信キャリアのデータパッケージ、プレミアムアプリを提供するプラットフォーム）と Nocoding（ウェブサイト、アプリ、自動化の開発サービス）の創業者兼 CEO です。",
+ "faq/items/5/question": "どのような技術を使っていますか？",
+ "faq/items/5/answer": "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare、Docker。"
 }

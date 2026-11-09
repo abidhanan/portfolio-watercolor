@@ -140,5 +140,19 @@
  "portfolio/activityItems/5/desc": "Mengadakan seminar di Sugeng Hartono University pada Jumaat, 31 Oktober 2025 untuk memperkenalkan ciri Gemini AI sebagai teman pembelajaran pelajar. Sebagai Google Student Ambassador, saya berkongsi bagaimana Gemini AI dapat membantu rakan kampus menyelesaikan tugasan harian dan belajar dengan lebih berkesan.",
  "portfolio/activityItems/6/desc": "Menamatkan enam bulan sebagai Google Student Ambassador selepas melaksanakan misi mengguna pakai teknologi Gemini AI di kampus Sugeng Hartono University. Menjadi Google Student Ambassador dan berada dalam 200 teratas daripada 12,000 pemohon di seluruh Indonesia menjadi salah satu pencapaian terbesar saya sebagai content creator.",
  "portfolio/activityItems/7/desc": "Pada Jumaat, 20 Februari 2026, saya berpeluang menjadi penceramah di NgabuburIT dengan tema \"Inovasi dalam Berkongsi, Memberi Inspirasi kepada Generasi Seterusnya melalui Pemikiran Komputasional.\" Saya berkongsi bagaimana Pemikiran Komputasional boleh diterapkan dalam kehidupan seharian bersama anak-anak perempuan di Aisyah Orphanage, membantu mereka membina kemahiran berfikir secara sistematik untuk masa depan.",
- "portfolio/activityItems/8/desc": "Menyertai stand-up harian Maua AI di Solo Techno Park, sesi penyelarasan harian yang ringkas di mana pasukan menyelaraskan keutamaan, berkongsi kemajuan dan halangan, serta merancang kerja hari itu. Sebagai sebahagian daripada pasukan berkuasa AI ini, sesi-sesi ini memastikan pembangunan aplikasi dan pertumbuhan media sosial kami bergerak ke arah yang sama sambil mengukuhkan kerjasama dan komunikasi dalam pasukan."
+ "portfolio/activityItems/8/desc": "Menyertai stand-up harian Maua AI di Solo Techno Park, sesi penyelarasan harian yang ringkas di mana pasukan menyelaraskan keutamaan, berkongsi kemajuan dan halangan, serta merancang kerja hari itu. Sebagai sebahagian daripada pasukan berkuasa AI ini, sesi-sesi ini memastikan pembangunan aplikasi dan pertumbuhan media sosial kami bergerak ke arah yang sama sambil mengukuhkan kerjasama dan komunikasi dalam pasukan.",
+ "faq/title": "FAQ",
+ "faq/summary": "Ringkasan tentang profil Abid Hanan Wicaksono.",
+ "faq/items/0/question": "Siapakah Abid Hanan Wicaksono?",
+ "faq/items/0/answer": "Abid Hanan Wicaksono (juga dikenali sebagai Ahawi) ialah pakar Developer Relations dari Surakarta, Jawa Tengah, Indonesia, dengan latar belakang teknologi, perniagaan, dan pemasaran. Beliau menghubungkan teknologi dengan komuniti melalui komunikasi yang jelas dan mendidik serta kerjasama yang bermakna.",
+ "faq/items/1/question": "Apakah pekerjaan Abid Hanan Wicaksono?",
+ "faq/items/1/answer": "Beliau bekerja sebagai pelatih Marketing & Developer di Maua AI (sejak Julai 2026), membina aplikasi dan automasi serta membantu pertumbuhan media sosial pelanggan. Beliau juga mencipta kandungan di TikTok, YouTube, dan Instagram.",
+ "faq/items/2/question": "Apakah yang dipelajari Abid Hanan Wicaksono?",
+ "faq/items/2/answer": "Beliau mengikuti Sarjana Sains Komputer di Universiti Sugeng Hartono (2024 hingga kini). Beliau berada di semester 5 dengan IPK 3.97 daripada 4.00.",
+ "faq/items/3/question": "Apakah peranan duta dan komuniti yang pernah beliau pegang?",
+ "faq/items/3/answer": "Beliau pernah menjadi Google Student Ambassador (September 2025 hingga Februari 2026, dipilih daripada 12,000 pelajar), Duta ARMchain dan FLOQ, serta Associate Marketing di Coinversity.",
+ "faq/items/4/question": "Apakah perniagaan yang dimiliki Abid Hanan Wicaksono?",
+ "faq/items/4/answer": "Beliau ialah Pengasas dan CEO Wiboost Store (platform untuk peningkatan media sosial, top-up permainan, pakej data operator mudah alih, dan aplikasi premium) dan Nocoding (perkhidmatan pembangunan laman web, aplikasi, dan automasi).",
+ "faq/items/5/question": "Teknologi apakah yang beliau gunakan?",
+ "faq/items/5/answer": "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare, dan Docker."
 }

@@ -140,5 +140,19 @@
  "portfolio/activityItems/5/desc": "Tổ chức hội thảo tại Sugeng Hartono University vào Thứ Sáu, ngày 31 tháng 10 năm 2025 để giới thiệu các tính năng Gemini AI như người bạn đồng hành học tập của sinh viên. Với tư cách Google Student Ambassador, tôi chia sẻ cách Gemini AI có thể giúp các bạn trong trường xử lý bài tập hằng ngày và học hiệu quả hơn.",
  "portfolio/activityItems/6/desc": "Hoàn thành sáu tháng làm Google Student Ambassador sau khi thực hiện sứ mệnh đưa công nghệ Gemini AI vào trường tại Sugeng Hartono University. Trở thành Google Student Ambassador và lọt vào top 200 trong số 12.000 ứng viên trên khắp Indonesia là một trong những thành tựu lớn nhất của tôi với tư cách content creator.",
  "portfolio/activityItems/7/desc": "Vào Thứ Sáu, ngày 20 tháng 2 năm 2026, tôi có cơ hội làm diễn giả tại NgabuburIT với chủ đề \"Đổi mới trong chia sẻ, truyền cảm hứng cho thế hệ tiếp theo thông qua Tư duy tính toán\". Tôi chia sẻ cách áp dụng Tư duy tính toán vào đời sống hằng ngày với các em gái tại Aisyah Orphanage, giúp các em xây dựng kỹ năng tư duy hệ thống cho tương lai.",
- "portfolio/activityItems/8/desc": "Tham gia buổi stand-up hằng ngày của Maua AI tại Solo Techno Park, một buổi đồng bộ ngắn mỗi ngày để cả nhóm thống nhất ưu tiên, chia sẻ tiến độ và vướng mắc, cũng như lên kế hoạch công việc trong ngày. Là một phần của đội ngũ ứng dụng AI này, các buổi họp giúp việc phát triển ứng dụng và tăng trưởng mạng xã hội của chúng tôi đi cùng một hướng, đồng thời tăng cường hợp tác và giao tiếp trong nhóm."
+ "portfolio/activityItems/8/desc": "Tham gia buổi stand-up hằng ngày của Maua AI tại Solo Techno Park, một buổi đồng bộ ngắn mỗi ngày để cả nhóm thống nhất ưu tiên, chia sẻ tiến độ và vướng mắc, cũng như lên kế hoạch công việc trong ngày. Là một phần của đội ngũ ứng dụng AI này, các buổi họp giúp việc phát triển ứng dụng và tăng trưởng mạng xã hội của chúng tôi đi cùng một hướng, đồng thời tăng cường hợp tác và giao tiếp trong nhóm.",
+ "faq/title": "FAQ",
+ "faq/summary": "Tóm tắt về hồ sơ của Abid Hanan Wicaksono.",
+ "faq/items/0/question": "Abid Hanan Wicaksono là ai?",
+ "faq/items/0/answer": "Abid Hanan Wicaksono (còn được biết đến với tên Ahawi) là chuyên gia Developer Relations đến từ Surakarta, Trung Java, Indonesia, có nền tảng về công nghệ, kinh doanh và marketing. Anh kết nối công nghệ với cộng đồng thông qua giao tiếp rõ ràng, mang tính giáo dục và sự hợp tác có ý nghĩa.",
+ "faq/items/1/question": "Abid Hanan Wicaksono làm công việc gì?",
+ "faq/items/1/answer": "Anh làm thực tập sinh Marketing & Developer tại Maua AI (từ tháng 7/2026), xây dựng ứng dụng và tự động hóa, đồng thời thúc đẩy tăng trưởng mạng xã hội cho khách hàng. Anh cũng sáng tạo nội dung trên TikTok, YouTube và Instagram.",
+ "faq/items/2/question": "Abid Hanan Wicaksono học ngành gì?",
+ "faq/items/2/answer": "Anh đang theo học Cử nhân Khoa học Máy tính tại Đại học Sugeng Hartono (từ 2024 đến nay). Anh đang học kỳ 5 với điểm GPA 3,97/4,00.",
+ "faq/items/3/question": "Anh đã đảm nhận những vai trò đại sứ và cộng đồng nào?",
+ "faq/items/3/answer": "Anh từng là Google Student Ambassador (tháng 9/2025 đến tháng 2/2026, được chọn từ 12.000 sinh viên), Đại sứ của ARMchain và FLOQ, và Associate Marketing tại Coinversity.",
+ "faq/items/4/question": "Abid Hanan Wicaksono sở hữu những doanh nghiệp nào?",
+ "faq/items/4/answer": "Anh là Nhà sáng lập kiêm CEO của Wiboost Store (nền tảng tăng tương tác mạng xã hội, nạp game, gói data nhà mạng và ứng dụng premium) và Nocoding (dịch vụ phát triển website, ứng dụng và tự động hóa).",
+ "faq/items/5/question": "Anh sử dụng những công nghệ nào?",
+ "faq/items/5/answer": "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare, và Docker."
 }

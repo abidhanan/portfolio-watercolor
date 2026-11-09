@@ -17,7 +17,7 @@ export const socialProfiles = [
 ];
 
 export const summary = {
-  en: "Abid Hanan Wicaksono (also known as AHAWI) is a Developer Relations specialist from Surakarta, Indonesia, with a background in technology, business, and marketing. He connects technology with communities through clear, educational communication and meaningful collaboration.",
+  en: "Abid Hanan Wicaksono (also known as Ahawi) is a Developer Relations specialist from Surakarta, Central Java, Indonesia, with a background in technology, business, and marketing. He connects technology with communities through clear, educational communication and meaningful collaboration.",
   id: "Abid Hanan Wicaksono (dikenal juga sebagai Ahawi) adalah Developer Relations asal Surakarta, Jawa Tengah, Indonesia, dengan latar belakang teknologi, bisnis, dan marketing. Ia menghubungkan teknologi dengan komunitas melalui komunikasi yang jelas, edukatif, dan kolaborasi yang bermakna.",
 };
 

@@ -140,5 +140,19 @@
  "portfolio/activityItems/5/desc": "Op vrijdag 31 oktober 2025 gaf ik een seminar aan de Sugeng Hartono University om de functies van Gemini AI te introduceren als leermaatje voor studenten. Als Google Student Ambassador liet ik zien hoe Gemini AI medestudenten kan helpen met dagelijkse opdrachten en effectiever studeren.",
  "portfolio/activityItems/6/desc": "Zes maanden als Google Student Ambassador afgerond na het volbrengen van de missie om Gemini AI-technologie te introduceren op de campus van de Sugeng Hartono University. Google Student Ambassador worden en bij de top 200 van 12.000 kandidaten uit heel Indonesië horen, werd een van mijn grootste prestaties als contentmaker.",
  "portfolio/activityItems/7/desc": "Op vrijdag 20 februari 2026 kreeg ik de kans om spreker te zijn bij NgabuburIT met als thema \"Innovatie in delen, de volgende generatie inspireren met computationeel denken\". Ik liet samen met de meisjes van Weeshuis Aisyah zien hoe computationeel denken in het dagelijks leven kan worden toegepast, en hielp hen systematisch denken te ontwikkelen voor de toekomst.",
- "portfolio/activityItems/8/desc": "Aanwezig bij de dagelijkse stand-up van Maua AI in Solo Techno Park, een korte dagelijkse sync waarin het team prioriteiten afstemt, voortgang en blokkades deelt en het werk van de dag plant. Als onderdeel van dit AI-gedreven team zorgen deze sessies ervoor dat onze app-ontwikkeling en social media-groei dezelfde kant op blijven gaan, terwijl de samenwerking en communicatie binnen het team worden versterkt."
+ "portfolio/activityItems/8/desc": "Aanwezig bij de dagelijkse stand-up van Maua AI in Solo Techno Park, een korte dagelijkse sync waarin het team prioriteiten afstemt, voortgang en blokkades deelt en het werk van de dag plant. Als onderdeel van dit AI-gedreven team zorgen deze sessies ervoor dat onze app-ontwikkeling en social media-groei dezelfde kant op blijven gaan, terwijl de samenwerking en communicatie binnen het team worden versterkt.",
+ "faq/title": "FAQ",
+ "faq/summary": "Samenvatting over het profiel van Abid Hanan Wicaksono.",
+ "faq/items/0/question": "Wie is Abid Hanan Wicaksono?",
+ "faq/items/0/answer": "Abid Hanan Wicaksono (ook bekend als Ahawi) is een Developer Relations-specialist uit Surakarta, Midden-Java, Indonesië, met een achtergrond in technologie, bedrijfskunde en marketing. Hij verbindt technologie met gemeenschappen door duidelijke, educatieve communicatie en betekenisvolle samenwerking.",
+ "faq/items/1/question": "Wat doet Abid Hanan Wicaksono?",
+ "faq/items/1/answer": "Hij werkt als Marketing & Developer-stagiair bij Maua AI (sinds juli 2026), bouwt apps en automatiseringen en stimuleert de groei van klanten op sociale media. Daarnaast maakt hij content op TikTok, YouTube en Instagram.",
+ "faq/items/2/question": "Wat studeert Abid Hanan Wicaksono?",
+ "faq/items/2/answer": "Hij volgt de bachelor Computerwetenschappen aan de Sugeng Hartono University (2024 tot nu). Hij zit in het vijfde semester met een gemiddelde van 3,97 uit 4,00.",
+ "faq/items/3/question": "Welke ambassadeurs- en gemeenschapsrollen heeft hij vervuld?",
+ "faq/items/3/answer": "Hij was Google Student Ambassador (september 2025 tot februari 2026, geselecteerd uit 12.000 studenten), ambassadeur van ARMchain en FLOQ en Associate Marketing bij Coinversity.",
+ "faq/items/4/question": "Welke bedrijven bezit Abid Hanan Wicaksono?",
+ "faq/items/4/answer": "Hij is oprichter en CEO van Wiboost Store (een platform voor social media-boosting, game-opwaarderingen, databundels van mobiele providers en premium apps) en Nocoding (ontwikkeling van websites, applicaties en automatiseringen).",
+ "faq/items/5/question": "Welke technologieën gebruikt hij?",
+ "faq/items/5/answer": "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare, en Docker."
 }

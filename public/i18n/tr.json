@@ -140,5 +140,19 @@
  "portfolio/activityItems/5/desc": "31 Ekim 2025 Cuma günü Sugeng Hartono University'de, Gemini AI özelliklerini öğrencilerin öğrenme yardımcısı olarak tanıtan bir seminer verdim. Google Student Ambassador olarak, Gemini AI'ın kampüsteki arkadaşlarıma günlük ödevlerde ve daha verimli çalışmada nasıl yardımcı olabileceğini anlattım.",
  "portfolio/activityItems/6/desc": "Sugeng Hartono University kampüsünde Gemini AI teknolojisini yaygınlaştırma görevini yürüterek Google Student Ambassador olarak altı ayı tamamladım. Google Student Ambassador olmak ve Endonezya genelinde 12.000 başvuru sahibi arasında ilk 200'e girmek, içerik üreticisi olarak en büyük başarılarımdan biri oldu.",
  "portfolio/activityItems/7/desc": "20 Şubat 2026 Cuma günü, \"Innovation in Sharing, Inspiring the Next Generation through Computational Thinking\" temalı NgabuburIT'te konuşmacı olma fırsatı buldum. Aisyah Yetimhanesi'ndeki kızlarla Hesaplamalı Düşünmenin günlük hayatta nasıl uygulanabileceğini paylaşarak onların gelecek için sistematik düşünme becerileri geliştirmesine yardımcı oldum.",
- "portfolio/activityItems/8/desc": "Solo Techno Park'taki Maua AI günlük stand-up toplantısına katıldım; ekibin öncelikleri hizaladığı, ilerleme ve engelleri paylaştığı ve günün işlerini planladığı kısa bir günlük senkronizasyon. Yapay zekâ destekli bu ekibin bir parçası olarak bu oturumlar, uygulama geliştirme ve sosyal medya büyümesi çalışmalarımızı aynı yönde tutarken ekip içi iş birliğini ve iletişimi güçlendiriyor."
+ "portfolio/activityItems/8/desc": "Solo Techno Park'taki Maua AI günlük stand-up toplantısına katıldım; ekibin öncelikleri hizaladığı, ilerleme ve engelleri paylaştığı ve günün işlerini planladığı kısa bir günlük senkronizasyon. Yapay zekâ destekli bu ekibin bir parçası olarak bu oturumlar, uygulama geliştirme ve sosyal medya büyümesi çalışmalarımızı aynı yönde tutarken ekip içi iş birliğini ve iletişimi güçlendiriyor.",
+ "faq/title": "FAQ",
+ "faq/summary": "Abid Hanan Wicaksono'nun profiline dair özet.",
+ "faq/items/0/question": "Abid Hanan Wicaksono kimdir?",
+ "faq/items/0/answer": "Abid Hanan Wicaksono (Ahawi olarak da bilinir), Endonezya'nın Orta Cava bölgesindeki Surakarta'dan teknoloji, iş ve pazarlama geçmişine sahip bir Developer Relations uzmanıdır. Teknolojiyi, açık ve eğitici iletişim ile anlamlı iş birlikleri aracılığıyla topluluklarla buluşturur.",
+ "faq/items/1/question": "Abid Hanan Wicaksono ne iş yapıyor?",
+ "faq/items/1/answer": "Maua AI'da Marketing & Developer stajyeri olarak çalışıyor (Temmuz 2026'dan beri); uygulamalar ve otomasyonlar geliştiriyor, müşterilerin sosyal medya büyümesine destek oluyor. Ayrıca TikTok, YouTube ve Instagram'da içerik üretiyor.",
+ "faq/items/2/question": "Abid Hanan Wicaksono ne okuyor?",
+ "faq/items/2/answer": "Sugeng Hartono Üniversitesi'nde Bilgisayar Bilimleri lisans eğitimi alıyor (2024'ten bugüne). 5. yarıyılda ve not ortalaması 4.00 üzerinden 3.97.",
+ "faq/items/3/question": "Hangi elçilik ve topluluk rollerinde bulundu?",
+ "faq/items/3/answer": "Google Student Ambassador (Eylül 2025 – Şubat 2026, 12.000 öğrenci arasından seçildi), ARMchain ve FLOQ elçisi ve Coinversity'de Associate Marketing olarak görev yaptı.",
+ "faq/items/4/question": "Abid Hanan Wicaksono hangi işletmelere sahip?",
+ "faq/items/4/answer": "Wiboost Store'un (sosyal medya büyütme, oyun yüklemeleri, operatör veri paketleri ve premium uygulamalar platformu) ve Nocoding'in (web sitesi, uygulama ve otomasyon geliştirme hizmetleri) kurucusu ve CEO'sudur.",
+ "faq/items/5/question": "Hangi teknolojileri kullanıyor?",
+ "faq/items/5/answer": "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare, ve Docker."
 }

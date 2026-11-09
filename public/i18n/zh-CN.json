@@ -140,5 +140,19 @@
  "portfolio/activityItems/5/desc": "于 2025 年 10 月 31 日（星期五）在 Sugeng Hartono University 举办研讨会，介绍 Gemini AI 作为学生学习伙伴的功能。作为 Google Student Ambassador，我分享了 Gemini AI 如何帮助校园同学处理日常作业并更高效地学习。",
  "portfolio/activityItems/6/desc": "在 Sugeng Hartono University 校园完成推广 Gemini AI 技术的使命，圆满结束六个月的 Google Student Ambassador 任期。成为 Google Student Ambassador 并在印度尼西亚全国 12,000 名申请者中进入前 200 名，是我作为内容创作者最大的成就之一。",
  "portfolio/activityItems/7/desc": "2026 年 2 月 20 日（星期五），我有幸担任 NgabuburIT 的演讲嘉宾，主题为\"分享中的创新，以计算思维启发下一代\"。我与 Aisyah 孤儿院的女孩们分享了如何在日常生活中运用计算思维，帮助她们培养面向未来的系统化思考能力。",
- "portfolio/activityItems/8/desc": "参加 Maua AI 在 Solo Techno Park 的每日站会，这是一个简短的每日同步会，团队在会上对齐优先事项、分享进展和阻碍，并规划当天工作。作为这支 AI 驱动团队的一员，这些会议让我们的应用开发和社交媒体增长保持同一方向，同时加强团队内的协作与沟通。"
+ "portfolio/activityItems/8/desc": "参加 Maua AI 在 Solo Techno Park 的每日站会，这是一个简短的每日同步会，团队在会上对齐优先事项、分享进展和阻碍，并规划当天工作。作为这支 AI 驱动团队的一员，这些会议让我们的应用开发和社交媒体增长保持同一方向，同时加强团队内的协作与沟通。",
+ "faq/title": "FAQ",
+ "faq/summary": "关于 Abid Hanan Wicaksono 个人简介的概要。",
+ "faq/items/0/question": "Abid Hanan Wicaksono 是谁？",
+ "faq/items/0/answer": "Abid Hanan Wicaksono（又名 Ahawi）是来自印度尼西亚中爪哇省梭罗的开发者关系（Developer Relations）专家，拥有技术、商业和营销背景。他通过清晰、富有教育意义的沟通和有意义的合作，将技术与社区连接起来。",
+ "faq/items/1/question": "Abid Hanan Wicaksono 从事什么工作？",
+ "faq/items/1/answer": "他在 Maua AI 担任市场营销与开发实习生（自 2026 年 7 月起），开发应用和自动化，并推动客户的社交媒体增长。他还在 TikTok、YouTube 和 Instagram 上创作内容。",
+ "faq/items/2/question": "Abid Hanan Wicaksono 学习什么专业？",
+ "faq/items/2/answer": "他在 Sugeng Hartono 大学攻读计算机科学学士学位（2024 年至今），目前在读第 5 学期，GPA 为 3.97（满分 4.00）。",
+ "faq/items/3/question": "他担任过哪些大使和社区角色？",
+ "faq/items/3/answer": "他曾担任 Google Student Ambassador（2025 年 9 月至 2026 年 2 月，从 12,000 名学生中选拔）、ARMchain 和 FLOQ 的大使，以及 Coinversity 的市场营销助理。",
+ "faq/items/4/question": "Abid Hanan Wicaksono 拥有哪些业务？",
+ "faq/items/4/answer": "他是 Wiboost Store（提供社交媒体增长、游戏充值、运营商流量套餐和高级应用服务的平台）和 Nocoding（网站、应用和自动化开发服务）的创始人兼 CEO。",
+ "faq/items/5/question": "他使用哪些技术？",
+ "faq/items/5/answer": "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare 和 Docker。"
 }

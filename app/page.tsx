@@ -4,7 +4,6 @@ import Image from "next/image";
 import { CertificateMarquee } from "./components/certificate-marquee";
 import { useLanguage } from "./components/language-provider";
 import { assetUrl } from "./lib/assets";
-import { faq, faqId } from "./lib/site";
 
 const toolTone = "border-[#E2E8F0] bg-[#F8FAFC] text-[#334155]";
 
@@ -91,8 +90,7 @@ function SectionHeader({ id, title, summary, uppercase = false }: SectionHeaderP
 }
 
 export default function Home() {
-  const { content, language } = useLanguage();
-  const visibleFaq = language === "id" ? faqId : faq;
+  const { content } = useLanguage();
   const {
     activityItems,
     careerItems,
@@ -431,16 +429,12 @@ export default function Home() {
       <section id="faq" aria-labelledby="faq-heading" className={lazySectionClass}>
         <SectionHeader
           id="faq-heading"
-          title="FAQ"
+          title={content.faq.title}
           uppercase
-          summary={
-            language === "id"
-              ? "Ringkasan tentang profil Abid Hanan Wicaksono."
-              : "Concise answers about Abid Hanan Wicaksono's profile, experience, skills, products, and contact details."
-          }
+          summary={content.faq.summary}
         />
         <div className="grid gap-4 md:grid-cols-2">
-          {visibleFaq.map((item) => (
+          {content.faq.items.map((item) => (
             <article key={item.question} className="shadow-watercolor p-5 sm:p-6">
               <h3 className="mb-3 text-lg font-black leading-snug text-[#0F172A]">
                 {item.question}

@@ -140,5 +140,19 @@
  "portfolio/activityItems/5/desc": "W piątek, 31 października 2025, poprowadziłem seminarium na Sugeng Hartono University, przedstawiając funkcje Gemini AI jako towarzysza nauki studentów. Jako Google Student Ambassador pokazałem, jak Gemini AI może pomóc kolegom z kampusu w codziennych zadaniach i skuteczniejszej nauce.",
  "portfolio/activityItems/6/desc": "Ukończyłem sześć miesięcy jako Google Student Ambassador, realizując misję wdrażania technologii Gemini AI na kampusie Sugeng Hartono University. Zostanie Google Student Ambassador i dostanie się do czołowej 200 spośród 12 000 kandydatów z całej Indonezji to jedno z moich największych osiągnięć jako twórcy treści.",
  "portfolio/activityItems/7/desc": "W piątek, 20 lutego 2026, miałem okazję być prelegentem na NgabuburIT z tematem \"Innovation in Sharing, Inspiring the Next Generation through Computational Thinking\". Opowiedziałem dziewczętom z Sierocińca Aisyah, jak myślenie komputacyjne można stosować w codziennym życiu, pomagając im rozwijać systematyczne myślenie na przyszłość.",
- "portfolio/activityItems/8/desc": "Dołączyłem do codziennego stand-upu Maua AI w Solo Techno Park, krótkiej codziennej synchronizacji, podczas której zespół ustala priorytety, dzieli się postępami i blokadami oraz planuje pracę na dany dzień. Jako część tego zespołu opartego na AI, te spotkania utrzymują rozwój aplikacji i wzrost w mediach społecznościowych w tym samym kierunku, wzmacniając współpracę i komunikację w zespole."
+ "portfolio/activityItems/8/desc": "Dołączyłem do codziennego stand-upu Maua AI w Solo Techno Park, krótkiej codziennej synchronizacji, podczas której zespół ustala priorytety, dzieli się postępami i blokadami oraz planuje pracę na dany dzień. Jako część tego zespołu opartego na AI, te spotkania utrzymują rozwój aplikacji i wzrost w mediach społecznościowych w tym samym kierunku, wzmacniając współpracę i komunikację w zespole.",
+ "faq/title": "FAQ",
+ "faq/summary": "Podsumowanie profilu Abida Hanana Wicaksono.",
+ "faq/items/0/question": "Kim jest Abid Hanan Wicaksono?",
+ "faq/items/0/answer": "Abid Hanan Wicaksono (znany też jako Ahawi) jest specjalistą Developer Relations z Surakarty w Jawie Środkowej w Indonezji, z doświadczeniem w technologii, biznesie i marketingu. Łączy technologię ze społecznościami dzięki jasnej, edukacyjnej komunikacji i wartościowej współpracy.",
+ "faq/items/1/question": "Czym zajmuje się Abid Hanan Wicaksono?",
+ "faq/items/1/answer": "Pracuje jako stażysta Marketing & Developer w Maua AI (od lipca 2026), tworząc aplikacje i automatyzacje oraz wspierając wzrost klientów w mediach społecznościowych. Tworzy też treści na TikToku, YouTube i Instagramie.",
+ "faq/items/2/question": "Co studiuje Abid Hanan Wicaksono?",
+ "faq/items/2/answer": "Studiuje informatykę na studiach licencjackich na Sugeng Hartono University (od 2024 do teraz). Jest na piątym semestrze ze średnią 3,97 na 4,00.",
+ "faq/items/3/question": "Jakie role ambasadora i w społecznościach pełnił?",
+ "faq/items/3/answer": "Był Google Student Ambassador (od września 2025 do lutego 2026, wybrany spośród 12 000 studentów), ambasadorem ARMchain i FLOQ oraz Associate Marketing w Coinversity.",
+ "faq/items/4/question": "Jakie firmy posiada Abid Hanan Wicaksono?",
+ "faq/items/4/answer": "Jest założycielem i CEO Wiboost Store (platformy do promowania w mediach społecznościowych, doładowań gier, pakietów danych operatorów komórkowych i aplikacji premium) oraz Nocoding (usługi tworzenia stron internetowych, aplikacji i automatyzacji).",
+ "faq/items/5/question": "Z jakich technologii korzysta?",
+ "faq/items/5/answer": "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare, i Docker."
 }

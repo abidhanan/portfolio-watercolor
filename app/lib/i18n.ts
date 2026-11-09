@@ -5,6 +5,7 @@ import {
   educationItems,
   techGroups,
 } from "./portfolio-data";
+import { faq, faqId } from "./site";
 
 export type Language = "en" | "id";
 
@@ -158,6 +159,11 @@ const uiText = {
         },
       ],
     },
+    faq: {
+      title: "FAQ",
+      summary: "A summary of Abid Hanan Wicaksono's profile.",
+      items: faq,
+    },
     footer: {
       motivation: "\"After every difficulty comes ease.\"",
       contact: "Contact",
@@ -271,6 +277,11 @@ const uiText = {
           logoAlt: "Logo Nocoding",
         },
       ],
+    },
+    faq: {
+      title: "FAQ",
+      summary: "Ringkasan tentang profil Abid Hanan Wicaksono.",
+      items: faqId,
     },
     footer: {
       motivation: "\"Sesudah kesulitan pasti ada kemudahan.\"",

@@ -140,5 +140,19 @@
  "portfolio/activityItems/5/desc": "Di un seminario en Sugeng Hartono University el viernes 31 de octubre de 2025 para presentar las funciones de Gemini AI como compañero de aprendizaje estudiantil. Como Google Student Ambassador, compartí cómo Gemini AI puede ayudar a mis compañeros del campus con las tareas diarias y a estudiar de forma más eficaz.",
  "portfolio/activityItems/6/desc": "Completé seis meses como Google Student Ambassador tras cumplir la misión de impulsar la adopción de la tecnología Gemini AI en el campus de Sugeng Hartono University. Ser Google Student Ambassador y llegar al top 200 entre 12 000 candidatos de toda Indonesia se convirtió en uno de mis mayores logros como creador de contenido.",
  "portfolio/activityItems/7/desc": "El viernes 20 de febrero de 2026 tuve la oportunidad de ser ponente en NgabuburIT con el tema \"Innovación al compartir, inspirando a la próxima generación mediante el pensamiento computacional\". Compartí cómo se puede aplicar el pensamiento computacional en la vida diaria con las niñas del Orfanato Aisyah, ayudándolas a desarrollar un pensamiento sistemático para su futuro.",
- "portfolio/activityItems/8/desc": "Participé en el stand-up diario de Maua AI en Solo Techno Park, una breve sincronización diaria en la que el equipo alinea prioridades, comparte avances y bloqueos, y planifica el trabajo del día. Como parte de este equipo impulsado por IA, estas sesiones mantienen nuestro desarrollo de apps y el crecimiento en redes sociales avanzando en la misma dirección, a la vez que fortalecen la colaboración y la comunicación en todo el equipo."
+ "portfolio/activityItems/8/desc": "Participé en el stand-up diario de Maua AI en Solo Techno Park, una breve sincronización diaria en la que el equipo alinea prioridades, comparte avances y bloqueos, y planifica el trabajo del día. Como parte de este equipo impulsado por IA, estas sesiones mantienen nuestro desarrollo de apps y el crecimiento en redes sociales avanzando en la misma dirección, a la vez que fortalecen la colaboración y la comunicación en todo el equipo.",
+ "faq/title": "FAQ",
+ "faq/summary": "Resumen del perfil de Abid Hanan Wicaksono.",
+ "faq/items/0/question": "¿Quién es Abid Hanan Wicaksono?",
+ "faq/items/0/answer": "Abid Hanan Wicaksono (también conocido como Ahawi) es un especialista en Developer Relations de Surakarta, Java Central, Indonesia, con formación en tecnología, negocios y marketing. Conecta la tecnología con las comunidades mediante una comunicación clara y educativa y una colaboración significativa.",
+ "faq/items/1/question": "¿A qué se dedica Abid Hanan Wicaksono?",
+ "faq/items/1/answer": "Trabaja como becario de Marketing & Developer en Maua AI (desde julio de 2026), creando aplicaciones y automatizaciones e impulsando el crecimiento en redes sociales de los clientes. También crea contenido en TikTok, YouTube e Instagram.",
+ "faq/items/2/question": "¿Qué estudia Abid Hanan Wicaksono?",
+ "faq/items/2/answer": "Cursa la Licenciatura en Ciencias de la Computación en la Universidad Sugeng Hartono (de 2024 a la actualidad). Está en el quinto semestre con un promedio de 3,97 sobre 4,00.",
+ "faq/items/3/question": "¿Qué roles de embajador y de comunidad ha desempeñado?",
+ "faq/items/3/answer": "Fue Google Student Ambassador (de septiembre de 2025 a febrero de 2026, seleccionado entre 12.000 estudiantes), embajador de ARMchain y FLOQ, y Associate Marketing en Coinversity.",
+ "faq/items/4/question": "¿Qué negocios tiene Abid Hanan Wicaksono?",
+ "faq/items/4/answer": "Es el fundador y CEO de Wiboost Store (una plataforma de impulso en redes sociales, recargas de juegos, paquetes de datos de operadores móviles y aplicaciones premium) y de Nocoding (servicios de desarrollo de sitios web, aplicaciones y automatización).",
+ "faq/items/5/question": "¿Qué tecnologías utiliza?",
+ "faq/items/5/answer": "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare, y Docker."
 }

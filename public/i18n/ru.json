@@ -140,5 +140,19 @@
  "portfolio/activityItems/5/desc": "Провёл семинар в Sugeng Hartono University в пятницу, 31 октября 2025 года, чтобы представить функции Gemini AI как помощника в учёбе. Как Google Student Ambassador, я рассказал, как Gemini AI помогает однокурсникам справляться с ежедневными заданиями и учиться эффективнее.",
  "portfolio/activityItems/6/desc": "Завершил шесть месяцев в роли Google Student Ambassador, выполнив миссию по внедрению технологии Gemini AI в кампусе Sugeng Hartono University. Стать Google Student Ambassador и войти в топ-200 среди 12 000 кандидатов по всей Индонезии - одно из моих главных достижений как создателя контента.",
  "portfolio/activityItems/7/desc": "В пятницу, 20 февраля 2026 года, я выступил спикером на NgabuburIT на тему \"Innovation in Sharing, Inspiring the Next Generation through Computational Thinking\". Я рассказал, как вычислительное мышление применимо в повседневной жизни, девочкам из приюта Aisyah, помогая им развивать системное мышление для будущего.",
- "portfolio/activityItems/8/desc": "Участвовал в ежедневном стендапе Maua AI в Solo Techno Park: короткой ежедневной синхронизации, где команда согласует приоритеты, делится прогрессом и блокерами и планирует работу на день. В этой команде на базе ИИ такие встречи направляют разработку приложений и рост в соцсетях в одну сторону, укрепляя сотрудничество и коммуникацию внутри команды."
+ "portfolio/activityItems/8/desc": "Участвовал в ежедневном стендапе Maua AI в Solo Techno Park: короткой ежедневной синхронизации, где команда согласует приоритеты, делится прогрессом и блокерами и планирует работу на день. В этой команде на базе ИИ такие встречи направляют разработку приложений и рост в соцсетях в одну сторону, укрепляя сотрудничество и коммуникацию внутри команды.",
+ "faq/title": "FAQ",
+ "faq/summary": "Краткий обзор профиля Abid Hanan Wicaksono.",
+ "faq/items/0/question": "Кто такой Abid Hanan Wicaksono?",
+ "faq/items/0/answer": "Abid Hanan Wicaksono (также известный как Ahawi) — специалист по Developer Relations из Суракарты, Центральная Ява, Индонезия, с опытом в технологиях, бизнесе и маркетинге. Он соединяет технологии с сообществами через понятную, образовательную коммуникацию и содержательное сотрудничество.",
+ "faq/items/1/question": "Чем занимается Abid Hanan Wicaksono?",
+ "faq/items/1/answer": "Он работает стажёром Marketing & Developer в Maua AI (с июля 2026), создаёт приложения и автоматизации и помогает клиентам расти в социальных сетях. Также создаёт контент в TikTok, YouTube и Instagram.",
+ "faq/items/2/question": "Что изучает Abid Hanan Wicaksono?",
+ "faq/items/2/answer": "Он учится на бакалавра компьютерных наук в Университете Sugeng Hartono (с 2024 года по настоящее время). Он на 5-м семестре, средний балл — 3,97 из 4,00.",
+ "faq/items/3/question": "Какие роли амбассадора и в сообществах он занимал?",
+ "faq/items/3/answer": "Он был Google Student Ambassador (с сентября 2025 по февраль 2026, отобран из 12 000 студентов), амбассадором ARMchain и FLOQ и Associate Marketing в Coinversity.",
+ "faq/items/4/question": "Какими бизнесами владеет Abid Hanan Wicaksono?",
+ "faq/items/4/answer": "Он основатель и CEO Wiboost Store (платформы для продвижения в соцсетях, пополнения игр, пакетов данных мобильных операторов и премиум-приложений) и Nocoding (услуги по разработке сайтов, приложений и автоматизации).",
+ "faq/items/5/question": "Какие технологии он использует?",
+ "faq/items/5/answer": "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare, и Docker."
 }

@@ -140,5 +140,19 @@
  "portfolio/activityItems/5/desc": "2025년 10월 31일 금요일 Sugeng Hartono University에서 학생의 학습 동반자로서 Gemini AI 기능을 소개하는 세미나를 열었습니다. Google Student Ambassador로서 Gemini AI가 캠퍼스 친구들의 일상 과제와 효과적인 학습에 어떻게 도움이 되는지 공유했습니다.",
  "portfolio/activityItems/6/desc": "Sugeng Hartono University 캠퍼스에 Gemini AI 기술을 도입한다는 미션을 수행하며 Google Student Ambassador로서 6개월을 마무리했습니다. 인도네시아 전역 12,000명의 지원자 중 상위 200명에 들어 Google Student Ambassador가 된 것은 콘텐츠 크리에이터로서 가장 큰 성과 중 하나입니다.",
  "portfolio/activityItems/7/desc": "2026년 2월 20일 금요일, \"나눔의 혁신, 컴퓨팅 사고로 다음 세대에게 영감을\"을 주제로 한 NgabuburIT에 연사로 참여할 기회를 얻었습니다. Aisyah 고아원의 소녀들과 컴퓨팅 사고를 일상에서 어떻게 활용할 수 있는지 나누며, 미래를 위한 체계적인 사고력을 키우도록 도왔습니다.",
- "portfolio/activityItems/8/desc": "Solo Techno Park에서 열린 Maua AI의 데일리 스탠드업에 참여했습니다. 팀이 우선순위를 맞추고, 진행 상황과 걸림돌을 공유하며, 그날의 업무를 계획하는 짧은 일일 미팅입니다. AI 기반 팀의 일원으로서 이 시간은 앱 개발과 SNS 성장을 같은 방향으로 이끌고, 팀 전반의 협업과 소통을 더욱 단단하게 해 줍니다."
+ "portfolio/activityItems/8/desc": "Solo Techno Park에서 열린 Maua AI의 데일리 스탠드업에 참여했습니다. 팀이 우선순위를 맞추고, 진행 상황과 걸림돌을 공유하며, 그날의 업무를 계획하는 짧은 일일 미팅입니다. AI 기반 팀의 일원으로서 이 시간은 앱 개발과 SNS 성장을 같은 방향으로 이끌고, 팀 전반의 협업과 소통을 더욱 단단하게 해 줍니다.",
+ "faq/title": "FAQ",
+ "faq/summary": "Abid Hanan Wicaksono의 프로필 요약.",
+ "faq/items/0/question": "Abid Hanan Wicaksono는 누구인가요?",
+ "faq/items/0/answer": "Abid Hanan Wicaksono(Ahawi로도 알려짐)는 인도네시아 중부 자바주 수라카르타 출신의 Developer Relations 전문가로, 기술, 비즈니스, 마케팅 배경을 가지고 있습니다. 명확하고 교육적인 커뮤니케이션과 의미 있는 협업을 통해 기술과 커뮤니티를 연결합니다.",
+ "faq/items/1/question": "Abid Hanan Wicaksono는 무슨 일을 하나요?",
+ "faq/items/1/answer": "Maua AI에서 마케팅 & 개발 인턴으로 일하며(2026년 7월부터) 앱과 자동화를 개발하고 고객의 소셜 미디어 성장을 돕고 있습니다. TikTok, YouTube, Instagram에서 콘텐츠도 제작합니다.",
+ "faq/items/2/question": "Abid Hanan Wicaksono는 무엇을 공부하나요?",
+ "faq/items/2/answer": "Sugeng Hartono 대학교에서 컴퓨터공학 학사 과정을 밟고 있습니다(2024년~현재). 현재 5학기이며 GPA는 4.00 만점에 3.97입니다.",
+ "faq/items/3/question": "어떤 앰배서더와 커뮤니티 역할을 맡았나요?",
+ "faq/items/3/answer": "Google Student Ambassador(2025년 9월~2026년 2월, 학생 12,000명 중 선발), ARMchain과 FLOQ의 앰배서더, Coinversity의 Associate Marketing을 역임했습니다.",
+ "faq/items/4/question": "Abid Hanan Wicaksono는 어떤 사업을 운영하나요?",
+ "faq/items/4/answer": "Wiboost Store(소셜 미디어 부스팅, 게임 충전, 통신사 데이터 패키지, 프리미엄 앱 플랫폼)와 Nocoding(웹사이트, 애플리케이션, 자동화 개발 서비스)의 창업자 겸 CEO입니다.",
+ "faq/items/5/question": "어떤 기술을 사용하나요?",
+ "faq/items/5/answer": "HTML, CSS, JavaScript, TypeScript, Solidity, Move, Rust, Go, Python, PHP, React, Next.js, Tailwind CSS, Node.js, Laravel, MySQL, PostgreSQL, Supabase, Hardhat, Foundry, Figma, GitHub, Vercel, Cloudflare, Docker"
 }

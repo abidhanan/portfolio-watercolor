@@ -56,7 +56,7 @@ export const faq = [
   {
     question: "What businesses does Abid Hanan Wicaksono own?",
     answer:
-      "He is the Founder and CEO of Wiboost Store (a platform for social media boosting, game top-ups, mobile operator data packages, and premium apps) and Nocoding (website, application, and automation development services).",
+      "He is the CEO and Founder of Wiboost Store (a platform for social media boosting, game top-ups, mobile operator data packages, and premium apps) and Nocoding (website, application, and automation development services).",
   },
   {
     question: "Which technologies does he use?",
@@ -81,7 +81,7 @@ export const faqId = [
   },
   {
     question: "Bisnis apa yang dimiliki Abid Hanan Wicaksono?",
-    answer: "Ia merupakan Founder dan CEO Wiboost Store (Platform penyedia layanan suntik sosmed, top up game, paket data operator, dan aplikasi premium) dan Nocoding (Jasa pembuatan website, aplikasi, dan automasi).",
+    answer: "Ia merupakan CEO dan Founder Wiboost Store (Platform penyedia layanan suntik sosmed, top up game, paket data operator, dan aplikasi premium) dan Nocoding (Jasa pembuatan website, aplikasi, dan automasi).",
   },
   {
     question: "Teknologi apa yang digunakan Abid Hanan Wicaksono?",

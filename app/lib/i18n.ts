@@ -321,6 +321,18 @@ const careerId: Partial<(typeof careerItems)[number]>[] = [
     highlights: ["Automasi AI", "Pengembangan aplikasi", "Pertumbuhan sosial"],
   },
   {
+    period: "Jun 2026 - Sekarang",
+    company: "Wiboost Store - Wiraswasta",
+    desc: "CEO dan Founder Wiboost Store, platform layanan suntik sosmed, top up game, paket data operator, dan aplikasi premium dengan proses yang cepat, aman, dan praktis.",
+    highlights: ["CEO", "Founder", "Wiboost Store"],
+  },
+  {
+    period: "Jun 2026 - Sekarang",
+    company: "Nocoding - Wiraswasta",
+    desc: "CEO dan Founder Nocoding, jasa pembuatan website, aplikasi, dan automasi yang cepat, terjangkau, dan memuaskan.",
+    highlights: ["CEO", "Founder", "Nocoding"],
+  },
+  {
     period: "Jun 2023 - Sekarang",
     company: "TikTok - Paruh Waktu",
     desc: "Content creator di TikTok dengan fokus pada analitik media sosial untuk meningkatkan engagement dan visibilitas. Terampil memantau performa dan mengoptimalkan strategi konten untuk memperluas jangkauan serta interaksi brand.",

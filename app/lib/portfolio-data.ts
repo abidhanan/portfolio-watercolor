@@ -132,6 +132,22 @@ export const careerItems: CareerItem[] = [
     highlights: ["AI automation", "App development", "Social growth"],
   },
   {
+    period: "Jun 2026 - Present",
+    role: "CEO & Founder",
+    company: "Wiboost Store - Self-employed",
+    companyLogo: "/wiboostore-logo-v2.webp",
+    desc: "CEO and Founder of Wiboost Store, a platform for social media boosting, game top-ups, mobile operator data packages, and premium apps, with a fast, secure, and convenient process.",
+    highlights: ["CEO", "Founder", "Wiboost Store"],
+  },
+  {
+    period: "Jun 2026 - Present",
+    role: "CEO & Founder",
+    company: "Nocoding - Self-employed",
+    companyLogo: "/nocoding-logo-grid.webp",
+    desc: "CEO and Founder of Nocoding, offering fast, affordable, and satisfying website, application, and automation development services.",
+    highlights: ["CEO", "Founder", "Nocoding"],
+  },
+  {
     period: "Jun 2023 - Present",
     role: "Content Creator",
     company: "TikTok - Part time",
